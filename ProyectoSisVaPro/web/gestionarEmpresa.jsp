@@ -82,12 +82,13 @@
                 <div class="form-row align-items-center">
                 <div class="col-auto">
                   <label class="mr-sm-2" for="idUsuario">Usuario</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idUsuario" name="lstUsuario" >
                   <%
                         List<Usuario> lst1=crudU.mostrarUsuario();
                         for(Usuario u:lst1){
                   %>
-                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" value="<%=u.getIdUsuario()%>">
-                  <option value="<%=u.getUserName()%>"></option>
+                  
+                  <option value="<%=u.getIdUsuario()%>"><%=u.getUserName()%></option>
                             <%
                             }
                             %>

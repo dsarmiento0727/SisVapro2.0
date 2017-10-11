@@ -42,20 +42,15 @@ public class IniciarSesion extends HttpServlet {
                 UsuarioIngreso obj = new UsuarioIngreso();
                 int tipoUsuario = obj.autenticarUsuario(usuario, clave);
                 if (tipoUsuario == 1) {
-                    HttpSession objSesion = request.getSession(false);
-                    HttpSession objSesionTipo = request.getSession(false);
-                    objSesion.setAttribute("usuario", usuario);
-                    objSesionTipo.setAttribute("tipo", "Administrador");
-                    if (request.getParameter("ck") != null) {
-                        Cookie valor_guardar = new Cookie("usuario", usuario);
-                        valor_guardar.setMaxAge(60 * 60 * 24);
-                        response.addCookie(valor_guardar);
-                        request.getRequestDispatcher("index.jsp").forward(request, response);
-                    }
-
+                    
+                     request.getRequestDispatcher("index.jsp").forward(request, response);
+                } else{
+                    out.print(tipoUsuario);
+                    out.print("Datos Invalidos");
                 }
             }
         } catch (Exception e) {
+            out.print("Error");
             out.print(e.toString());
         }
     }

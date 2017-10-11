@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarCatalogo extends HttpServlet {
 
@@ -52,12 +52,13 @@ public class ProcesarCatalogo extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crudC.eliminarCatalogo(c);              
             }
-            response.sendRedirect("gestionarCatalogo.jsp");
+            
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarCatalogo.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("valor", e.toString());
         }
-        request.getRequestDispatcher("").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

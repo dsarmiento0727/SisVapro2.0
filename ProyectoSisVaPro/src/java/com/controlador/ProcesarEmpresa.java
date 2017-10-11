@@ -42,14 +42,23 @@ public class ProcesarEmpresa extends HttpServlet {
         CrudEmpresa crud= new CrudEmpresa();
         String val=null;
         try {
+            
             em.setIdEmpresa(Integer.parseInt(request.getParameter("txtIdEmpresa")));
+            
             em.setNombreJuridico(request.getParameter("txtNombreJ"));
+            
             em.setNombreComercial(request.getParameter("txtNombreC"));
+            
             em.setGiro(request.getParameter("txtGiro"));
+            
             em.setFechaInscripcion(request.getParameter("txtFechaInscripcion"));
+            
             em.setNit(request.getParameter("txtNit"));
+            
             em.setDireccion(request.getParameter("txtDireccion"));
+            
             em.setIdUsuario(Integer.parseInt(request.getParameter("lstUsuario")));
+            
             if (request.getParameter("btnInsertar") !=null){
                 crud.insertarEmpresa(em);
                 val="Datos Insertados Correctamente";
@@ -60,12 +69,13 @@ public class ProcesarEmpresa extends HttpServlet {
                 crud.eliminarEmpresa(em);
                 val="Datos Eliminmados Correctamente";
             }
-            rd=request.getRequestDispatcher("gestionarEmpresa.jsp");
+            
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarEmpresa.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }
-        rd.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

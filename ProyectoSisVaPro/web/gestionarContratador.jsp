@@ -1,9 +1,10 @@
 <%-- 
     Document   : contratador
     Created on : 10-06-2017, 04:59:30 PM
-    Author     : carlos
+    Author     : Carlos Lopez,David Sarmiento
 --%>
 
+<%@page import="com.modelo.CrudEmpresa"%>
 <%@page import="com.modelo.Empresa"%>
 <%@page import="com.modelo.Empresa"%>
 <%@page import="com.modelo.Contratador"%>
@@ -18,13 +19,13 @@
         <script src="JavaScript/Procesos.js"></script>
     </head>
     <%
-    CrudContratador crud=new CrudContratador();
-    CrudEmpresa crude= new CrudEmpresa();
+        CrudContratador crud = new CrudContratador();
+        CrudEmpresa crude = new CrudEmpresa();
     %>
     <body>
         <h1>Registro de Contratador</h1>
         <table>
-            <form action="" method="POST" name="frmContratador">
+            <form action="procesarContratador" method="POST" name="frmContratador">
                 <tr>
                     <th colspan="2">formulario de registro</th>
                 </tr>
@@ -51,16 +52,18 @@
                 <tr>
                     <td>Empresa:</td>
                     <td>
-                       <%
-                        List<Empresa> lst1=crude.mostrarEmpresa();
-                        for(Empresa em:lst1){
-                        %>
-                        <select name="lstEmpresa" value="<%=em.getIdEmpresa()%>">
-                            <option><%=em.getNombreComercial()%></option>
+                        <select name="lstEmpresa">
+                            <%
+                                List<Empresa> lst1 = crude.mostrarEmpresa();
+                                for (Empresa em : lst1) {
+                            %>
+
+                            <option value="<%=em.getIdEmpresa()%>"><%=em.getNombreComercial()%></option>
+
+                            <%
+                                }
+                            %>
                         </select>
-                       <%
-                        }
-                       %>
                     </td>
                 </tr>
                 <tr>
@@ -88,8 +91,8 @@
             </thead>
             <tbody>
                 <%
-                    List<Contratador> lst=crud.mostrarContratador();
-                    for(Contratador co:lst){
+                    List<Contratador> lst = crud.mostrarContratador();
+                    for (Contratador co : lst) {
                 %>
                 <tr class="table-info">
                     <td><%=co.getIdContratador()%></td>

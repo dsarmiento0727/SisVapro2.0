@@ -1,7 +1,7 @@
 <%-- 
     Document   : catalogo
     Created on : 10-06-2017, 05:17:37 PM
-    Author     : carlos, karenn Escobar
+    Author     : carlos, karenn Escobar,david sarmiento
 --%>
 
 <%@page import="com.modelo.Contratador"%>
@@ -52,30 +52,34 @@
                 <div class="form-row align-items-center">
                 <div class="col-auto">
                   <label class="mr-sm-2" for="idAarea">Area</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" >
                         <%
                         List<Area> lst1=cruda.mostrarArea();
                         for(Area a:lst1){
                         %>
-                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" value="<%=a.getIdArea()%>">
-                        <option><%=a.getNombreArea()%></option>
-                    </select>
+                        
+                        <option value="<%=a.getIdArea()%>"><%=a.getNombreArea()%></option>
+                   
                         <%
                           }
                         %>
+                      </select>   
                 </div>
                 </div>
                 <div class="form-row align-items-center">
                 <div class="col-auto">
                   <label class="mr-sm-2" for="idContratador">Contratador</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstContratador" name="lstContratador" >
                   <%
                         List<Contratador> lst2=crudc.mostrarContratador();
                         for(Contratador c:lst2){
                   %>
-                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstContratador" name="lstContratador" value="<%=c.getIdContratador()%>">
-                      <option><%=c.getNombresC()%></option>
+                  
+                      <option value="<%=c.getIdContratador()%>"><%=c.getNombresC()%></option>
                       <%
                         }
                       %>
+                  </select>
                 </div>
                 </div>
                 <tr>

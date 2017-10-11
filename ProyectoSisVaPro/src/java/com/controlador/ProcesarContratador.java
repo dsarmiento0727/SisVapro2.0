@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarContratador extends HttpServlet {
 
@@ -47,6 +47,7 @@ public class ProcesarContratador extends HttpServlet {
             co.setCorreoElectronicoC(request.getParameter("txtCorreo"));
             co.setIdEmpresa(Integer.parseInt(request.getParameter("lstEmpresa")));
             if (request.getParameter("btnInsertar")!=null) {
+                
                 crud.insertarContratador(co);
                 val="Datos insertados Correctamente";
             }else if (request.getParameter("btnModificar")!=null) {
@@ -54,12 +55,14 @@ public class ProcesarContratador extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarContratador(co);
             }
-            response.sendRedirect("gestionarContratador.jsp");
+            
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarContratador.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
+            out.print(e.toString());
         }
-        request.getRequestDispatcher("").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -7,7 +7,7 @@ import java.sql.*;
  * Version:1.0
  * Fecha:01/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class CrudContratador extends Conexion{
     public List<Contratador> mostrarContratador() throws Exception{
@@ -26,6 +26,7 @@ public class CrudContratador extends Conexion{
                 c.setDescripcion(res.getString("descripcion"));
                 c.setCorreoElectronicoC(res.getString("correoElectronico"));
                 c.setIdEmpresa(res.getInt("idEmpresa"));
+                listaContratador.add(c);
             }
         } catch (Exception e) {
             throw e;
@@ -37,7 +38,7 @@ public class CrudContratador extends Conexion{
     public void insertarContratador(Contratador c) throws Exception{
         try {
             this.conectar();
-            String sql="insert into contratador(idContratador,nombres,apellidos,descripcion,correoElectronico,idEmpresa) values(?,?,?,?,?,?)";
+            String sql="insert into contratador values(?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, c.getIdContratador());
             pre.setString(2, c.getNombresC());

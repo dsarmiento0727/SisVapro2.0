@@ -42,8 +42,7 @@ public class CrudEmpresa extends Conexion{
     public void insertarEmpresa(Empresa em) throws Exception{
         try {
             this.conectar();
-            String sql="insert into empresa(idEmpresa,nombreJuridico,nombreComercial,giro,"
-                    + "fechaInscripcion,nit,direccion,idUsuario) values(?,?,?,?,?,?,?)";
+            String sql="insert into empresa values(?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, em.getIdEmpresa());
             pre.setString(2, em.getNombreJuridico());
