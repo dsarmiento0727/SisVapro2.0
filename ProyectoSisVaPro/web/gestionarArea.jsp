@@ -1,7 +1,7 @@
 <%-- 
     Document   : area
     Created on : 10-06-2017, 05:13:32 PM
-    Author     : carlos, Karen Escobar
+    Author     : Karen Escobar
 --%>
 
 <%@page import="com.modelo.Area"%>
