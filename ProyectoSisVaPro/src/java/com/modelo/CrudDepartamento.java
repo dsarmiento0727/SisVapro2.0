@@ -35,7 +35,7 @@ public class CrudDepartamento extends Conexion{
     public void insertarDepartamento(Departamento d) throws Exception{
         try {
             this.conectar();
-            String sql="insert into departamento(idDepartamento,nombre) values(?,?)";
+            String sql="insert into departamento values(?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, d.getIdDepartamento());
             pre.setString(2, d.getNombreDepartamento());

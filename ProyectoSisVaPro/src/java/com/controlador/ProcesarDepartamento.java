@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarDepartamento extends HttpServlet {
 
@@ -42,7 +42,7 @@ public class ProcesarDepartamento extends HttpServlet {
         CrudDepartamento crud=new CrudDepartamento();
         Departamento d=new Departamento();
         try {
-            d.setIdDepartamento(Integer.parseInt("txtIdDepartamento"));
+            d.setIdDepartamento(Integer.parseInt(request.getParameter("txtIdDepartamento")));
             d.setNombreDepartamento(request.getParameter("txtNombre"));
             if (request.getParameter("btnInsertar")!=null) {
                 crud.insertarDepartamento(d);
@@ -52,12 +52,14 @@ public class ProcesarDepartamento extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarDepartamento(d);
             }
-            response.sendRedirect("gestionarDepartamento.jsp");
+            
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarDepartamento.jsp").forward(request, response);
         } catch (Exception e) {
+            out.print(e.toString());
             request.setAttribute("error", e.toString());
         }
-        rd.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

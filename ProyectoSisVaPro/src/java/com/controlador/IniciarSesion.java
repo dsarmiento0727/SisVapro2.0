@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Nombre del Servlet:IniciarSesion Versión:1.0 Fecha:10/10/2017
+ * Nombre del Servlet:IniciarSesion 
+ * Versión:1.0 
+ * Fecha:10/10/2017
  * Copyright:SISVAPRO
- *
  * @author Karen Escobar,David Sarmiento
  */
 public class IniciarSesion extends HttpServlet {
@@ -42,9 +43,9 @@ public class IniciarSesion extends HttpServlet {
                 UsuarioIngreso obj = new UsuarioIngreso();
                 int tipoUsuario = obj.autenticarUsuario(usuario, clave);
                 if (tipoUsuario == 1) {
-                    
-                     request.getRequestDispatcher("index.jsp").forward(request, response);
-                } else{
+
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                } else {
                     out.print(tipoUsuario);
                     out.print("Datos Invalidos");
                 }
