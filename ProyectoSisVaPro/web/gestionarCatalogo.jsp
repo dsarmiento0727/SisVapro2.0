@@ -33,6 +33,7 @@
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Catalogo</h1></div>
         </center>
         <br><br>
+        <center>
         <table>
             <div class="container">
             <form action="procesarCatalogo" method="POST" name="frmContratador">
@@ -49,10 +50,15 @@
                     <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Catalogo">
                 </div>
                 </div>
-                <div class="form-row align-items-center">
+                     <div class="container">
+                        <div class="row">
+                          <div class="col align-self-star">
+                            <div class="row justify-content-star">
+                <div class="form-row align-items-star">
+                <div class="form-row align-items-star">
                 <div class="col-auto">
                   <label class="mr-sm-2" for="idAarea">Area</label>
-                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" >
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-1" id="lstArea" name="lstArea" >
                         <%
                         List<Area> lst1=cruda.mostrarArea();
                         for(Area a:lst1){
@@ -66,7 +72,17 @@
                       </select>   
                 </div>
                 </div>
-                <div class="form-row align-items-center">
+                </div>
+                            </div>
+                          </div>
+                        </div>
+                      <br>
+                   <div class="container">
+                        <div class="row">
+                          <div class="col align-self-star">
+                            <div class="row justify-content-star">
+                      <div class="form-row align-items-star">
+                <div class="form-row align-items-star">
                 <div class="col-auto">
                   <label class="mr-sm-2" for="idContratador">Contratador</label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstContratador" name="lstContratador" >
@@ -82,6 +98,13 @@
                   </select>
                 </div>
                 </div>
+                      </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                </div>
                 <tr>
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <td colspan="2">
@@ -93,10 +116,11 @@
                </div>
                     </td>
                 </tr>
-                </center>  
+                
             </form>
+        </table> 
+        </center>
         <center>
-        </table>
         <br>
         <table class="table table-bordered" style="text-align: center">
             <thead class="thead-inverse">

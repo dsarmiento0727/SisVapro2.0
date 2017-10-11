@@ -25,7 +25,7 @@
         <br><br>
         <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Área</h1></div>
-    </center>
+        </center>
         <br><br>
             <div class="container">
             <form action="procesarArea" method="POST" name="frmArea">
@@ -60,7 +60,8 @@
         </table>
     </center>
         <br>
-        <table class="table table-bordered" style="text-align: center; width: 1200px" >
+      
+        <table class="table table-bordered" style="text-align: center; " >
             <thead class="thead-inverse">
                 <tr>
                     <th scope="row" style="text-align: center">Id Area</th>
