@@ -9,7 +9,7 @@ import java.sql.ResultSet;
  * Versión:1.0
  * Fecha:10/10/2017
  * Copyright:SISVAPRO
- * @author Karen Escobar
+ * @author Karen Escobar, David Sarmiento
  */
 public class UsuarioIngreso extends Conexion{
     public int autenticarUsuario(String user, String contra) throws Exception{
@@ -22,7 +22,8 @@ public class UsuarioIngreso extends Conexion{
             pre.setString(2, contra);
             res=pre.executeQuery();
             if (res.absolute(1)) {
-                int tipoU = res.getInt("tipo");
+                
+                int tipoU = res.getInt("idtipo");
                 
                 
                 return tipoU;

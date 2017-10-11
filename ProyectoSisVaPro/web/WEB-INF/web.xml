@@ -64,6 +64,10 @@
         <servlet-name>ProcesarUsuario</servlet-name>
         <servlet-class>com.controlador.ProcesarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>IniciarSesion</servlet-name>
+        <servlet-class>com.controlador.IniciarSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProcesarMunicipio</servlet-name>
         <url-pattern>/procesarMunicipio</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarUsuario</servlet-name>
         <url-pattern>/procesarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IniciarSesion</servlet-name>
+        <url-pattern>/iniciarSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

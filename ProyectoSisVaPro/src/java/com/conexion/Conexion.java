@@ -22,7 +22,7 @@ public class Conexion {
         try {
            Class.forName("org.postgresql.Driver");
            con=DriverManager.getConnection(
-                   "jdbc:postgresql://localhost:5432/Sisvapro?user=postgres&password=karen22"); 
+                   "jdbc:postgresql://localhost:5432/Sisvapro?user=postgres&password=root"); 
         } catch (Exception e) {
             throw e;
         }

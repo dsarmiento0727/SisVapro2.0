@@ -22,7 +22,7 @@
     <br><br>
     <center> 
         <table>
-        <form action="" method="post"><table>
+        <form action="iniciarSesion" method="post"><table>
                 <tr>
                     <td>
                         <div class="form-group" >

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0 
  * Fecha:10/10/2017 
  * Copyright:SISVAPRO
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class IniciarSesion extends HttpServlet {
 
@@ -33,14 +33,31 @@ public class IniciarSesion extends HttpServlet {
             throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        if (request.getParameter("btnIngresar") != null) {
+        
+        try {
+            String val=null ;
+            if (request.getParameter("btnIngresar") != null) {
             String usuario = request.getParameter("txtusuario");
             String clave = request.getParameter("txtcontra");
             UsuarioIngreso obj = new UsuarioIngreso();
             int tipoUsuario = obj.autenticarUsuario(usuario, clave);
-           
-            
-                
+           if (tipoUsuario == 1) {
+                HttpSession objSesion = request.getSession(false);
+                HttpSession objSesionTipo = request.getSession(false);
+                objSesion.setAttribute("usuario", usuario);
+                objSesionTipo.setAttribute("tipo", "Administrador");
+                if (request.getParameter("ck") != null) {
+                    Cookie valor_guardar = new Cookie("usuario", usuario);
+                    valor_guardar.setMaxAge(60 * 60 * 24);
+                    response.addCookie(valor_guardar);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+              
+           }
+            } 
+            response.sendRedirect("index.jsp");
+        } catch (Exception e) {
+            out.print(e.toString());
         }
     }
 
