@@ -48,7 +48,7 @@ public class ProcesarPerfil extends HttpServlet {
             per.setFechaNacimiento(request.getParameter("txtFechaNac"));
             per.setDui(request.getParameter("txtDui"));
             per.setNit(request.getParameter("txtNit"));
-            per.setEstadoCivil(request.getParameter("estado"));
+            per.setEstadoCivil(request.getParameter("Estado"));
             per.setDireccion(request.getParameter("txtDireccion"));
             per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
             per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
