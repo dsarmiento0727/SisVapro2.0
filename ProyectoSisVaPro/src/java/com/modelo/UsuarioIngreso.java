@@ -14,30 +14,31 @@ public class UsuarioIngreso extends Conexion {
 
     public int autenticarUsuario(String user, String contra) throws Exception {
         ResultSet res;
-        int tipoU=2;
+        int tipoU=0;
 
         try {
             this.conectar();
-            String sql = "select * from usuario where username=? and password=?";
-            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            String sql = "select * from public.usuario where username=? and password=?";
+            PreparedStatement pre = this.getCon().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             pre.setString(1, user);
             pre.setString(2, contra);
             res = pre.executeQuery();
 
           if(res.absolute(1))
           {
-              tipoU = res.getInt("idTipo");
+              tipoU= res.getInt("idTipo");
               
-              return tipoU;
           }
-              
+          
+             return tipoU; 
           
         } catch (Exception e) {
-
+            
             throw e;
         } finally {
             this.desconectar();
         }
-        return tipoU;
+       
+
     }
 }
