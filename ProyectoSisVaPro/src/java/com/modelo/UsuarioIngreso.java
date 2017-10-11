@@ -22,7 +22,7 @@ public class UsuarioIngreso extends Conexion{
             pre.setString(2, contra);
             res=pre.executeQuery();
             if (res.absolute(1)) {
-                int tipoU = res.getInt("tipo");
+                int tipoU = res.getInt("idtipo");
                 
                 
                 return tipoU;
