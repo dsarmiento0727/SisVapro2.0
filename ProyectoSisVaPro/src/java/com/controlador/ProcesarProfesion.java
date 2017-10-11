@@ -50,12 +50,11 @@ public class ProcesarProfesion extends HttpServlet {
         }else if (request.getParameter("btnEliminar")!=null) {
             crud.eliminarProfesion(pro);
         }
-            response.sendRedirect("gestionarProfesion.jsp");
-            request.setAttribute("valor", val);
+          request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarProfesion.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }
-        request.getRequestDispatcher("").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -12,7 +12,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Area</title>
         <script src="JavaScript/Procesos.js"></script>
@@ -21,16 +21,21 @@
     CrudArea crud=new CrudArea();
     %>
     <body>
-    <center>
+    
+            
+     <div id="contenedor">
+     <div id="cabezera">Cabezera Y Titulo</div>
+     <div id="menu">Menu de Navegacion</div>
+     <div id="izquierda">
+         <center>
         <br><br>
         <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Área</h1></div>
         </center>
         <br><br>
-            <div class="container">
+        
             <form action="procesarArea" method="POST" name="frmArea">
-                <center>
-            <table>
+                
                 <div class="form-group row">
                     <label for="idarea" class="col-sm-1 col-form-label">Id Area</label>
                 <div class="col-sm-2">
@@ -44,21 +49,14 @@
                 </div>
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                
-                <tr>
-                    <td colspan="2">
                         <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                         <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar">
                         <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar">
                         <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                    </td>
-                </tr>
                 </div>
-                </div>
+               
             </form>
-            </div>
-        </table>
-    </center>
+              
         <br>
       
         <table class="table table-bordered" style="text-align: center; " >
@@ -83,9 +81,13 @@
                 <%
                     }
                 %>
-            </tbody
+            </tbody>
         </table>
             
     </center>
+     </div> 
+     <div id="derecha">Publicidad y Enlaces</div>
+     <div id="pie">Informacion de la pagina</div>
+      </div>      
     </body>
 </html>
