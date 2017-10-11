@@ -25,7 +25,8 @@
         CrudEmpresa crude = new CrudEmpresa();
     %>
     <body>
-         <center>
+        <br><br>
+        <center>
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Contratador</h1></div>
         </center>
        
@@ -63,8 +64,8 @@
                                     <input type="email" class="form-control" id="txtCorreo" name="txtCorreo" placeholder="nombre@ejemplo.com">
                                 </div>
                             </div>
-                  <label class="mr-sm-2" for="idAarea">Area</label>
-                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstEmpresa" >
+                  <label class="mr-sm-2" for="idEmpresa">Empresa</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstEmpresa" name="lstEmpresa" >
                              <%
                                 List<Empresa> lst1 = crude.mostrarEmpresa();
                                 for (Empresa em : lst1) {
