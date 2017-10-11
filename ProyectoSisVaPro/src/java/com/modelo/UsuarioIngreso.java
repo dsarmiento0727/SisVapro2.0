@@ -16,14 +16,13 @@ public class UsuarioIngreso extends Conexion{
         ResultSet res;
         try {
             this.conectar();
-            String sql="select * from usuario where userName=? and password=?";
+            String sql="select * from usuario where userName=? and clave=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, user);
             pre.setString(2, contra);
             res=pre.executeQuery();
             if (res.absolute(1)) {
-                
-                int tipoU = res.getInt("idtipo");
+                int tipoU = res.getInt("tipo");
                 
                 
                 return tipoU;
