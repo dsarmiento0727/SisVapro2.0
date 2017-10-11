@@ -10,7 +10,7 @@ import java.sql.*;
  * @author Karen Escobar
  */
 public class CrudPerfil extends Conexion{
-    List<Perfil> mostrarPerfil() throws Exception{
+    public List<Perfil> mostrarPerfil() throws Exception{
         ResultSet res;
         List<Perfil> listaPerfil=new ArrayList<>();
         try {
