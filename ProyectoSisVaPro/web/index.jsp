@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 10-06-2017, 04:56:36 PM
-    Author     : Carlos Lopez (Lo puse para ver si guarda cambios) :vok
+    Author     : Carlos Lopez, Karen Escobar
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
