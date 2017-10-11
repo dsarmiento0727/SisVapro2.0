@@ -15,6 +15,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <title>Gestionar Contratador</title>
         <script src="JavaScript/Procesos.js"></script>
     </head>
@@ -23,16 +25,26 @@
         CrudEmpresa crude = new CrudEmpresa();
     %>
     <body>
-        <h1>Registro de Contratador</h1>
+         <center>
+            <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Contratador</h1></div>
+        </center>
         <table>
             <form action="procesarContratador" method="POST" name="frmContratador">
-                <tr>
-                    <th colspan="2">formulario de registro</th>
-                </tr>
-                <tr>
-                    <td>Id Contratador :</td>
-                    <td><input type="text" name="txtIdContratador"></td>
-                </tr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col align-self-start">
+                    <div class="row justify-content-start">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="IdContratador" class="col-form-label">Contratador</label>
+                                    <input type="text" class="form-control" id="txtIdContratador" name="txtIdContratador" placeholder="Id Contratador">
+                                </div>
+                            </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+               
                 <tr>
                     <td>Nombres:</td>
                     <td><input type="text" name="txtNombres"></td>
