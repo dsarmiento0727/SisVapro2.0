@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarIdioma extends HttpServlet {
 
@@ -49,11 +49,13 @@ public class ProcesarIdioma extends HttpServlet {
                 val="Datos insertados Correctamente";
             }else if (request.getParameter("btnModificar")!=null) {
                 crud.modificarIdioma(i);
+                val="Datos modificados Correctamente";
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarIdioma(i);
-                response.sendRedirect("gestionarIdioma.jsp");
-                request.setAttribute("valor", val);
+                val="Datos eliminados Correctamente";
             }
+             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarIdioma.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

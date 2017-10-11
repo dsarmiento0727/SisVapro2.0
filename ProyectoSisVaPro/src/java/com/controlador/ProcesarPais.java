@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarPais extends HttpServlet {
 
@@ -52,12 +52,12 @@ public class ProcesarPais extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarPais(pa);
             }
-            response.sendRedirect("gestionarPais.jsp");
+            
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarPais.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }
-        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

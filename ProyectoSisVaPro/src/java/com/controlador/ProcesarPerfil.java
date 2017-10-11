@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Versión:1.0
  * Fecha:07/10/2017
  * Copyright:Sisvapro
- * @author Karen Escobar
+ * @author Karen Escobar,David Sarmiento
  */
 public class ProcesarPerfil extends HttpServlet {
 
@@ -59,12 +59,21 @@ public class ProcesarPerfil extends HttpServlet {
             per.setIdProfesion(Integer.parseInt(request.getParameter("lstProfesion")));
             per.setIdTrabajo(Integer.parseInt(request.getParameter("lstTrabajo")));
             per.setCorreoElectronico(request.getParameter("txtCorreoE"));
-            response.sendRedirect("gestionarPerfil.jsp");
+            
+            if (request.getParameter("btnInsertar")!=null) {
+                crud.insertarPerfil(per);
+                val="Datos insertados Correctamente";
+            }else if (request.getParameter("btnModificar")!=null) {
+                crud.modificarPerfil(per);
+            }else if (request.getParameter("btnEliminar")!=null) {
+                crud.eliminarPerfil(per);
+            }
             request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarPerfil.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }
-        request.getRequestDispatcher("").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
