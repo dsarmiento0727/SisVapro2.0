@@ -28,44 +28,44 @@
          <center>
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Contratador</h1></div>
         </center>
-        <table>
+       
             <form action="procesarContratador" method="POST" name="frmContratador">
                 <div class="container">
                     <div class="row">
                         <div class="col align-self-start">
-                    <div class="row justify-content-start">
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label for="IdContratador" class="col-form-label">Contratador</label>
-                                    <input type="text" class="form-control" id="txtIdContratador" name="txtIdContratador" placeholder="Id Contratador">
+                            <div class="row justify-content-start">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="IdContratador" class="col-form-label">Id Contratador</label>
+                                            <input type="text" class="form-control" id="txtIdContratador" name="txtIdContratador" placeholder="Id Contratador">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="NOMBRES" class="col-form-label">Nombres</label>
+                                    <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="apellidos" class="col-form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
                                 </div>
                             </div>
-                    </div>
-                        </div>
-                    </div>
-                </div>
-               
-                <tr>
-                    <td>Nombres:</td>
-                    <td><input type="text" name="txtNombres"></td>
-                </tr>
-                <tr>
-                    <td>Apellidos:</td>
-                    <td><input type="text" name="txtApellidos"></td>
-                </tr>
-                <tr>
-                    <td>Descripcion : </td>
-                    <td><input type="text" name="txtDescripcion"></td>
-                </tr>
-                <tr>
-                    <td>Correo Electronico:</td>
-                    <td><input type="text" name="txtCorreo"></td>
-                </tr>
-                <tr>
-                    <td>Empresa:</td>
-                    <td>
-                        <select name="lstEmpresa">
-                            <%
+                            <div class="col-15">
+                                <div class="form-group">
+                                    <label for="descripcion" class="col-form-label">Descripción</label>
+                                    <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="correor" class="col-form-label">Correo Electronico</label>
+                                    <input type="email" class="form-control" id="txtCorreo" name="txtCorreo" placeholder="nombre@ejemplo.com">
+                                </div>
+                            </div>
+                  <label class="mr-sm-2" for="idAarea">Area</label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstEmpresa" >
+                             <%
                                 List<Empresa> lst1 = crude.mostrarEmpresa();
                                 for (Empresa em : lst1) {
                             %>
@@ -75,30 +75,33 @@
                             <%
                                 }
                             %>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="btnInsertar" value="Insertar">
-                        <input type="submit" name="btnModificar" value="Modificar">
-                        <input type="submit" name="btnEliminar" value="Eliminar">
-                        <input type="reset" name="btnLimpiar" value="Limpiar">
-                    </td>
-                </tr>
+                  </select>   
+                </div>
+                        </div>
+                    <div class="row justify-content-center">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            
+                                    <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                                    <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar">
+                                    <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar">
+                                    <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
+                            
+                        </div>
+                    </div>    
+                </div>  
             </form>
-        </table>
         <br>
-        <table class="table table-bordered" style="text-align: center; width: 1200px" >
+        <center>
+        <table class="table table-bordered" style="text-align: center" >
             <thead class="thead-inverse">
                 <tr>
-                    <th scope="row" style="text-align: center">Id Contratador</th>
+                    <th scope="row" style="text-align: center;width: 150px">Id Contratador</th>
                     <th style="text-align: center">Nombres</th>
                     <th style="text-align: center">Apellidos</th>
                     <th style="text-align: center">Descripcion</th>
-                    <th style="text-align: center">Correo Electronico</th>
-                    <th style="text-align: center">Empresa</th>
-                    <th style="text-align: center">Seleccionar</th>
+                    <th style="text-align: center; width: 225px">Correo Electronico</th>
+                    <th style="text-align: center; width: 150px">Empresa</th>
+                    <th style="text-align: center; width: 150px">Seleccionar</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,5 +125,6 @@
                 %>
             </tbody
         </table>
+        </center>
     </body>
 </html>
