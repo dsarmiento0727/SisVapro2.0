@@ -112,7 +112,7 @@
             </div>
         </table>
         <br>
-        <table class="table table-bordered" style="text-align: center; width: 1200px">
+        <table class="table table-bordered" style="text-align: center">
             <thead  class="thead-inverse">
                 <tr>
                     <th style="text-align: center">ID Empresa</th>

@@ -39,7 +39,7 @@
         <table>
             <div class="container">
             <form action="../procesarCatalogo" method="POST" name="frmContratador">
-                <center>
+                
                 <div class="form-group row">
                     <label for="idcatalogo" class="col-sm-2 col-form-label">Id Catalogo</label>
                 <div class="col-sm-2">

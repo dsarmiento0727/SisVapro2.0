@@ -67,7 +67,7 @@ function cargarCatalogo(id,nombre,area,contratador){
     document.frmCatalogo.lstArea.value=area;
     document.frmCatalogo.lstContratador.value=contratador;
 }
-function cargarContrtador(id,nombres,apellidos,descripcion,correo,empresa){
+function cargarContratador(id,nombres,apellidos,descripcion,correo,empresa){
     document.frmContratador.txtIdContratador.value=id;
     document.frmContratador.txtNombres.value=nombres;
     document.frmContratador.txtApellidos.value=apellidos;
