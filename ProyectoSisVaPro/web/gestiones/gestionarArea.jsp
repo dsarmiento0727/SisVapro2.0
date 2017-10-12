@@ -23,17 +23,15 @@
     <body>
     
             
-     <div id="contenedor">
-     <div id="cabezera">Cabezera Y Titulo</div>
-     <div id="menu">Menu de Navegacion</div>
-     <div id="izquierda">
-         <center>
+   
+     <jsp:include page="navGestiones.jsp" />
+        <center>
         <br><br>
         <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Área</h1></div>
         </center>
         <br><br>
-        
+        <div class="container">
             <form action="procesarArea" method="POST" name="frmArea">
                 
                 <div class="form-group row">
@@ -83,11 +81,7 @@
                 %>
             </tbody>
         </table>
-            
-    </center>
-     </div> 
-     <div id="derecha">Publicidad y Enlaces</div>
-     <div id="pie">Informacion de la pagina</div>
-      </div>      
+        </div>
+    </center>     
     </body>
 </html>

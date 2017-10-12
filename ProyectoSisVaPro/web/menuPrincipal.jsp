@@ -16,12 +16,9 @@
         
     </head>
     <body>
-     <div id="contenedor">
-     <div id="cabezera">Cabezera Y Titulo</div>
-     <div id="menu"><jsp:include page="menu.jsp" /></div>
-     <div id="izquierda">Contenido Principal</div>
-     <div id="derecha">Publicidad y Enlaces</div>
-     <div id="pie">Informacion de la pagina</div>
+
+     <jsp:include page="navBar.jsp" />
+ 
   </div>
     </body>
 </html>
