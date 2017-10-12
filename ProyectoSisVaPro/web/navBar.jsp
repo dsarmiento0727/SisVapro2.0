@@ -5,6 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    String usuario = null;
+    String tipoUsuario = null;
+    try {
+        String cerrar = "";
+        HttpSession objSesion = request.getSession(false);
+        HttpSession objSesionTipo = request.getSession(false);
+        usuario = (String) objSesion.getAttribute("usuario");
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+    } catch (Exception e) {
+        out.print(e.toString());
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,12 +26,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="Imagenes/man.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 SISVAPRO
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,9 +45,11 @@
                         <a class="nav-link" href="#">Gestionar</a>
                     </li>
                 </ul>
+                
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Usuario" aria-label="Search" disabled="true">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Cerrar Session</button>
+                    <span class="input-group-addon" id="basic-addon1"><% out.print(usuario);%></span>
+                   
+                    <a href="cerrarSession.jsp" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
                 </form>
             </div>
         </nav>

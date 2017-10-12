@@ -22,9 +22,7 @@
     CrudArea crud=new CrudArea();
     %>
     <body>
-     
-        <br><br>
-         <jsp:include page="navGestiones.jsp" />
+     <jsp:include page="navGestiones.jsp" />
         <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Área</h1></div>
         </center>

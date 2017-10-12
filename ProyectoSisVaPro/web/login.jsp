@@ -6,6 +6,41 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+            try {
+                String cerrar = "";
+                HttpSession objSesion = request.getSession(false);
+                HttpSession objSesionTipo = request.getSession(false);
+                String usuario = (String) objSesion.getAttribute("usuario");
+                String tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+
+                if (tipoUsuario.equals("Administrador")) {
+                    response.sendRedirect("index.jsp");
+                } else if (tipoUsuario.equals("Vendedor")) {
+                    response.sendRedirect("index.jsp");
+                }
+            } catch (Exception e) {
+                if (e.toString().equals("java.lang.NullPointerException")) {
+
+                } else {
+                    out.print(e.toString());
+                }
+                //response.sendRedirect("registro.jsp");
+            }
+
+            String cUser = "";
+            if (request.getCookies() != null) {
+                Cookie[] guardados = request.getCookies();
+                for (int i = 0; i < guardados.length; i++) {
+                    if (guardados[i].getName().equals("usuario")) {
+
+                        cUser = guardados[i].getValue();
+
+                    }
+                }
+            }
+        %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +66,7 @@
                 </tr>
                 <tr>
                         <td>
-                            <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su Usuario">
+                            <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su Usuario" value="<% out.print(cUser); %>">
                         </td>
                     </div>
                 </tr>

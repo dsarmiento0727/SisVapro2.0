@@ -5,6 +5,31 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    String usuario = null;
+    String tipoUsuario = null;
+    try {
+        String cerrar = "";
+        HttpSession objSesion = request.getSession(false);
+        HttpSession objSesionTipo = request.getSession(false);
+        usuario = (String) objSesion.getAttribute("usuario");
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+
+        if (tipoUsuario == null) {
+            response.sendRedirect("registro.jsp");
+        } else if (tipoUsuario.equals("Administrador")) {
+
+        } else if (tipoUsuario.equals("Vendedor")) {
+
+        } else {
+            cerrar = "Tipo Usuario no encontrado";
+            response.sendRedirect("../accesoDenegado.jsp");
+        }
+    } catch (Exception e) {
+        out.print(e.toString());
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,13 +40,13 @@
         <script src="JavaScript/Procesos.js"></script>
     </head>
     <body>
-        
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="../Imagenes/man.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 SISVAPRO
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,8 +61,9 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Usuario" aria-label="Search" disabled="true">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Cerrar Session</button>
+                    <input class="form-control mr-sm-2" type="text" placeholder="<% out.print(usuario);%>" aria-label="Search" disabled="true">
+                    <a href="#" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
+                    
                 </form>
             </div>
         </nav>
