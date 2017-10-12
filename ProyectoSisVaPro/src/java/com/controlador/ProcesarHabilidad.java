@@ -52,7 +52,7 @@ public class ProcesarHabilidad extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarHabilidad.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarHabilidad.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

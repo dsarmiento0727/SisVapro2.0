@@ -57,7 +57,7 @@ public class ProcesarContratador extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarContratador.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarContratador.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
             out.print(e.toString());

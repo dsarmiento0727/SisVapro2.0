@@ -55,7 +55,7 @@ public class ProcesarIdioma extends HttpServlet {
                 val="Datos eliminados Correctamente";
             }
              request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarIdioma.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarIdioma.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

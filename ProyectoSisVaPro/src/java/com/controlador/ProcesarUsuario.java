@@ -53,7 +53,7 @@ public class ProcesarUsuario extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarUsuario(u);
             }      
-            response.sendRedirect("gestionarUsuario.jsp");
+            response.sendRedirect("gestiones/gestionarUsuario.jsp");
             request.setAttribute("valor", val);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());

@@ -54,7 +54,7 @@ public class ProcesarCatalogo extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarCatalogo.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarCatalogo.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("valor", e.toString());
         }

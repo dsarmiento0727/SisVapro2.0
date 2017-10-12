@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <script src="../JavaScript/Procesos.js"></script>
         <%
         if(request.getAttribute("valor")!=null){
@@ -29,9 +30,10 @@
     TipoUsuario tipo= new TipoUsuario();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <h1>Registro de Tipo de Usuario</h1>
         <table>
-            <form action="procesarTipoUsuario" method="POST" name="frmTipoUsuario">
+            <form action="../procesarTipoUsuario" method="POST" name="frmTipoUsuario">
                 <tr>
                     <th colspan="2">formulario de Registro</th>
                 </tr>

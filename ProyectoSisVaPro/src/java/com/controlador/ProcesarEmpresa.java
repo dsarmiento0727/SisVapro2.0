@@ -71,7 +71,7 @@ public class ProcesarEmpresa extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarEmpresa.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarEmpresa.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

@@ -54,7 +54,7 @@ public class ProcesarDepartamento extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarDepartamento.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarDepartamento.jsp").forward(request, response);
         } catch (Exception e) {
             out.print(e.toString());
             request.setAttribute("error", e.toString());

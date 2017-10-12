@@ -13,14 +13,16 @@
         <title>Gestionar Usuario</title>
         <script src="../JavaScript/Procesos.js"></script>
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+         <link rel="stylesheet" type="text/css" href="CSS/style.css">
     </head>
     <%
     CrudUsuario crud=new CrudUsuario();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <h1>Registro de Usuario</h1>
         <table>
-            <form action="" method="POST" name="frmUsuario">
+            <form action="../procesarUsuario" method="POST" name="frmUsuario">
                 <tr>
                     <th colspan="2">formulario de registro</th>
                 </tr>

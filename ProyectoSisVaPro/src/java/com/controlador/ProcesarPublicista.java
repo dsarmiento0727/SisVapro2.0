@@ -53,7 +53,7 @@ public class ProcesarPublicista extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarPublicista(pu);
             }
-            response.sendRedirect("gestionarPublicista.jsp");
+            response.sendRedirect("gestiones/gestionarPublicista.jsp");
             request.setAttribute("valor", val);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());

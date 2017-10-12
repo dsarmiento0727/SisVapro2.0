@@ -16,6 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <title>Gestionar Ranking</title>
         <script src="../JavaScript/Procesos.js"></script>
     </head>
@@ -24,6 +25,7 @@
     CrudUsuario crudu=new CrudUsuario();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <center>
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Ranking</h1></div>
         </center>
@@ -31,7 +33,7 @@
         <center>
             <div class="container">
         <table>
-            <form action="" method="POST" name="frmRanking">
+            <form action="../procesarRanking" method="POST" name="frmRanking">
                 <div class="form-group row">
                     <label for="idranking" class="col-sm-1 col-form-label">Id Ranking</label>
                 <div class="col-sm-2">

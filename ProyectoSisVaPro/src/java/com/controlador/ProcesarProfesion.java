@@ -51,7 +51,7 @@ public class ProcesarProfesion extends HttpServlet {
             crud.eliminarProfesion(pro);
         }
           request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarProfesion.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarProfesion.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

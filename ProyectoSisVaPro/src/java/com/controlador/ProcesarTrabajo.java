@@ -50,7 +50,7 @@ public class ProcesarTrabajo extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null) {
                 crud.eliminarTrabajo(tr);
             }
-            response.sendRedirect("gestionarTrabajo.jsp");
+            response.sendRedirect("gestiones/gestionarTrabajo.jsp");
             request.setAttribute("valor", val);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());

@@ -14,15 +14,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Trabajo</title>
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <script src="../JavaScript/Procesos.js"></script>
     </head>
     <%
     CrudTrabajo crud=new CrudTrabajo();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <h1>Registro de Trabajo</h1>
         <table>
-            <form action="" method="POST" name="frmTrabajo">
+            <form action="../procesarTrabajo" method="POST" name="frmTrabajo">
                 <tr>
                     <th colspan="2">formulario de Registro</th>
                 </tr>

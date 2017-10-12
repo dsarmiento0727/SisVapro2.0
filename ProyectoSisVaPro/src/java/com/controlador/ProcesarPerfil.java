@@ -69,7 +69,7 @@ public class ProcesarPerfil extends HttpServlet {
                 crud.eliminarPerfil(per);
             }
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarPerfil.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarPerfil.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

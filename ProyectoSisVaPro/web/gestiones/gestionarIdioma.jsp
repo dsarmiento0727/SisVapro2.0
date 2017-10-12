@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <title>Gestionar Idioma</title>
         <script src="../JavaScript/Procesos.js"></script>
         <%
@@ -30,12 +31,13 @@
     CrudIdioma crud= new CrudIdioma();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <br><br>
     <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Habilidad</h1></div>
         <br><br>
             <div class="container">
-            <form action="procesarIdioma" method="POST" name="frmIdioma"> 
+            <form action="../procesarIdioma" method="POST" name="frmIdioma"> 
                 <table>
                 <div class="form-group row">
                     <label for="iddidioma" class="col-sm-2 col-form-label">Id Idioma</label>

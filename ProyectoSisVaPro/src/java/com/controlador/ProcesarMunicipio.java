@@ -52,7 +52,7 @@ public class ProcesarMunicipio extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarMunicipio.jsp").forward(request, response);
+            request.getRequestDispatcher("gestiones/gestionarMunicipio.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
         }

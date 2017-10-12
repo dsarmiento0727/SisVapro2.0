@@ -15,6 +15,7 @@
         <title>Gestionar Municipio</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <script src="../JavaScript/Procesos.js"></script>
     <%
         if(request.getAttribute("valor")!=null){
@@ -30,12 +31,13 @@
     CrudMunicipio crud=new CrudMunicipio();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
     <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Municipio</h1></div>
         <br><br>        
             <div class="container">
         <table>
-            <form action="procesarMunicipio" method="POST" name="frmMunicipio">
+            <form action="../procesarMunicipio" method="POST" name="frmMunicipio">
                 <div class="form-group row">
                     <label for="idmunicipio" class="col-sm-2 col-form-label">Id Municipio</label>
                 <div class="col-sm-3">

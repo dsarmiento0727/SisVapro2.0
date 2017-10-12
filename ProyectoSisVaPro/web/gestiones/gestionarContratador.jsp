@@ -17,6 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
         <title>Gestionar Contratador</title>
         <script src="../JavaScript/Procesos.js"></script>
     </head>
@@ -25,12 +26,13 @@
         CrudEmpresa crude = new CrudEmpresa();
     %>
     <body>
+         <jsp:include page="navGestiones.jsp" />
         <br><br>
         <center>
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Contratador</h1></div>
         </center>
        
-            <form action="procesarContratador" method="POST" name="frmContratador">
+            <form action="../procesarContratador" method="POST" name="frmContratador">
                 <div class="container">
                     <div class="row">
                         <div class="col align-self-start">

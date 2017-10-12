@@ -51,7 +51,7 @@ public class ProcesarRanking extends HttpServlet {
             }else if (request.getParameter("btnEliminar")!=null){
                 crud.eliminarRanking(r);
             }
-            response.sendRedirect("gestionarRanking.jsp");
+            response.sendRedirect("gestiones/gestionarRanking.jsp");
             request.setAttribute("valor", val);
         } catch (Exception e) {
             request.setAttribute("error", e.toString());
