@@ -52,7 +52,7 @@ public class ProcesarArea extends HttpServlet {
             }
                 
                 request.setAttribute("valor", val);
-                request.getRequestDispatcher("gestionarArea.jsp").forward(request, response);
+                request.getRequestDispatcher("gestiones/gestionarArea.jsp").forward(request, response);
                 
         } catch (Exception e) {
             request.setAttribute("error", e.toString());

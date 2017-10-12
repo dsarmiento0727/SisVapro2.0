@@ -32,7 +32,7 @@
         </center>
         <br><br>
         <div class="container">
-            <form action="procesarArea" method="POST" name="frmArea">
+            <form action="../procesarArea" method="POST" name="frmArea">
                 
                 <div class="form-group row">
                     <label for="idarea" class="col-sm-1 col-form-label">Id Area</label>
