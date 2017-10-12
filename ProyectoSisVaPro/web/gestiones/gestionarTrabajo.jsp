@@ -13,7 +13,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Trabajo</title>
-        <script src="JavaScript/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <script src="../JavaScript/Procesos.js"></script>
     </head>
     <%
     CrudTrabajo crud=new CrudTrabajo();

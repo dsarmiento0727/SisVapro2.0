@@ -14,8 +14,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Municipio</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
-        <script src="JavaScript/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <script src="../JavaScript/Procesos.js"></script>
     <%
         if(request.getAttribute("valor")!=null){
         %>
@@ -52,8 +52,8 @@
                 <tr>
                     <td colspan="2">
                 <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar">
-                <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar">
+                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                 <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
                     </td>
                 </tr>   

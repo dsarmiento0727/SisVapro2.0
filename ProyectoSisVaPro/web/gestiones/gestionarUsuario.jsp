@@ -11,7 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Usuario</title>
-        <script src="JavaScript/Procesos.js"></script>
+        <script src="../JavaScript/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     </head>
     <%
     CrudUsuario crud=new CrudUsuario();
