@@ -64,7 +64,7 @@
 
                     <li class="nav-item">
 
-                        <a class="nav-link" href="#">Contactanos</a>
+                        <a class="nav-link" href="#quienes">Contactanos</a>
 
                     </li>
                     <li class="nav-item dropdown">
@@ -94,12 +94,12 @@
                                 <form>
                                     <div class="form-group" >
                                         <label for="txtUsuario" style="text-align: center"><strong>Usuario</strong> </label>
-                                        <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center">
+                                        <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su usuario.">
                                     </div>                            
 
                                     <div class="form-group" >
                                         <label for="txtcontra" style="text-align: center"><strong>Contrasenia</strong> </label>
-                                        <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center">
+                                        <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center" placeholder="Ingrese su clave.">
                                         <input type="checkbox" name="ck" value="recordar">Recordar Usuario</center>
                                         <div class="btn-group" role="group" aria-label="Basic example" >
                                             <input type="submit" name="btnIngresar" class="btn btn-primary" value="Ingresar">
@@ -129,34 +129,80 @@
 
         </nav>
 
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="jumbotron well">
+                    <div class="jumbotron">
                         <h2>
-                            Hola, Bienvenido a Sisvapro
+                            Hello, world!
                         </h2>
                         <p>
-                            Sisvapro es un Sistema de vacantes profecionales en el cual podras aplicar a varias ofertas de empleo segun tu curriculum.
+                            This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
                         </p>
                         <p>
-                            <a class="btn btn-primary btn-large" href="#">Quiero saber mas</a>
+                            <a class="btn btn-dark btn-large" href="#">Learn more</a>
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="imagenes/15-oportunidades-laborales-para-peruanos.png" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Titulo</h3>
+                            <p>Contenido</p>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imagenes/3-ofertas-de-empleo-para-trabajar-desde-tu-casa.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Titulo</h3>
+                            <p>Contenido</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imagenes/9-ofertas-de-practicas-profesionales-en-ingenieria-.jpg" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Titulo</h3>
+                            <p>Contenido</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>       
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
+                                <img alt="Bootstrap Thumbnail First" src="imagenes/9-ofertas-de-practicas-profesionales-en-ingenieria-.jpg" width="100%" />
                                 <div class="caption">
                                     <h3>
-                                        Thumbnail label
+                                        Mision
                                     </h3>
                                     <p>
                                         Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+                                        <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
                                     </p>
                                 </div>
                             </div>
@@ -166,29 +212,29 @@
                                 <img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
                                 <div class="caption">
                                     <h3>
-                                        Thumbnail label
+                                        Vision
                                     </h3>
                                     <p>
                                         Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+                                        <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="quienes">
                             <div class="thumbnail">
                                 <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
                                 <div class="caption">
                                     <h3>
-                                        Thumbnail label
+                                        Quienes somos
                                     </h3>
                                     <p>
                                         Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+                                        <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
                                     </p>
                                 </div>
                             </div>
