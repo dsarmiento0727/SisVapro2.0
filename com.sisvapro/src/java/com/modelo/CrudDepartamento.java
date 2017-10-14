@@ -15,14 +15,14 @@ import java.util.List;
  *
  * @author carlos
  */
-public class CrubPais extends Conexion{
-    public void insertarPais(Pais pa)throws Exception{
+public class CrudDepartamento extends Conexion{
+    public void insertarDepartamento(Departamento de)throws Exception{
         this.conectar();
-        String sql="insert into pais values(?,?)";
+        String sql="insert into departamento values(?,?)";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setInt(1, pa.getIdPais());
-            pre.setString(2, pa.getNombrePais());
+            pre.setInt(1, de.getIdDepartamento());
+            pre.setString(2, de.getNombreDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -32,13 +32,13 @@ public class CrubPais extends Conexion{
         }
     }
     
-    public void modificarPais(Pais pa)throws Exception{
+    public void modificarDepartamento(Departamento de)throws Exception{
         this.conectar();
-        String sql="update pais set nombre=? where idPais=?";
+        String sql="update departamento set nombre=? where idDepartamento=?";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setString(1, pa.getNombrePais());
-            pre.setInt(2, pa.getIdPais());
+            pre.setString(1, de.getNombreDepartamento());
+            pre.setInt(2, de.getIdDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -48,12 +48,12 @@ public class CrubPais extends Conexion{
         }
     }
     
-    public void eliminarPais(Pais pa)throws Exception{
+    public void eliminarDepartamento(Departamento de)throws Exception{
         this.conectar();
-        String sql="delete from pais where idPais=?";
+        String sql="delete from departamento where idDepartamento=?";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setInt(1, pa.getIdPais());
+            pre.setInt(1, de.getIdDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -63,19 +63,19 @@ public class CrubPais extends Conexion{
         }
     }
     
-    public List<Pais> mostrarPais()throws Exception{
-        List<Pais> listaPais=new ArrayList();
+    public List<Departamento> mostrarDepartamento()throws Exception{
+        List<Departamento> listaDepartamento=new ArrayList();
         ResultSet res;
         try {
             this.conectar();
-            String sql="select*from pais";
+            String sql="select*from departamento";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
-                Pais pa=new Pais();
-                pa.setIdPais(res.getInt("idPais"));
-                pa.setNombrePais(res.getString("nombre"));
-                listaPais.add(pa);
+                Departamento de=new Departamento();
+                de.setIdDepartamento(res.getInt("idDepartamento"));
+                de.setNombreDepartamento(res.getString("nombre"));
+                listaDepartamento.add(de);
             }
         } catch (Exception e) {
             throw e;
@@ -83,6 +83,6 @@ public class CrubPais extends Conexion{
         finally{
             this.desconectar();
         }
-        return listaPais;
+        return listaDepartamento;
     }
 }

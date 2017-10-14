@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author carlos
  */
-public class CrubHabilidad extends Conexion{
+public class CrudHabilidad extends Conexion{
     public void insertarHabilidad(Habilidad ha)throws Exception{
         this.conectar();
         String sql="insert into habilidad values(?,?)";
