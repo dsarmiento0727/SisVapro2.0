@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% response.sendRedirect("jsp/principal.jsp");     %>
 <!DOCTYPE html>
 <html>
     <head>
