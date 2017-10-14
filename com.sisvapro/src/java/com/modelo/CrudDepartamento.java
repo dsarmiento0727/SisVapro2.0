@@ -12,17 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author carlos
+ * Nombre del servlet: CrudDepartamento
+ * Versión 1.0,1.2
+ * Fecha:14/10/2017
+ * CopyRight:MundoEmpelo SA. De CV.
+ * @author Carlos Pozo,Karen Escobar
  */
 public class CrudDepartamento extends Conexion{
-    public void insertarDepartamento(Departamento de)throws Exception{
-        this.conectar();
-        String sql="insert into departamento values(?,?)";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
+    
+    public void insertarDepartamento(Departamento d)throws Exception{
         try {
-            pre.setInt(1, de.getIdDepartamento());
-            pre.setString(2, de.getNombreDepartamento());
+            this.conectar();
+            String sql="insert into departamento(idDepartamento,nombre) values(?,?)";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
+            pre.setInt(1, d.getIdDepartamento());
+            pre.setString(2, d.getNombreDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -32,13 +36,13 @@ public class CrudDepartamento extends Conexion{
         }
     }
     
-    public void modificarDepartamento(Departamento de)throws Exception{
-        this.conectar();
-        String sql="update departamento set nombre=? where idDepartamento=?";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
+    public void modificarDepartamento(Departamento d)throws Exception{
         try {
-            pre.setString(1, de.getNombreDepartamento());
-            pre.setInt(2, de.getIdDepartamento());
+            this.conectar();
+            String sql="update departamento set nombre=? where idDepartamento=?";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
+            pre.setString(1, d.getNombreDepartamento());
+            pre.setInt(2, d.getIdDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -48,12 +52,12 @@ public class CrudDepartamento extends Conexion{
         }
     }
     
-    public void eliminarDepartamento(Departamento de)throws Exception{
-        this.conectar();
-        String sql="delete from departamento where idDepartamento=?";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
+    public void eliminarDepartamento(Departamento d)throws Exception{
         try {
-            pre.setInt(1, de.getIdDepartamento());
+            this.conectar();
+            String sql="delete from departamento where idDepartamento=?";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
+            pre.setInt(1, d.getIdDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -67,15 +71,15 @@ public class CrudDepartamento extends Conexion{
         List<Departamento> listaDepartamento=new ArrayList();
         ResultSet res;
         try {
-            this.conectar();
+           this.conectar();
             String sql="select*from departamento";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
-                Departamento de=new Departamento();
-                de.setIdDepartamento(res.getInt("idDepartamento"));
-                de.setNombreDepartamento(res.getString("nombre"));
-                listaDepartamento.add(de);
+                Departamento d=new Departamento();
+                d.setIdDepartamento(res.getInt("idDepartamento"));
+                d.setNombreDepartamento(res.getString("nombre"));
+                listaDepartamento.add(d);
             }
         } catch (Exception e) {
             throw e;

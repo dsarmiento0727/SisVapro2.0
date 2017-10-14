@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /**
- * Nombre de la Clase: Usuario
+ * Nombre de la Clase:  AutentificarUsuario
  * Fecha: 12 de Octubre de 2017
  * CopyRight: MundoEmpleo SA. De CV.
  * @author David Sarmiento
