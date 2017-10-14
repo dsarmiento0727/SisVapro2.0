@@ -5,50 +5,59 @@
  */
 package com.modelo;
 
-import com.conexion.Conexion;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 /**
- * Nombre de la Clase: Usuario
- * Fecha: 12 de Octubre de 2017
- * CopyRight: SISVAPRO SA. De CV.
- * @author David Sarmiento
+ * Nombre de la clase: Usuario
+ * Versión 1.0
+ * Fecha:14/10/2017
+ * CopyRight:MundoEmpelo SA. De CV.
+ * @author Karen Escobar
  */
 public class Usuario {
-        
-    
-    
-    
-    
-    public int autenticarUsuario(String user, String contra) throws Exception {
-        Conexion objConexion = new Conexion();
-        ResultSet res;
-        int tipoU=0;
+     private int idUsuario;
+    private String nombreUsuario;
+    private String clave;
+    private int idTipoUsuario;
 
-        try {
-            objConexion.conectar();
-            String sql = "select * from public.usuario where username=? and password=?";
-            PreparedStatement pre = objConexion.getCon().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            pre.setString(1, user);
-            pre.setString(2, contra);
-            res = pre.executeQuery();
-
-          if(res.absolute(1))
-          {
-              tipoU= res.getInt("idTipo");
-              
-          }
-          
-             return tipoU; 
-          
-        } catch (Exception e) {
-            
-            throw e;
-        } finally {
-            objConexion.desconectar();
-        }
-       
-
+    public Usuario() {
     }
+
+    public Usuario(int idUsuario, String nombreUsuario, String clave, int idTipoUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.clave = clave;
+        this.idTipoUsuario = idTipoUsuario;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public int getIdTipoUsuario() {
+        return idTipoUsuario;
+    }
+
+    public void setIdTipoUsuario(int idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
+    }
+    
 }

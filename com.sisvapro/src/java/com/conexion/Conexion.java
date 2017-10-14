@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 /**
  * Nombre de la Clase: Conexion
  * Fecha: 12 de Octubre de 2017
- * CopyRight: SISVAPRO SA. De CV.
+ * CopyRight:MundoEmpelo SA. De CV.
  * @author David Sarmiento
  */
 public class Conexion {
@@ -29,7 +29,7 @@ public class Conexion {
         try {
            Class.forName("org.postgresql.Driver");
            con=DriverManager.getConnection(
-                   "jdbc:postgresql://localhost:5432/Sisvapro?user=postgres&password=root"); 
+                   "jdbc:postgresql://localhost:5432/MundoEmpleo?user=postgres&password=karen"); 
         } catch (Exception e) {
             throw e;
         }
