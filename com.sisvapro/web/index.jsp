@@ -1,7 +1,7 @@
 <%-- 
     Document   : index.jsp
     Created on : Oct 12, 2017, 9:28:42 PM
-    Author     : David Sarmiento, Henry Peraza amigos los quiero
+    Author     : David Sarmiento, Henry Peraza
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
