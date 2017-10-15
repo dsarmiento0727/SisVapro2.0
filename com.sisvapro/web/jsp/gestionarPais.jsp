@@ -1,14 +1,12 @@
 <%-- 
-    Document   : departamento
+    Document   : pais
     Created on : 10-06-2017, 05:21:16 PM
     Author     : carlos
 --%>
 
-
-<%@page import="com.modelo.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
-<%@page import="com.modelo.CrudDepartamento" %>
+<%@page import="com.modelo.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,34 +14,42 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Gestionar Departamento</title>
+        <title>Gestionar Pais</title>
         <script src="../js/Procesos.js"></script>
-        
+        <%
+        if(request.getAttribute("valor")!=null){
+        %>
+        <script>
+            alert('<%=request.getAttribute("valor")%>')
+        </script>
+        <%
+        }
+        %>
     </head>
     <%
-    CrudDepartamento crud=new CrudDepartamento();
+    CrudPais crud=new CrudPais();
     %>
     <body>
          
-        <br><br>
-    <center>
-        <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Habilidad</h1></marquee></div>
-    </center>
-        <br><br>        
+         <center>
+        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de País</h1></div>
+        <table>
+            
+                <br><br>        
             <div class="container">
-                <form action="../procesarDepartamento" method="POST" name="frmDepartamento">
+                <form action="../procesarPais" method="POST" name="frmPais">
                 <center>
                     <table>
                 <div class="form-group row">
-                    <label for="iddepartamento" class="col-sm-2 col-form-label">Id Departamento</label>
+                    <label for="idpais" class="col-sm-2 col-form-label">Id Pais</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdDepartamento"placeholder="Id Departamento">
+                    <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais">
                 </div>
                 </div>
                 <div class="form-group row">
-                    <label for="nombre" class="col-sm-2 col-form-label">Departamento</label>
+                    <label for="nombre" class="col-sm-2 col-form-label">Pais</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Deparatamento">
+                    <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Pais">
                 </div>
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -58,31 +64,32 @@
             </form>
             </div>
         </table>
-        </center>
+        
         <br><br>
         <table class="table table-bordered" style="text-align: center; width: 1200px">
             <thead class="thead-inverse">
                 <tr>
-                    <th  scope="row" style="text-align: center">Id Departamento</th>
+                    <th  style="text-align: center;width: 200px">Id País</th>
                     <th  style="text-align: center">Nombre</th>
                     <th  style="text-align: center">Seleccionar</th>
                 </tr>
             </thead>
             <tbody>
                 <%
-                List<Departamento> lst=crud.mostrarDepartamento();
-                for(Departamento d:lst){
+                List<Pais> lst=crud.mostrarPais();
+                for(Pais pa:lst){
                 %>
                 <tr class="table-primary">
-                    <td><%=d.getIdDepartamento()%></td>
-                    <td><%=d.getNombreDepartamento()%></td>
-                    <td><a href="javascript:cargarDepartamento(<%=d.getIdDepartamento()%>,
-                           '<%=d.getNombreDepartamento()%>')">Seleccionar</a></td> 
+                    <td scope="row"><%=pa.getIdPais()%></td>
+                    <td><%=pa.getNombrePais()%></td>
+                    <td><a href="javascript:cargarPais(<%=pa.getIdPais()%>,
+                           '<%=pa.getNombrePais()%>')">Seleccionar</a></td>
                 </tr>
                 <%
                 }
                 %>
             </tbody>
         </table>
+            </center>
     </body>
 </html>
