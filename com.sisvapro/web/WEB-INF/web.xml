@@ -20,6 +20,10 @@
         <servlet-name>ProcesarAreaProfesional</servlet-name>
         <servlet-class>com.controlador.ProcesarAreaProfesional</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarExperienciaLaboral</servlet-name>
+        <servlet-class>com.controlador.ProcesarExperienciaLaboral</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarAreaProfesional</servlet-name>
         <url-pattern>/jsp/gestionar/procesarAreaProfesional</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarExperienciaLaboral</servlet-name>
+        <url-pattern>/ProcesarExperienciaLaboral</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
