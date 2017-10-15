@@ -31,7 +31,7 @@
     </center>
         <br><br>        
             <div class="container">
-                <form action="procesarDepartamento" method="POST" name="frmDepartamento">
+                <form action="../procesarDepartamento" method="POST" name="frmDepartamento">
                 <center>
                     <table>
                 <div class="form-group row">
