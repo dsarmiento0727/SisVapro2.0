@@ -45,9 +45,9 @@ function cargarHabilidad(id,nombre){
     document.frmHabilidad.txtIdHabilidad.value=id;
     document.frmHabilidad.txtNombre.value=nombre;
 }
-function cargarProfesion(id,nombre){
+function cargarAreaProfesional(id,nombre){
     document.frmProfesion.txtIdProfesion.value=id;
-    document.frmProfesion.txtProfesion.value=nombre;
+    document.frmProfesion.txtNombre.value=nombre;
 }
 function cargarRanking(id,clasi,usuario){
     document.frmRanking.txtIdRanking.value=id;

@@ -16,6 +16,10 @@
         <servlet-name>ProcesarPais</servlet-name>
         <servlet-class>com.controlador.ProcesarPais</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarAreaProfesional</servlet-name>
+        <servlet-class>com.controlador.ProcesarAreaProfesional</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarPais</servlet-name>
         <url-pattern>/jsp/gestionar/procesarPais</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarAreaProfesional</servlet-name>
+        <url-pattern>/jsp/gestionar/procesarAreaProfesional</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

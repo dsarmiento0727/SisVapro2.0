@@ -13,30 +13,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
-        <title>Gestionar Profesión</title>
-        <script src="../JavaScript/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <title>Gestionar Area Profesional</title>
+        <script src="../../js/Procesos.js"></script>
     </head>
     <%
     CrudAreaProfesional crud=new CrudAreaProfesional();
     %>
     <body>
-         <jsp:include page="navGestiones.jsp" />
+         
         <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Profesión</h1></div>
+        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Area Profesional</h1></div>
         <br><br>
         <table>
             <div class="container">
-            <form action="../procesarProfesion" method="POST" name="frmProfesion">
+            <form action="procesarAreaProfesional" method="POST" name="frmProfesion">
                 <div class="form-group row">
-                    <label for="idprofesion" class="col-sm-2 col-form-label">Id Profesión</label>
+                    <label for="idprofesion" class="col-sm-2 col-form-label">Id Area Profesiónal</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtIdProfesion" name="txtIdProfesion"placeholder="Id Profesion">
+                    <input type="text" class="form-control" id="txtIdProfesion" name="txtIdProfesion"placeholder="Id Area Profesion">
                 </div>
                 </div>
                 <div class="form-group row">
-                    <label for="nombreprofesion" class="col-sm-2 col-form-label">Profesion</label>
+                    <label for="nombreprofesion" class="col-sm-2 col-form-label">Area Profesion</label>
                 <div class="col-sm-5">
                     <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Profesion">
                 </div>
@@ -72,7 +72,7 @@
                 <tr class="table-primary">
                     <td><%=pro.getIdAreaProfesional()%></td>
                     <td><%=pro.getNombreAreaProfesional()%></td>
-                    <td><a href="javascript:cargarProfesion(<%=pro.getIdAreaProfesional()%>,
+                    <td><a href="javascript:cargarAreaProfesional(<%=pro.getIdAreaProfesional()%>,
                            '<%=pro.getNombreAreaProfesional()%>')">Seleccionar</a></td>
                 </tr>
                 <%
