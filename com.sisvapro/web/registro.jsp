@@ -31,72 +31,21 @@
                 <br>
                 <br>
 
-                <div align="center">
-                    <form method="POST" action="">
-                        <table border="0" style="background-color: #99ff99" cellspacing="8" cellpadding="5">
-
-                            <caption><label style="color: #333333; font-family: sans-serif; size: 15">Formulario De Registro</label></caption>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Nombres:</label></td>
-                                <td><input type="text" name="txtNombreEmpleador" maxlength="60" required autocomplete="on" placeholder="Ingrese sus dos nombres" autofocus="on"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Apellidos:</label></td>
-                                <td><input type="text" name="txtApellidosEmpleador" maxlength="60" required autocomplete="on" placeholder="Ingrese sus dos apellidos"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Direcci&oacute;n:</label></td>
-                                <td><textarea rows="5" name="txtDireccionEmpleador" maxlength="80" placeholder="Direcci&oacute;n..."></textarea></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Tel&eacute;fono:</label></td>
-                                <td><input type="tel" name="txtTelefonoEmpleador" required placeholder="####-####" pattern="d\{4}[\-]d\{4}"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Correo:</label></td>
-                                <td><input type="email" name="txtCorreoEmpleador" required placeholder="Correo Electronico"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Fecha De Nacimiento:</label></td>
-                                <td><input type="date" name="txtFNacimientoEmpleador" required></td>
-                            </tr>
-                            <tr>
-                                <th colspan="2"><label style="color: #333333; font-family: sans-serif; size: 15">Genero</label></th>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Hombre</label><input type="radio" name="rdGeneroEmpleador" value="M" checked="checked"></td>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Mujer</label><input type="radio" name="rdGeneroEmpleador" value="F"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">A&ntilde;os De Experiencia:</label></td>
-                                <td><input type="number" name="txtExperienciaEmpleador" min="1" max="65"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Foto De Perfil:</label></td>
-                                <td><input type="file" name="txtFotoEmpleador" value="Seleccionar Foto" accept="image/*"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">DUI:</label></td>
-                                <td><input type="text" name="txtDuiEmpleador" required placeholder="########-#" pattern="d\{8}[\-]d\{1}"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">NIT:</label></td>
-                                <td><input type="text" name="txtNitEmpleador" required placeholder="####-######-###-#" pattern="d\{4}[\-]d\{6}[\-]d\{3}[\-]d\{1}"></td>
-                            </tr>
-                            <tr>
-                                <td><label style="color: #333333; font-family: sans-serif; size: 15">Nacionalidad:</label></td>
-                                <td><input type="text" name="txtNacionalidadEmpleador" required placeholder="Nacionalidad"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" align="center">
-                                    <input type="submit" name="btnRegistrarEmpleador" value="Enviar Datos">
-                                    <input type="reset" value="Cancelar">
-                                </td>
-                            </tr>
-
-                        </table>
-                    </form>
+                <form method="POST" action="">
+                <div class="form-group">
+                    <label for="txtUsuario">Nombre de usuario</label>
+                    <input type="email" class="form-control" id="txtUsuario" name="txtUsuario" aria-describedby="emailHelp" placeholder="Ingrese su nombre de usuario aqui" required>
                 </div>
+                <div class="form-group">
+                    <label for="txtPassword">Contrase&ntilde;a</label>
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="txtPassword">Vuelva a introducir su contrase&ntilde;a</label>
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                </div>
+                    <button type="submit" class="btn btn-primary" name="btnRegistrarse">Registrarse</button>
+                </form>
 
             </article>
         </section>
