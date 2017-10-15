@@ -1,7 +1,7 @@
 <%-- 
     Document   : departamento
     Created on : 10-06-2017, 05:21:16 PM
-    Author     : carlos
+    Author     : Karen Escobar
 --%>
 
 
@@ -14,10 +14,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Gestionar Departamento</title>
-        <script src="../js/Procesos.js"></script>
+        <script src="../../js/Procesos.js"></script>
         
     </head>
     <%
@@ -27,11 +27,11 @@
          
         <br><br>
     <center>
-        <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Habilidad</h1></marquee></div>
+        <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Departamento</h1></marquee></div>
     </center>
         <br><br>        
             <div class="container">
-                <form action="../procesarDepartamento" method="POST" name="frmDepartamento">
+                <form action="procesarDepartamento" method="POST" name="frmDepartamento">
                 <center>
                     <table>
                 <div class="form-group row">

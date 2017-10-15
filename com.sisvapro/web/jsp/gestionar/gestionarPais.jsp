@@ -12,10 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Gestionar Pais</title>
-        <script src="../js/Procesos.js"></script>
+        <script src="../../js/Procesos.js"></script>
         <%
         if(request.getAttribute("valor")!=null){
         %>
@@ -32,12 +32,12 @@
     <body>
          
          <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de País</h1></div>
+             <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de País</h1></marquee></div>
         <table>
             
                 <br><br>        
             <div class="container">
-                <form action="../procesarPais" method="POST" name="frmPais">
+                <form action="procesarPais" method="POST" name="frmPais">
                 <center>
                     <table>
                 <div class="form-group row">
