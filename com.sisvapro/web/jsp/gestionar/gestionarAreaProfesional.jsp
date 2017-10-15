@@ -24,7 +24,7 @@
     <body>
          
         <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Area Profesional</h1></div>
+            <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Area Profesional</h1></marquee></div>
         <br><br>
         <table>
             <div class="container">

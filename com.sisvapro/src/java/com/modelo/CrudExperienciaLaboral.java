@@ -13,17 +13,17 @@ import java.util.List;
  *
  * @author HENRY
  */
-public class CrudExperienciaLaboral {
+public class CrudExperienciaLaboral extends Conexion{
      public void insertarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
-        this.conectar();
-        String sql="insert into  experienciaLaboral values(?,?,?,?,?,?,?,?)";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
+            this.conectar();
+            String sql="insert into  experienciaLaboral values(?,?,?,?,?,?,?,?)";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, ap.getIdExperienciaLaboral());
             pre.setString(2, ap.getNombreEmpresa());
             pre.setString(3, ap.getNombreJefe());
-            pre.setString(4, ap.getTelefonoJefe();
-            pre.setString(5. ap.getPuesto();
+            pre.setString(4, ap.getTelefonoJefe());
+            pre.setString(5, ap.getPuesto());
             pre.setString(6, ap.getDesde());
             pre.setString(7, ap.getHasta());
             pre.setString(8, ap.getTipoContrato());
@@ -36,12 +36,18 @@ public class CrudExperienciaLaboral {
         }
     }
      public void modificarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
-        this.conectar();
-        String sql="update experienciaLaboral set nombre=? where idExperienciaLaboral=?";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setString(1, ap.getIdExperienciaLaboral());
-            pre.setInt(2, ap.getIdExperienciaLaboral());
+            this.conectar();
+            String sql="update experienciaLaboral set nombreEmpresa=?,nombreJefe=?,telefonoJefe=?,puesto=?,desde=?,hasta=?,tipoContrato=? where idExperienciaLaboral=?";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
+            pre.setString(1, ap.getNombreEmpresa());
+            pre.setString(2, ap.getNombreJefe());
+            pre.setString(3, ap.getTelefonoJefe());
+            pre.setString(4, ap.getPuesto());
+            pre.setString(5, ap.getDesde());
+            pre.setString(6, ap.getHasta());
+            pre.setString(7, ap.getTipoContrato());
+            pre.setInt(8, ap.getIdExperienciaLaboral());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -52,10 +58,10 @@ public class CrudExperienciaLaboral {
     }
     
     public void eliminarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
-        this.conectar();
-        String sql="delete from experienciaLaboral where idExperienciaLaboral=?";
-        PreparedStatement pre=this.getCon().prepareStatement(sql);
-        try {
+       try {
+            this.conectar();
+            String sql="delete from experienciaLaboral where idExperienciaLaboral=?";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, ap.getIdExperienciaLaboral());
             pre.executeUpdate();
         } catch (Exception e) {
@@ -75,9 +81,15 @@ public class CrudExperienciaLaboral {
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
-                experienciaLaboral ap=new experienciaLaboral();
-                ap.setidExperienciaLaboral(res.getInt("idExperienciaLaboral"));
-                ap.setnombreEmpresa(res.getString("nombre"));
+                ExperienciaLaboral ap=new ExperienciaLaboral();
+                ap.setIdExperienciaLaboral(res.getInt("idExperienciaLaboral"));
+                ap.setNombreEmpresa(res.getString("nombreEmpresa"));
+                ap.setNombreJefe(res.getString("nombreJefe"));
+                ap.setTelefonoJefe(res.getString("telefonoJefe"));
+                ap.setPuesto(res.getString("puesto"));
+                ap.setDesde(res.getString("desde"));
+                ap.setHasta(res.getString("hasta"));
+                ap.setTipoContrato(res.getString("tipoContrato"));
                 listaExperienciaLaboral.add(ap);
             }
         } catch (Exception e) {
