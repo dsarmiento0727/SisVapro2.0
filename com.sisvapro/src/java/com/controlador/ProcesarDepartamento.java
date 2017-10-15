@@ -9,7 +9,6 @@ import com.modelo.CrudDepartamento;
 import com.modelo.Departamento;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Gerardo
+ * @author Sarmiento
  */
 public class ProcesarDepartamento extends HttpServlet {
 
@@ -32,8 +31,8 @@ public class ProcesarDepartamento extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        RequestDispatcher rd=null;
         String val=null;
         CrudDepartamento crud=new CrudDepartamento();
         Departamento d=new Departamento();
@@ -50,7 +49,7 @@ public class ProcesarDepartamento extends HttpServlet {
             }
             
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("jsp/gestionarDepartamento.jsp").forward(request, response);
+            request.getRequestDispatcher("gestionarDepartamento.jsp").forward(request, response);
         } catch (Exception e) {
             out.print(e.toString());
             request.setAttribute("error", e.toString());

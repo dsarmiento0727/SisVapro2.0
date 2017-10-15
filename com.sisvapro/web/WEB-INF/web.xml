@@ -14,7 +14,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProcesarDepartamento</servlet-name>
-        <url-pattern>/procesarDepartamento</url-pattern>
+        <url-pattern>/jsp/gestionar/procesarDepartamento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
