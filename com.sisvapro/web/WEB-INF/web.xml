@@ -8,6 +8,10 @@
         <servlet-name>ProcesarDepartamento</servlet-name>
         <servlet-class>com.controlador.ProcesarDepartamento</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarHabilidad</servlet-name>
+        <servlet-class>com.controlador.ProcesarHabilidad</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarDepartamento</servlet-name>
         <url-pattern>/jsp/gestionar/procesarDepartamento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarHabilidad</servlet-name>
+        <url-pattern>/jsp/gestionar/procesarHabilidad</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
