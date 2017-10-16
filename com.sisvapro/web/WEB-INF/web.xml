@@ -24,22 +24,6 @@
         <servlet-name>ProcesarExperienciaLaboral</servlet-name>
         <servlet-class>com.controlador.ProcesarExperienciaLaboral</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ProcesarFormacionAcademica</servlet-name>
-        <servlet-class>com.controlador.ProcesarFormacionAcademica</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ProcesarPersonaContacto</servlet-name>
-        <servlet-class>com.controlador.ProcesarPersonaContacto</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ProcesarSectorEmpresarial</servlet-name>
-        <servlet-class>com.controlador.ProcesarSectorEmpresarial</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ProcesarEmpresa</servlet-name>
-        <servlet-class>com.controlador.ProcesarEmpresa</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -63,22 +47,6 @@
     <servlet-mapping>
         <servlet-name>ProcesarExperienciaLaboral</servlet-name>
         <url-pattern>/ProcesarExperienciaLaboral</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProcesarFormacionAcademica</servlet-name>
-        <url-pattern>/ProcesarFormacionAcademica</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProcesarPersonaContacto</servlet-name>
-        <url-pattern>/ProcesarPersonaContacto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProcesarSectorEmpresarial</servlet-name>
-        <url-pattern>/ProcesarSectorEmpresarial</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProcesarEmpresa</servlet-name>
-        <url-pattern>/ProcesarEmpresa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
