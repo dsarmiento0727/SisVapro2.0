@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author dsarm
+ * Nombre del Servlet: Iniciar Sesion
+ * CopyRight: MundoEmpleo SA de CV
+ * 
+ * @author David Sarmiento
  */
 public class IniciarSesion extends HttpServlet {
 
