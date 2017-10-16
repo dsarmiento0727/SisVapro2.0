@@ -32,7 +32,7 @@
                     <br>
                     <br>
 
-                    <table class="table table-bordered" width="600px" height="450px">
+                    <table class="table table-bordered">
                         <thead class="thead-default">
                             <tr>
                                 <th><label>Registrar una cuenta</label></th>
