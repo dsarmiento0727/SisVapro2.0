@@ -1,0 +1,50 @@
+/* 
+    Created on : 09-25-2017, 09:58:23 PM
+    Author     : David Sarmiento
+*/
+
+body{
+     background-image: url("../Imagenes/f2.jpg")
+}
+#contenedor
+{
+margin: 0 auto;
+
+border: 1px;
+height: 700px;
+}
+
+#cabezera
+{
+height: 10%;
+
+}
+
+#menu
+{
+height: 10%;
+
+}
+
+#izquierda
+{
+height: 50%;
+
+float: left;
+width: 70%;
+}
+
+#derecha
+{
+height: 50%;
+
+float: right;
+width: 20%;
+}
+
+#pie
+{
+height: 20%;
+
+clear: both;
+}
