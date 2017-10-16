@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.controlador;
+
 import com.modelo.CrudExperienciaLaboral;
 import com.modelo.ExperienciaLaboral;
 import java.io.IOException;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author herny
+ * @author Gerardo
  */
 public class ProcesarExperienciaLaboral extends HttpServlet {
 
@@ -31,7 +32,7 @@ public class ProcesarExperienciaLaboral extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();
         String val=null;
         CrudExperienciaLaboral crud=new CrudExperienciaLaboral();
         ExperienciaLaboral d=new ExperienciaLaboral();

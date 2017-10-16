@@ -46,7 +46,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProcesarExperienciaLaboral</servlet-name>
-        <url-pattern>/ProcesarExperienciaLaboral</url-pattern>
+        <url-pattern>/jsp/gestionar/procesarExperienciaLaboral</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
