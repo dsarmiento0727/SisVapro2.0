@@ -35,19 +35,24 @@ public class ProcesarExperienciaLaboral extends HttpServlet {
         PrintWriter out = response.getWriter();
         String val=null;
         CrudExperienciaLaboral crud=new CrudExperienciaLaboral();
-        ExperienciaLaboral d=new ExperienciaLaboral();
+        ExperienciaLaboral ex=new ExperienciaLaboral();
         try {
-            d.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
-            d.setNombreEmpresa(request.getParameter("txtNombre"));
+            ex.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
+            ex.setNombreEmpresa(request.getParameter("txtNombreEmpresa"));
+            ex.setNombreJefe(request.getParameter("txtJefe"));
+            ex.setTelefonoJefe(request.getParameter("txtTelefono"));
+            ex.setPuesto(request.getParameter("txtPuesto"));
+            ex.setTipoContrato(request.getParameter("lstTipoContrato"));
+            ex.setDesde(request.getParameter("txtDesde"));
+            ex.setHasta(request.getParameter("txtHasta"));
             if (request.getParameter("btnInsertar")!=null) {
-                crud.insertarExperienciaLaboral(d);
+                crud.insertarExperienciaLaboral(ex);
                 val="Datos insertados Correctamente";
             }else if (request.getParameter("btnModificar")!=null) {
-                crud.modificarExperienciaLaboral(d);
+                crud.modificarExperienciaLaboral(ex);
             }else if (request.getParameter("btnEliminar")!=null) {
-                crud.eliminarExperienciaLaboral(d);
+                crud.eliminarExperienciaLaboral(ex);
             }
-            
             request.setAttribute("valor", val);
             request.getRequestDispatcher("gestionarExperienciaLaboral.jsp").forward(request, response);
         } catch (Exception e) {

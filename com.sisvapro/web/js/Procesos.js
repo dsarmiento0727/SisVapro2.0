@@ -54,12 +54,15 @@ function cargarRanking(id,clasi,usuario){
     document.frmRanking.txtClasificacion.value=clasi;
     document.frmRanking.lstUsuario.value=usuario;
 }
-function cargarTrabajo(id,empresa,jefe,puesto,tiempo){
-    document.frmTrabajo.txtIdEmpresa.value=id;
-    document.frmTrabajo.txtNombre.value=empresa;
-    document.frmTrabajo.txtEncargado.value=jefe;
-    document.frmTrabajo.txtPuestoD.value=puesto;
-    document.frmTrabajo.txtTiempoL.value=tiempo;
+function cargarExperienciaLaboral(id,empresa,jefe,telefono,puesto,desde, hasta,tipo){
+    document.frmExperienciaLaboral.txtIdExperienciaLaboral.value=id;
+    document.frmExperienciaLaboral.txtNombreEmpresa.value=empresa;
+    document.frmExperienciaLaboral.txtJefe.value=jefe;
+    document.frmExperienciaLaboral.txtTelefono.value=telefono;
+    document.frmExperienciaLaboral.txtPuesto.value=puesto;
+    document.frmExperienciaLaboral.txtDesde.value=desde;
+    document.frmExperienciaLaboral.txtHasta.value=hasta;
+    document.frmExperienciaLaboral.lstTipoContrato.value=tipo;
 }
 function cargarCatalogo(id,nombre,area,contratador){
     document.frmCatalogo.txtIdCatalogo.value=id;

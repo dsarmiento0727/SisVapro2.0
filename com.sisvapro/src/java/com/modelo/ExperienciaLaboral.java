@@ -14,23 +14,12 @@ public class ExperienciaLaboral {
     private String nombreEmpresa;
     private String nombreJefe;
     private String telefonoJefe;
+    private String tipoContrato;
     private String puesto;
     private String desde;
     private String hasta;
-    private String tipoContrato;
 
     public ExperienciaLaboral() {
-    }
-
-    public ExperienciaLaboral(int idExperienciaLaboral, String nombreEmpresa, String nombreJefe, String telefonoJefe, String puesto, String desde, String hasta, String tipoContrato) {
-        this.idExperienciaLaboral = idExperienciaLaboral;
-        this.nombreEmpresa = nombreEmpresa;
-        this.nombreJefe = nombreJefe;
-        this.telefonoJefe = telefonoJefe;
-        this.puesto = puesto;
-        this.desde = desde;
-        this.hasta = hasta;
-        this.tipoContrato = tipoContrato;
     }
 
     public int getIdExperienciaLaboral() {
@@ -65,6 +54,14 @@ public class ExperienciaLaboral {
         this.telefonoJefe = telefonoJefe;
     }
 
+    public String getTipoContrato() {
+        return tipoContrato;
+    }
+
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+
     public String getPuesto() {
         return puesto;
     }
@@ -89,13 +86,15 @@ public class ExperienciaLaboral {
         this.hasta = hasta;
     }
 
-    public String getTipoContrato() {
-        return tipoContrato;
+    public ExperienciaLaboral(int idExperienciaLaboral, String nombreEmpresa, String nombreJefe, String telefonoJefe, String tipoContrato, String puesto, String desde, String hasta) {
+        this.idExperienciaLaboral = idExperienciaLaboral;
+        this.nombreEmpresa = nombreEmpresa;
+        this.nombreJefe = nombreJefe;
+        this.telefonoJefe = telefonoJefe;
+        this.tipoContrato = tipoContrato;
+        this.puesto = puesto;
+        this.desde = desde;
+        this.hasta = hasta;
     }
 
-    public void setTipoContrato(String tipoContrato) {
-        this.tipoContrato = tipoContrato;
-    }
-    
-    
 }

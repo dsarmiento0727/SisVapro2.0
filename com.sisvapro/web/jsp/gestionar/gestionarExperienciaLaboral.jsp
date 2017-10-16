@@ -1,9 +1,12 @@
-<%-- 
+<%--  
     Document   : gestionarExperienciaLaboral
     Created on : 10-15-2017, 12:58:11 AM
     Author     : Gerardo
 --%>
 
+<%@page import="com.modelo.CrudExperienciaLaboral"%>
+<%@page import="java.util.List"%>
+<%@page import="com.modelo.ExperienciaLaboral"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,11 +18,11 @@
         <script src="../../js/Procesos.js"></script>
         <title>Gestionar Experiencia Laboral</title>
     </head>
-    <%--
+  
     <%
     CrudExperienciaLaboral crud=new CrudExperienciaLaboral();
     %>
-    --%>
+   
     <body>
     <center>
         <br><br>
@@ -28,13 +31,13 @@
         </div>
     </center>    
             <div class="container">
-            <form action="" method="post" name="frmAreaProfesional">
+            <form action="procesarExperienciaLaboral" method="post" name="frmExperienciaLaboral">
                 <div class="col align-self-star">
                    <div class="row justify-content-star">
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="IdAreaProfesional" class="col-form-label">Id Area Profesional</label>
-                                <input type="text" class="form-control" id="txtIdPublicista" name="txtIdAreaProfesional" placeholder="Id Area Profesional">
+                                <input type="text" class="form-control" id="txtIdAreaProfesional" name="txtIdExperienciaLaboral" placeholder="Id Area Profesional">
                             </div>
                         </div>
                    </div>
@@ -53,17 +56,31 @@
                     </div>
                     </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="NombreJefe" class="col-form-label">Nombre del Jefe</label>
+                            <input type="text" class="form-control" id="txtJefe" name="txtJefe" placeholder="Nombre del Jefe">
+                        </div>
+                    <div class="col align-self-end">
+                    <div class="row justify-content-center">
+                       <div class="form-group col-md-8">
+                            <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
+                            <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
+                        </div>
+                    </div>
+                    </div>
+                    </div>
                     
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="desde" class="col-form-label">Desde</label>
-                            <input type="date" class="form-control" id="txtNombreEmpresa" name="txtDesde">
+                            <input type="date" class="form-control" id="txtDesde" name="txtDesde">
                         </div>
                     <div class="col align-self-end">
                     <div class="row justify-content-center">
                        <div class="form-group col-md-8">
                             <label for="hasta" class="col-form-label">Hasta</label>
-                            <input type="date" class="form-control" id="txtPuesto" name="txtHasta">
+                            <input type="date" class="form-control" id="txtHasta" name="txtHasta">
                         </div>
                     </div>
                     </div>
@@ -99,6 +116,46 @@
                 </tr>
             </form>
             </div>
+            <br>
+             <table class="table table-bordered" style="text-align: center">
+            <thead class="thead-inverse">
+                <tr>
+                    <th style="text-align: center;width: 100px">Id Area Profesional</th>
+                    <th style="text-align: center;width: 200px">Nombre de la Empresa</th>
+                    <th style="text-align: center;width: 200px">Nombre de Jefe</th>
+                    <th style="text-align: center;width: 150px">Telefono del Jefe</th>
+                    <th style="text-align: center">Puesto</th>
+                    <th style="text-align: center;width: 150px">Tipo de contrato</th>
+                    <th style="text-align: center;width: 150px">Desde</th>
+                    <th style="text-align: center;width: 150px">Hasta</th>
+                    <th style="text-align: center;width: 100px">Seleccionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    List<ExperienciaLaboral> lst=crud.mostrarExperienciaLaboral();
+                    for(ExperienciaLaboral ep:lst){
+                %>
+                <tr class="table-primary">
+                    <td><%=ep.getIdExperienciaLaboral()%></td>
+                    <td><%=ep.getNombreEmpresa()%></td>
+                    <td><%=ep.getNombreJefe()%></td>
+                    <td><%=ep.getTelefonoJefe()%></td>
+                    <td><%=ep.getPuesto()%></td>
+                    <td><%=ep.getTipoContrato()%></td>
+                    <td><%=ep.getDesde()%></td>
+                    <td><%=ep.getHasta()%></td>
+                    <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
+                           '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
+                           '<%=ep.getPuesto()%>','<%=ep.getTipoContrato()%>','<%=ep.getDesde()%>',
+                           '<%=ep.getHasta()%>')">Seleccionar</a></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+            </table>
+            
         </table>
        </center>
     </body>

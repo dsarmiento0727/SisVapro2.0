@@ -24,9 +24,9 @@ public class CrudExperienciaLaboral extends Conexion{
             pre.setString(3, ap.getNombreJefe());
             pre.setString(4, ap.getTelefonoJefe());
             pre.setString(5, ap.getPuesto());
-            pre.setString(6, ap.getDesde());
-            pre.setString(7, ap.getHasta());
-            pre.setString(8, ap.getTipoContrato());
+            pre.setString(6, ap.getTipoContrato());
+            pre.setString(7, ap.getDesde());
+            pre.setString(8, ap.getHasta());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -39,15 +39,15 @@ public class CrudExperienciaLaboral extends Conexion{
      public void modificarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
         try {
             this.conectar();
-            String sql="update experienciaLaboral set nombreEmpresa=?,nombreJefe=?,telefonoJefe=?,puesto=?,desde=?,hasta=?,tipoContrato=? where idExperienciaLaboral=?";
+            String sql="update experienciaLaboral set nombreEmpresa=?,nombreJefe=?,telefonoJefe=?,puesto=?,tipoContrato=?,desde=?,hasta=? where idExperienciaLaboral=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, ap.getNombreEmpresa());
             pre.setString(2, ap.getNombreJefe());
             pre.setString(3, ap.getTelefonoJefe());
             pre.setString(4, ap.getPuesto());
-            pre.setString(5, ap.getDesde());
-            pre.setString(6, ap.getHasta());
-            pre.setString(7, ap.getTipoContrato());
+            pre.setString(5, ap.getTipoContrato());
+            pre.setString(6, ap.getDesde());
+            pre.setString(7, ap.getHasta());
             pre.setInt(8, ap.getIdExperienciaLaboral());
             pre.executeUpdate();
         } catch (Exception e) {
@@ -87,10 +87,10 @@ public class CrudExperienciaLaboral extends Conexion{
                 ap.setNombreEmpresa(res.getString("nombreEmpresa"));
                 ap.setNombreJefe(res.getString("nombreJefe"));
                 ap.setTelefonoJefe(res.getString("telefonoJefe"));
-                ap.setPuesto(res.getString("puesto"));
+                ap.setPuesto(res.getString("puesto"));                
+                ap.setTipoContrato(res.getString("tipoContrato"));
                 ap.setDesde(res.getString("desde"));
                 ap.setHasta(res.getString("hasta"));
-                ap.setTipoContrato(res.getString("tipoContrato"));
                 listaExperienciaLaboral.add(ap);
             }
         } catch (Exception e) {
