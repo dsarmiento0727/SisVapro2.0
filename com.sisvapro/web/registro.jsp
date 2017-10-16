@@ -32,7 +32,7 @@
                     <br>
                     <br>
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" width="600px" height="450px">
                         <thead class="thead-default">
                             <tr>
                                 <th><label>Registrar una cuenta</label></th>
@@ -66,6 +66,8 @@
                             </tr>
                         </tbody>
                     </table>
+                    
+                    
                 </article>
             </section>
             <aside>
