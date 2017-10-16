@@ -1,7 +1,7 @@
 <%-- 
     Document   : profesion
     Created on : 10-06-2017, 06:09:47 PM
-    Author     : Karen Escobar
+    Author     : Karen Escobarv b
 --%>
 
 <%@page import="com.modelo.CrudAreaProfesional"%>
