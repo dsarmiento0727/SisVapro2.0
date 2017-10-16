@@ -19,7 +19,7 @@ public class CrudSectorEmpresarial  extends Conexion {
     public void insertarSectorEmpresarial(SectorEmpresarial d)throws Exception{
         try {
             this.conectar();
-            String sql="insert into SectorEmpresarial(idSectorEmpresarial,nombre) values(?,?)";
+            String sql="insert into sectorEmpresarial values(?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, d.getIdSectorEmpresarial());
             pre.setString(2, d.getNombreSectorEmpresarial());
@@ -36,11 +36,10 @@ public class CrudSectorEmpresarial  extends Conexion {
     public void modificarSectorEmpresarial(SectorEmpresarial d)throws Exception{
         try {
             this.conectar();
-            String sql="update SectorEmpresarial set id=? where idSectorEmpresarial=?";
+            String sql="update sectorEmpresarial set nombreSectorEmpresarial=? where idSectorEmpresarial=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, d.getIdSectorEmpresarial());
-            pre.setString(2, d.getNombreSectorEmpresarial());
-           
+            pre.setString(1, d.getNombreSectorEmpresarial());
+            pre.setInt(2, d.getIdSectorEmpresarial());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -53,7 +52,7 @@ public class CrudSectorEmpresarial  extends Conexion {
     public void eliminarSectorEmpresarial(SectorEmpresarial d)throws Exception{
         try {
             this.conectar();
-            String sql="delete from SectorEmpresarial where idFormacion=?";
+            String sql="delete from sectorEmpresarial where idFormacion=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, d.getIdSectorEmpresarial());
             pre.setString(2, d.getNombreSectorEmpresarial());
@@ -71,13 +70,13 @@ public class CrudSectorEmpresarial  extends Conexion {
         ResultSet res;
         try {
            this.conectar();
-            String sql="select*from SectorEmpresarial";
+            String sql="select*from sectorEmpresarial";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
                 SectorEmpresarial d=new SectorEmpresarial();
-                d.setIdSectorEmpresarial(res.getInt("idsector"));
-                d.setNombreSectorEmpresarial(res.getString("nombre"));
+                d.setIdSectorEmpresarial(res.getInt("idSectorEmpresarial"));
+                d.setNombreSectorEmpresarial(res.getString("nombreSectorEmpresarial"));
                 listaSectorEmpresarial.add(d);
             }
         } catch (Exception e) {

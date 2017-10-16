@@ -19,7 +19,7 @@ public class CrudFormacionAcademica  extends Conexion{
     public void insertarFormacionAcademica(FormacionAcademica d)throws Exception{
         try {
             this.conectar();
-            String sql="insert into FormacionAcademica(idDepartamento,nombre) values(?,?,?,?)";
+            String sql="insert into formacionAcademica values(?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, d.getIdFormacion());
             pre.setString(2, d.getNivelEstudio());
@@ -37,12 +37,12 @@ public class CrudFormacionAcademica  extends Conexion{
     public void modificarFormacionAcademica(FormacionAcademica d)throws Exception{
         try {
             this.conectar();
-            String sql="update FormacionAcademica set id=? where idFormacion=?";
+            String sql="update formacionAcademica set idFormacion=?, nivelEstudios=?, estado=?, carrera=? where idFormacion=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, d.getIdFormacion());
-            pre.setString(2, d.getNivelEstudio());
-            pre.setString(3, d.getEstado());
-            pre.setString(4, d.getCarrera());
+            pre.setString(1, d.getNivelEstudio());
+            pre.setString(2, d.getEstado());
+            pre.setString(3, d.getCarrera());
+            pre.setInt(4, d.getIdFormacion());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -55,7 +55,7 @@ public class CrudFormacionAcademica  extends Conexion{
     public void eliminarFormacionAcademica(FormacionAcademica d)throws Exception{
         try {
             this.conectar();
-            String sql="delete from FormacionAcademica where idFormacion=?";
+            String sql="delete from formacionAcademica where idFormacion=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, d.getIdFormacion());
             pre.executeUpdate();
@@ -72,13 +72,15 @@ public class CrudFormacionAcademica  extends Conexion{
         ResultSet res;
         try {
            this.conectar();
-            String sql="select*from FormacionAcademica";
+            String sql="select*from formacionAcademica";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
                 FormacionAcademica d=new FormacionAcademica();
                 d.setIdFormacion(res.getInt("idFormacion"));
                 d.setNivelEstudio(res.getString("nivelestudio"));
+                d.setEstado(res.getString("estado"));
+                d.setCarrera(res.getString("carrera"));
                 listaFormacionAcademica.add(d);
             }
         } catch (Exception e) {

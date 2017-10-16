@@ -35,6 +35,7 @@ public class CrudExperienciaLaboral extends Conexion{
             this.desconectar();
         }
     }
+     
      public void modificarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
         try {
             this.conectar();
