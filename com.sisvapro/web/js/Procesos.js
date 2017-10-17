@@ -92,6 +92,11 @@ function cargarPublicista(id,nombres,apellidos,correo,empresa){
     document.frmContratadortxtCorreo.value=correo;
     document.frmContratador.lstEmpresa.value=empresa;
 }
+
+// Con esto Funciona DataTable
+$(document).ready(function () {
+        $('#grid').DataTable();
+    });
 function Modificar(){ 
 confirmar=confirm("¿Desea Modificar el registro?"); 
 if (confirmar) 
