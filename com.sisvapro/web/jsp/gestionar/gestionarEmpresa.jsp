@@ -105,7 +105,7 @@
                         </select>
                 </div>
                         </div>
-            <div class="form-group">
+            <div class="form-group"> 
                 <label for="logo">Logo de la Empresa</label>
                 <input type="file" class="form-control-file" id="logo" name="logo">
             </div>
