@@ -5,17 +5,19 @@
  */
 package com.controlador;
 
+import com.modelo.AutentificarUsuario;
 import java.io.IOException;
-import java.io.PrintWriter; 
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Nombre del Servlet: Iniciar Sesion
- * CopyRight: MundoEmpleo SA de CV
- * 
+ * Nombre del Servlet: Iniciar Sesion CopyRight: MundoEmpleo SA de CV
+ *
  * @author David Sarmiento
  */
 public class IniciarSesion extends HttpServlet {
@@ -30,19 +32,57 @@ public class IniciarSesion extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet IniciarSesion</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet IniciarSesion at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        try {
+            if (request.getParameter("btnIngresar") != null) {
+                String usuario = request.getParameter("txtusuario");
+                String clave = request.getParameter("txtcontra");
+                AutentificarUsuario obj = new AutentificarUsuario();
+                int tipoUsuario = obj.autenticarUsuario(usuario, clave);
+                if (tipoUsuario == 1) {
+                    HttpSession objSesion = request.getSession(false);
+                    HttpSession objSesionTipo = request.getSession(false);
+                    objSesion.setAttribute("usuario", usuario);
+                    objSesionTipo.setAttribute("tipo", "Administrador");
+                    if (request.getParameter("ck") != null) {
+                        Cookie valor_guardar = new Cookie("usuario", usuario);
+                        valor_guardar.setMaxAge(60 * 60 * 24);
+                        response.addCookie(valor_guardar);
+                    }
+                    request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
+                } else if (tipoUsuario == 2) {
+                    HttpSession objSesion = request.getSession(false);
+                    HttpSession objSesionTipo = request.getSession(false);
+                    objSesion.setAttribute("usuario", usuario);
+                    objSesionTipo.setAttribute("tipo", "Empleador");
+                    if (request.getParameter("ck") != null) {
+                        Cookie valor_guardar = new Cookie("usuario", usuario);
+                        valor_guardar.setMaxAge(60 * 60 * 24);
+                        response.addCookie(valor_guardar);
+                    }
+                    request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
+                }  else if (tipoUsuario == 2) {
+                    HttpSession objSesion = request.getSession(false);
+                    HttpSession objSesionTipo = request.getSession(false);
+                    objSesion.setAttribute("usuario", usuario);
+                    objSesionTipo.setAttribute("tipo", "Empresa");
+                    if (request.getParameter("ck") != null) {
+                        Cookie valor_guardar = new Cookie("usuario", usuario);
+                        valor_guardar.setMaxAge(60 * 60 * 24);
+                        response.addCookie(valor_guardar);
+                    }
+                    request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
+                }else {
+                    HttpSession objSesion = request.getSession(false);
+                    HttpSession objSesionTipo = request.getSession(false);
+                    objSesionTipo.setAttribute("tipo", null);
+                    response.sendRedirect("registro.jsp");
+                }
+            }
+        } catch (Exception e) {
+            out.print(e.toString());
         }
     }
 
@@ -58,7 +98,11 @@ public class IniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception e) {
+        }
+
     }
 
     /**
@@ -72,7 +116,11 @@ public class IniciarSesion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception e) {
+        }
+
     }
 
     /**

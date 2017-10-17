@@ -28,7 +28,7 @@ public class AutentificarUsuario {
 
         try {
             objConexion.conectar();
-            String sql = "select * from public.usuario where username=? and password=?";
+            String sql = "select * from public.usuario where nombreUsuario=? and clave=?";
             PreparedStatement pre = objConexion.getCon().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             pre.setString(1, user);
             pre.setString(2, contra);
@@ -36,7 +36,7 @@ public class AutentificarUsuario {
 
           if(res.absolute(1))
           {
-              tipoU= res.getInt("idTipo");
+              tipoU= res.getInt("idTipoUsuario");
               
           }
           

@@ -91,7 +91,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                <form>
+                                <form action="iniciarSesion" method="post">
                                     <div class="form-group" >
                                         <label for="txtUsuario" style="text-align: center"><strong>Usuario</strong> </label>
                                         <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su usuario.">
