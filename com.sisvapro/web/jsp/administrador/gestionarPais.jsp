@@ -46,7 +46,7 @@
 
             <br><br>        
             <div class="container">
-                <form action="procesarPais" method="POST" name="frmPais">
+                <form action="../gestionar/procesarPais" method="POST" name="frmPais">
                     <center>
                         <table>
                             <div class="form-group row">
