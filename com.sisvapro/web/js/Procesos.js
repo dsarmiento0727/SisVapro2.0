@@ -64,11 +64,18 @@ function cargarExperienciaLaboral(id,empresa,jefe,telefono,puesto,desde, hasta,t
     document.frmExperienciaLaboral.txtHasta.value=hasta;
     document.frmExperienciaLaboral.lstTipoContrato.value=tipo;
 }
-function cargarCatalogo(id,nombre,area,contratador){
-    document.frmCatalogo.txtIdCatalogo.value=id;
-    document.frmCatalogo.txtNombre.value=nombre;
-    document.frmCatalogo.lstArea.value=area;
-    document.frmCatalogo.lstContratador.value=contratador;
+function cargarOferta(id,puesto,tipo,genero,edad,salario,empresa,pais,departamento,descripcion,experiencia){
+    document.frmOferta.txtIdOferta.value=id;
+    document.frmOferta.txtPuesto.value=puesto;
+    document.frmOferta.lstContratacion.value=tipo;
+    document.frmOferta.genero.value=genero;
+    document.frmOferta.txtedad.value=edad;
+    document.frmOferta.txtsalario.value=salario;
+    document.frmOferta.lstEmpresa.value=empresa;
+    document.frmOferta.lstPais.value=pais;
+    document.frmOferta.lstDepartamento.value=departamento;
+    document.frmOferta.txtDescripcion.value=descripcion;
+    document.frmOferta.experiencia.value=experiencia;
 }
 function cargarContrtador(id,nombres,apellidos,descripcion,correo,empresa){
     document.frmContratador.txtIdContratador.value=id;

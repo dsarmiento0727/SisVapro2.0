@@ -30,6 +30,7 @@
             <MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Experiencia Laboral</h1></marquee>
         </div>
     </center>    
+    <center>
             <div class="container">
             <form action="procesarExperienciaLaboral" method="post" name="frmExperienciaLaboral">
                 <div class="col align-self-star">
@@ -98,23 +99,23 @@
                                 </select>
                             </div>
                         </div>
-       <center>
                    </div>
                    </div>
                 </div>
                 </div>
-           
-               
+               <tr>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                      
+                    <td colspan="2">
+                        
                             <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                             <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
                             <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                   
-                </div>
-               
+                        </div>
+                    </td>
+                </tr>
             </form>
+    </center>
             </div>
             <br>
              <table class="table table-bordered" style="text-align: center">
