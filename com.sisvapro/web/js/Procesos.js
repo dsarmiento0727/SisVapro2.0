@@ -24,14 +24,17 @@ function cargarArea(id,nombre){
     document.frmArea.txtIdArea.value=id;
     document.frmArea.txtNombre.value=nombre;
 }
-function cargarEmpresa(id,juridico,comercial,giro,fecha,nit,direccion,usuario){
+function cargarEmpresa(id,nombre,razon,nit,direccion,pais, depa,logo,pagina,sector){
     document.frmEmpresa.txtIdEmpresa.value=id;
-    document.frmEmpresa.txtNombreJ.value=juridico;
-    document.frmEmpresa.txtNombreC.value=comercial;
-    document.frmEmpresa.txtFechaInscripcion.value=fecha;
-    document.frmEmpresa.txtDireccion.value=direccion;
+    document.frmEmpresa.txtNombre.value=nombre;
+    document.frmEmpresa.txtRazon.value=razon;
     document.frmEmpresa.txtNit.value=nit;
-    document.frmEmpresa.lstUsuario.value=usuario;
+    document.frmEmpresa.txtDireccion.value=direccion;
+    document.frmEmpresa.lstPais.value=pais;
+    document.frmEmpresa.lstDepartamento.value=depa;
+    document.frmEmpresa.logo.value=logo;
+    document.frmEmpresa.txtPagina.value=pagina;
+    document.frmEmpresa.lstSector.value=sector;
 }
 function cargarIdioma(id,nombre){
     document.frmIdioma.txtIdIdioma.value=id;
@@ -86,13 +89,7 @@ function cargarContacto(id,nombres,apellidos,cargo,telefono1,telefono2,empresa){
     document.frmContratadortxtTelefono2.value=telefono2;
     document.frmContratador.lstEmpresa.value=empresa;
 }
-function cargarPublicista(id,nombres,apellidos,correo,empresa){
-    document.frmContratador.txtIdContratador.value=id;
-    document.frmContratador.txtNombres.value=nombres;
-    document.frmContratador.txtApellidos.value=apellidos;
-    document.frmContratadortxtCorreo.value=correo;
-    document.frmContratador.lstEmpresa.value=empresa;
-}
+
 function Modificar(){ 
 confirmar=confirm("¿Desea Modificar el registro?"); 
 if (confirmar) 
