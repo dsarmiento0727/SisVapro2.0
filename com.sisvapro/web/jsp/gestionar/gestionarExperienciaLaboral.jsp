@@ -73,13 +73,13 @@
                     
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="desde" class="col-form-label">Desde</label>
+                            <label for="txtDesde" class="col-form-label">Desde</label>
                             <input type="date" class="form-control" id="txtDesde" name="txtDesde">
                         </div>
                     <div class="col align-self-end">
                     <div class="row justify-content-center">
                        <div class="form-group col-md-8">
-                            <label for="hasta" class="col-form-label">Hasta</label>
+                            <label for="txtHasta" class="col-form-label">Hasta</label>
                             <input type="date" class="form-control" id="txtHasta" name="txtHasta">
                         </div>
                     </div>
@@ -93,27 +93,27 @@
                                 <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
                                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstTipoContrato" name="lstTipoContrato" >
                                     <option>Tiempo Completo</option>
-                                    <option>Por horas</option>
+                                    <option>Por Horas</option>
                                     <option>Practicas</option>
                                 </select>
                             </div>
                         </div>
-                   </div>
-                   </div>
-                </div>
-                </div>
        <center>
-           <table>
-               <tr>
+                   </div>
+                   </div>
+                </div>
+                </div>
+           
+               
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <td colspan="2">    
+                      
                             <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                             <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
                             <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                    </td>
+                   
                 </div>
-                </tr>
+               
             </form>
             </div>
             <br>
@@ -147,8 +147,8 @@
                     <td><%=ep.getHasta()%></td>
                     <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
                            '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
-                           '<%=ep.getPuesto()%>','<%=ep.getTipoContrato()%>','<%=ep.getDesde()%>',
-                           '<%=ep.getHasta()%>')">Seleccionar</a></td>
+                           '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
+                           '<%=ep.getTipoContrato()%>')">Seleccionar</a></td>
                 </tr>
                 <%
                     }

@@ -3,9 +3,9 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
-function cargarTipoUsuario(id,nivel){
+ */function cargarTipoUsuario(id,nivel){
     document.frmTipoUsuario.txtIdTipoU.value=id;
+
     document.frmTipoUsuario.txtNivel.value=nivel;
 }
 function cargarPais(id,nombre){
