@@ -32,6 +32,10 @@
         <servlet-name>ProcesarPersonaContacto</servlet-name>
         <servlet-class>com.controlador.ProcesarPersonaContacto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarEmpleador</servlet-name>
+        <servlet-class>com.controlador.ProcesarEmpleador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarPersonaContacto</servlet-name>
         <url-pattern>/jsp/gestionar/procesarPersonaContacto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarEmpleador</servlet-name>
+        <url-pattern>/jsp/gestionar/procesarEmpleador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -49,7 +49,7 @@
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Empleador</h1></div>
         </center>
         
-            <form action="" method="POST" name="frmEmpleador">
+            <form action="procesarEmpleador" method="POST" name="frmEmpleador">
                 <div class="container">
                     <div class="row">
                         <div class="col align-self-start">
@@ -84,7 +84,7 @@
                         <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono celular o de casa">
                     </div>
                 </div>
-                            <div class="col-7">
+                            <div class="col-6">
                                 <div class="form-group">
                                     <label for="correor" class="col-form-label"><strong>Correo Electronico</strong></label>
                                     <input type="email" class="form-control" id="txtCorreo" name="txtCorreoE" placeholder="nombre@ejemplo.com">
@@ -138,8 +138,20 @@
                             </div>
                             </div>
                             </div>
-                            <div class="form-row">
-                            <label class="mr-sm-2" for="idUsuario"><strong> Usuario</strong></label>
+                            
+                              <div class="form-row">
+                                  <div class="col align-self-start">
+                            <div class="row justify-content-start">
+                            <div class="col-5">
+                                        <div class="form-group">
+                                            <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
+                                            <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad">
+                                        </div>
+                            </div>
+                            </div></div>
+                                  <div class="col align-self-start">
+                            <div class="row justify-content-center">
+                            <label class="mr-sm-4" for="idUsuario"><strong> Usuario</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstUsuario" name="lstUsuario" >
                              <%
                                 List<Usuario> lst4 = crudu.mostrarUsuario();
@@ -151,8 +163,11 @@
                             <%
                                 }
                             %>
-                  </select> 
-                            
+                  </select> </div></div>
+                              </div>
+                  <div class="form-row">
+                      <div class="col align-self-start">
+                            <div class="row justify-content-start">
                   <label class="mr-sm-2" for="idPais"><strong>Pais</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
                              <%
@@ -166,6 +181,9 @@
                                 }
                             %>
                   </select>   
+                            </div></div>
+                  <div class="col align-self-start">
+                            <div class="row justify-content-end">
                   <label class="mr-sm-2" for="idDepartamento"><strong>Departamento</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstDepartamento" name="lstDepartamento" >
                              <%
@@ -179,8 +197,11 @@
                                 }
                             %>
                   </select> 
+                            </div></div>
                             </div><br>
                   <div class="form-row">
+                      <div class="col align-self-start">
+                            <div class="row justify-content-start">
                   <label class="mr-sm-2" for="idhabilidad"><strong>Habilidad</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstHabilidad" name="lstHabilidad" >
                              <%
@@ -194,7 +215,9 @@
                                 }
                             %>
                   </select> 
-                 
+                            </div></div>
+                  <div class="col align-self-start">
+                            <div class="row justify-content-center">
                   <label class="mr-sm-2" for="idFormacion"><strong>Formación Academica</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstFormacion" name="lstFormacion" >
                              <%
@@ -208,9 +231,12 @@
                                 }
                             %>
                   </select> 
+                            </div></div>
                   </div>
                   <br>
                   <div class="form-row">
+                      <div class="col align-self-start">
+                            <div class="row justify-content-start">
                   <label class="mr-sm-2" for="idExperiencia"><strong>Experiencia Laboral</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstProfesion" name="lstProfesion" >
                              <%
@@ -224,6 +250,9 @@
                                 }
                             %>
                   </select> 
+                            </div></div>
+                  <div class="col align-self-start">
+                            <div class="row justify-content-center">
                   <label class="mr-sm-2" for="idarea"><strong>Area Profesional</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" >
                              <%
@@ -237,6 +266,7 @@
                                 }
                             %>
                   </select>
+                            </div></div>
                   </div>
                         </div>
                   <center>
@@ -258,7 +288,7 @@
             </form>
         </table>
         <br>
-        <table class="table table-bordered" style="text-align: center; width: 1200px" >
+        <table class="table table-bordered" style="text-align: center" >
             <thead class="thead-inverse">
                 <tr>
                     <th scope="row" style="text-align: center">Id Empleador</th>
