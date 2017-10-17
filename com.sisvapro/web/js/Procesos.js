@@ -89,7 +89,30 @@ function cargarContacto(id,nombres,apellidos,cargo,telefono1,telefono2,empresa){
     document.frmContratadortxtTelefono2.value=telefono2;
     document.frmContratador.lstEmpresa.value=empresa;
 }
-
+function cargarEmpleador(id,nombres,apellidos,direccion,telefono,correo,fecha,
+genero,anio,foto,dui,nit,nacionalidad,user,pais,depa,habilidad, formacion,expe,area){
+    document.frmEmpleador.txtIdPerfil.value=id;
+    document.frmEmpleador.txtNombres.values=nombres;
+    document.frmEmpleador.txtApellidos.values=apellidos;
+    document.frmEmpleador.txtDirecciom.values=direccion;
+    document.frmEmpleador.txtTelefono.values=telefono;
+    document.frmEmpleador.txtCorreoE.values=correo;
+    document.frmEmpleador.txtFechaNac.values=fecha;
+    document.frmEmpleador.genero.values=genero;
+    document.frmEmpleador.txtAnio.values=anio;
+    document.frmEmpleador.foto.values=foto;
+    document.frmEmpleador.txtDui.values=dui;
+    document.frmEmpleador.txtNit.values=nit;
+    document.frmEmpleador.txtNacionalidad.values=nacionalidad;
+    document.frmEmpleador.lstUsuario.values=user;
+    document.frmEmpleador.lstPais.values=pais;
+    document.frmEmpleador.lstDepartamento.values=depa;
+    document.frmEmpleador.lstHabilidad.values=habilidad;
+    document.frmEmpleador.lstFormacion.values=formacion;
+    document.frmEmpleador.lstProfesion.values=expe;
+    document.frmEmpleador.lstArea.values=area;
+    
+}
 function Modificar(){ 
 confirmar=confirm("¿Desea Modificar el registro?"); 
 if (confirmar) 
