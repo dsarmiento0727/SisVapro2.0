@@ -26,7 +26,7 @@ public class CrudOfertaEmpleo extends Conexion{
             pre.setString(3, oe.getTipoContratacion());
             pre.setString(4, oe.getGenero());
             pre.setInt(5, oe.getEdad());
-            pre.setFloat(6, oe.getSalario());
+            pre.setDouble(6, oe.getSalario());
             pre.setInt(7, oe.getIdEmpresa());
             pre.setInt(8, oe.getIdPais());
             pre.setInt(9, oe.getIdDepartamento());
@@ -50,7 +50,7 @@ public class CrudOfertaEmpleo extends Conexion{
             pre.setString(2, oe.getTipoContratacion());
             pre.setString(3, oe.getGenero());
             pre.setInt(4, oe.getEdad());
-            pre.setFloat(5, oe.getSalario());
+            pre.setDouble(5, oe.getSalario());
             pre.setInt(6, oe.getIdEmpresa());
             pre.setInt(7, oe.getIdPais());
             pre.setInt(8, oe.getIdDepartamento());
@@ -96,7 +96,7 @@ public class CrudOfertaEmpleo extends Conexion{
                 oe.setTipoContratacion(res.getString("tipoContratacion"));
                 oe.setGenero(res.getString("genero"));
                 oe.setEdad(res.getInt("edad"));
-                oe.setSalario(res.getFloat("salario"));
+                oe.setSalario(res.getDouble("salario"));
                 oe.setIdEmpresa(res.getInt("idEmpresa"));
                 oe.setIdPais(res.getInt("idPais"));
                 oe.setIdDepartamento(res.getInt("idDepartamento"));

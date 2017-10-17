@@ -16,7 +16,7 @@ public class OfertaEmpleo {
     private String nivelExperiencia;
     private String genero;
     private int edad;
-    private float salario;
+    private Double salario;
     private int idEmpresa;
     private int idPais;
     private int idDepartamento;
@@ -25,7 +25,7 @@ public class OfertaEmpleo {
     public OfertaEmpleo() {
     }
 
-    public OfertaEmpleo(int idOfertaEmpleo, int puestoVacante, String tipoContratacion, String nivelExperiencia, String genero, int edad, float salario, int idEmpresa, int idPais, int idDepartamento, String descripcionOferta) {
+    public OfertaEmpleo(int idOfertaEmpleo, int puestoVacante, String tipoContratacion, String nivelExperiencia, String genero, int edad, Double salario, int idEmpresa, int idPais, int idDepartamento, String descripcionOferta) {
         this.idOfertaEmpleo = idOfertaEmpleo;
         this.puestoVacante = puestoVacante;
         this.tipoContratacion = tipoContratacion;
@@ -54,6 +54,7 @@ public class OfertaEmpleo {
     public void setPuestoVacante(int puestoVacante) {
         this.puestoVacante = puestoVacante;
     }
+    
 
     public String getTipoContratacion() {
         return tipoContratacion;
@@ -87,13 +88,14 @@ public class OfertaEmpleo {
         this.edad = edad;
     }
 
-    public float getSalario() {
+    public Double getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(Double salario) {
         this.salario = salario;
     }
+
 
     public int getIdEmpresa() {
         return idEmpresa;
