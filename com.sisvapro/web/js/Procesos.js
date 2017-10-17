@@ -31,7 +31,7 @@ function cargarEmpresa(id,nombre,razon,nit,direccion,pais, depa,logo,pagina,sect
     document.frmEmpresa.txtNit.value=nit;
     document.frmEmpresa.txtDireccion.value=direccion;
     document.frmEmpresa.lstPais.value=pais;
-    document.frmEmpresa.lstDepartamento.value=depa;
+    document.frmEmpresa.lstDepartamento.value=depa; 
     document.frmEmpresa.logo.value=logo;
     document.frmEmpresa.txtPagina.value=pagina;
     document.frmEmpresa.lstSector.value=sector;
