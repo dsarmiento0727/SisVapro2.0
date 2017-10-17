@@ -139,7 +139,7 @@
                                 for (Usuario u : lst4) {
                             %>
 
-                            <option value="<%=u.getIdUsuario()%>"><%=u.getUserName()%></option>
+                            <option value="<%=u.getIdUsuario()%>"><%=u.getNombreUsuario()%></option>
 
                             <%
                                 }
