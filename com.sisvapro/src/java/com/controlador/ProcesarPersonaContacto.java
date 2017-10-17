@@ -47,7 +47,7 @@ public class ProcesarPersonaContacto extends HttpServlet {
             pc.setTelefono2(request.getParameter("txtTelefono2"));
             pc.setIdEmpresa(Integer.parseInt(request.getParameter("lstEmpresa")));
             if (request.getParameter("btnInsertar")!=null) {
-                crud.insertarPersonaContacto(pc);
+                crud.insertarPersonaContacto(pc); 
                 val="Datos insertados Correctamente";
             }else if (request.getParameter("btnModificar")!=null) {
                 crud.modificarPersonaContacto(pc);
