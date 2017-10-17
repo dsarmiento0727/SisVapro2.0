@@ -1,7 +1,7 @@
 <%-- 
     Document   : empresa
     Created on : 10-06-2017, 05:37:08 PM
-    Author     : carlos
+    Author     : carlos xD
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
