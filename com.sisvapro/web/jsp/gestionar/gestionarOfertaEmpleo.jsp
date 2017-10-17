@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="../../js/Procesos.js"></script>
@@ -36,7 +36,7 @@
             <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Oferta de Empleo</h1></marquee></div>
         <br>
             <div class="container">
-            <form action="" method="POST" name="frmOferta">
+            <form action="procesarOfertaEmpleo" method="POST" name="frmOferta">
                 <div class="form-group row">
                     <label for="idprofesion" class="col-sm-2 col-form-label"><strong>Id Oferta de Empleo</strong></label>
                 <div class="col-sm-3">
