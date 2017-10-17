@@ -1,7 +1,7 @@
 <%-- 
     Document   : gestionarOfertaEmpleo
     Created on : 10-16-2017, 03:04:56 PM
-    Author     : Gerardo
+    Author     : Karen Escobar, David Sarmiento,
 --%>
 
 <%@page import="com.modelo.OfertaEmpleo"%>
@@ -14,6 +14,32 @@
 <%@page import="com.modelo.CrudPais"%>
 <%@page import="com.modelo.CrudOfertaEmpleo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

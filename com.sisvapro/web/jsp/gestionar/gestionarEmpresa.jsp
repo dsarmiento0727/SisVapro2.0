@@ -1,12 +1,38 @@
 <%-- 
     Document   : empresa
     Created on : 10-06-2017, 05:37:08 PM
-    Author     : carlos xD
+    Author     : Karen Escobar, David Sarmiento, Carlos Lopez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.modelo.*" %>
 <%@page import="java.util.*" %>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

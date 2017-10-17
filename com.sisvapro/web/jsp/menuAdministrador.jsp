@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 10-16-2017, 09:56:37 PM
-    Author     : carlos
+    Author     : David Sarmiento
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,7 +21,14 @@
 
         tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
         if (usuario == null) {
-            //response.sendRedirect("../accesoDenegado.jsp");
+            response.sendRedirect("../accesoDenegado.jsp");
+        }
+        if (usuario.equals("Empleador")) {
+                response.sendRedirect("menuEmpleador.jsp");
+            }
+        else if(usuario.equals("Empresa"))
+        {
+            response.sendRedirect("menuEmpresa.jsp");
         }
 
     } catch (Exception e) {

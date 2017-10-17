@@ -1,7 +1,7 @@
 <%-- 
     Document   : registro
     Created on : Oct 14, 2017, 10:47:26 PM
-    Author     : Sarmiento
+    Author     : Franklin Baires
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

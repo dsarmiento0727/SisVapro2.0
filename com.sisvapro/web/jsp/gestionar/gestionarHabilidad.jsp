@@ -1,13 +1,39 @@
 <%-- 
     Document   : habilidad
     Created on : 10-06-2017, 06:02:13 PM
-    Author     : Karen Escobar
+    Author     : Karen Escobar, David Sarmiento
 --%>
 
 <%@page import="com.modelo.Habilidad"%>
 <%@page import="java.util.List"%>
 <%@page import="com.modelo.CrudHabilidad"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

@@ -16,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <center>
+    <center>
         <%
 
             try {
@@ -25,26 +25,28 @@
                 HttpSession objSesionTipo = request.getSession(false);
                 String usuario = (String) objSesion.getAttribute("usuario");
                 String tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
-                
+
                 if (tipoUsuario == null) {
                     out.print("<center><h1>Bienvenido <span class='adge badge-success'> Usuario </span></h1>");
-                    out.print("<h1>Usted tiene privilegios de <span class='badge badge-warning'> Nada :v</span></h1>");
+                    out.print("<h1>Usted no a iniciado session <span class='badge badge-warning'>Inicie Secion</span></h1>");
                     out.print("<h1>Este sitio solo puede ser visible por un <span class='badge badge-secondary'> Administrador </span></h1>");
                     cerrar = "<a class='badge badge-pill badge-danger' href='index.jsp'>Regresar a Menu Principal</a>";
                     out.print(cerrar);
-                }else 
-                if (tipoUsuario.equals("Administrador")) {
-                    out.print("<center><h1>Bienvenido <span class='adge badge-success'> " + usuario + " </span></h1>");
-                    out.print("<h1>Usted tiene privilegios de <span class='badge badge-warning'>" + tipoUsuario + "</span></h1>");
-                    out.print("<h1>Usted es el  <span class='badge badge-secondary'>PUTO AMO!</span></h1>");
-                    cerrar = "<a class='badge badge-pill badge-danger' href='index.jsp'>Regresar a Menu Principal</a>";
-                    out.print(cerrar);
+                } else if (tipoUsuario.equals("Administrador")) {
+                    response.sendRedirect("jsp/menuAdministrador.jsp");
+                }else if (tipoUsuario.equals("Administrador")) {
+                    response.sendRedirect("jsp/menuEmpleador.jsp");
                 }
+                else if (tipoUsuario.equals("Administrador")) {
+                    response.sendRedirect("jsp/menuEmpresa.jsp");
+                }
+
             } catch (Exception e) {
                 if (e.toString().equals("java.lang.NullPointerException")) {
 
+                } else {
+                    out.print(e.toString());
                 }
-                else {out.print(e.toString());}
                 //response.sendRedirect("registro.jsp");
             }
         %>
@@ -58,5 +60,5 @@
 
         <h2><a class="badge badge-pill badge-secondary" href="index.jsp">Regresar</a></h2>
     </center>
-    </body>
+</body>
 </html>

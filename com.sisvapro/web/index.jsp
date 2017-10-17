@@ -1,7 +1,7 @@
 <%-- 
     Document   : index.jsp
     Created on : Oct 12, 2017, 9:28:42 PM
-    Author     : David Sarmiento, Henry Peraza CREO QUE SI PODRE
+    Author     : David Sarmiento, Carlos Lopez, Henry Peraza
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

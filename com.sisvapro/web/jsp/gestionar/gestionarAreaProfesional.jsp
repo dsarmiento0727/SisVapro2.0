@@ -1,13 +1,39 @@
 <%-- 
     Document   : profesion
     Created on : 10-06-2017, 06:09:47 PM
-    Author     : Karen Escobarv b
+    Author     : Karen Escobar, David Sarmiento, Carlos Lopez
 --%>
 
 <%@page import="com.modelo.CrudAreaProfesional"%>
 <%@page import="com.modelo.AreaProfesional"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

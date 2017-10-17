@@ -1,7 +1,7 @@
 <%-- 
     Document   : perfil
     Created on : 10-06-2017, 06:47:30 PM
-    Author     : carlos
+    Author     : Karen Escobar, David Sarmiento, Carlos Lopez
 --%>
 
 
@@ -23,6 +23,32 @@
 <%@page import="com.modelo.CrudDepartamento"%>
 <%@page import="com.modelo.CrudPais"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

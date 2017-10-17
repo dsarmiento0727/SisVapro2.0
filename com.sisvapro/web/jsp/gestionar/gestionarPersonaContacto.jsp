@@ -1,7 +1,7 @@
 <%-- 
     Document   : gestionarPersonaContacto
     Created on : 10-16-2017, 10:26:11 PM
-    Author     : Gerardo
+    Author     : Karen Escobar, David Sarmiento, Carlos Lopez
 --%>
 
 <%@page import="com.modelo.PersonaContacto"%>
@@ -10,6 +10,32 @@
 <%@page import="com.modelo.CrudEmpresa"%>
 <%@page import="com.modelo.CrudPersonaContacto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    String usuario = null;
+
+    String tipoUsuario = null;
+
+    try {
+
+        HttpSession objSesion = request.getSession(false);
+
+        HttpSession objSesionTipo = request.getSession(false);
+
+        usuario = (String) objSesion.getAttribute("usuario");
+
+        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        if (usuario == null) {
+            response.sendRedirect("../../accesoDenegado.jsp");
+        }
+
+    } catch (Exception e) {
+
+        out.print(e.toString());
+
+    }
+
+%>
 <!DOCTYPE html>
 <html>
     <head>

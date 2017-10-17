@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 10-16-2017, 09:56:37 PM
-    Author     : carlos
+    Author     : David Sarmiento
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
