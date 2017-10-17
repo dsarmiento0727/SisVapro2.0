@@ -28,7 +28,7 @@
         CrudAreaProfesional crud = new CrudAreaProfesional();
     %>
     <body>
-
+        <jsp:include page="menuGestionar.jsp"/>
     <center>
         <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Area Profesional</h1></marquee></div>
         <br><br>

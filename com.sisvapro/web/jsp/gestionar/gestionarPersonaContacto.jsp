@@ -14,10 +14,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../../css/style.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <script src="../../js/Procesos.js"></script>
+         <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/dataTables.bootstrap4.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+        <script type="text/javascript" src="../../js/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="../../js/popper.min.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../js/datatables.min.js"></script>
+        <script type="text/javascript" src="../../js/Procesos.js"></script>
+        <script type="text/javascript" src="../../js/dataTable.js"></script>
         <title>Gestionar Persona Contacto</title>
     </head>
     <%
@@ -25,6 +30,7 @@
     CrudEmpresa crude=new CrudEmpresa();
     %>
     <body>
+         <jsp:include page="menuGestionar.jsp"/>
        <center>
         <br><br>
         <div class="p-3 mb-2 bg-light text-black">
@@ -112,7 +118,7 @@
         </table>
             </form>
             </div> <br>
-            <table class="table table-bordered" style="text-align: center">
+            <table id="grid" class="table table-bordered" style="text-align: center">
             <thead class="thead-inverse">
                 <tr>
                     <th style="text-align: center;width: 200px">Id Persona Contacto</th>
