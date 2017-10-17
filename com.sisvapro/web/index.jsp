@@ -199,7 +199,7 @@
                                         Mision
                                     </h3>
                                     <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                        Somos una empresa lider en las aplicaciones de ofertas laborales a nivel nacional.
                                     </p>
                                     <p>
                                         <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
@@ -215,7 +215,7 @@
                                         Vision
                                     </h3>
                                     <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                       Poder fomentar un amplio sistema en la cual se puede ensi sacontrar muchas ofertas laborales.
                                     </p>
                                     <p>
                                         <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
