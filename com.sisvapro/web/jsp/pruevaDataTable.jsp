@@ -10,21 +10,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
-
-        <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css"/>
-
-        <script type="text/javascript" src="js/datatables.min.js"></script>
-        <script src="js/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap4.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <script type="text/javascript" src="../js/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="../js/popper.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/datatables.min.js"></script>
+        <script type="text/javascript" src="../js/Procesos.js"></script>
+        <script type="text/javascript" src="../js/dataTable.js"></script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Pais</title>
-        <script src="../../js/Procesos.js"></script>
+        
         <%
             if (request.getAttribute("valor") != null) {
         %>

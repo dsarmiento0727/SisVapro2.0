@@ -134,10 +134,10 @@
                 <div class="col-md-12">
                     <div class="jumbotron">
                         <h2>
-                            Hello, world!
+                            Hola y Bienvenido a MUNDO EMPLEO
                         </h2>
                         <p>
-                            This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                            En mundo empleo encontraras ofertas de empleo.
                         </p>
                         <p>
                             <a class="btn btn-dark btn-large" href="#">Learn more</a>
@@ -157,16 +157,16 @@
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="imagenes/15-oportunidades-laborales-para-peruanos.png" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Titulo</h3>
-                            <p>Contenido</p>
+                            <h3>Ofertas de Empleo</h3>
+                            <p>Obten muchas ofertas de empleo con nuestro Sitema de Vacantes Profecionales.</p>
                         </div>
 
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="imagenes/3-ofertas-de-empleo-para-trabajar-desde-tu-casa.jpg" alt="Second slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Titulo</h3>
-                            <p>Contenido</p>
+                            <h3>Tienes una empresa y quieres trabajadores</h3>
+                            <p>Puedes publicar tus ofertas de trabajo, asi los empleadores lo veran.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -193,7 +193,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail First" src="imagenes/9-ofertas-de-practicas-profesionales-en-ingenieria-.jpg" width="100%" />
+                                <img class="img-fluid" alt="Responsive image" src="imagenes/misionvisionvalores.png" width="100%" />
                                 <div class="caption">
                                     <h3>
                                         Mision
@@ -209,7 +209,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
+                                <img class="img-fluid"  alt="Responsive image" src="imagenes/books-on-business-man-vector-graphics0.jpg" />
                                 <div class="caption">
                                     <h3>
                                         Vision
@@ -225,7 +225,7 @@
                         </div>
                         <div class="col-md-4" id="quienes">
                             <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
+                                <img  class="img-fluid" width="1000px" alt="Responsive image" src="imagenes/top_contactenos.jpg" />
                                 <div class="caption">
                                     <h3>
                                         Quienes somos
