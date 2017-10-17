@@ -1,0 +1,221 @@
+CREATE TABLE pais(
+idPais int primary key not null,
+nombre varchar(50) not null
+);
+
+CREATE TABLE departamento(
+idDepartamento int primary key not null,
+nombre varchar(50) not null
+);
+
+CREATE TABLE tipoUsuario(
+idTipoUsuario int primary key not null,
+nivel varchar(50) not null
+);
+
+CREATE TABLE usuario(
+idUsuario int primary key not null,
+nombreUsuario varchar(50) not null,
+clave varchar(50) not null,
+idTipoUsuario int not null,
+FOREIGN KEY(idTipoUsuario) references tipoUsuario(idTipoUsuario)
+ );
+
+CREATE TABLE habilidad(
+idHabilidad int primary key not null,
+nombreHabilidad varchar(50) not null
+);
+
+CREATE TABLE formacionAcademica(
+idFormacion int primary key not null,
+nivelEstudios varchar(50) not null,
+estado varchar(60) not null,
+carrera varchar(300) not null
+);
+
+CREATE TABLE experienciaLaboral(
+idExperienciaLaboral int primary key not null,
+nombreEmpresa varchar(80) not null,
+nombreJefe varchar(50) not null,
+telefonoJefe varchar(25) not null,
+puesto varchar(80) not null,
+desde date not null,
+hasta date not null,
+tipoContrato varchar(50) not null
+);
+
+CREATE TABLE areaProfesional(
+idAreaProfesional int primary key not null,
+nombreAreaProfesional varchar(100) not null
+);
+
+CREATE TABLE sectorEmpresiarial(
+idSectorEmpresiarial int primary key not null,
+nombreSectorEmpresarial varchar(100) not null
+);
+
+
+CREATE TABLE administrador(
+idAdministrador int primary key not null,
+nombres varchar(80) not null,
+apellidos varchar(80) not null,
+dui varchar(20) not null,
+nit varchar(20) not null,
+telefono varchar(25) not null,
+direccion varchar(60) not null,
+genero varchar(10) not null,
+correoElectronico varchar(50) not null,
+idPais int not null,
+idDepartamento int not null,
+idUsuario int not null,
+FOREIGN KEY (idPais) references pais(idPais),
+FOREIGN KEY (idDepartamento) references Departamento
+(idDepartamento),
+FOREIGN KEY (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE ranking(
+idRanking int primary key not null,
+cantidadPuntos int not null,
+idUsuario int not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE empresa(
+idEmpresa int primary key not null,
+nombreEmpresa varchar(60) not null,
+razonSocial varchar(60) not null,
+nit varchar(25) not null,
+direccion varchar(60) not null,
+idPais int not null,
+idDepartamento int not null,
+logo varchar(100) not null,
+paginaWeb varchar(150) not null,
+idSectorEmpresiarial int not null,
+FOREIGN KEY (idPais) references pais(idPais),
+FOREIGN KEY (idDepartamento) references departamento
+(idDepartamento),
+FOREIGN KEY (idSectorEmpresiarial) references 
+sectorEmpresiarial(idSectorEmpresiarial)
+);
+
+CREATE TABLE personaContacto(
+idPersonaContacto int primary key not null,
+nombres varchar(60) not null,
+apellidos varchar(60) not null,
+cargo varchar(50) not null,
+telefono1 varchar(20) not null,
+telefono2 varchar(20) not null,
+idEmpresa int not null,
+FOREIGN KEY (idEmpresa) references empresa(idEmpresa)
+);
+
+CREATE TABLE ofertaEmpleo(
+idOfertaEmpleo int primary key not null,
+puestoVaacante int not null,
+tipoContratacion varchar(50) not null,
+nivelExperiencia varchar(50) not null,
+genero varchar(20) not null,
+edad varchar(20) not null,
+salario float not null,
+idEmpresa int not null,
+idPais int not null,
+idDepartamento int not null,
+descripcionOferta varchar(500) not null,
+FOREIGN KEY (idEmpresa) references empresa(idEmpresa),
+FOREIGN KEY (idPais) references Pais(idPais),
+FOREIGN KEY (idDepartamento) references departamento
+(idDepartamento)
+);
+
+CREATE TABLE capacitacion(
+idCapacitacion int primary key not null,
+nombre varchar(60) not null,
+descripcion varchar(300) not null,
+fechaInicio date not null,
+fechaFinal date not null
+);
+
+CREATE TABLE empleador(
+idEmpleador int primary key not null,
+nombres varchar(60) not null,
+apellidos varchar(60) not null,
+direccion varchar(80) not null,
+telefono varchar(20) not null,
+correoElectronico varchar(50) not null,
+fechaNacimiento date not null,
+genero varchar(10) not null,
+aniosExperiencia int not null,
+fotoPerfil varchar(150) not null,
+dui varchar(20) not null,
+nit varchar(25) not null,
+nacionalidad varchar(60) not null,
+idUsuario int not null,
+idPais int not null,
+idDepartamento int not null,
+idHabilidad int not null,
+idFormacion int not null,
+idExperienciaLaboral int,
+idAreaProfesional int not null,
+idCapacitacion int not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario),
+FOREIGN KEY (idPais) references pais(idPais),
+FOREIGN KEY (idDepartamento) references departamento
+(idDepartamento),
+FOREIGN KEY (idHabilidad) references habilidad(idHabilidad),
+FOREIGN KEY (idFormacion) references formacionAcademica
+(idFormacion),
+FOREIGN KEY (idExperienciaLaboral) references 
+experienciaLaboral(idExperienciaLaboral),
+FOREIGN KEY (idAreaProfesional) references areaProfesional
+(idAreaProfesional),
+FOREIGN KEY (idCapacitacion) references capacitacion
+(idCapacitacion)
+);
+
+
+CREATE TABLE reporte(
+idReporte int primary key not null,
+idAdministrador int not null,
+fechaGenerado date not null,
+FOREIGN KEY (idAdministrador) references administrador
+(idAdministrador)
+);
+
+CREATE TABLE reportePuntuacionesHabilidad(
+numReporte int primary key not null,
+descripcion varchar(50) not null,
+cantidadPuntos int not null,
+idUsuario int not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE reporteProfesionesMasSolicitadas(
+numReporte int primary key not null,
+idAreaProfesional int not null,
+FOREIGN KEY (idAreaProfesional) references areaProfesional
+(idAreaProfesional)
+);
+
+CREATE TABLE reporteUsuarioPorGenero(
+numReporte int primary key not null,
+idUsuario int not null,
+genero varchar(25) not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE reportePorAniosExperiencia(
+numReporte int primary key not null,
+idUsuario int not null,
+cantidadAnios int not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE reporteUsuarioPorProfesion(
+numReporte int primary key not null,
+idUsuario int not null,
+idAreaProfesional int not null,
+FOREIGN KEY (idUsuario) references usuario(idUsuario),
+FOREIGN KEY (idAreaProfesional) references AreaProfesional
+(idAreaProfesional)
+);
