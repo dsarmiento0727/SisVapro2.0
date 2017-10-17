@@ -29,9 +29,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestionar Perfil</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
-        <script src="../JavaScript/Procesos.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="../../js/Procesos.js"></script>
     </head>
     <%
  
@@ -48,7 +48,7 @@
          <center>
             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Empleador</h1></div>
         </center>
-        <table>
+        
             <form action="" method="POST" name="frmEmpleador">
                 <div class="container">
                     <div class="row">
@@ -56,42 +56,44 @@
                             <div class="row justify-content-start">
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <label for="Idperfil" class="col-form-label">Id Perfil</label>
+                                            <label for="Idperfil" class="col-form-label"><strong>Id Perfil</strong></label>
                                             <input type="text" class="form-control" id="txtIdPerfil" name="txtIdPerfil" placeholder="Id Perfil">
                                         </div>
                                     </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="nombres" class="col-form-label">Nombres</label>
+                                    <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
                                     <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="apellidos" class="col-form-label">Apellidos</label>
+                                    <label for="apellidos" class="col-form-label"><strong>Apellidos</strong></label>
                                     <input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
                                 </div>
                             </div>
-                <div class="col-4">
+                <div class="col-13">
                     <div class="form-group">
-                        <label for="direccion" class="col-form-label">Direccion actual</label>
+                        <label for="direccion" class="col-form-label"><strong>Direccion actual</strong></label>
                         <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion actual donde reside">
                     </div>
                 </div>
-                <div class="col-4">
+                            <div class="form-row">
+                <div class="col-6">
                     <div class="form-group">
-                        <label for="telefono" class="col-form-label">Telefono</label>
+                        <label for="telefono" class="col-form-label"><strong>Telefono</strong></label>
                         <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono celular o de casa">
                     </div>
                 </div>
-                            <div class="col-4">
+                            <div class="col-7">
                                 <div class="form-group">
-                                    <label for="correor" class="col-form-label">Correo Electronico</label>
+                                    <label for="correor" class="col-form-label"><strong>Correo Electronico</strong></label>
                                     <input type="email" class="form-control" id="txtCorreo" name="txtCorreoE" placeholder="nombre@ejemplo.com">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            </div>
+                            <div class="col-6">
                                         <div class="form-group">
-                                            <label for="fecha" class="col-form-label">Fecha de Nacimiento</label>
+                                            <label for="fecha" class="col-form-label"><strong>Fecha de Nacimiento</strong></label>
                                             <input type="date" class="form-control" id="txtFechaNac" name="txtFechaNac" >
                                         </div>
                             </div>
@@ -108,31 +110,36 @@
                     <span class="custom-control-description">Masculino</span>
                 </label>
             </div>
-                            <div class="col-4">
+                            <div class="form-row">
+                            <div class="col-6">
                                         <div class="form-group">
-                                            <label for="DUI" class="col-form-label">DUI</label>
+                                            <label for="DUI" class="col-form-label"><strong>DUI</strong></label>
                                             <input type="text" class="form-control" id="txtDui" name="txtIdPerfil" placeholder="########-#">
                                         </div>
                                     </div>
-                            <div class="col-5">
+                            <div class="col-6">
                                 <div class="form-group">
-                                    <label for="NIT" class="col-form-label">NIT</label>
+                                    <label for="NIT" class="col-form-label"><strong>NIT</strong></label>
                                     <input type="text" class="form-control" id="txtNit" name="txtNit" placeholder="###">
                                 </div>
                             </div>
-                    <div class="col-4">
+                            </div>
+                            <div class="form-row">
+                    <div class="col-6">
                         <div class="form-group">
-                            <label for="anios" class="col-form-label">Años de Experiencia</label>
+                            <label for="anios" class="col-form-label"><strong>Años de Experiencia</strong></label>
                             <input type="number" class="form-control" id="txtAnio" name="txtAnio" >
                         </div>
                     </div>
                             <div class="form-group"> 
-                                <label for="foto">Foto de Perfil</label>
+                                <div class="col-6">
+                                    <label for="foto"><strong>Foto de Perfil</strong></label>
                                 <input type="file" class="form-control-file" id="foto" name="foto">
                             </div>
-                                
-                            
-                            <label class="mr-sm-2" for="idUsuario"> Usuario</label>
+                            </div>
+                            </div>
+                            <div class="form-row">
+                            <label class="mr-sm-2" for="idUsuario"><strong> Usuario</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstUsuario" name="lstUsuario" >
                              <%
                                 List<Usuario> lst4 = crudu.mostrarUsuario();
@@ -145,7 +152,8 @@
                                 }
                             %>
                   </select> 
-                  <label class="mr-sm-2" for="idPais">Pais</label>
+                            
+                  <label class="mr-sm-2" for="idPais"><strong>Pais</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
                              <%
                                 List<Pais> lst1 = crudpa.mostrarPais();
@@ -158,7 +166,7 @@
                                 }
                             %>
                   </select>   
-                <label class="mr-sm-2" for="idDepartamento">Departamento</label>
+                  <label class="mr-sm-2" for="idDepartamento"><strong>Departamento</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstDepartamento" name="lstDepartamento" >
                              <%
                                 List<Departamento> lst2 = crudd.mostrarDepartamento();
@@ -171,7 +179,9 @@
                                 }
                             %>
                   </select> 
-                  <label class="mr-sm-2" for="idhabilidad">Habilidad</label>
+                            </div><br>
+                  <div class="form-row">
+                  <label class="mr-sm-2" for="idhabilidad"><strong>Habilidad</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstHabilidad" name="lstHabilidad" >
                              <%
                                 List<Habilidad> lst5 = crudh.mostrarHabilidad();
@@ -185,7 +195,7 @@
                             %>
                   </select> 
                  
-                  <label class="mr-sm-2" for="idFormacion">Formación Academica</label>
+                  <label class="mr-sm-2" for="idFormacion"><strong>Formación Academica</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstFormacion" name="lstFormacion" >
                              <%
                                 List<FormacionAcademica> lst6 = crudf.mostrarFormacionAcademica();
@@ -198,7 +208,10 @@
                                 }
                             %>
                   </select> 
-                  <label class="mr-sm-2" for="idExperiencia">Experiencia Laboral</label>
+                  </div>
+                  <br>
+                  <div class="form-row">
+                  <label class="mr-sm-2" for="idExperiencia"><strong>Experiencia Laboral</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstProfesion" name="lstProfesion" >
                              <%
                                 List<ExperienciaLaboral> lst8 = crude.mostrarExperienciaLaboral();
@@ -211,7 +224,7 @@
                                 }
                             %>
                   </select> 
-                  <label class="mr-sm-2" for="idarea">Area Profesional</label>
+                  <label class="mr-sm-2" for="idarea"><strong>Area Profesional</strong></label>
                   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea" >
                              <%
                                 List<AreaProfesional> lst7 = cruda.mostrarAreaProfesional();
@@ -224,19 +237,24 @@
                                 }
                             %>
                   </select>
-                   
+                  </div>
                         </div>
-                    <div class="row justify-content-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            
-                                    <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                                    <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                                    <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                                    <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                            
+                  <center>
+                  <table>
+                     <tr>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <td colspan="2">
+                        
+                            <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                            <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                            <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
+                            <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
                         </div>
-                    </div>    
+                    </td>
+                </tr>    
                 </div>  
+                            </table>
+                  </center>
             </form>
         </table>
         <br>
