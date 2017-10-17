@@ -77,12 +77,13 @@ function cargarOferta(id,puesto,tipo,genero,edad,salario,empresa,pais,departamen
     document.frmOferta.txtDescripcion.value=descripcion;
     document.frmOferta.experiencia.value=experiencia;
 }
-function cargarContrtador(id,nombres,apellidos,descripcion,correo,empresa){
-    document.frmContratador.txtIdContratador.value=id;
+function cargarContacto(id,nombres,apellidos,cargo,telefono1,telefono2,empresa){
+    document.frmContratador.txtIdContacto.value=id;
     document.frmContratador.txtNombres.value=nombres;
     document.frmContratador.txtApellidos.value=apellidos;
-    document.frmContratador.txtDescripcion.value=descripcion;
-    document.frmContratadortxtCorreo.value=correo;
+    document.frmContratador.txtCargo.value=cargo;
+    document.frmContratadortxtTelefono1.value=telefono1;
+    document.frmContratadortxtTelefono2.value=telefono2;
     document.frmContratador.lstEmpresa.value=empresa;
 }
 function cargarPublicista(id,nombres,apellidos,correo,empresa){
@@ -92,11 +93,6 @@ function cargarPublicista(id,nombres,apellidos,correo,empresa){
     document.frmContratadortxtCorreo.value=correo;
     document.frmContratador.lstEmpresa.value=empresa;
 }
-
-// Con esto Funciona DataTable
-$(document).ready(function () {
-        $('#grid').DataTable();
-    });
 function Modificar(){ 
 confirmar=confirm("¿Desea Modificar el registro?"); 
 if (confirmar) 
