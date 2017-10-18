@@ -51,7 +51,7 @@ public class IniciarSesion extends HttpServlet {
                         valor_guardar.setMaxAge(60 * 60 * 24);
                         response.addCookie(valor_guardar);
                     }
-                    request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
+                    request.getRequestDispatcher("jsp/menuAdministrador.jsp").forward(request, response);
                 } else if (tipoUsuario == 2) {
                     HttpSession objSesion = request.getSession(false);
                     HttpSession objSesionTipo = request.getSession(false);
