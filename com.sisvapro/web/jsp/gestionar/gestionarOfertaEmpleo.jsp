@@ -52,7 +52,7 @@
         <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../js/datatables.min.js"></script>
         <script type="text/javascript" src="../../js/Procesos.js"></script>
-        <script type="text/javascript" src="../../js/dataTable.js"></script>>
+        <script type="text/javascript" src="../../js/dataTable.js"></script>
         <title>Gestionar Oferta de Empleo</title>
     </head>
     <%
@@ -70,13 +70,13 @@
                 <div class="form-group row">
                     <label for="idprofesion" class="col-sm-2 col-form-label"><strong>Id Oferta de Empleo</strong></label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="txtIdOferta" name="txtIdOferta"placeholder="Id de Oferta de Empleo">
+                        <input type="text" class="form-control" id="txtIdOferta" name="txtIdOferta" placeholder="Id de Oferta de Empleo">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="puesto" class="col-sm-2 col-form-label"><strong>Puesto Vacante</strong></label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="txtPuestoVacante" name="txtPuesto"placeholder="Puesto Vacante">
+                        <input type="text" class="form-control" id="txtPuestoVacante" name="txtPuesto" placeholder="Puesto Vacante">
                     </div>
                     <label for="IdTipoContrato" class="col-form-label"><strong>Tipo de Contratatación</strong></label>
                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstContratacion" name="lstContratacion" >

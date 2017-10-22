@@ -69,7 +69,7 @@
                     <div class="form-group row">
                         <label for="iddepartamento" class="col-sm-2 col-form-label">Id Departamento</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdDepartamento"placeholder="Id Departamento">
+                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdDepartamento" placeholder="Id Departamento">
                         </div>
                     </div>
                     <div class="form-group row">
