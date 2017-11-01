@@ -37,7 +37,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index</title>
     </head>
@@ -111,10 +111,6 @@
                                         </div>
                                         <input type="submit" name="btnIngresar" class="btn btn-success btn-lg btn-block" value="Ingresar">        
                                         <p> No tiene cuenta? <a class="badge badge-pill badge-info" href="registro.jsp" role="button">Registrate</a>
-                                        <div id='oculto' style='display:none;'>
-                                            Contenido a ocultar, puede ser bloques de texto, imágenes, videos o cualquier otro elemento.
-                                        </div>
-                                        <input type="button" value="Mostrar" onclick="mostrar()">
                                     </form>
 
 
@@ -140,7 +136,7 @@
             </div>
 
         </nav>
-
+        <br/>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -152,7 +148,7 @@
                             En mundo empleo encontraras ofertas de empleo.
                         </p>
                         <p>
-                            <a class="btn btn-dark btn-large" href="#">Learn more</a>
+                            <a class="btn btn-dark btn-large" href="#">Quiero Saber Mas</a>
                         </p>
                     </div>
                 </div>
@@ -205,7 +201,9 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img class="img-fluid" alt="Responsive image" src="imagenes/misionvisionvalores.png" width="100%" />
+
+                                <img class="img-fluid" alt="Responsive image" src="imagenes/mision.png" width="100%" />
+
                                 <div class="caption">
                                     <h3>
                                         Mision
@@ -221,7 +219,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img class="img-fluid"  alt="Responsive image" src="imagenes/books-on-business-man-vector-graphics0.jpg" />
+
+                                <img class="img-fluid"  alt="Responsive image" src="imagenes/vision.jpg" />
+
                                 <div class="caption">
                                     <h3>
                                         Vision

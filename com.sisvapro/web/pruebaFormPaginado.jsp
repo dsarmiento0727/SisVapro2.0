@@ -120,6 +120,6 @@
                 <!-- Recordar insertar todo en diferentes div
                 -->
             </div>
-        </form>
+        </form> 
     </body>
 </html>
