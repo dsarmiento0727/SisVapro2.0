@@ -31,7 +31,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -41,9 +43,9 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.jsp">
                 <img src="imagenes/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                SISVAPRO
+                MUNDO EMPLEO
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,32 +86,40 @@
                 <%                 if (usuario == null) {
                 %>
                 <ul class="navbar-nav mr-right">
+
                     <li>
                         <div class="dropdown show">
-                            <a class="btn btn-outline-danger my-2 my-sm-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Iniciar Session
-                            </a>
+                            <div class="container">
+                                <a class="btn btn-outline-danger my-2 my-sm-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Iniciar Session
+                                </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                <form action="iniciarSesion" method="post">
-                                    <div class="form-group" >
-                                        <label for="txtUsuario" style="text-align: center"><strong>Usuario</strong> </label>
-                                        <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su usuario.">
-                                    </div>                            
 
-                                    <div class="form-group" >
-                                        <label for="txtcontra" style="text-align: center"><strong>Contrasenia</strong> </label>
-                                        <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center" placeholder="Ingrese su clave.">
-                                        <input type="checkbox" name="ck" value="recordar">Recordar Usuario</center>
-                                        <div class="btn-group" role="group" aria-label="Basic example" >
-                                            <input type="submit" name="btnIngresar" class="btn btn-primary" value="Ingresar">
-                                            <input type="reset" name="btnCancelar" class="btn btn-danger" value="Cancelar"> 
-                                        </div>
-                                </form>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                    <form action="iniciarSesion" method="post">
+                                        <div class="form-group" >
+                                            <label for="txtUsuario" style="text-align: center"><strong>Usuario</strong> </label>
+                                            <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su usuario.">
+                                        </div>                            
 
+                                        <div class="form-group" >
+                                            <label for="txtcontra" style="text-align: center"><strong>Contrasenia</strong> </label>
+                                            <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center" placeholder="Ingrese su clave.">
+                                            <input type="checkbox" name="ck" value="recordar">Recordar Usuario</center>
+                                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                                <input type="submit" name="btnIngresar" class="btn btn-success" value="Ingresar">
+                                                <input type="reset" name="btnCancelar" class="btn btn-danger" value="Cancelar"> 
+                                                
+                                            </div>
+                                            <p> No tiene cuenta? <a class="badge badge-pill badge-info" href="registro.jsp" role="button">Registro</a>
+                                            </div>
+                                    </form>
+
+                                
                             </div>
                         </div>
                         </div>
+
                     </li>
                 </ul>
                 <%
@@ -215,7 +225,7 @@
                                         Vision
                                     </h3>
                                     <p>
-                                       Poder fomentar un amplio sistema en la cual se puede ensi sacontrar muchas ofertas laborales.
+                                        Poder fomentar un amplio sistema en la cual se puede ensi sacontrar muchas ofertas laborales.
                                     </p>
                                     <p>
                                         <a class="btn btn-dark" href="#">Action</a> <a class="btn" href="#">Action</a>
