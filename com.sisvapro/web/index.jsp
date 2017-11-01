@@ -37,6 +37,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index</title>
     </head>
@@ -98,26 +99,27 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                     <form action="iniciarSesion" method="post">
                                         <div class="form-group" >
-                                            <label for="txtUsuario" style="text-align: center"><strong>Usuario</strong> </label>
+
                                             <input id="txtUsuario" class="form-control" type="text" name="txtusuario" required="true" style="text-align: center" placeholder="Ingrese su usuario.">
                                         </div>                            
 
                                         <div class="form-group" >
-                                            <label for="txtcontra" style="text-align: center"><strong>Contrasenia</strong> </label>
-                                            <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center" placeholder="Ingrese su clave.">
+
+                                            <input id="txtcontra" class="form-control" type="password" name="txtcontra" required="true" style="text-align: center" placeholder="Ingrese su contrase&ntilde;a.">
                                             <input type="checkbox" name="ck" value="recordar">Recordar Usuario</center>
-                                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                                <input type="submit" name="btnIngresar" class="btn btn-success" value="Ingresar">
-                                                <input type="reset" name="btnCancelar" class="btn btn-danger" value="Cancelar"> 
-                                                
-                                            </div>
-                                            <p> No tiene cuenta? <a class="badge badge-pill badge-info" href="registro.jsp" role="button">Registro</a>
-                                            </div>
+
+                                        </div>
+                                        <input type="submit" name="btnIngresar" class="btn btn-success btn-lg btn-block" value="Ingresar">        
+                                        <p> No tiene cuenta? <a class="badge badge-pill badge-info" href="registro.jsp" role="button">Registrate</a>
+                                        <div id='oculto' style='display:none;'>
+                                            Contenido a ocultar, puede ser bloques de texto, imágenes, videos o cualquier otro elemento.
+                                        </div>
+                                        <input type="button" value="Mostrar" onclick="mostrar()">
                                     </form>
 
-                                
+
+                                </div>
                             </div>
-                        </div>
                         </div>
 
                     </li>
