@@ -74,8 +74,50 @@
     <body>
     <center>
         <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Empleador</h1></div>
-    </center>
-
-    
+   
+    <form action="procesarEmpleador" method="POST" name="frmEmpleador">
+        <div id="pagina1" style="display:block">
+            <div class="form-group, position-relative"> 
+                <img src="../../imagenes/fotoprueba.jpg" style="width: 150px" class="rounded float-center" alt="..." class="rounded">
+                <div class="col-6">
+                    <label for="foto"><strong>Foto de Perfil</strong></label>
+                    <input type="file" class="form-control-file" id="foto" name="foto">
+                </div>
+            </div>
+            </center>
+             <div class="container">
+                 <div class="row">
+                     <div class="col align-self-start">
+                         
+                        <div class="row justify-content-start">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="Idperfil" class="col-form-label"><strong>Id Perfil</strong></label>
+                                    <input type="text" class="form-control" id="txtIdPerfil" name="txtIdPerfil" placeholder="Id Perfil">
+                                </div>
+                            </div>
+                        </div> 
+                     
+                     
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
+                                <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="apellidos" class="col-form-label"><strong>Apellidos</strong></label>
+                                <input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+                            </div>
+                        </div>
+                         
+                         
+                     </div><!--cerra al final-->
+                 </div><!--cerrar al final-->
+             </div><!--cerrar final-->
+            
+            <input type="button" onclick="siguientePagina()" value="Siguiente">
+        </div>
+             
+    </form>
 </body>
 </html>
