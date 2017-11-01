@@ -61,6 +61,7 @@
                 </div>
 
                 <input type="button" onclick="siguientePagina()" value="Siguiente">
+                
 
 
             </div>
