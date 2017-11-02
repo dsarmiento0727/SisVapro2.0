@@ -28,16 +28,15 @@
                 usuario = (String) objSesion.getAttribute("usuario");
 
                 tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
-                if (usuario == null) {
+                if (tipoUsuario == null) {
                     response.sendRedirect("accesoDenegado.jsp");
-                } else if (usuario.equals("Administrador")) {
+                } else if (tipoUsuario.equals("Administrador")) {
                     response.sendRedirect("jsp/menuAdministrador.jsp");
-                } else if (usuario.equals("Empleador")) {
+                } else if (tipoUsuario.equals("Empleador")) {
                     response.sendRedirect("jsp/menuEmpleador.jsp");
-                } else if (usuario.equals("Empresa")) {
+                } else if (tipoUsuario.equals("Empresa")) {
                     response.sendRedirect("jsp/menuEmpresa.jsp");
                 }
-
             } catch (Exception e) {
 
                 out.print(e.toString());
