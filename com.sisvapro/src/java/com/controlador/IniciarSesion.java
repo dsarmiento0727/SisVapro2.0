@@ -15,11 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Nombre del Servlet: Iniciar Sesion CopyRight: MundoEmpleo SA de CV
- *
- * @author David Sarmiento
- */
 public class IniciarSesion extends HttpServlet {
 
     /**
@@ -63,7 +58,7 @@ public class IniciarSesion extends HttpServlet {
                         response.addCookie(valor_guardar);
                     }
                     request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
-                }  else if (tipoUsuario == 2) {
+                } else if (tipoUsuario == 2) {
                     HttpSession objSesion = request.getSession(false);
                     HttpSession objSesionTipo = request.getSession(false);
                     objSesion.setAttribute("usuario", usuario);
@@ -74,7 +69,7 @@ public class IniciarSesion extends HttpServlet {
                         response.addCookie(valor_guardar);
                     }
                     request.getRequestDispatcher("jsp/administrador/index.jsp").forward(request, response);
-                }else {
+                } else {
                     HttpSession objSesion = request.getSession(false);
                     HttpSession objSesionTipo = request.getSession(false);
                     objSesionTipo.setAttribute("tipo", null);
