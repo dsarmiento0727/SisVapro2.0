@@ -78,6 +78,7 @@ public class CrudPais extends Conexion{
                 listaPais.add(pa);
             }
         } catch (Exception e) {
+            System.out.println("Error al mostar en Dao");
             throw e;
         }
         finally{

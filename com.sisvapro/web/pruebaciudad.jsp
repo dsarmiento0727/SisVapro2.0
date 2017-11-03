@@ -4,6 +4,7 @@
     Author     : David Sarmiento
 --%>
 
+<%@page import="java.util.List"%>
 <%@page import="com.modelo.Departamento"%>
 <%@page import="com.modelo.CrudDepartamento"%>
 <%@page import="com.modelo.Pais"%>
@@ -16,45 +17,46 @@
         <title>JSP Page</title>
     </head>
     
-    <% CrudPais crudPai = new CrudPais(); 
-        Pais pai = new Pais();
-        CrudDepartamento cruddepa = new CrudDepartamento();
-        Departamento depa = new Departamento();
+
+   <%
+    CrudPais crud=new CrudPais();
     %>
-    <script> 
+<body > 
+<form name=pp> 
+    
+<select name=pais OnChange="cambio()"> 
+
+    <%
+                List<Pais> lst=crud.mostrarPais();
+                for(Pais pa:lst){
+                %>
+             <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option> 
+                <%
+                }
+                %>
+
+
+</select> 
+
+<select name=capital > 
+</select> 
+</form> 
+<script> 
 function cambio() 
 { 
-var departamento;
+var departamento ;
 pais = document.pp.pais.options[document.pp.pais.selectedIndex].value 
-if(tmp == "<%= pai.getIdPais() %>")
+if(pais == 1)
 {
 document.pp.capital.options[1] = new Option(xd[1], tmp, true, true)
 document.pp.capital.options[2] = new Option(xd[0], tmp, true, true) 
 }
-if(tmp == "Guatemala")
+if(pais == 2)
 {
 document.pp.capital.options[1] = new Option('guate', 'xd', true, true)
 document.pp.capital.options[2] = new Option('loco', 'jojo', true, true) 
 }
 } 
 </script> 
-
-<body > 
-<form name=pp> 
-    
-<select name=pais OnChange="cambio()"> 
-    
-    <%  
-        for(Pais var:Pais)
-        %>
-<option value="El Salvador">El Salvador</option> 
-<option value="Guatemala">Guatemala</option> 
-<option value="Honduras">Honduras</option> 
-<option value="Costa Rica">Costa Rica</option> 
-</select> 
-
-<select name=capital > 
-</select> 
-</form> 
-</body></html> 
+</body>
 </html>
