@@ -27,7 +27,7 @@ public class CrudFormacionAcademica  extends Conexion{
             pre.setString(4, d.getCarrera());
             pre.executeUpdate();
         } catch (Exception e) {
-            throw e;
+            throw e; 
         }
         finally{
             this.desconectar();
