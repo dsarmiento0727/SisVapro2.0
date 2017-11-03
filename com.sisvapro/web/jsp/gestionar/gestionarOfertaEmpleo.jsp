@@ -63,7 +63,7 @@
     %>
     <body>
         <jsp:include page="menuGestionar.jsp"/>
-        <div class="p-3 mb-2 bg-light text-black"><MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Oferta de Empleo</h1></marquee></div>
+        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Oferta de Empleo</h1></div>
         <br>
         <div class="container">
             <form action="procesarOfertaEmpleo" method="POST" name="frmOferta">

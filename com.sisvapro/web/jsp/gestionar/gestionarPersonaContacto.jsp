@@ -65,19 +65,15 @@
         
             <div class="container">
             <form action="procesarPersonaContacto" method="post" name="frmContacto">
+                
                 <div class="col align-self-star">
                    <div class="row justify-content-star">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="IdContacto" class="col-form-label"><strong>Id Contacto Persona</strong></label>
-                                <input type="text" class="form-control" id="txtIdContacto" name="txtIdContacto" placeholder="Id de Contacto Persona">
-                            </div>
-                        </div>
+                        
                    </div>
                     
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
+                            <label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label>
                             <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
                         </div>
                     <div class="col align-self-center">

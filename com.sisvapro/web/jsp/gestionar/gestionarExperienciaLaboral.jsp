@@ -49,30 +49,24 @@
         <title>Gestionar Experiencia Laboral</title>
     </head>
 
-    <%
-        CrudExperienciaLaboral crud = new CrudExperienciaLaboral();
+    <%        CrudExperienciaLaboral crud = new CrudExperienciaLaboral();
     %>
 
     <body>
         <jsp:include page="menuGestionar.jsp"/>
     <center>
-        <br><br>
-        <div class="p-3 mb-2 bg-light text-black">
-            <MARQUEE BEHAVIOR=ALTERNATE><h1>Registro de Experiencia Laboral</h1></marquee>
+        <br>
+        <div class="p-1 mb-2 bg-light text-black">
+            <h1>Registro de Experiencia Laboral</h1>
         </div>
     </center>    
-    <center>
+    <br>
+    <div class="jumbotron" style="color:black">
         <div class="container">
             <form action="procesarExperienciaLaboral" method="post" name="frmExperienciaLaboral">
+
                 <div class="col align-self-star">
-                    <div class="row justify-content-star">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="IdAreaProfesional" class="col-form-label">Id Area Profesional</label>
-                                <input type="text" class="form-control" id="txtIdAreaProfesional" name="txtIdExperienciaLaboral" placeholder="Id Area Profesional">
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="form-row">
                         <div class="form-group col-md-5">
@@ -118,75 +112,80 @@
                         </div>
                     </div>
 
-                    <div class="col align-self-star">
-                        <div class="row justify-content-star">
-                            <div class="col-8">
-                                <div class="form-group">
-                                    <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstTipoContrato" name="lstTipoContrato" >
-                                        <option>Tiempo Completo</option>
-                                        <option>Por Horas</option>
-                                        <option>Practicas</option>
-                                    </select>
-                                </div>
+                    <div class="row">
+                        <div class="col; col-2">
+                            <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
+                        </div>
+                        <div class="col-4">
+                            <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="lstNivel" name="lstNivel" required="true">
+                                <option>Tiempo Completo</option>
+                                <option>Por Horas</option>
+                                <option>Practicas</option> 
+                            </select>
+                        </div>
+                        <div class="w-10"></div>
+                    </div>
+                </div>
+                <center>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
+                            </div>
+                            <div class="col">
+                                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
                             </div>
                         </div>
                     </div>
-                </div>
+                </center>                        
+            </form>       
         </div>
-        <tr>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <td colspan="2">
-
-                <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-        </div>
-    </td>
-</tr>
-</form>
-</center>
-</div>
-<br>
-<table id="grid" class="table table-bordered" style="text-align: center">
-    <thead class="thead-inverse">
-        <tr>
-            <th style="text-align: center;width: 100px">Id Area Profesional</th>
-            <th style="text-align: center;width: 200px">Nombre de la Empresa</th>
-            <th style="text-align: center;width: 200px">Nombre de Jefe</th>
-            <th style="text-align: center;width: 150px">Telefono del Jefe</th>
-            <th style="text-align: center">Puesto</th>
-            <th style="text-align: center;width: 150px">Tipo de contrato</th>
-            <th style="text-align: center;width: 150px">Desde</th>
-            <th style="text-align: center;width: 150px">Hasta</th>
-            <th style="text-align: center;width: 100px">Seleccionar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <%
-            List<ExperienciaLaboral> lst = crud.mostrarExperienciaLaboral();
-            for (ExperienciaLaboral ep : lst) {
-        %>
-        <tr class="table-primary">
-            <td><%=ep.getIdExperienciaLaboral()%></td>
-            <td><%=ep.getNombreEmpresa()%></td>
-            <td><%=ep.getNombreJefe()%></td>
-            <td><%=ep.getTelefonoJefe()%></td>
-            <td><%=ep.getPuesto()%></td>
-            <td><%=ep.getTipoContrato()%></td>
-            <td><%=ep.getDesde()%></td>
-            <td><%=ep.getHasta()%></td>
-            <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
-                   '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
-                   '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
-                   '<%=ep.getTipoContrato()%>')">Seleccionar</a></td>
-        </tr>
-        <%
-            }
-        %>
-    </tbody>
-</table>
+    </div>
+    <table id="grid" class="table table-bordered" style="text-align: center">
+        <thead class="thead-inverse">
+            <tr>
+                <th style="text-align: center;width: 100px">Id Area Profesional</th>
+                <th style="text-align: center;width: 200px">Nombre de la Empresa</th>
+                <th style="text-align: center;width: 200px">Nombre de Jefe</th>
+                <th style="text-align: center;width: 150px">Telefono del Jefe</th>
+                <th style="text-align: center">Puesto</th>
+                <th style="text-align: center;width: 150px">Tipo de contrato</th>
+                <th style="text-align: center;width: 150px">Desde</th>
+                <th style="text-align: center;width: 150px">Hasta</th>
+                <th style="text-align: center;width: 100px">Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                List<ExperienciaLaboral> lst = crud.mostrarExperienciaLaboral();
+                for (ExperienciaLaboral ep : lst) {
+            %>
+            <tr class="table-primary">
+                <td><%=ep.getIdExperienciaLaboral()%></td>
+                <td><%=ep.getNombreEmpresa()%></td>
+                <td><%=ep.getNombreJefe()%></td>
+                <td><%=ep.getTelefonoJefe()%></td>
+                <td><%=ep.getPuesto()%></td>
+                <td><%=ep.getTipoContrato()%></td>
+                <td><%=ep.getDesde()%></td>
+                <td><%=ep.getHasta()%></td>
+                <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
+                       '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
+                       '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
+                       '<%=ep.getTipoContrato()%>')">Seleccionar</a></td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
 
 </center>
 </body>

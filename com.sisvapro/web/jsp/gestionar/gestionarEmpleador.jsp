@@ -88,14 +88,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col align-self-start">
-                        <div class="row justify-content-start">
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label for="Idperfil" class="col-form-label"><strong>Id Perfil</strong></label>
-                                    <input type="text" class="form-control" id="txtIdPerfil" name="txtIdPerfil" placeholder="Id Perfil">
-                                </div>
-                            </div>
-                        </div> 
+                        
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
@@ -159,16 +152,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--cerra al final-->
-                </div><!--cerrar al final-->
-            </div><!--cerrar final-->
-            <input type="button" onclick="siguientePagina()" value="Siguiente">
-
-        </div>
-        <div id="pagina2" style="display:none;">
-            <div class="form-row">
+                        
+                        <div class="form-row">
                 <div class="col align-self-start">
                     <div class="row justify-content-start">
+                        <label class="mr-sm-2" for="idPais"><strong>Pais</strong></label>
+                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
+                            <%
+                                List<Pais> lst1 = crudpa.mostrarPais();
+                                for (Pais pa : lst1) {
+                            %>
+
+                            <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
+
+                            <%
+                                }
+                            %>
+                        </select>   
                         <div class="col-5">
                             <div class="form-group">
                                 <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
@@ -176,13 +176,35 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-            </div>
+                        </div>
+                    </div><!--cerra al final-->
+                </div><!--cerrar al final-->
+            </div><!--cerrar final-->
+            <input type="button" onclick="siguientePagina()" value="Siguiente">
+
+        </div>
+        <div id="pagina2" style="display:none;">
+            
+                    
+                <jsp:include page="gestionarExperienciaLaboral.jsp"/>
+
+
+
+                <input type="button" onclick="anteriorPagina()" value="Anterior">
+                <input type="button" onclick="siguientePagina()" value="Siguiente">
+    
+        </div>      
+        <div id="pagina3" style="display:none;">
+            
+                    
+                <jsp:include page="gestionarExperienciaLaboral.jsp"/>
+
+
+
+                <input type="button" onclick="anteriorPagina()" value="Anterior">
+                <input type="button" onclick="siguientePagina()" value="Siguiente">
+    
         </div>      
     </form>
 </center>
