@@ -88,10 +88,11 @@
                     <div class="form-group row">
                         <label for="nombreEmpresa" class="col-sm-2 col-form-label">Nombre de la Empresa</label>
                         <div class="col-sm-5">
+                            <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
+
                         <label for="razonsocial" class="col-sm-2 col-form-label">Razón Social</label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" id="txtRazon" name="txtRazon"placeholder="Razón Social de la Empresa">
