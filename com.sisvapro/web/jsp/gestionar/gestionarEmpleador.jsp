@@ -182,30 +182,20 @@
                 </div><!--cerrar al final-->
             </div><!--cerrar final-->
             <input type="button" onclick="siguientePagina()" value="Siguiente">
-
         </div>
-        <div id="pagina2" style="display:none;">
+                        
             
-                    
-                <jsp:include page="gestionarExperienciaLaboral.jsp"/>
-
-
-
+                
+        <div id="pagina2" style="display:none;">      
+            <jsp:include page="gestionarFormacionAcademica.jsp"/>
                 <input type="button" onclick="anteriorPagina()" value="Anterior">
                 <input type="button" onclick="siguientePagina()" value="Siguiente">
-    
         </div>      
         <div id="pagina3" style="display:none;">
-            
-                    
-                <jsp:include page="gestionarExperienciaLaboral.jsp"/>
-
-
-
+            <jsp:include page="gestionarExperienciaLaboral.jsp"/>
                 <input type="button" onclick="anteriorPagina()" value="Anterior">
-                <input type="button" onclick="siguientePagina()" value="Siguiente">
-    
-        </div>      
+                
+        </div>  
     </form>
 </center>
 

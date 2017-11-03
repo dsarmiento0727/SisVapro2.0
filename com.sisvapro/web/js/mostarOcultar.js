@@ -16,7 +16,8 @@ function mostrar() {
  */
 function siguientePagina() {
     document.getElementById('pagina1').style.display = 'none';
-    document.getElementById('pagina2').style.display = 'block';
+    document.getElementById('pagina2').style.display = 'none';
+    document.getElementById('pagina3').style.display = 'block';
 }
 
 /*
@@ -26,5 +27,8 @@ function siguientePagina() {
 function anteriorPagina() {
     document.getElementById('pagina2').style.display = 'none';
     document.getElementById('pagina1').style.display = 'block';
+    document.getElementById('pagina3').style.display = 'none';
+     
+     
 }
 

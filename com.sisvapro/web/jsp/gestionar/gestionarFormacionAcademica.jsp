@@ -62,21 +62,32 @@
                         </div>
                         <div class="w-100"></div>
                         <div class="col; col-2">
-                            <label for="carrera" class="col-sm-2 col-form-label"><strong>Carrera</strong></label>
+                            <label for="carrera" class="col-sm-2 col-form-label mb-sm-4"><strong>Carrera</strong></label>
                         </div>
                         <div class="col-8">
                             <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"placeholder="Carrera" required="true">
                     </div>
                 </div>
 
-                    <tr>    
-                        <td colspan="4">
-                            <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                            <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                            <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                            <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                        </td>
-                    </tr>
+                     <center>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
+                            </div>
+                            <div class="col">
+                                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
+                            </div>
+                        </div>
+                    </div>
+                </center>  
                 </div>
             </form>
         </div>
