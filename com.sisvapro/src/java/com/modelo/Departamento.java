@@ -39,5 +39,5 @@ public class Departamento {
     public void setNombreDepartamento(String nombreDepartamento) {
         this.nombreDepartamento = nombreDepartamento;
     }
-    
+        
 }

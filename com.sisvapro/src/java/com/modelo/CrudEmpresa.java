@@ -30,8 +30,8 @@ public class CrudEmpresa extends Conexion {
             pre.setInt(7, d.getIdDepartamento());
             pre.setString(8, d.getLogo());
             pre.setString(9, d.getPaginaWeb());
-            pre.setInt(10, d.getIdUsuario());
-            pre.setInt(11, d.getIdSectorEmpresiarial());
+            pre.setInt(10, d.getIdSectorEmpresiarial());
+            pre.setInt(11, d.getIdUsuario());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -44,7 +44,7 @@ public class CrudEmpresa extends Conexion {
     public void modificarEmpresa(Empresa d)throws Exception{
         try {
             this.conectar();
-            String sql="update empresa set nombre=?, razonSocial=?, nit=?, direccion=?, idPais=?, idDepartamento=?, logo=?, paginaWeb=?, idUsuario=?, idSectorEmpresiarial=? where idEmpresa =?";
+            String sql="update empresa set nombreEmpresa=?, razonSocial=?, nit=?, direccion=?, idPais=?, idDepartamento=?, logo=?, paginaWeb=?, idSectorEmpresiarial=?, idUsuario=? where idEmpresa =?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, d.getNombreEmpresa());
             pre.setString(2, d.getRazonSocial());
@@ -54,8 +54,8 @@ public class CrudEmpresa extends Conexion {
             pre.setInt(6, d.getIdDepartamento());
             pre.setString(7, d.getLogo());
             pre.setString(8, d.getPaginaWeb());
-            pre.setInt(9, d.getIdUsuario());
-            pre.setInt(10, d.getIdSectorEmpresiarial());
+            pre.setInt(9, d.getIdSectorEmpresiarial());
+            pre.setInt(10, d.getIdUsuario());
             pre.setInt(11, d.getIdEmpresa());
             pre.executeUpdate();
         } catch (Exception e) {
@@ -92,15 +92,15 @@ public class CrudEmpresa extends Conexion {
             while(res.next()){
                 Empresa d=new Empresa();
                 d.setIdEmpresa(res.getInt("idEmpresa"));
-                d.setNombreEmpresa(res.getString("nombre"));
+                d.setNombreEmpresa(res.getString("nombreEmpresa"));
                 d.setRazonSocial(res.getString("razonSocial"));
                 d.setNit(res.getString("nit"));
                 d.setDireccion(res.getString("direccion"));
                 d.setIdPais(res.getInt("idPais"));
                 d.setIdDepartamento(res.getInt("idDepartamento"));
-                d.setLogo(res.getString(res.getString("logo")));
+                d.setLogo(res.getString("logo"));
                 d.setIdSectorEmpresiarial(res.getInt("idSectorEmpresiarial"));
-                d.setPaginaWeb(sql);
+                d.setPaginaWeb(res.getString("paginaWeb"));
                 listaEmpresa.add(d);
             }
         } catch (Exception e) {

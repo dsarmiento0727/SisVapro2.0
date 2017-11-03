@@ -36,7 +36,7 @@ public class CrudSectorEmpresarial  extends Conexion {
     public void modificarSectorEmpresarial(SectorEmpresarial d)throws Exception{
         try {
             this.conectar();
-            String sql="update sectorEmpresiarial set nombreSectorEmpresiarial=? where idSectorEmpresiarial=?";
+            String sql="update sectorEmpresiarial set nombreSectorEmpresarial=? where idSectorEmpresiarial=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, d.getNombreSectorEmpresarial());
             pre.setInt(2, d.getIdSectorEmpresarial());
@@ -76,7 +76,7 @@ public class CrudSectorEmpresarial  extends Conexion {
             while(res.next()){
                 SectorEmpresarial d=new SectorEmpresarial();
                 d.setIdSectorEmpresarial(res.getInt("idSectorEmpresiarial"));
-                d.setNombreSectorEmpresarial(res.getString("nombreSectorEmpresiarial"));
+                d.setNombreSectorEmpresarial(res.getString("nombreSectorEmpresarial"));
                 listaSectorEmpresarial.add(d);
             }
         } catch (Exception e) {

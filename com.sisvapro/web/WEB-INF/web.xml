@@ -36,6 +36,10 @@
         <servlet-name>ProcesarEmpleador</servlet-name>
         <servlet-class>com.controlador.ProcesarEmpleador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarEmpresa</servlet-name>
+        <servlet-class>com.controlador.ProcesarEmpresa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarEmpleador</servlet-name>
         <url-pattern>/jsp/gestionar/procesarEmpleador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarEmpresa</servlet-name>
+        <url-pattern>/jsp/gestionar/procesarEmpresa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

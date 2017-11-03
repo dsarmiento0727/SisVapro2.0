@@ -70,20 +70,28 @@
         <br><br>
         <table>
             <div class="container">
-            <form action="" method="POST" name="frmEmpresa">
+            <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
                  <div class="form-group row">
                     <label for="idempresa" class="col-sm-2 col-form-label">Id Empresa</label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control" id="txtIdEmpresa" name="txtIdEmpresa"placeholder="Id Empresa">
                 </div>
                 </div>
+                
+                <div class="form-group row">
+                    <label for="idusuario" class="col-sm-2 col-form-label">Id usuario</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtIdUsuario" name="txtIdUsuario"placeholder="Id Usuario">
+                </div>
+                </div>
+                
                 <div class="form-group row">
                     <label for="nombreEmpresa" class="col-sm-2 col-form-label">Nombre de la Empresa</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
                 </div>
                 </div> 
                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
                     <label for="razonsocial" class="col-sm-2 col-form-label">Razón Social</label>
                 <div class="col-sm-5">
                     <input type="text" class="form-control" id="txtRazon" name="txtRazon"placeholder="Razón Social de la Empresa">
@@ -162,15 +170,15 @@
                </div>
                </div>
                 <tr>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <td colspan="2">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                        <td colspan="2">
                         
                             <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                             <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
                             <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
+                         </td> 
                         </div>
-                    </td>
                 </tr>
             </form>
             </div>
