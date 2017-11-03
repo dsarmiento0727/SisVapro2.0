@@ -189,11 +189,11 @@
         <div id="pagina2" style="display:none;">      
             <jsp:include page="gestionarFormacionAcademica.jsp"/>
                 <input type="button" onclick="anteriorPagina()" value="Anterior">
-                <input type="button" onclick="siguientePagina()" value="Siguiente">
+                <input type="button" onclick="siguientePagina2()" value="Siguiente">
         </div>      
         <div id="pagina3" style="display:none;">
             <jsp:include page="gestionarExperienciaLaboral.jsp"/>
-                <input type="button" onclick="anteriorPagina()" value="Anterior">
+                <input type="button" onclick="anteriorPagina2()" value="Anterior">
                 
         </div>  
     </form>

@@ -32,7 +32,7 @@
 
 %>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav id="menuGestionar" class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: block">
 
             <a class="navbar-brand" href="#">
                 <img src="../../imagenes/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">

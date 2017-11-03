@@ -16,10 +16,8 @@ function mostrar() {
  */
 function siguientePagina() {
     document.getElementById('pagina1').style.display = 'none';
-    document.getElementById('pagina2').style.display = 'none';
-    document.getElementById('pagina3').style.display = 'block';
-}
-
+    document.getElementById('pagina2').style.display = 'block';
+    }
 /*
  * Segunda funcion en esta funcion de retrocedera de pagina,
  * Se mostrata la paguina anterior y se ocultara la pagina actual.
@@ -27,8 +25,19 @@ function siguientePagina() {
 function anteriorPagina() {
     document.getElementById('pagina2').style.display = 'none';
     document.getElementById('pagina1').style.display = 'block';
+    
+     
+     
+}
+function anteriorPagina2() {
     document.getElementById('pagina3').style.display = 'none';
+    document.getElementById('pagina2').style.display = 'block';
+    
      
      
 }
 
+function siguientePagina2() {
+    document.getElementById('pagina2').style.display = 'none';
+    document.getElementById('pagina3').style.display = 'block';
+}
