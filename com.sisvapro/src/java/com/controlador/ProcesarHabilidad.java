@@ -39,6 +39,7 @@ public class ProcesarHabilidad extends HttpServlet {
         try {
             h.setIdHabilidad(Integer.parseInt(request.getParameter("txtIdHabilidad")));
             h.setNombreHabilidad(request.getParameter("txtNombre"));
+            h.setIdEmpleador(Integer.parseInt(request.getParameter("idEmpleador")));
             if (request.getParameter("btnInsertar")!=null) {
                 crud.insertarHabilidad(h);
                 val="Datos insertados Correctamente";

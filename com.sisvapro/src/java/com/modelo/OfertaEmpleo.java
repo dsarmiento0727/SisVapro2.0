@@ -11,7 +11,8 @@ package com.modelo;
  */
 public class OfertaEmpleo {
     private int idOfertaEmpleo;
-    private int puestoVacante;
+    private String puestoVacante;
+    private int cantidad;
     private String tipoContratacion;
     private String nivelExperiencia;
     private String genero;
@@ -20,14 +21,16 @@ public class OfertaEmpleo {
     private int idEmpresa;
     private int idPais;
     private int idDepartamento;
+    private int idSectorEmpresarial;
     private String descripcionOferta;
 
     public OfertaEmpleo() {
     }
 
-    public OfertaEmpleo(int idOfertaEmpleo, int puestoVacante, String tipoContratacion, String nivelExperiencia, String genero, int edad, Double salario, int idEmpresa, int idPais, int idDepartamento, String descripcionOferta) {
+    public OfertaEmpleo(int idOfertaEmpleo, String puestoVacante, int cantidad, String tipoContratacion, String nivelExperiencia, String genero, int edad, Double salario, int idEmpresa, int idPais, int idDepartamento, int idSectorEmpresarial, String descripcionOferta) {
         this.idOfertaEmpleo = idOfertaEmpleo;
         this.puestoVacante = puestoVacante;
+        this.cantidad = cantidad;
         this.tipoContratacion = tipoContratacion;
         this.nivelExperiencia = nivelExperiencia;
         this.genero = genero;
@@ -36,6 +39,7 @@ public class OfertaEmpleo {
         this.idEmpresa = idEmpresa;
         this.idPais = idPais;
         this.idDepartamento = idDepartamento;
+        this.idSectorEmpresarial = idSectorEmpresarial;
         this.descripcionOferta = descripcionOferta;
     }
 
@@ -47,14 +51,21 @@ public class OfertaEmpleo {
         this.idOfertaEmpleo = idOfertaEmpleo;
     }
 
-    public int getPuestoVacante() {
+    public String getPuestoVacante() {
         return puestoVacante;
     }
 
-    public void setPuestoVacante(int puestoVacante) {
+    public void setPuestoVacante(String puestoVacante) {
         this.puestoVacante = puestoVacante;
     }
-    
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
     public String getTipoContratacion() {
         return tipoContratacion;
@@ -96,7 +107,6 @@ public class OfertaEmpleo {
         this.salario = salario;
     }
 
-
     public int getIdEmpresa() {
         return idEmpresa;
     }
@@ -121,6 +131,14 @@ public class OfertaEmpleo {
         this.idDepartamento = idDepartamento;
     }
 
+    public int getIdSectorEmpresarial() {
+        return idSectorEmpresarial;
+    }
+
+    public void setIdSectorEmpresarial(int idSectorEmpresarial) {
+        this.idSectorEmpresarial = idSectorEmpresarial;
+    }
+
     public String getDescripcionOferta() {
         return descripcionOferta;
     }
@@ -128,6 +146,9 @@ public class OfertaEmpleo {
     public void setDescripcionOferta(String descripcionOferta) {
         this.descripcionOferta = descripcionOferta;
     }
+
+    
+
     
     
 }

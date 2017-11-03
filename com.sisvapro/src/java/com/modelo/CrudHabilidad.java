@@ -21,8 +21,9 @@ public class CrudHabilidad extends Conexion{
         String sql="insert into habilidad values(?,?)";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setInt(1, ha.getIdHabilidad());
-            pre.setString(2, ha.getNombreHabilidad());
+            
+            pre.setString(1, ha.getNombreHabilidad());
+            pre.setInt(2, ha.getIdEmpleador());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -34,11 +35,12 @@ public class CrudHabilidad extends Conexion{
     
     public void modificarHabilidad(Habilidad ha)throws Exception{
         this.conectar();
-        String sql="update habilidad set nombreHabilidad=? where idHabilidad=?";
+        String sql="update habilidad set nombreHabilidad=?, idEmpleador=? where idHabilidad=?";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
             pre.setString(1, ha.getNombreHabilidad());
-            pre.setInt(2, ha.getIdHabilidad());
+            pre.setInt(2, ha.getIdEmpleador());
+            pre.setInt(3, ha.getIdHabilidad());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -68,13 +70,14 @@ public class CrudHabilidad extends Conexion{
         ResultSet res;
         try {
             this.conectar();
-            String sql="select*from habilidad";
+            String sql="select * from habilidad";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
                 Habilidad ha=new Habilidad();
                 ha.setIdHabilidad(res.getInt("idHabilidad"));
                 ha.setNombreHabilidad(res.getString("nombreHabilidad"));
+                ha.setIdEmpleador(res.getInt("idEmpleador"));
                 listaHabilidad.add(ha);
             }
         } catch (Exception e) {

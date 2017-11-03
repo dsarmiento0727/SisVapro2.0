@@ -6,23 +6,28 @@
 package com.modelo;
 
 /**
- *
- * @author carlos
+ * Nombre de la clase: FormacionAcademica
+ * Versión:1.0
+ * Fecha: 03/11/2017
+ * Copyright:ITCA-FEPADE
+ * @author Karen Escobar
  */
 public class FormacionAcademica {
     private int idFormacion;
     private String nivelEstudio;
     private String estado;
     private String carrera;
+    private int idEmpleador;
 
     public FormacionAcademica() {
     }
 
-    public FormacionAcademica(int idFormacion, String nivelEstudio, String estado, String carrera) {
+    public FormacionAcademica(int idFormacion, String nivelEstudio, String estado, String carrera, int idEmpleador) {
         this.idFormacion = idFormacion;
         this.nivelEstudio = nivelEstudio;
         this.estado = estado;
         this.carrera = carrera;
+        this.idEmpleador = idEmpleador;
     }
 
     public int getIdFormacion() {
@@ -56,6 +61,15 @@ public class FormacionAcademica {
     public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
+
+    public int getIdEmpleador() {
+        return idEmpleador;
+    }
+
+    public void setIdEmpleador(int idEmpleador) {
+        this.idEmpleador = idEmpleador;
+    }
+
     
     
 }

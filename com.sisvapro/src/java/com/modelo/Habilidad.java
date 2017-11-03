@@ -15,13 +15,15 @@ package com.modelo;
 public class Habilidad {
     private int idHabilidad;
     private String nombreHabilidad;
+    private int idEmpleador;
 
     public Habilidad() {
     }
 
-    public Habilidad(int idHabilidad, String nombreHabilidad) {
+    public Habilidad(int idHabilidad, String nombreHabilidad, int idEmpleador) {
         this.idHabilidad = idHabilidad;
         this.nombreHabilidad = nombreHabilidad;
+        this.idEmpleador = idEmpleador;
     }
 
     public int getIdHabilidad() {
@@ -39,5 +41,14 @@ public class Habilidad {
     public void setNombreHabilidad(String nombreHabilidad) {
         this.nombreHabilidad = nombreHabilidad;
     }
+
+    public int getIdEmpleador() {
+        return idEmpleador;
+    }
+
+    public void setIdEmpleador(int idEmpleador) {
+        this.idEmpleador = idEmpleador;
+    }
+    
     
 }

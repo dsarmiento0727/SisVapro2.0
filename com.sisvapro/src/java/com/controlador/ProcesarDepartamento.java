@@ -39,6 +39,7 @@ public class ProcesarDepartamento extends HttpServlet {
         try {
             d.setIdDepartamento(Integer.parseInt(request.getParameter("txtIdDepartamento")));
             d.setNombreDepartamento(request.getParameter("txtNombre"));
+            d.setIdPais(Integer.parseInt(request.getParameter("idPais")));
             if (request.getParameter("btnInsertar")!=null) {
                 crud.insertarDepartamento(d);
                 val="Datos insertados Correctamente";

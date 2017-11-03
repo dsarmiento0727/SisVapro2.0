@@ -21,7 +21,6 @@ public class CrudEmpleador extends Conexion{
             this.conectar();
             String sql="insert into empleador values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, em.getIdEmpleador());
             pre.setString(2, em.getNombres());
             pre.setString(3, em.getApellidos());
             pre.setString(4, em.getDireccion());
@@ -37,11 +36,7 @@ public class CrudEmpleador extends Conexion{
             pre.setInt(14, em.getIdUsuario());
             pre.setInt(15, em.getIdPais());
             pre.setInt(16, em.getIdDepartamento());
-            pre.setInt(17, em.getIdHabilidad());
-            pre.setInt(18, em.getIdFormacion());
-            pre.setInt(19, em.getIdExperienciaLaboral());
-            pre.setInt(20, em.getIdAreaProfesional());
-            pre.setInt(21, em.getIdCapacitacion());
+            pre.setInt(17, em.getIdAreaProfesional());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -54,7 +49,7 @@ public class CrudEmpleador extends Conexion{
     public void modificarEmpleador(Empleador em)throws Exception{
         try {
             this.conectar();
-            String sql="update empleador set nombres=?, apellidos=?, direccion=?, telefono=?, correoElectronico=?, fechaNacimiento=?, genero=?, aniosExperiencia=?, fotoPerfil=? dui=?, nit=?, nacionalidad=?, idUsuario=?, idPais=?, idDepartamento=?, idHabilidad=?, idFormacion=?, idExperienciaLaboral=?, idAreaProfesional=?, idCapacitacion=? where idEmpleador=?";
+            String sql="update empleador set nombres=?, apellidos=?, direccion=?, telefono=?, correoElectronico=?, fechaNacimiento=?, genero=?, aniosExperiencia=?, fotoPerfil=? dui=?, nit=?, nacionalidad=?, idUsuario=?, idPais=?, idDepartamento=?,  idExperienciaLaboral=?, idAreaProfesional=? where idEmpleador=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, em.getNombres());
             pre.setString(2, em.getApellidos());
@@ -71,11 +66,7 @@ public class CrudEmpleador extends Conexion{
             pre.setInt(13, em.getIdUsuario());
             pre.setInt(14, em.getIdPais());
             pre.setInt(15, em.getIdDepartamento());
-            pre.setInt(16, em.getIdHabilidad());
-            pre.setInt(17, em.getIdFormacion());
-            pre.setInt(18, em.getIdExperienciaLaboral());
             pre.setInt(19, em.getIdAreaProfesional());
-            pre.setInt(20, em.getIdCapacitacion());
             pre.setInt(21, em.getIdEmpleador());
             pre.executeUpdate();
         } catch (Exception e) {
@@ -127,11 +118,7 @@ public class CrudEmpleador extends Conexion{
                 em.setIdUsuario(res.getInt("idUsuario"));
                 em.setIdPais(res.getInt("idPais"));
                 em.setIdDepartamento(res.getInt("idDepartamento"));
-                em.setIdHabilidad(res.getInt("idHabilidad"));
-                em.setIdFormacion(res.getInt("idFormacion"));
-                em.setIdExperienciaLaboral(res.getInt("idExperienciaLaboral"));
                 em.setIdAreaProfesional(res.getInt("idAreaProfesional"));
-                em.setIdCapacitacion(res.getInt("idCapacitacion"));
                 listaEmpleador.add(em);
             }
         } catch (Exception e) {

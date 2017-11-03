@@ -19,19 +19,20 @@ public class CrudOfertaEmpleo extends Conexion{
      public void insertarOfertaEmpleo(OfertaEmpleo oe)throws Exception{
         try {
             this.conectar();
-            String sql="insert into ofertaEmpleo values(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="insert into ofertaEmpleo(puestoVacante,Cantidad,tipoContratacion,genero,edad,salario,idEmpresa,idPais,idDepartamento,idSectorEmpresarial,descripcionOferta) values(?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, oe.getIdOfertaEmpleo());
-            pre.setInt(2, oe.getPuestoVacante());
-            pre.setString(3, oe.getTipoContratacion());
-            pre.setString(4, oe.getGenero());
-            pre.setInt(5, oe.getEdad());
-            pre.setDouble(6, oe.getSalario());
-            pre.setInt(7, oe.getIdEmpresa());
-            pre.setInt(8, oe.getIdPais());
-            pre.setInt(9, oe.getIdDepartamento());
-            pre.setString(10, oe.getDescripcionOferta());
-            pre.setString(11, oe.getNivelExperiencia());
+            pre.setString(2, oe.getPuestoVacante());
+            pre.setInt(3, oe.getCantidad());
+            pre.setString(4, oe.getTipoContratacion());
+            pre.setString(5, oe.getGenero());
+            pre.setInt(6, oe.getEdad());
+            pre.setDouble(7, oe.getSalario());
+            pre.setInt(8, oe.getIdEmpresa());
+            pre.setInt(9, oe.getIdPais());
+            pre.setInt(10, oe.getIdDepartamento());
+            pre.setInt(11, oe.getIdSectorEmpresarial());
+            pre.setString(12, oe.getDescripcionOferta());
+          
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -46,17 +47,18 @@ public class CrudOfertaEmpleo extends Conexion{
             this.conectar();
             String sql="update ofertaEmpleo set puestoVacaante=?, tipoContratacion=?, genero=?, edad=?, salario=?, idEmpresa=?, idPais=?, idDepartamento=?, descripcionOferta=?,experiencia=? where idOfertaEmpleo=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, oe.getPuestoVacante());
-            pre.setString(2, oe.getTipoContratacion());
-            pre.setString(3, oe.getGenero());
-            pre.setInt(4, oe.getEdad());
-            pre.setDouble(5, oe.getSalario());
-            pre.setInt(6, oe.getIdEmpresa());
-            pre.setInt(7, oe.getIdPais());
-            pre.setInt(8, oe.getIdDepartamento());
-            pre.setString(9, oe.getDescripcionOferta());
-            pre.setString(10, oe.getNivelExperiencia());
-            pre.setInt(11, oe.getIdOfertaEmpleo());
+            pre.setString(1, oe.getPuestoVacante());
+            pre.setInt(2, oe.getCantidad());
+            pre.setString(3, oe.getTipoContratacion());
+            pre.setString(4, oe.getGenero());
+            pre.setInt(5, oe.getEdad());
+            pre.setDouble(6, oe.getSalario());
+            pre.setInt(7, oe.getIdEmpresa());
+            pre.setInt(8, oe.getIdPais());
+            pre.setInt(9, oe.getIdDepartamento());
+            pre.setString(10, oe.getDescripcionOferta());
+            pre.setInt(11, oe.getIdSectorEmpresarial());
+            pre.setInt(12, oe.getIdOfertaEmpleo());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -92,7 +94,8 @@ public class CrudOfertaEmpleo extends Conexion{
             while(res.next()){
                 OfertaEmpleo oe=new OfertaEmpleo();
                 oe.setIdOfertaEmpleo(res.getInt("idOfertaEmpleo"));
-                oe.setPuestoVacante(res.getInt("puestoVacaante"));
+                oe.setPuestoVacante(res.getString("puestoVacante"));
+                oe.setCantidad(res.getInt("Cantidad"));
                 oe.setTipoContratacion(res.getString("tipoContratacion"));
                 oe.setGenero(res.getString("genero"));
                 oe.setEdad(res.getInt("edad"));
@@ -100,8 +103,8 @@ public class CrudOfertaEmpleo extends Conexion{
                 oe.setIdEmpresa(res.getInt("idEmpresa"));
                 oe.setIdPais(res.getInt("idPais"));
                 oe.setIdDepartamento(res.getInt("idDepartamento"));
+                oe.setIdSectorEmpresarial(res.getInt("idSectorEmpresarial"));
                 oe.setDescripcionOferta(res.getString("descripcionOferta"));
-                oe.setNivelExperiencia(res.getString("experiencia"));
                 listaOfertaEmpleo.add(oe);
             }
         } catch (Exception e) {

@@ -26,16 +26,12 @@ public class Empleador {
     private int idUsuario;
     private int idPais;
     private int idDepartamento;
-    private int idHabilidad;
-    private int idFormacion;
-    private int idExperienciaLaboral;
     private int idAreaProfesional;
-    private int idCapacitacion;
-
+   
     public Empleador() {
     }
 
-    public Empleador(int idEmpleador, String nombres, String apellidos, String direccion, String telefono, String correoElectronico, String fechaNac, String genero, int aniosExperiencia, String fotoPerfil, String dui, String nit, String nacionalidad, int idUsuario, int idPais, int idDepartamento, int idHabilidad, int idFormacion, int idExperienciaLaboral, int idAreaProfesional, int idCapacitacion) {
+    public Empleador(int idEmpleador, String nombres, String apellidos, String direccion, String telefono, String correoElectronico, String fechaNac, String genero, int aniosExperiencia, String fotoPerfil, String dui, String nit, String nacionalidad, int idUsuario, int idPais, int idDepartamento, int idAreaProfesional) {
         this.idEmpleador = idEmpleador;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -52,11 +48,7 @@ public class Empleador {
         this.idUsuario = idUsuario;
         this.idPais = idPais;
         this.idDepartamento = idDepartamento;
-        this.idHabilidad = idHabilidad;
-        this.idFormacion = idFormacion;
-        this.idExperienciaLaboral = idExperienciaLaboral;
         this.idAreaProfesional = idAreaProfesional;
-        this.idCapacitacion = idCapacitacion;
     }
 
     public int getIdEmpleador() {
@@ -187,44 +179,12 @@ public class Empleador {
         this.idDepartamento = idDepartamento;
     }
 
-    public int getIdHabilidad() {
-        return idHabilidad;
-    }
-
-    public void setIdHabilidad(int idHabilidad) {
-        this.idHabilidad = idHabilidad;
-    }
-
-    public int getIdFormacion() {
-        return idFormacion;
-    }
-
-    public void setIdFormacion(int idFormacion) {
-        this.idFormacion = idFormacion;
-    }
-
-    public int getIdExperienciaLaboral() {
-        return idExperienciaLaboral;
-    }
-
-    public void setIdExperienciaLaboral(int idExperienciaLaboral) {
-        this.idExperienciaLaboral = idExperienciaLaboral;
-    }
-
     public int getIdAreaProfesional() {
         return idAreaProfesional;
     }
 
     public void setIdAreaProfesional(int idAreaProfesional) {
         this.idAreaProfesional = idAreaProfesional;
-    }
-
-    public int getIdCapacitacion() {
-        return idCapacitacion;
-    }
-
-    public void setIdCapacitacion(int idCapacitacion) {
-        this.idCapacitacion = idCapacitacion;
     }
     
 }

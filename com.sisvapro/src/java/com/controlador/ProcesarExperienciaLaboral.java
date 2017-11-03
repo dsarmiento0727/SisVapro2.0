@@ -42,9 +42,10 @@ public class ProcesarExperienciaLaboral extends HttpServlet {
             ex.setNombreJefe(request.getParameter("txtJefe"));
             ex.setTelefonoJefe(request.getParameter("txtTelefono"));
             ex.setPuesto(request.getParameter("txtPuesto"));
-            ex.setTipoContrato(request.getParameter("lstTipoContrato"));
             ex.setDesde(request.getParameter("txtDesde"));
             ex.setHasta(request.getParameter("txtHasta"));
+            ex.setTipoContrato(request.getParameter("lstTipoContrato"));
+            ex.setIdEmpleador(Integer.parseInt(request.getParameter("idEmpleador")));
             if (request.getParameter("btnInsertar")!=null) {
                 crud.insertarExperienciaLaboral(ex);
                 val="Datos insertados Correctamente";

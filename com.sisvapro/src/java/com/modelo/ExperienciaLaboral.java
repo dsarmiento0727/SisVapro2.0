@@ -6,8 +6,10 @@
 package com.modelo;
 
 /**
- *
- * @author carlos
+ *Nombre de la clase:Experiencia Laboral
+ * Versión:1.0
+ * Copyright:ITCA-FEPADE
+ * @author Karen Escobar
  */
 public class ExperienciaLaboral {
     private int idExperienciaLaboral;
@@ -18,8 +20,21 @@ public class ExperienciaLaboral {
     private String puesto;
     private String desde;
     private String hasta;
+    private int idEmpleador;
 
     public ExperienciaLaboral() {
+    }
+
+    public ExperienciaLaboral(int idExperienciaLaboral, String nombreEmpresa, String nombreJefe, String telefonoJefe, String tipoContrato, String puesto, String desde, String hasta, int idEmpleador) {
+        this.idExperienciaLaboral = idExperienciaLaboral;
+        this.nombreEmpresa = nombreEmpresa;
+        this.nombreJefe = nombreJefe;
+        this.telefonoJefe = telefonoJefe;
+        this.tipoContrato = tipoContrato;
+        this.puesto = puesto;
+        this.desde = desde;
+        this.hasta = hasta;
+        this.idEmpleador = idEmpleador;
     }
 
     public int getIdExperienciaLaboral() {
@@ -86,15 +101,14 @@ public class ExperienciaLaboral {
         this.hasta = hasta;
     }
 
-    public ExperienciaLaboral(int idExperienciaLaboral, String nombreEmpresa, String nombreJefe, String telefonoJefe, String tipoContrato, String puesto, String desde, String hasta) {
-        this.idExperienciaLaboral = idExperienciaLaboral;
-        this.nombreEmpresa = nombreEmpresa;
-        this.nombreJefe = nombreJefe;
-        this.telefonoJefe = telefonoJefe;
-        this.tipoContrato = tipoContrato;
-        this.puesto = puesto;
-        this.desde = desde;
-        this.hasta = hasta;
+    public int getIdEmpleador() {
+        return idEmpleador;
     }
+
+    public void setIdEmpleador(int idEmpleador) {
+        this.idEmpleador = idEmpleador;
+    }
+
+    
 
 }
