@@ -41,3 +41,7 @@ function siguientePagina2() {
     document.getElementById('pagina2').style.display = 'none';
     document.getElementById('pagina3').style.display = 'block';
 }
+
+$(document).ready(function () {
+       document.getElementById('menuGestionar').style.display = 'none';
+    });

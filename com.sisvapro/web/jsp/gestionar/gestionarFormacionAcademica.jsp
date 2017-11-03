@@ -35,7 +35,7 @@
             <form action="" method="POST" name="frmFormacion">
                 <div class="container">
                     <div class="row">
-                        <div class="col; col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
+                        <div class="col col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
                         <div class="col">
                             <select class="custom-select mb-1 mr-sm-1 mb-sm-1" id="lstNivel" name="lstNivel" required="true">
                                 <option>Seleccione</option>
@@ -51,7 +51,7 @@
                                 <option>Universidad Incompleta</option>
                                 <option>Maestria</option>
                             </select></div>
-                        <div class="col; col-1"><label for="Estado" class="col-form-label"><strong>Estado</strong></label></div>
+                        <div class="col col-1"><label for="Estado" class="col-form-label"><strong>Estado</strong></label></div>
                         <div class="col">
                             <select class="custom-select mb-2 mr-sm-2 mb-sm-4 row-md-4" id="lstEstado" name="lstEstado" required="true">
                                 <option>Seleccione</option>
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         <div class="w-100"></div>
-                        <div class="col; col-2">
+                        <div class="col col-2">
                             <label for="carrera" class="col-sm-2 col-form-label mb-sm-4"><strong>Carrera</strong></label>
                         </div>
                         <div class="col-8">

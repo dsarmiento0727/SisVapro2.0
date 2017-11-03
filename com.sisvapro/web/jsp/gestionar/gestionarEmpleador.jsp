@@ -193,7 +193,7 @@
         </div>      
         <div id="pagina3" style="display:none;">
             <jsp:include page="gestionarExperienciaLaboral.jsp"/>
-                <input type="button" onclick="anteriorPagina2()" value="Anterior">
+            <input type="button" class="" onclick="anteriorPagina2()" value="Anterior">
                 
         </div>  
     </form>

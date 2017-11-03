@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col; col-2">
+                        <div class="col col-2">
                             <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
                         </div>
                         <div class="col-4">
