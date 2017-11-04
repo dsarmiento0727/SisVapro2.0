@@ -147,7 +147,7 @@
                     <div class="form-group"> 
                         <label for="logo">Logo de la Empresa</label>
                         <input type="file" class="form-control-file" id="logo" name="logo">
-                        <input type="text" id="logo2" name="logo2" style="display: block;" readonly="true">
+                        <input type="text" id="logo2" name="logo2" style="display: block;">
                     </div>
                     <div class="form-group row">
                         <label for="pagina" class="col-sm-2 col-form-label">Pagina Web</label>
