@@ -32,7 +32,6 @@ public class CrudOfertaEmpleo extends Conexion{
             pre.setInt(10, oe.getIdDepartamento());
             pre.setInt(11, oe.getIdSectorEmpresarial());
             pre.setString(12, oe.getDescripcionOferta());
-          
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -45,7 +44,7 @@ public class CrudOfertaEmpleo extends Conexion{
     public void modificarOfertaEmpleo(OfertaEmpleo oe)throws Exception{
         try {
             this.conectar();
-            String sql="update ofertaEmpleo set puestoVacante=?, cantidad=?,tipoContratacion=?, genero=?, edad=?, salario=?, idEmpresa=?, idPais=?, idDepartamento=?, descripcionOferta=? ,idSectorEmpresarial where idOfertaEmpleo=?";
+            String sql="update ofertaEmpleo set puestoVacante=?, cantidad=?,tipoContratacion=?, genero=?, edad=?, salario=?, idEmpresa=?, idPais=?, idDepartamento=?, descripcionOferta=? ,idSectorEmpresarial=? where idOfertaEmpleo=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, oe.getPuestoVacante());
             pre.setInt(2, oe.getCantidad());

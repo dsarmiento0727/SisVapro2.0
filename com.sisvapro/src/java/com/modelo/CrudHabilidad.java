@@ -18,10 +18,9 @@ import java.util.List;
 public class CrudHabilidad extends Conexion{
     public void insertarHabilidad(Habilidad ha)throws Exception{
         this.conectar();
-        String sql="insert into habilidad values(?,?)";
+        String sql="insert into habilidad(nombreHabilidad,idEmpleador) values(?,?)";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            
             pre.setString(1, ha.getNombreHabilidad());
             pre.setInt(2, ha.getIdEmpleador());
             pre.executeUpdate();

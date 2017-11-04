@@ -19,37 +19,7 @@ public class CrudEmpleador extends Conexion{
     public void insertarEmpleador(Empleador em)throws Exception{
         try {
             this.conectar();
-            String sql="insert into empleador values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setString(2, em.getNombres());
-            pre.setString(3, em.getApellidos());
-            pre.setString(4, em.getDireccion());
-            pre.setString(5, em.getTelefono());
-            pre.setString(6, em.getCorreoElectronico());
-            pre.setString(7, em.getFechaNac());
-            pre.setString(8, em.getGenero());
-            pre.setInt(9, em.getAniosExperiencia());
-            pre.setString(10, em.getFotoPerfil());
-            pre.setString(11, em.getDui());
-            pre.setString(12, em.getNit());
-            pre.setString(13, em.getNacionalidad());
-            pre.setInt(14, em.getIdUsuario());
-            pre.setInt(15, em.getIdPais());
-            pre.setInt(16, em.getIdDepartamento());
-            pre.setInt(17, em.getIdAreaProfesional());
-            pre.executeUpdate();
-        } catch (Exception e) {
-            throw e;
-        }
-        finally{
-            this.desconectar();
-        }
-    }
-    
-    public void modificarEmpleador(Empleador em)throws Exception{
-        try {
-            this.conectar();
-            String sql="update empleador set nombres=?, apellidos=?, direccion=?, telefono=?, correoElectronico=?, fechaNacimiento=?, genero=?, aniosExperiencia=?, fotoPerfil=? dui=?, nit=?, nacionalidad=?, idUsuario=?, idPais=?, idDepartamento=?,  idExperienciaLaboral=?, idAreaProfesional=? where idEmpleador=?";
+            String sql="insert into empleador(nombres,apellidos,direccion,telefono,correoElectronico,fechaNacimiento,genero,aniosExperiencia,fotoPerfil,dui,nit,nacionalidad,idUsuario,idPais,idDepartamento,idAreaProfesional) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, em.getNombres());
             pre.setString(2, em.getApellidos());
@@ -66,8 +36,38 @@ public class CrudEmpleador extends Conexion{
             pre.setInt(13, em.getIdUsuario());
             pre.setInt(14, em.getIdPais());
             pre.setInt(15, em.getIdDepartamento());
-            pre.setInt(19, em.getIdAreaProfesional());
-            pre.setInt(21, em.getIdEmpleador());
+            pre.setInt(16, em.getIdAreaProfesional());
+            pre.executeUpdate();
+        } catch (Exception e) {
+            throw e;
+        }
+        finally{
+            this.desconectar();
+        }
+    }
+    
+    public void modificarEmpleador(Empleador em)throws Exception{
+        try {
+            this.conectar();
+            String sql="update empleador set nombres=?,apellidos=?,direccion=?,telefono=?,correoElectronico=?,fechaNacimiento=?,genero=?,aniosExperiencia=?,fotoPerfil=?,dui=?,nit=?,nacionalidad=?,idUsuario=?,idPais=?,idDepartamento=?,idAreaProfesional=? where idEmpleador=?";
+            PreparedStatement pre=this.getCon().prepareStatement(sql);
+            pre.setString(1, em.getNombres());
+            pre.setString(2, em.getApellidos());
+            pre.setString(3, em.getDireccion());
+            pre.setString(4, em.getTelefono());
+            pre.setString(5, em.getCorreoElectronico());
+            pre.setString(6, em.getFechaNac());
+            pre.setString(7, em.getGenero());
+            pre.setInt(8, em.getAniosExperiencia());
+            pre.setString(9, em.getFotoPerfil());
+            pre.setString(10, em.getDui());
+            pre.setString(11, em.getNit());
+            pre.setString(12, em.getNacionalidad());
+            pre.setInt(13, em.getIdUsuario());
+            pre.setInt(14, em.getIdPais());
+            pre.setInt(15, em.getIdDepartamento());
+            pre.setInt(16, em.getIdAreaProfesional());
+            pre.setInt(17, em.getIdEmpleador());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;

@@ -19,12 +19,12 @@ public class CrudFormacionAcademica  extends Conexion{
     public void insertarFormacionAcademica(FormacionAcademica d)throws Exception{
         try {
             this.conectar();
-            String sql="insert into formacionAcademica values(?,?,?,?)";
+            String sql="insert into formacionAcademica(nivelEstudios,estado,carrera,idEmpleador) values(?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, d.getIdFormacion());
-            pre.setString(2, d.getNivelEstudio());
-            pre.setString(3, d.getEstado());
-            pre.setString(4, d.getCarrera());
+            pre.setString(1, d.getNivelEstudio());
+            pre.setString(2, d.getEstado());
+            pre.setString(3, d.getCarrera());
+            pre.setInt(4, d.getIdEmpleador());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e; 
@@ -37,7 +37,7 @@ public class CrudFormacionAcademica  extends Conexion{
     public void modificarFormacionAcademica(FormacionAcademica d)throws Exception{
         try {
             this.conectar();
-            String sql="update formacionAcademica set idFormacion=?, nivelEstudios=?, estado=?, carrera=? where idFormacion=?";
+            String sql="update formacionAcademica set nivelEstudios=?,estado=?,carrera=?,idEmpleador=? where idFormacion=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, d.getNivelEstudio());
             pre.setString(2, d.getEstado());
@@ -78,9 +78,10 @@ public class CrudFormacionAcademica  extends Conexion{
             while(res.next()){
                 FormacionAcademica d=new FormacionAcademica();
                 d.setIdFormacion(res.getInt("idFormacion"));
-                d.setNivelEstudio(res.getString("nivelestudio"));
+                d.setNivelEstudio(res.getString("nivelEstudios"));
                 d.setEstado(res.getString("estado"));
                 d.setCarrera(res.getString("carrera"));
+                d.setIdEmpleador(res.getInt("idEmpleador"));
                 listaFormacionAcademica.add(d);
             }
         } catch (Exception e) {

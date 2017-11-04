@@ -18,12 +18,11 @@ import java.util.List;
 public class CrudRanking extends Conexion{
      public void insertarRanking(Ranking ra)throws Exception{
         this.conectar();
-        String sql="insert into ranking values(?,?,?)";
+        String sql="insert into ranking(cantidadPuntos,idUsuario) values(?,?)";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setInt(1, ra.getIdRanking());
-            pre.setInt(2, ra.getCantidadPuntos());
-            pre.setInt(3, ra.getIdUsuario());
+            pre.setInt(1, ra.getCantidadPuntos());
+            pre.setInt(2, ra.getIdUsuario());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
