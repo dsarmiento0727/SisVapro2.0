@@ -19,7 +19,7 @@ public class CrudOfertaEmpleo extends Conexion{
      public void insertarOfertaEmpleo(OfertaEmpleo oe)throws Exception{
         try {
             this.conectar();
-            String sql="insert into ofertaEmpleo(puestoVacante,Cantidad,tipoContratacion,genero,edad,salario,idEmpresa,idPais,idDepartamento,idSectorEmpresarial,descripcionOferta) values(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="insert into ofertaEmpleo(puestoVacante,cantidad,tipoContratacion,genero,edad,salario,idEmpresa,idPais,idDepartamento,idSectorEmpresarial,descripcionOferta) values(?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(2, oe.getPuestoVacante());
             pre.setInt(3, oe.getCantidad());
@@ -45,7 +45,7 @@ public class CrudOfertaEmpleo extends Conexion{
     public void modificarOfertaEmpleo(OfertaEmpleo oe)throws Exception{
         try {
             this.conectar();
-            String sql="update ofertaEmpleo set puestoVacaante=?, tipoContratacion=?, genero=?, edad=?, salario=?, idEmpresa=?, idPais=?, idDepartamento=?, descripcionOferta=?,experiencia=? where idOfertaEmpleo=?";
+            String sql="update ofertaEmpleo set puestoVacante=?, cantidad=?,tipoContratacion=?, genero=?, edad=?, salario=?, idEmpresa=?, idPais=?, idDepartamento=?, descripcionOferta=? ,idSectorEmpresarial where idOfertaEmpleo=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, oe.getPuestoVacante());
             pre.setInt(2, oe.getCantidad());
@@ -95,7 +95,7 @@ public class CrudOfertaEmpleo extends Conexion{
                 OfertaEmpleo oe=new OfertaEmpleo();
                 oe.setIdOfertaEmpleo(res.getInt("idOfertaEmpleo"));
                 oe.setPuestoVacante(res.getString("puestoVacante"));
-                oe.setCantidad(res.getInt("Cantidad"));
+                oe.setCantidad(res.getInt("cantidad"));
                 oe.setTipoContratacion(res.getString("tipoContratacion"));
                 oe.setGenero(res.getString("genero"));
                 oe.setEdad(res.getInt("edad"));
