@@ -64,7 +64,7 @@
                     <div class="form-group row">
                         <label for="idprofesion" class="col-sm-2 col-form-label">Id Area Profesiónal</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdProfesion" name="txtIdProfesion"placeholder="Id Area Profesion">
+                            <input type="text" class="form-control" id="txtIdProfesion" name="txtIdProfesion"placeholder="Id Area Profesion" disabled>
                         </div>
                     </div>
                     <div class="form-group row">

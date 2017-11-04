@@ -5,8 +5,6 @@
  */
 package com.controlador;
 
-import com.modelo.CrudExperienciaLaboral;
-import com.modelo.ExperienciaLaboral;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Gerardo
+ * @author carlos
  */
-public class ProcesarExperienciaLaboral extends HttpServlet {
+public class ProcesarFormacionAcademica extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,37 +31,8 @@ public class ProcesarExperienciaLaboral extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String val = null;
-        CrudExperienciaLaboral crud = new CrudExperienciaLaboral();
-        ExperienciaLaboral ex = new ExperienciaLaboral();
-        try {
-
-            ex.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
-            ex.setNombreEmpresa(request.getParameter("txtNombreEmpresa"));
-            ex.setNombreJefe(request.getParameter("txtJefe"));
-            ex.setTelefonoJefe(request.getParameter("txtTelefono"));
-            ex.setPuesto(request.getParameter("txtPuesto"));
-            ex.setDesde(request.getParameter("txtDesde"));
-            ex.setHasta(request.getParameter("txtHasta"));
-            ex.setTipoContrato(request.getParameter("lstTipoContrato"));
-            ex.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
-
-            if (request.getParameter("btnInsertar") != null) {
-                crud.insertarExperienciaLaboral(ex);
-                val = "Datos insertados Correctamente";
-            } else if (request.getParameter("btnModificar") != null) {
-                crud.modificarExperienciaLaboral(ex);
-            } else if (request.getParameter("btnEliminar") != null) {
-                crud.eliminarExperienciaLaboral(ex);
-            }
-            request.setAttribute("valor", val);
-            request.getRequestDispatcher("gestionarExperienciaLaboral.jsp").forward(request, response);
-        } catch (Exception e) {
-            out.print(nulillo);
-            out.print("<br>");
-            out.print(e.toString());
-            request.setAttribute("error", e.toString());
-        }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

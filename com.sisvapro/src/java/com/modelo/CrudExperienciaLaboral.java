@@ -17,7 +17,7 @@ public class CrudExperienciaLaboral extends Conexion{
      public void insertarExperienciaLaboral(ExperienciaLaboral ap)throws Exception{
         try {
             this.conectar();
-            String sql="insert into experienciaLaboral(nombreEmpresa,nombreJefe,telefonoJefe,telefonoJefe,puesto,desde,hasta,tipoContratacion,idEmpleador) values(?,?,?,?,?,?,?,?)";
+            String sql="insert into experienciaLaboral(nombreEmpresa,nombreJefe,telefonoJefe,puesto,desde,hasta,tipoContrato,idEmpleador) values(?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, ap.getNombreEmpresa());
             pre.setString(2, ap.getNombreJefe());

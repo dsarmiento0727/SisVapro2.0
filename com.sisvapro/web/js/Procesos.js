@@ -75,7 +75,7 @@ function cargarRanking(id, clasi, usuario) {
     document.frmRanking.txtClasificacion.value = clasi;
     document.frmRanking.lstUsuario.value = usuario;
 }
-function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, hasta, tipo) {
+function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, hasta, tipo,idEmpleado) {
     document.frmExperienciaLaboral.txtIdExperienciaLaboral.value = id;
     document.frmExperienciaLaboral.txtNombreEmpresa.value = empresa;
     document.frmExperienciaLaboral.txtJefe.value = jefe;
@@ -84,6 +84,7 @@ function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, ha
     document.frmExperienciaLaboral.txtDesde.value = desde;
     document.frmExperienciaLaboral.txtHasta.value = hasta;
     document.frmExperienciaLaboral.lstTipoContrato.value = tipo;
+    document.frmExperienciaLaboral.txtIdEmpleador.value =idEmpleado;
 }
 function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, departamento, descripcion, experiencia) {
     document.frmOferta.txtIdOferta.value = id;

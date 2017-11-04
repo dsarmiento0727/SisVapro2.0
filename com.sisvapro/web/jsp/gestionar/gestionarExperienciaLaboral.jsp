@@ -66,32 +66,46 @@
             <form action="procesarExperienciaLaboral" method="post" name="frmExperienciaLaboral">
 
                 <div class="col align-self-star">
-
-
                     <div class="form-row">
                         <div class="form-group col-md-5">
+                            <label for="idExperienciaLaboral" class="col-form-label">Id Experiencia Laboral</label>
+                            <input type="text" class="form-control" id="idExperienciaLaboral" name="txtIdExperienciaLaboral" placeholder="Id Experiencia Laboral"  value="0" readonly>
+                        </div>
+                       <div class="col align-self-center">
+                            <div class="row justify-content-center">
+                                <div class="form-group col-md-8">
+                                    <label for="idEmpleador" class="col-form-label">Id Empleador</label>
+                                    <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador" placeholder="Id Empleado" >
+                                </div>
+                            </div>
+                        </div>
+                          
+                    </div>
+                    <div class="form-row">
+                       
+                        <div class="form-group col-md-5">
                             <label for="nombreEmpresa" class="col-form-label">Nombre de la Empresa</label>
-                            <input type="text" class="form-control" id="txtNombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
+                            <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
                         </div>
                         <div class="col align-self-center">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="puesto" class="col-form-label">Puesto</label>
-                                    <input type="text" class="form-control" id="txtPuesto" name="txtPuesto" placeholder="Puesto ">
+                                    <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Puesto ">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="NombreJefe" class="col-form-label">Nombre del Jefe</label>
-                            <input type="text" class="form-control" id="txtJefe" name="txtJefe" placeholder="Nombre del Jefe">
+                            <label for="nombreJefe" class="col-form-label">Nombre del Jefe</label>
+                            <input type="text" class="form-control" id="nombreJefe" name="txtJefe" placeholder="Nombre del Jefe">
                         </div>
                         <div class="col align-self-end">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
-                                    <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
+                                    <input type="text" class="form-control" id="Telefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
                                 </div>
                             </div>
                         </div>
@@ -99,31 +113,34 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="txtDesde" class="col-form-label">Desde</label>
-                            <input type="date" class="form-control" id="txtDesde" name="txtDesde">
+                            <label for="Desde" class="col-form-label">Desde</label>
+                            <input type="date" class="form-control" id="Desde" name="txtDesde">
                         </div>
                         <div class="col align-self-end">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
-                                    <label for="txtHasta" class="col-form-label">Hasta</label>
-                                    <input type="date" class="form-control" id="txtHasta" name="txtHasta">
+                                    <label for="Hasta" class="col-form-label">Hasta</label>
+                                    <input type="date" class="form-control" id="Hasta" name="txtHasta">
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    
                     <div class="row">
                         <div class="col col-2">
                             <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
                         </div>
                         <div class="col-4">
-                            <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="lstNivel" name="lstNivel" required="true">
-                                <option>Tiempo Completo</option>
-                                <option>Por Horas</option>
-                                <option>Practicas</option> 
+                            <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="idTipoContrato" name="lstTipoContrato" required="true">
+                                <option value="Tiempo Completo">Tiempo Completo</option>
+                                <option value="Por Horas">Por Horas</option>
+                                <option value="Practicas">Practicas</option> 
                             </select>
                         </div>
                         <div class="w-10"></div>
+                        
+                        
                     </div>
                 </div>
                 <center>
@@ -151,7 +168,7 @@
     <table id="grid" class="table table-bordered" style="text-align: center">
         <thead class="thead-inverse">
             <tr>
-                <th style="text-align: center;width: 100px">Id Area Profesional</th>
+                <th style="text-align: center;width: 100px">Id Experiencia Laboral</th>
                 <th style="text-align: center;width: 200px">Nombre de la Empresa</th>
                 <th style="text-align: center;width: 200px">Nombre de Jefe</th>
                 <th style="text-align: center;width: 150px">Telefono del Jefe</th>
@@ -159,6 +176,7 @@
                 <th style="text-align: center;width: 150px">Tipo de contrato</th>
                 <th style="text-align: center;width: 150px">Desde</th>
                 <th style="text-align: center;width: 150px">Hasta</th>
+                <th style="text-align: center;width: 150px">Id Empleador</th>
                 <th style="text-align: center;width: 100px">Seleccionar</th>
             </tr>
         </thead>
@@ -176,10 +194,11 @@
                 <td><%=ep.getTipoContrato()%></td>
                 <td><%=ep.getDesde()%></td>
                 <td><%=ep.getHasta()%></td>
+                <td><%=ep.getIdEmpleador() %></td>
                 <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
                        '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
                        '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
-                       '<%=ep.getTipoContrato()%>')">Seleccionar</a></td>
+                       '<%=ep.getTipoContrato()%>','<%=ep.getIdEmpleador()%>')">Seleccionar</a></td>
             </tr>
             <%
                 }
@@ -187,6 +206,5 @@
         </tbody>
     </table>
 
-</center>
 </body>
 </html>
