@@ -12,9 +12,10 @@ function cargarPais(id, nombre) {
     document.frmPais.txtIdPais.value = id;
     document.frmPais.txtNombre.value = nombre;
 }
-function cargarDepartamento(id, nombre) {
+function cargarDepartamento(id, nombre,pa) {
     document.frmDepartamento.txtIdDepartamento.value = id;
     document.frmDepartamento.txtNombre.value = nombre;
+    document.frmDepartamento.lstPais.value=pa;
 }
 function cargarMunicipio(id, nombre) {
     document.frmMunicipio.txtIdMunicipio.value = id;

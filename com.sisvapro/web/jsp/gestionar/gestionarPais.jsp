@@ -75,13 +75,13 @@
                 <div class="form-group row">
                     <label for="idpais" class="col-sm-2 col-form-label">Id Pais</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais">
+                    <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais" disabled>
                 </div>
                 </div>
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Pais</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Pais">
+                    <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Pais" >
                 </div>
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic example">

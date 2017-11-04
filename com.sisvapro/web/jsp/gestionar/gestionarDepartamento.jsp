@@ -78,6 +78,23 @@
                             <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Deparatamento">
                         </div>
                     </div>
+                    <div class="col-10">
+                        <div class="form-group">
+                            <label for="lstPais" class="col-form-label"><strong>Pais</strong></label>
+
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais">
+                                <option>Seleccionar</option>
+                                <%
+                                    List<Pais> lstpais = crud.mostrarPais();
+                                    for (Pais pa : lstpais) {
+                                %>
+                                <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                        </div>
+                    </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
                       
                                 <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
@@ -87,6 +104,7 @@
                          
                         </form>
                     </div>
+                 
                 </table>
             </center>
             <br><br>
@@ -95,19 +113,28 @@
                     <tr>
                         <th  scope="row" style="text-align: center">Id Departamento</th>
                         <th  style="text-align: center">Nombre</th>
+                        <th  style="text-align: center">Pais</th>
                         <th  style="text-align: center">Seleccionar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <%
+                        
                         List<Departamento> lst = crud.mostrarDepartamento();
                         for (Departamento d : lst) {
                     %>
                     <tr class="table-primary">
                         <td><%=d.getIdDepartamento()%></td>
                         <td><%=d.getNombreDepartamento()%></td>
+                        <%
+                            List<Pais> lstp=crud.mostrarPais();
+                             for(Pais pa:lstp){
+                                 if(d.getIdPais()==pa.getIdPais()){
+                        %>
+                        <td><%=pa.getNombrePais()%></td>
                         <td><a href="javascript:cargarDepartamento(<%=d.getIdDepartamento()%>,
-                               '<%=d.getNombreDepartamento()%>')">Seleccionar</a></td> 
+                               '<%=d.getNombreDepartamento()%>','<%=pa.getIdPais() %>')">Seleccionar</a></td> 
+                               <% }} %>
                     </tr>
                     <%
                         }

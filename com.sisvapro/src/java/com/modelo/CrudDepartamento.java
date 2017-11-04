@@ -91,5 +91,29 @@ public class CrudDepartamento extends Conexion{
         }
         return listaDepartamento;
     }
+    
+     public List<Pais> mostrarPais()throws Exception{
+        List<Pais> listaPais=new ArrayList();
+        ResultSet res;
+        try {
+            this.conectar();
+            String sql="select*from pais";
+            PreparedStatement pre =this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while(res.next()){
+                Pais pa=new Pais();
+                pa.setIdPais(res.getInt("idPais"));
+                pa.setNombrePais(res.getString("nombre"));
+                listaPais.add(pa);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al mostar en Dao");
+            throw e;
+        }
+        finally{
+            this.desconectar();
+        }
+        return listaPais;
+    }
    
 }

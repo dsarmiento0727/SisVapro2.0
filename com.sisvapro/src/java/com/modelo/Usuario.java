@@ -13,7 +13,7 @@ package com.modelo;
  * @author Karen Escobar
  */
 public class Usuario {
-     private int idUsuario;
+    private int idUsuario;
     private String nombreUsuario;
     private String clave;
     private int idTipoUsuario;
