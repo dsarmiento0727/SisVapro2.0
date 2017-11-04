@@ -94,13 +94,15 @@ public class ProcesarEmpresa extends HttpServlet {
                 if (item.getFieldName().equals("logo")) {
                     if (!item.isFormField()) {
 
-                        if (item.getName() == null) {
+                        if (item.getName().isEmpty()) {
                             File archivo = new File(ruta + item.getName());
                             //item.write(archivo);
                             fotoperfil = item.getName();
+                            out.print(fotoperfil);
                         } else {
                             if (item.getName() != null) {
                                 File archivo = new File(ruta + item.getName());
+                                out.print(item.getName());
                                 item.write(archivo);
                                 fotoperfil = item.getName();
                             }
