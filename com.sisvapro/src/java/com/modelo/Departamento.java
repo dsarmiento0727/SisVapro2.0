@@ -15,13 +15,15 @@ package com.modelo;
 public class Departamento {
     private int idDepartamento;
     private String nombreDepartamento;
+    private int idPais;
 
     public Departamento() {
     }
 
-    public Departamento(int idDepartamento, String nombreDepartamento) {
+    public Departamento(int idDepartamento, String nombreDepartamento, int idPais) {
         this.idDepartamento = idDepartamento;
         this.nombreDepartamento = nombreDepartamento;
+        this.idPais = idPais;
     }
 
     public int getIdDepartamento() {
@@ -38,6 +40,14 @@ public class Departamento {
 
     public void setNombreDepartamento(String nombreDepartamento) {
         this.nombreDepartamento = nombreDepartamento;
+    }
+
+    public int getIdPais() {
+        return idPais;
+    }
+
+    public void setIdPais(int idPais) {
+        this.idPais = idPais;
     }
         
 }

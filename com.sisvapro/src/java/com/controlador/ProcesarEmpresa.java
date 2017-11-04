@@ -54,8 +54,8 @@ public class ProcesarEmpresa extends HttpServlet {
             FileItemFactory Interfaz = new DiskFileItemFactory();
             ServletFileUpload servlet_up = new ServletFileUpload(Interfaz);
             List objetos = servlet_up.parseRequest(request);
-
-            String ruta = "C:\\Users\\David Sarmiento\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\fotosperfiles\\";
+//C:\\Users\\David Sarmiento\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\fotosperfiles\\"
+            String ruta = "C:\\Users\\carlos\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\";
 
             for (int i = 0; i < objetos.size(); i++) {
                 FileItem item = (FileItem) objetos.get(i);

@@ -23,10 +23,10 @@ public class CrudDepartamento extends Conexion{
     public void insertarDepartamento(Departamento d)throws Exception{
         try {
             this.conectar();
-            String sql="insert into departamento(idDepartamento,nombre) values(?,?)";
+            String sql="insert into departamento(nombre,idPais) values(?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, d.getIdDepartamento());
-            pre.setString(2, d.getNombreDepartamento());
+            pre.setString(1, d.getNombreDepartamento());
+            pre.setInt(2, d.getIdPais());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -39,10 +39,11 @@ public class CrudDepartamento extends Conexion{
     public void modificarDepartamento(Departamento d)throws Exception{
         try {
             this.conectar();
-            String sql="update departamento set nombre=? where idDepartamento=?";
+            String sql="update departamento set nombre=?, idPais=? where idDepartamento=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, d.getNombreDepartamento());
-            pre.setInt(2, d.getIdDepartamento());
+            pre.setInt(2, d.getIdPais());
+            pre.setInt(3, d.getIdDepartamento());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -79,6 +80,7 @@ public class CrudDepartamento extends Conexion{
                 Departamento d=new Departamento();
                 d.setIdDepartamento(res.getInt("idDepartamento"));
                 d.setNombreDepartamento(res.getString("nombre"));
+                d.setIdPais(res.getInt("idPais"));
                 listaDepartamento.add(d);
             }
         } catch (Exception e) {

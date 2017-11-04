@@ -18,11 +18,10 @@ import java.util.List;
 public class CrudPais extends Conexion{
     public void insertarPais(Pais pa)throws Exception{
         this.conectar();
-        String sql="insert into pais values(?,?)";
+        String sql="insert into pais(nombre) values(?)";
         PreparedStatement pre=this.getCon().prepareStatement(sql);
         try {
-            pre.setInt(1, pa.getIdPais());
-            pre.setString(2, pa.getNombrePais());
+            pre.setString(1, pa.getNombrePais());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;

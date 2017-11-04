@@ -20,20 +20,19 @@ public class CrudAdministrador extends Conexion{
     public void insertarAdministrador(Administrador ad)throws Exception{
         try {
             this.conectar();
-            String sql="insert into administrador values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="insert into administrador(nombres,apellidos,dui,nit,telefono,direccion,genero,correoElectronico,idPais,IdDepartamento,idUsuario) values(?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, ad.getIdAdministrador());
-            pre.setString(2, ad.getNombres());
-            pre.setString(3, ad.getApellidos());
-            pre.setString(4, ad.getDui());
-            pre.setString(5, ad.getNit());
-            pre.setString(6, ad.getTelefono());
-            pre.setString(7, ad.getDireccion());
-            pre.setString(8, ad.getGenero());
-            pre.setString(9, ad.getCorreoElectronico());
-            pre.setInt(10, ad.getIdPais());
-            pre.setInt(11, ad.getIdDepartamento());
-            pre.setInt(12, ad.getIdUsuario());
+            pre.setString(1, ad.getNombres());
+            pre.setString(2, ad.getApellidos());
+            pre.setString(3, ad.getDui());
+            pre.setString(4, ad.getNit());
+            pre.setString(5, ad.getTelefono());
+            pre.setString(6, ad.getDireccion());
+            pre.setString(7, ad.getGenero());
+            pre.setString(8, ad.getCorreoElectronico());
+            pre.setInt(9, ad.getIdPais());
+            pre.setInt(10, ad.getIdDepartamento());
+            pre.setInt(11, ad.getIdUsuario());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;

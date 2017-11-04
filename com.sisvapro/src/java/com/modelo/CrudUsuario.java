@@ -19,12 +19,11 @@ public class CrudUsuario extends Conexion{
     public void insertarUsuario(Usuario u)throws Exception{
         try {
             this.conectar();
-            String sql="insert into usuario values(?,?,?,?)";
+            String sql="insert into usuario(nombreUsuario,clave,idTipoUsuario) values(?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, u.getIdUsuario());
-            pre.setString(2, u.getNombreUsuario());
-            pre.setString(3, u.getClave());
-            pre.setInt(4, u.getIdTipoUsuario());
+            pre.setString(1, u.getNombreUsuario());
+            pre.setString(2, u.getClave());
+            pre.setInt(3, u.getIdTipoUsuario());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -37,7 +36,7 @@ public class CrudUsuario extends Conexion{
     public void modificarUsuario(Usuario u)throws Exception{
         try {
             this.conectar();
-            String sql="update usuario set usuarioUsuario=?, clave=?, idTipoUsuario=? where idUsuario=?";
+            String sql="update usuario set nombreUsuario=?, clave=?, idTipoUsuario=? where idUsuario=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, u.getNombreUsuario());
             pre.setString(2, u.getClave());
