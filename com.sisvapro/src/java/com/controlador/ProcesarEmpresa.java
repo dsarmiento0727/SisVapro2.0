@@ -45,14 +45,15 @@ public class ProcesarEmpresa extends HttpServlet {
         String departamento = "";
         String sectorE = "";
         String idEmpresa = "";
-        String idUsu = "";
+        String idUsu = "", logo2 = "";
+        String insertar = "", modificar = "", eliminar = "";
         Empresa em = new Empresa();
         CrudEmpresa crud = new CrudEmpresa();
         try {
             FileItemFactory Interfaz = new DiskFileItemFactory();
             ServletFileUpload servlet_up = new ServletFileUpload(Interfaz);
             List objetos = servlet_up.parseRequest(request);
-            String ruta = "C:\\Users\\carlos\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\";
+            String ruta = "C:\\Users\\carlos\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\FotosUsuarios";
 
             for (int i = 0; i < objetos.size(); i++) {
                 FileItem item = (FileItem) objetos.get(i);
@@ -94,9 +95,27 @@ public class ProcesarEmpresa extends HttpServlet {
                         item.write(archivo);
                         fotoperfil = item.getName();
                     }
+                    if (item.isFormField()) {
+                        fotoperfil = null;
+                    }
+                }
+
+                if (item.getFieldName().equals("logo2")) {
+                    logo2 = item.getString();
+                }
+
+                if (item.getFieldName().equals("btnInsertar")) {
+                    insertar = item.getString();
+                }
+                if (item.getFieldName().equals("btnModificar")) {
+                    modificar = item.getString();
+                }
+                if (item.getFieldName().equals("btnEliminar")) {
+                    eliminar = item.getString();
                 }
             }
-           
+
+            if (insertar.equals("Insertar")) {
                 if (!fotoperfil.isEmpty()) {
                     em.setIdEmpresa(Integer.parseInt(idEmpresa));
                     em.setNombreEmpresa(nombreE);
@@ -109,15 +128,36 @@ public class ProcesarEmpresa extends HttpServlet {
                     em.setPaginaWeb(pagina);
                     em.setIdSectorEmpresiarial(Integer.parseInt(sectorE));
                     em.setIdUsuario(Integer.parseInt(idUsu));
-                    crud.insertarEmpresa(em);
-                    out.print("Se metio al if foto");
 
+                    crud.insertarEmpresa(em);
                 }
-                
-            
-            
-            out.print("Hola que hace");
-           
+            } else if (modificar.equals("Modificar")) {
+
+                em.setIdEmpresa(Integer.parseInt(idEmpresa));
+                em.setNombreEmpresa(nombreE);
+                em.setRazonSocial(razonSocial);
+                em.setNit(nit);
+                em.setDireccion(direE);
+                em.setIdPais(Integer.parseInt(pais));
+                em.setIdDepartamento(Integer.parseInt(departamento));
+                if (fotoperfil.isEmpty()) {
+                    em.setLogo(logo2);
+                } else {
+                    em.setLogo(fotoperfil);
+                }
+
+                em.setPaginaWeb(pagina);
+                em.setIdSectorEmpresiarial(Integer.parseInt(sectorE));
+                em.setIdUsuario(Integer.parseInt(idUsu));
+
+                crud.modificarEmpresa(em);
+            } else if (eliminar.equals("Eliminar")) {
+                em.setIdEmpresa(Integer.parseInt(idEmpresa));
+                crud.eliminarEmpresa(em);
+            }
+
+            request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarEmpresa.jsp").forward(request, response);
         } catch (Exception e) {
             out.print(e.toString());
             request.setAttribute("error", e.toString());
