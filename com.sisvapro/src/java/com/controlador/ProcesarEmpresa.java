@@ -49,11 +49,12 @@ public class ProcesarEmpresa extends HttpServlet {
         String insertar = "", modificar = "", eliminar = "";
         Empresa em = new Empresa();
         CrudEmpresa crud = new CrudEmpresa();
+        FileItemFactory Interfaz = new DiskFileItemFactory();
+        ServletFileUpload servlet_up = new ServletFileUpload(Interfaz);
+        List objetos = servlet_up.parseRequest(request);
+        
+        String ruta = "C:\\Users\\David Sarmiento\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\ImagenesPerfiles";
         try {
-            FileItemFactory Interfaz = new DiskFileItemFactory();
-            ServletFileUpload servlet_up = new ServletFileUpload(Interfaz);
-            List objetos = servlet_up.parseRequest(request);
-            String ruta = "C:\\Users\\carlos\\Documents\\NetBeansProjects\\SisVapro2.0\\com.sisvapro\\web\\imagenes\\FotosUsuarios";
 
             for (int i = 0; i < objetos.size(); i++) {
                 FileItem item = (FileItem) objetos.get(i);
