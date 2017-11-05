@@ -32,31 +32,32 @@ public class IniciarSesion extends HttpServlet {
             throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String usuario = request.getParameter("txtusuario");
+        String clave = request.getParameter("txtcontra");
         try {
             if (request.getParameter("btnIngresar") != null) {
                 Usuario u = new Usuario();
-                String usuario = request.getParameter("txtusuario");
-                String clave = request.getParameter("txtcontra");
+
                 CrudUsuario obj = new CrudUsuario();
                 int tipoUsuario = obj.autenticarUsuario(usuario, clave);
                 HttpSession objSesion = request.getSession(false);
-                    HttpSession objSesionId = request.getSession(false);
-                    HttpSession objSesionTipo = request.getSession(false);
-                if (tipoUsuario == 1) {
-                    
+                HttpSession objSesionId = request.getSession(false);
+                HttpSession objSesionTipo = request.getSession(false);
+                if (tipoUsuario == 3) {
+
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Administrador");
-                    objSesionId.setAttribute("id",u.getIdUsuario());
+                    objSesionId.setAttribute("id", u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
                         response.addCookie(valor_guardar);
                     }
                     request.getRequestDispatcher("redireccionLogin.jsp").forward(request, response);
-                } else if (tipoUsuario == 2) {
+                } else if (tipoUsuario == 1) {
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empleador");
-                    objSesionId.setAttribute("idEmpleador",u.getIdUsuario());
+                    objSesionId.setAttribute("idEmpleador", u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
@@ -66,7 +67,7 @@ public class IniciarSesion extends HttpServlet {
                 } else if (tipoUsuario == 2) {
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empresa");
-                    objSesionId.setAttribute("idEmpresa",u.getIdUsuario());
+                    objSesionId.setAttribute("idEmpresa", u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
@@ -79,6 +80,8 @@ public class IniciarSesion extends HttpServlet {
                 }
             }
         } catch (Exception e) {
+            out.print(usuario);
+            out.print(clave);
             out.print(e.toString());
         }
     }

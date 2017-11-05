@@ -106,11 +106,11 @@ public class CrudUsuario extends Conexion{
           if(res.absolute(1))
           {
               Usuario u = new Usuario();
-              u.setIdUsuario(res.getInt("idusuario"));
-              u.setNombreUsuario(res.getString("nombreusuario"));
-              u.setIdTipoUsuario(res.getInt("idtipousuario"));
+              u.setIdUsuario(res.getInt("idUsuario"));
+              u.setNombreUsuario(res.getString("nombreUsuario"));
+              u.setIdTipoUsuario(res.getInt("idTipoUsuario"));
               
-              tipoU= res.getInt("idTipoUsuario");
+              tipoU= res.getInt(4);
               
           }
           
