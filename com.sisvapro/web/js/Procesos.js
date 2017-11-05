@@ -62,9 +62,10 @@ function cargarMunicipio(id, nombre) {
     document.frmMunicipio.txtIdMunicipio.value = id;
     document.frmMunicipio.txtNombre.value = nombre;
 }
-function cargarHabilidad(id, nombre) {
+function cargarHabilidad(id, nombre,ide) {
     document.frmHabilidad.txtIdHabilidad.value = id;
     document.frmHabilidad.txtNombre.value = nombre;
+    document.frmHabilidad.txtIdEmpleador.value=ide;
 }
 function cargarAreaProfesional(id, nombre) {
     document.frmProfesion.txtIdProfesion.value = id;
