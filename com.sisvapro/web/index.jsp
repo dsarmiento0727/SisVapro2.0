@@ -123,12 +123,37 @@
                 <%
                 } else {
                 %>
-                <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-right">
 
-                    <span class="input-group-addon" id="basic-addon1">Usuario</span>
-                    <a href="cerrarSession.jsp" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
+                    <li>
+                        <form class="form-inline my-2 my-lg-0">
 
-                </form>
+
+                            <div class="dropdown show">
+                                <div class="container">
+
+                                    <a class="btn btn-outline-secondary my-2 my-sm-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase() %></span>
+                                    </a>
+
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a href="redireccionLogin.jsp" class="btn btn-primary btn-lg btn-block">Menu <%= tipoUsuario%></a>
+                                        <a href="cerrarSession.jsp" class="btn btn-danger btn-lg btn-block">Cerrar Session</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+
+                    </li>
+                </ul>
+
+
+
+
                 <%
                     }
                 %>

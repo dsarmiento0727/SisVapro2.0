@@ -83,7 +83,7 @@
 
                 <form class="form-inline my-2 my-lg-0">
 
-                    <span class="input-group-addon" id="basic-addon1">Usuario</span>
+                    <span class="input-group-addon" id="basic-addon1"><%=usuario%></span>
                     <a href="../cerrarSession.jsp" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
 
                 </form>

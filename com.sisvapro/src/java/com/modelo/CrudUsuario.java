@@ -90,4 +90,38 @@ public class CrudUsuario extends Conexion{
         }
         return listaUsuario;
     }
+    
+    public int autenticarUsuario(String user, String contra) throws Exception {
+        ResultSet res;
+        int tipoU=0;
+
+        try {
+            this.conectar();
+            String sql = "select * from public.usuario where nombreUsuario=? and clave=?";
+            PreparedStatement pre = this.getCon().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            pre.setString(1, user);
+            pre.setString(2, contra);
+            res = pre.executeQuery();
+
+          if(res.absolute(1))
+          {
+              Usuario u = new Usuario();
+              u.setIdUsuario(res.getInt("idusuario"));
+              u.setNombreUsuario(res.getString("nombreusuario"));
+              u.setIdTipoUsuario(res.getInt("idtipousuario"));
+              
+              tipoU= res.getInt("idTipoUsuario");
+              
+          }
+          
+             return tipoU; 
+          
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+       
+
+    }
 }

@@ -6,6 +6,7 @@
 package com.controlador;
 
 import com.modelo.AutentificarUsuario;
+import com.modelo.CrudUsuario;
 import com.modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +37,7 @@ public class IniciarSesion extends HttpServlet {
                 Usuario u = new Usuario();
                 String usuario = request.getParameter("txtusuario");
                 String clave = request.getParameter("txtcontra");
-                AutentificarUsuario obj = new AutentificarUsuario();
+                CrudUsuario obj = new CrudUsuario();
                 int tipoUsuario = obj.autenticarUsuario(usuario, clave);
                 HttpSession objSesion = request.getSession(false);
                     HttpSession objSesionId = request.getSession(false);
@@ -45,7 +46,7 @@ public class IniciarSesion extends HttpServlet {
                     
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Administrador");
-                    objSesionId.setAttribute("id",u.getIdUsuario() );
+                    objSesionId.setAttribute("id",u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
@@ -55,6 +56,7 @@ public class IniciarSesion extends HttpServlet {
                 } else if (tipoUsuario == 2) {
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empleador");
+                    objSesionId.setAttribute("idEmpleador",u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
@@ -64,6 +66,7 @@ public class IniciarSesion extends HttpServlet {
                 } else if (tipoUsuario == 2) {
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empresa");
+                    objSesionId.setAttribute("idEmpresa",u.getIdUsuario());
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);

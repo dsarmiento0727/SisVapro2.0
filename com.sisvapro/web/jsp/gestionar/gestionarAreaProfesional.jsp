@@ -13,6 +13,8 @@
     String usuario = null;
 
     String tipoUsuario = null;
+    
+    String idUsuario = null;
 
     try {
 
