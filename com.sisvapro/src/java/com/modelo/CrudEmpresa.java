@@ -98,7 +98,7 @@ public class CrudEmpresa extends Conexion {
                 d.setIdPais(res.getInt("idPais"));
                 d.setIdDepartamento(res.getInt("idDepartamento"));
                 d.setLogo(res.getString("logo"));
-                d.setIdSectorEmpresiarial(res.getInt("idSectorEmpresiarial"));
+                d.setIdSectorEmpresiarial(res.getInt("idSectorEmpresarial"));
                 d.setPaginaWeb(res.getString("paginaWeb"));
                 listaEmpresa.add(d);
             }
