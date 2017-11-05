@@ -5,6 +5,9 @@
  */
 package com.controlador;
 
+
+import com.modelo.CrudFormacionAcademica;
+import com.modelo.FormacionAcademica;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,8 +34,32 @@ public class ProcesarFormacionAcademica extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        
+        String val = null;
+        CrudFormacionAcademica crud = new CrudFormacionAcademica();
+        FormacionAcademica aca = new FormacionAcademica();
+        try {
+
+            aca.setIdFormacion(Integer.parseInt(request.getParameter("txtIdFormacionAcademica")));
+            aca.setNivelEstudio(request.getParameter("lstNivel"));
+            aca.setEstado(request.getParameter("lstEstado"));
+            aca.setCarrera(request.getParameter("txtCarrera"));
+            aca.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+
+            if (request.getParameter("btnInsertar") != null) {
+                crud.insertarFormacionAcademica(aca);
+                val = "Datos insertados Correctamente";
+            } else if (request.getParameter("btnModificar") != null) {
+                crud.modificarFormacionAcademica(aca);
+            } else if (request.getParameter("btnEliminar") != null) {
+                crud.eliminarFormacionAcademica(aca);
+            }
+            request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarFormacionAcademica.jsp").forward(request, response);
+        } catch (Exception e) {
+            
+            out.print(e.toString());
+            request.setAttribute("error", e.toString());
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

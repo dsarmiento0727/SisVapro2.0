@@ -59,8 +59,7 @@ public class ProcesarExperienciaLaboral extends HttpServlet {
             request.setAttribute("valor", val);
             request.getRequestDispatcher("gestionarExperienciaLaboral.jsp").forward(request, response);
         } catch (Exception e) {
-            out.print(nulillo);
-            out.print("<br>");
+            
             out.print(e.toString());
             request.setAttribute("error", e.toString());
         }

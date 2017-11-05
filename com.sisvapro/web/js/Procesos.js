@@ -86,6 +86,15 @@ function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, ha
     document.frmExperienciaLaboral.lstTipoContrato.value = tipo;
     document.frmExperienciaLaboral.txtIdEmpleador.value =idEmpleado;
 }
+
+function cargarFormacionAcademica(id,nivel,estado,car,ide){
+    document.frmFormacion.txtIdFormacionAcademica.value=id;
+    document.frmFormacion.lstNivel.value=nivel;
+    document.frmFormacion.lstEstado.value=estado;
+    document.frmFormacion.txtCarrera.value=car;
+    document.frmFormacion.txtIdEmpleador.value=ide;
+}
+
 function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, departamento, descripcion, experiencia) {
     document.frmOferta.txtIdOferta.value = id;
     document.frmOferta.txtPuesto.value = puesto;

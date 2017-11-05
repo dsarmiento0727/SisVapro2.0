@@ -42,7 +42,8 @@ public class CrudFormacionAcademica  extends Conexion{
             pre.setString(1, d.getNivelEstudio());
             pre.setString(2, d.getEstado());
             pre.setString(3, d.getCarrera());
-            pre.setInt(4, d.getIdFormacion());
+            pre.setInt(4, d.getIdEmpleador());
+            pre.setInt(5, d.getIdFormacion());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
