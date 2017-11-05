@@ -6,6 +6,7 @@
 package com.controlador;
 
 import com.modelo.AutentificarUsuario;
+import com.modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,15 +33,19 @@ public class IniciarSesion extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             if (request.getParameter("btnIngresar") != null) {
+                Usuario u = new Usuario();
                 String usuario = request.getParameter("txtusuario");
                 String clave = request.getParameter("txtcontra");
                 AutentificarUsuario obj = new AutentificarUsuario();
                 int tipoUsuario = obj.autenticarUsuario(usuario, clave);
-                if (tipoUsuario == 1) {
-                    HttpSession objSesion = request.getSession(false);
+                HttpSession objSesion = request.getSession(false);
+                    HttpSession objSesionId = request.getSession(false);
                     HttpSession objSesionTipo = request.getSession(false);
+                if (tipoUsuario == 1) {
+                    
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Administrador");
+                    objSesionId.setAttribute("id",u.getIdUsuario() );
                     if (request.getParameter("ck") != null) {
                         Cookie valor_guardar = new Cookie("usuario", usuario);
                         valor_guardar.setMaxAge(60 * 60 * 24);
@@ -48,8 +53,6 @@ public class IniciarSesion extends HttpServlet {
                     }
                     request.getRequestDispatcher("redireccionLogin.jsp").forward(request, response);
                 } else if (tipoUsuario == 2) {
-                    HttpSession objSesion = request.getSession(false);
-                    HttpSession objSesionTipo = request.getSession(false);
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empleador");
                     if (request.getParameter("ck") != null) {
@@ -59,8 +62,6 @@ public class IniciarSesion extends HttpServlet {
                     }
                     request.getRequestDispatcher("redireccionLogin.jsp").forward(request, response);
                 } else if (tipoUsuario == 2) {
-                    HttpSession objSesion = request.getSession(false);
-                    HttpSession objSesionTipo = request.getSession(false);
                     objSesion.setAttribute("usuario", usuario);
                     objSesionTipo.setAttribute("tipo", "Empresa");
                     if (request.getParameter("ck") != null) {
@@ -70,8 +71,6 @@ public class IniciarSesion extends HttpServlet {
                     }
                     request.getRequestDispatcher("redireccionLogin.jsp").forward(request, response);
                 } else {
-                    HttpSession objSesion = request.getSession(false);
-                    HttpSession objSesionTipo = request.getSession(false);
                     objSesionTipo.setAttribute("tipo", null);
                     response.sendRedirect("registro.jsp");
                 }

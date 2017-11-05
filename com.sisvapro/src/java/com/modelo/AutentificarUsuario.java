@@ -18,8 +18,6 @@ import java.sql.ResultSet;
 public class AutentificarUsuario {
         
     
-    Conexion objConexion = new Conexion();
-    
     
     public int autenticarUsuario(String user, String contra) throws Exception {
         Conexion objConexion = new Conexion();
@@ -36,6 +34,11 @@ public class AutentificarUsuario {
 
           if(res.absolute(1))
           {
+              Usuario u = new Usuario();
+              u.setIdUsuario(res.getInt("idusuario"));
+              u.setNombreUsuario(res.getString("nombreusuario"));
+              u.setIdTipoUsuario(res.getInt("idtipousuario"));
+              
               tipoU= res.getInt("idTipoUsuario");
               
           }
@@ -43,7 +46,6 @@ public class AutentificarUsuario {
              return tipoU; 
           
         } catch (Exception e) {
-            
             throw e;
         } finally {
             objConexion.desconectar();
