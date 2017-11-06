@@ -73,7 +73,7 @@
                     <div class="form-group row">
                         <label for="idadmin" class="col-sm-2 col-form-label">Id Administrador</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="idadmin" name="txtIdAdministrador"placeholder="Id Administrador">
+                            <input type="text" class="form-control" id="idadmin" name="txtIdAdministrador"placeholder="Id Administrador" value="0" readonly>
                         </div>
                     </div>
 

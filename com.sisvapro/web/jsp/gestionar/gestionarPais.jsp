@@ -75,7 +75,7 @@
                 <div class="form-group row">
                     <label for="idpais" class="col-sm-2 col-form-label">Id Pais</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais" disabled>
+                    <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais" value="0" readonly>
                 </div>
                 </div>
                 <div class="form-group row">

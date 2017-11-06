@@ -68,7 +68,7 @@
                     <div class="form-group row">
                         <label for="idusu" class="col-sm-2 col-form-label">Id Usuario</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="idusu" name="txtIdUsuario" placeholder="Id Usuario">
+                            <input type="text" class="form-control" id="idusu" name="txtIdUsuario" placeholder="Id Usuario" value="0" readonly>
                         </div>
                     </div>
                     <div class="form-group row">

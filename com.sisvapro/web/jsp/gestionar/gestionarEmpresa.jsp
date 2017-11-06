@@ -74,7 +74,7 @@
                     <div class="form-group row">
                         <label for="idempresa" class="col-sm-2 col-form-label">Id Empresa</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdEmpresa" name="txtIdEmpresa"placeholder="Id Empresa">
+                            <input type="text" class="form-control" id="txtIdEmpresa" name="txtIdEmpresa"placeholder="Id Empresa" value="0" readonly>
                         </div>
                     </div>
 

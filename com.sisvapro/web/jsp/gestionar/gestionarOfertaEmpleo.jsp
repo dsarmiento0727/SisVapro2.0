@@ -70,7 +70,7 @@
                 <div class="form-group row">
                     <label for="idprofesion" class="col-sm-2 col-form-label"><strong>Id Oferta de Empleo</strong></label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="txtIdOferta" name="txtIdOferta" placeholder="Id de Oferta de Empleo">
+                        <input type="text" class="form-control" id="txtIdOferta" name="txtIdOferta" placeholder="Id de Oferta de Empleo" value="0" readonly>
                     </div>
                 </div>
                 <div class="form-group row">
