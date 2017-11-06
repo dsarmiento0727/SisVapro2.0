@@ -4,18 +4,24 @@
     Author     : David Sarmiento
 --%>
 
+<%@page import="com.modelo.CrudPais"%>
 <%@page import="com.modelo.Pais"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    CrudPais crudpa = new CrudPais();
+    %>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <script type="text/javascript" src="../js/jquery-3.2.1.slim.min.js"></script>
-        <script type="text/javascript" src="../js/popper.min.js"></script>
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/mostarOcultar.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <script type="text/javascript" src="../../js/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="../../js/popper.min.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../js/mostarOcultar.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -33,7 +39,7 @@
 
                 <center>
                     <br>
-                    <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empleador</h1></div>
+                    <div class="p-1 mb-1 bg-light text-black"><h1>Perfil de Empleador</h1></div>
                     <br>
                     <div class="form-group, position-relative"> 
                         <img src="../../imagenes/fotoprueba.jpg" style="width: 150px" class="rounded float-center" alt="..." class="rounded">
@@ -139,22 +145,71 @@
                             </div><!--cerra al final-->
                         </div><!--cerrar al final-->
                     </div><!--cerrar final-->
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                        <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                        <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                        <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                    </div>
 
 
                     <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
                     -->
-                    <input type="button" onclick="anteriorPagina()" value="Anterior">
-                    <input type="button" onclick="siguientePagina()" value="Siguiente">
+                    <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
+                    <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
 
                     <!-- Recordar insertar todo en diferentes div
                     -->
                     </div>
+                              <div id="pagina2" style="display:none;">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox"> Check me out
+                        </label>
+                    </div>
+                </div>
+
+                <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
+                -->
+                <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
+                <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
+
+                <!-- Recordar insertar todo en diferentes div
+                -->
+            </div>                
+                                            
+                                            
+                                            
                     </form> 
                     </body>
                     </html>
