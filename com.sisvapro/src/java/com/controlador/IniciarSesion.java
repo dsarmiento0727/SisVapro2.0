@@ -10,6 +10,7 @@ import com.modelo.CrudUsuario;
 import com.modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -34,12 +35,23 @@ public class IniciarSesion extends HttpServlet {
         PrintWriter out = response.getWriter();
         String usuario = request.getParameter("txtusuario");
         String clave = request.getParameter("txtcontra");
+        int tipoUsuario = 0;
         try {
             if (request.getParameter("btnIngresar") != null) {
                 Usuario u = new Usuario();
-
+                
                 CrudUsuario obj = new CrudUsuario();
-                int tipoUsuario = obj.autenticarUsuario(usuario, clave);
+                List<Usuario> login = obj.autenticarUsuario(usuario, clave);
+                
+                for(Usuario log:login)
+                {
+                    u.setIdUsuario(log.getIdUsuario());
+                    u.setNombreUsuario(log.getNombreUsuario());
+                    u.setClave(log.getClave());
+                    u.setIdTipoUsuario(log.getIdTipoUsuario());
+                }
+                
+                tipoUsuario = u.getIdTipoUsuario();
                 HttpSession objSesion = request.getSession(false);
                 HttpSession objSesionId = request.getSession(false);
                 HttpSession objSesionTipo = request.getSession(false);
@@ -80,9 +92,7 @@ public class IniciarSesion extends HttpServlet {
                 }
             }
         } catch (Exception e) {
-            out.print(usuario);
-            out.print(clave);
-            out.print(e.toString());
+
         }
     }
 

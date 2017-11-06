@@ -133,7 +133,7 @@
                                 <div class="container">
 
                                     <a class="btn btn-outline-secondary my-2 my-sm-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase() %></span>
+                                        <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase()%></span>
                                     </a>
 
 
@@ -280,7 +280,13 @@
                 </div>
             </div>
         </div>
-
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Copyright © Mundo Empleo 2017</small>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>

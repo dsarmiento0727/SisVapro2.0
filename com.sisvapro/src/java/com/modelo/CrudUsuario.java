@@ -91,9 +91,9 @@ public class CrudUsuario extends Conexion{
         return listaUsuario;
     }
     
-    public int autenticarUsuario(String user, String contra) throws Exception {
+    public List<Usuario>autenticarUsuario(String user, String contra) throws Exception {
+        List<Usuario> loguinUsuario =new ArrayList();
         ResultSet res;
-        int tipoU=0;
 
         try {
             this.conectar();
@@ -108,13 +108,14 @@ public class CrudUsuario extends Conexion{
               Usuario u = new Usuario();
               u.setIdUsuario(res.getInt("idUsuario"));
               u.setNombreUsuario(res.getString("nombreUsuario"));
+              u.setClave(res.getString("clave"));
               u.setIdTipoUsuario(res.getInt("idTipoUsuario"));
               
-              tipoU= res.getInt(4);
+              loguinUsuario.add(u);
               
           }
           
-             return tipoU; 
+             return loguinUsuario; 
           
         } catch (Exception e) {
             throw e;

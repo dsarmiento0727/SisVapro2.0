@@ -10,6 +10,8 @@
     String usuario = null;
 
     String tipoUsuario = null;
+    
+    String idUsuario = null;
 
     try {
 
@@ -20,6 +22,7 @@
         usuario = (String) objSesion.getAttribute("usuario");
 
         tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        idUsuario = (String) objSesionTipo.getAttribute("id").toString();
         if (usuario == null) {
             response.sendRedirect("../accesoDenegado.jsp");
         }
@@ -77,7 +80,7 @@
 
                     </li>      
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Gestionar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -109,9 +112,9 @@
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="#">Dashboard</a>
+                        <a href="#">Inicio</a>
                     </li>
-                    <li class="breadcrumb-item active">My Dashboard</li>
+                    <li class="breadcrumb-item active">Mi Panel De control</li>
                 </ol>
                 <!-- Icon Cards-->
                 <div class="row">
@@ -121,10 +124,10 @@
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-comments"></i>
                                 </div>
-                                <div class="mr-5">26 New Messages!</div>
+                                <div class="mr-5">26 Usuarios Registrados</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
+                            <a class="card-footer text-white clearfix small z-1" href="gestionar/gestionarUsuario.jsp">
+                                <span class="float-left"><%= idUsuario %></span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right"></i>
                                 </span>
