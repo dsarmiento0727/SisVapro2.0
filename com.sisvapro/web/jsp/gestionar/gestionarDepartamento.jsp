@@ -59,30 +59,32 @@
     <body>
 <jsp:include page="menuGestionar.jsp"/>
     <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Departamento</h1></div>
+        <br>
+        <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Departamento</h1></div>
     </center>
     <br><br>        
     <div class="container">
+        <center>
         <form action="procesarDepartamento" method="POST" name="frmDepartamento">
-            <center>
+            
                 
                     <div class="form-group row">
-                        <label for="iddepartamento" class="col-sm-2 col-form-label">Id Departamento</label>
+                        <label for="iddepartamento" class="col-sm-2 col-form-label"><strong>Id Departamento</strong></label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdDepartamento" placeholder="Id Departamento" value="0" readonly>
+                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdDepartamento" required="true" placeholder="Id Departamento" value="0" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="nombre" class="col-sm-2 col-form-label">Departamento</label>
+                        <label for="nombre" class="col-sm-2 col-form-label"><strong>Departamento</strong></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Deparatamento">
+                            <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="true" placeholder="Deparatamento">
                         </div>
                     </div>
-                    <div class="col-10">
-                        <div class="form-group">
-                            <label for="lstPais" class="col-form-label"><strong>Pais</strong></label>
-
-                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais">
+                    <div class="form-group row">
+                        <label for="lstPais" class="col-lg-2 col-form-label"><strong>  Pais</strong></label>
+                        
+                        <div class="col-auto">
+                            <select class="custom-select mb-2 mr-sm-10 mb-sm-0" id="lstPais" name="lstPais">
                                 <option>Seleccionar</option>
                                 <%
                                     List<Pais> lstpais = crud.mostrarPais();
@@ -102,10 +104,10 @@
                                 <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                                 <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
                          
-                        </form>
+                        
                     </div>
-                 
-                </table>
+                 </form>
+               
             </center>
             <br><br>
             <table id="grid" class="table table-bordered" style="text-align: center; width: 1200px">
