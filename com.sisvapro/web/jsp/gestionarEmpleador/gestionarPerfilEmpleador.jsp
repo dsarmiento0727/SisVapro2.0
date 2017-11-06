@@ -212,7 +212,7 @@
                         <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
                         -->
                         <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
-                        <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
+                        <input type="button" class="btn btn-info" onclick="siguientePagina2()" value="Siguiente">
 
                         <!-- Recordar insertar todo en diferentes div
                         -->
@@ -307,8 +307,8 @@
 
                                         </div>
                                     </div>
-                                                          <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
-                        <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
+                                    <input type="button" class="btn btn-info" onclick="anteriorPagina2()" value="Anterior">
+                                    <input type="button" class="btn btn-info" onclick="siguientePagina3()" value="Siguiente">
                                 </form>       
                             </div>
                         </div>

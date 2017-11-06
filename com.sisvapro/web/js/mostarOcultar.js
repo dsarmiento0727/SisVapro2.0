@@ -42,6 +42,12 @@ function siguientePagina2() {
     document.getElementById('pagina3').style.display = 'block';
 }
 
-$(document).ready(function () {
-       document.getElementById('menuGestionar').style.display = 'none';
-    });
+function anteriorPagina3() {
+    document.getElementById('pagina4').style.display = 'none';
+    document.getElementById('pagina3').style.display = 'block';     
+}
+function siguientePagina3() {
+    document.getElementById('pagina3').style.display = 'none';
+    document.getElementById('pagina4').style.display = 'block';
+}
+
