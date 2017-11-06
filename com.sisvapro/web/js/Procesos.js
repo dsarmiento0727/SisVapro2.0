@@ -98,10 +98,12 @@ function cargarFormacionAcademica(id, nivel, estado, car, ide) {
     document.frmFormacion.txtIdEmpleador.value = ide;
 }
 
-function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, departamento, descripcion, experiencia) {
+function cargarOferta(id, puesto, canti,tipo, experiencia,genero, edad, salario, empresa, pais, departamento, descripcion) {
     document.frmOferta.txtIdOferta.value = id;
     document.frmOferta.txtPuesto.value = puesto;
+    document.frmOferta.txtCanti.value=canti;
     document.frmOferta.lstContratacion.value = tipo;
+    document.frmOferta.experiencia.value=experiencia;
     document.frmOferta.genero.value = genero;
     document.frmOferta.txtedad.value = edad;
     document.frmOferta.txtsalario.value = salario;
@@ -109,7 +111,7 @@ function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, de
     document.frmOferta.lstPais.value = pais;
     document.frmOferta.lstDepartamento.value = departamento;
     document.frmOferta.txtDescripcion.value = descripcion;
-    document.frmOferta.experiencia.value = experiencia;
+    
 }
 function cargarContacto(id, nombres, apellidos, cargo, telefono1, telefono2, empresa) {
     document.frmContacto.txtIdContacto.value = id;

@@ -71,34 +71,36 @@
     CrudEmpleador crud = new CrudEmpleador();
 %>
 
-<center>
+
     <br>
     <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empleador</h1></div>
     <br>
+    <center>
     <form action="procesarEmpleador" method="POST" name="frmEmpleador">
+        
         <div class="form-group, position-relative"> 
             <img src="../../imagenes/fotoprueba.jpg" style="width: 150px" class="rounded float-center" alt="..." class="rounded">
-            <div class="col-6">
+            <div class="col-5">
                 <label for="foto"><strong>Foto de Perfil</strong></label>
                 <input type="file" class="form-control-file" id="foto" name="foto">
             </div>
         </div>
-
+        
         <div class="container">
             <div class="row">
                 <div class="col align-self-start">
-
+                    
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
                             <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="apellidos" class="col-form-label"><strong>Apellidos</strong></label>
                             <input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
                         </div>
                     </div>
-                    <div class="col-13">
+                    <div class="col-10">
                         <div class="form-group">
                             <label for="direccion" class="col-form-label"><strong>Direccion actual</strong></label>
                             <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion actual donde reside">
@@ -180,6 +182,7 @@
                 </div><!--cerra al final-->
             </div><!--cerrar al final-->
         </div><!--cerrar final-->
+        
         <div class="btn-group" role="group" aria-label="Basic example">
             <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
             <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
@@ -187,6 +190,6 @@
             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
         </div>
     </form>
-</center>
-                                <br>
+    </center>
+<br>
 

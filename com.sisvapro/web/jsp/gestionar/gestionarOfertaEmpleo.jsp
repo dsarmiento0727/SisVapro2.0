@@ -67,7 +67,7 @@
         <br>
         <div class="container">
             <form action="procesarOfertaEmpleo" method="POST" name="frmOferta">
-                <label for="idprofesion" class="col-sm-5 col-form-label"><strong>Id</strong></label>
+                <label for="idoferta" class="col-sm-5 col-form-label"><strong>Id</strong></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="txtIdOferta" name="txtIdOferta" placeholder="Id de Oferta de Empleo" value="0" readonly>
                         </div>

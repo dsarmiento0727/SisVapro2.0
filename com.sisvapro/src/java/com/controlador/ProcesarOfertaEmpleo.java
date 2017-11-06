@@ -40,8 +40,10 @@ public class ProcesarOfertaEmpleo extends HttpServlet {
         String val=null;
         try {
             o.setIdOfertaEmpleo(Integer.parseInt(request.getParameter("txtIdOfertaEmpleo")));
-            o.setPuestoVacante(Integer.parseInt(request.getParameter("txtPuesto")));
+            o.setPuestoVacante(request.getParameter("txtPuesto"));
+            o.setCantidad(Integer.parseInt(request.getParameter("txtCanti")));
             o.setTipoContratacion(request.getParameter("lstContratacion"));
+            o.setNivelExperiencia(request.getParameter("experiencia"));
             o.setGenero(request.getParameter("genero"));
             o.setEdad(Integer.parseInt(request.getParameter("txtEdad")));
             o.setSalario(Double.parseDouble(request.getParameter("txtSalario")));
@@ -49,7 +51,6 @@ public class ProcesarOfertaEmpleo extends HttpServlet {
             o.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
             o.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
             o.setDescripcionOferta(request.getParameter("txtDescripcion"));
-            o.setNivelExperiencia(request.getParameter("experiencia"));
             if (request.getParameter("btnInsertar")!=null) {
                 crud.insertarOfertaEmpleo(o);
                 val="Datos insertados Correctamente";
