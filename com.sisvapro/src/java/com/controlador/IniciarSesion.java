@@ -65,6 +65,7 @@ public class IniciarSesion extends HttpServlet {
                         valor_guardar.setMaxAge(60 * 60 * 24);
                         response.addCookie(valor_guardar);
                     }
+                    
                     request.getRequestDispatcher("redireccionLogin.jsp").forward(request, response);
                 } else if (tipoUsuario == 1) {
                     objSesion.setAttribute("usuario", usuario);
@@ -91,8 +92,9 @@ public class IniciarSesion extends HttpServlet {
                     response.sendRedirect("registro.jsp");
                 }
             }
+            
         } catch (Exception e) {
-
+            out.print(e.toString());
         }
     }
 
