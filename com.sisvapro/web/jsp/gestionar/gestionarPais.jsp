@@ -73,13 +73,13 @@
                 <center>
                     <table>
                 <div class="form-group row">
-                    <label for="idpais" class="col-sm-2 col-form-label">Id Pais</label>
+                    <label for="idpais" class="col-sm-2 col-form-label"><strong>Id Pais</strong></label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control" id="txtIdPais" name="txtIdPais"placeholder="Id Pais" value="0" readonly>
                 </div>
                 </div>
                 <div class="form-group row">
-                    <label for="nombre" class="col-sm-2 col-form-label">Pais</label>
+                    <label for="nombre" class="col-sm-2 col-form-label"><strong>Pais</strong></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtNombre" name="txtNombre"placeholder="Pais" >
                 </div>

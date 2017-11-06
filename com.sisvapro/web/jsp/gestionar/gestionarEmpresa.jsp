@@ -65,48 +65,48 @@
     <body> 
         <jsp:include page="menuGestionar.jsp"/>
     <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Empresa</h1></div>
-        <br><br>
-
+        <br>
+        <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empresa</h1></div>
+        <br>
         <div class="container">
             <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
                 <table>
                     <div class="form-group row">
-                        <label for="idempresa" class="col-sm-2 col-form-label">Id Empresa</label>
+                        <label for="idempresa" class="col-sm-2 col-form-label"><strong>Id Empresa</strong></label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="txtIdEmpresa" name="txtIdEmpresa"placeholder="Id Empresa" value="0" readonly>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="idusuario" class="col-sm-2 col-form-label">Id usuario</label>
+                        <label for="idusuario" class="col-sm-2 col-form-label"><strong>Id usuario</strong></label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="txtIdUsuario" name="txtIdUsuario"placeholder="Id Usuario">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="nombreEmpresa" class="col-sm-2 col-form-label">Nombre de la Empresa</label>
+                        <label for="nombreEmpresa" class="col-sm-2 col-form-label"><strong>Nombre de la Empresa</strong></label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
                         </div>
                     </div> 
                     <div class="form-group row">
 
-                        <label for="razonsocial" class="col-sm-2 col-form-label">Razón Social</label>
+                        <label for="razonsocial" class="col-sm-2 col-form-label"><strong>Razón Social</strong></label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" id="txtRazon" name="txtRazon"placeholder="Razón Social de la Empresa">
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label for="nit" class="col-sm-2 col-form-label">NIT</label>
+                        <label for="nit" class="col-sm-2 col-form-label"><strong>NIT</strong></label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" id="txtNit" name="txtNit"placeholder="############-##">
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label for="DIRECCION" class="col-sm-2 col-form-label">Dirección de la Empresa</label>
-                        <div class="col-sm-5">
+                        <label for="DIRECCION" class="col-sm-2 col-form-label"><strong>Dirección de la Empresa</strong></label>
+                        <div class="col-sm-9">
                             <textarea class="form-control" id="txtDireccion" name="txtDireccion" rows="3"></textarea>
                         </div>
                     </div>
@@ -145,19 +145,19 @@
                         </div>
                     </div>
                     <div class="form-group"> 
-                        <label for="logo">Logo de la Empresa</label>
+                        <label for="logo"><strong>Logo de la Empresa</strong></label>
                         <input type="file" class="form-control-file" id="logo" name="logo">
                         <input type="text" id="logo2" name="logo2" style="display: block;">
                     </div>
                     <div class="form-group row">
-                        <label for="pagina" class="col-sm-2 col-form-label">Pagina Web</label>
+                        <label for="pagina" class="col-sm-2 col-form-label"><strong>Pagina Web</strong></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="txtPagina" name="txtPagina"placeholder="Página Web de la Empresa">
                         </div>
                     </div> 
                     <div class="form-row align-items-center">
                         <div class="col-auto">
-                            <label class="mr-sm-2" for="idSector">Sector Empresarial</label>
+                            <label class="mr-sm-2" for="idSector"><strong>Sector Empresarial</strong></label>
                             <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idUsuario" name="lstSector" >
                                 <%
                                     List<SectorEmpresarial> lst3 = cruds.mostrarSectorEmpresarial();
