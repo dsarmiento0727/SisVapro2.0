@@ -16,7 +16,7 @@ public class OfertaEmpleo {
     private String tipoContratacion;
     private String nivelExperiencia;
     private String genero;
-    private int edad;
+    private String edad;
     private Double salario;
     private int idEmpresa;
     private int idPais;
@@ -27,7 +27,7 @@ public class OfertaEmpleo {
     public OfertaEmpleo() {
     }
 
-    public OfertaEmpleo(int idOfertaEmpleo, String puestoVacante, int cantidad, String tipoContratacion, String nivelExperiencia, String genero, int edad, Double salario, int idEmpresa, int idPais, int idDepartamento, int idSectorEmpresarial, String descripcionOferta) {
+    public OfertaEmpleo(int idOfertaEmpleo, String puestoVacante, int cantidad, String tipoContratacion, String nivelExperiencia, String genero, String edad, Double salario, int idEmpresa, int idPais, int idDepartamento, int idSectorEmpresarial, String descripcionOferta) {
         this.idOfertaEmpleo = idOfertaEmpleo;
         this.puestoVacante = puestoVacante;
         this.cantidad = cantidad;
@@ -91,11 +91,11 @@ public class OfertaEmpleo {
         this.genero = genero;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
@@ -146,9 +146,6 @@ public class OfertaEmpleo {
     public void setDescripcionOferta(String descripcionOferta) {
         this.descripcionOferta = descripcionOferta;
     }
-
-    
-
     
     
 }

@@ -211,9 +211,10 @@
                 </div>
 
             </form>
-        </div>
+        
         <br>
-        <table id="grid" class="table table-bordered" style="text-align: center; width: 1400px">
+        </div>
+        <table id="grid" class="table table-bordered" style="text-align: center">
             <thead class="thead-inverse">
                 <tr>
                     <th style="text-align: center">Id Oferta</th>
@@ -239,6 +240,7 @@
                     <td><%=o.getIdOfertaEmpleo()%></td>
                     <td><%=o.getPuestoVacante()%></td>
                     <td><%=o.getTipoContratacion()%></td>
+                    <td><%=o.getNivelExperiencia()%></td>
                     <td><%=o.getGenero()%></td>
                     <td><%=o.getEdad()%></td>
                     <td><%=o.getSalario()%></td>
@@ -246,8 +248,8 @@
                     <td><%=o.getIdPais()%></td>
                     <td><%=o.getIdDepartamento()%></td>
                     <td><%=o.getDescripcionOferta()%></td>
-                    <td><%=o.getNivelExperiencia()%></td>
-                    <td><a href="javascript:cargarOfertal(<%=o.getIdOfertaEmpleo()%>,
+                    
+                    <td><a class="badge badge-primary" href="javascript:cargarOfertal(<%=o.getIdOfertaEmpleo()%>,
                            '<%=o.getPuestoVacante()%>','<%=o.getTipoContratacion()%>',
                            '<%=o.getGenero()%>','<%=o.getEdad()%>','><%=o.getSalario()%>',
                            '<%=o.getIdEmpresa()%>','<%=o.getIdPais()%>','<%=o.getIdDepartamento()%>',
@@ -259,5 +261,6 @@
             </tbody>
         </table>
 
+    
     </body>
 </html>

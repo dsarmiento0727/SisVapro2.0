@@ -45,7 +45,7 @@ public class ProcesarOfertaEmpleo extends HttpServlet {
             o.setTipoContratacion(request.getParameter("lstContratacion"));
             o.setNivelExperiencia(request.getParameter("experiencia"));
             o.setGenero(request.getParameter("genero"));
-            o.setEdad(Integer.parseInt(request.getParameter("txtEdad")));
+            o.setEdad(request.getParameter("txtEdad"));
             o.setSalario(Double.parseDouble(request.getParameter("txtSalario")));
             o.setIdEmpresa(Integer.parseInt(request.getParameter("lstEmpresa")));
             o.setIdPais(Integer.parseInt(request.getParameter("lstPais")));

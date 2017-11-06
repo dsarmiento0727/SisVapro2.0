@@ -25,7 +25,7 @@ public class CrudOfertaEmpleo extends Conexion{
             pre.setInt(3, oe.getCantidad());
             pre.setString(4, oe.getTipoContratacion());
             pre.setString(5, oe.getGenero());
-            pre.setInt(6, oe.getEdad());
+            pre.setString(6, oe.getEdad());
             pre.setDouble(7, oe.getSalario());
             pre.setInt(8, oe.getIdEmpresa());
             pre.setInt(9, oe.getIdPais());
@@ -50,7 +50,7 @@ public class CrudOfertaEmpleo extends Conexion{
             pre.setInt(2, oe.getCantidad());
             pre.setString(3, oe.getTipoContratacion());
             pre.setString(4, oe.getGenero());
-            pre.setInt(5, oe.getEdad());
+            pre.setString(5, oe.getEdad());
             pre.setDouble(6, oe.getSalario());
             pre.setInt(7, oe.getIdEmpresa());
             pre.setInt(8, oe.getIdPais());
@@ -97,13 +97,14 @@ public class CrudOfertaEmpleo extends Conexion{
                 oe.setCantidad(res.getInt("cantidad"));
                 oe.setTipoContratacion(res.getString("tipoContratacion"));
                 oe.setGenero(res.getString("genero"));
-                oe.setEdad(res.getInt("edad"));
+                oe.setEdad(res.getString("edad"));
                 oe.setSalario(res.getDouble("salario"));
                 oe.setIdEmpresa(res.getInt("idEmpresa"));
                 oe.setIdPais(res.getInt("idPais"));
                 oe.setIdDepartamento(res.getInt("idDepartamento"));
                 oe.setIdSectorEmpresarial(res.getInt("idSectorEmpresarial"));
                 oe.setDescripcionOferta(res.getString("descripcionOferta"));
+                oe.setNivelExperiencia(res.getString("nivelExperiencia"));
                 listaOfertaEmpleo.add(oe);
             }
         } catch (Exception e) {
