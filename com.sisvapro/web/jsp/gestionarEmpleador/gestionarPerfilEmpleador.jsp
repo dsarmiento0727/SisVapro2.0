@@ -11,7 +11,7 @@
 
 <%
     CrudPais crudpa = new CrudPais();
-    %>
+%>
 
 <!DOCTYPE html>
 <html>
@@ -155,61 +155,166 @@
                     <!-- Recordar insertar todo en diferentes div
                     -->
                     </div>
-                              <div id="pagina2" style="display:none;">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Check me out
-                        </label>
-                    </div>
-                </div>
+                    <div id="pagina2" style="display:none;">
+                        <div class="p-1 mb-1 bg-light text-black"><center><h1>Formacion Academica</h1></center></div>
+                        <br>
+                        <div class="jumbotron">
+                            <form action="procesarFormacionAcademica" method="POST" name="frmFormacion">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="form-group col-md-5">
+                                            <label for="idfor" class="col-form-label">Id Formacion Academica</label>
+                                            <input type="text" class="form-control" id="idfor" name="txtIdFormacionAcademica" placeholder="Id Formacion Academica"  value="0" readonly>
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="idfor1" class="col-form-label">Id Empleador</label>
+                                            <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador"  value="0" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
+                                        <div class="col">
+                                            <select class="custom-select mb-1 mr-sm-1 mb-sm-1" id="lstNivel" name="lstNivel" required="true">
+                                                <option>Seleccione</option>
+                                                <option value="9 grado">9 grado</option>
+                                                <option value="Bachillertao Incompleto">Bachillertao Incompleto</option>
+                                                <option value="Bachillertao Completo">Bachillertao Completo</option>
+                                                <option value="Universidad 1to año">Universidad 1ro a&ntilde;o</option>
+                                                <option value="Universidad 2to año">Universidad 2do a&ntilde;o</option>
+                                                <option value="Universidad 3to año">Universidad 3er a&ntilde;o</option>
+                                                <option value="Universidad 4to año">Universidad 4to a&ntilde;o</option>
+                                                <option value="Universidad 5to año">Universidad 5to a&ntilde;o</option>
+                                                <option value="Graduado Universitario">Graduado Universitario</option>
+                                                <option value="Universidad Incompleta">Universidad Incompleta</option>
+                                                <option value="Maestria">Maestria</option>
+                                            </select></div>
+                                        <div class="col col-1"><label for="Estado" class="col-form-label"><strong>Estado</strong></label></div>
+                                        <div class="col">
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-4 row-md-4" id="lstEstado" name="lstEstado" required="true">
+                                                <option>Seleccione</option>
+                                                <option value="Estudios Activos">Estudios Activos</option>
+                                                <option value="Estudios Pausados">Estudios Pausados</option>
+                                                <option value="Estudios Terminados">Estudios Terminados</option>
+                                            </select>
+                                        </div>
+                                        <div class="w-100"></div>
+                                        <div class="col col-2">
+                                            <label for="carrera" class="col-sm-2 col-form-label mb-sm-4"><strong>Carrera</strong></label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"placeholder="Carrera" required="true">
+                                        </div>
+                                    </div> 
+                                </div>
+                            </form>
+                        </div>
 
-                <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
-                -->
-                <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
-                <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
+                        <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
+                        -->
+                        <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
+                        <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
 
-                <!-- Recordar insertar todo en diferentes div
-                -->
-            </div>                
-                                            
-                                            
-                                            
+                        <!-- Recordar insertar todo en diferentes div
+                        -->
+                    </div>                
+                    <div id="pagina3" style="display:none;">
+                        <center>
+                            <br>
+                            <div class="p-1 mb-2 bg-light text-black">
+                                <h1>Registro de Experiencia Laboral</h1>
+                            </div>
+                        </center>    
+                        <br>
+                        <div class="jumbotron" style="color:black">
+                            <div class="container">
+                                <form action="procesarExperienciaLaboral" method="post" name="frmExperienciaLaboral">
+
+                                    <div class="col align-self-star">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <label for="idExperienciaLaboral" class="col-form-label">Id Experiencia Laboral</label>
+                                                <input type="text" class="form-control" id="idExperienciaLaboral" name="txtIdExperienciaLaboral" placeholder="Id Experiencia Laboral"  value="0" readonly>
+                                            </div>
+                                            <div class="col align-self-center">
+                                                <div class="row justify-content-center">
+                                                    <div class="form-group col-md-8">
+                                                        <label for="idEmpleador" class="col-form-label">Id Empleador</label>
+                                                        <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador" placeholder="Id Empleado" >
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-row">
+
+                                            <div class="form-group col-md-5">
+                                                <label for="nombreEmpresa" class="col-form-label">Nombre de la Empresa</label>
+                                                <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
+                                            </div>
+                                            <div class="col align-self-center">
+                                                <div class="row justify-content-center">
+                                                    <div class="form-group col-md-8">
+                                                        <label for="puesto" class="col-form-label">Puesto</label>
+                                                        <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Puesto ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <label for="nombreJefe" class="col-form-label">Nombre del Jefe</label>
+                                                <input type="text" class="form-control" id="nombreJefe" name="txtJefe" placeholder="Nombre del Jefe">
+                                            </div>
+                                            <div class="col align-self-end">
+                                                <div class="row justify-content-center">
+                                                    <div class="form-group col-md-8">
+                                                        <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
+                                                        <input type="text" class="form-control" id="Telefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <label for="Desde" class="col-form-label">Desde</label>
+                                                <input type="date" class="form-control" id="Desde" name="txtDesde">
+                                            </div>
+                                            <div class="col align-self-end">
+                                                <div class="row justify-content-center">
+                                                    <div class="form-group col-md-8">
+                                                        <label for="Hasta" class="col-form-label">Hasta</label>
+                                                        <input type="date" class="form-control" id="Hasta" name="txtHasta">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col col-2">
+                                                <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="idTipoContrato" name="lstTipoContrato" required="true">
+                                                    <option value="Tiempo Completo">Tiempo Completo</option>
+                                                    <option value="Por Horas">Por Horas</option>
+                                                    <option value="Practicas">Practicas</option> 
+                                                </select>
+                                            </div>
+                                            <div class="w-10"></div>
+
+
+                                        </div>
+                                    </div>
+                                                          <input type="button" class="btn btn-info" onclick="anteriorPagina()" value="Anterior">
+                        <input type="button" class="btn btn-info" onclick="siguientePagina()" value="Siguiente">
+                                </form>       
+                            </div>
+                        </div>
+                    </div>
+
+
                     </form> 
                     </body>
                     </html>
