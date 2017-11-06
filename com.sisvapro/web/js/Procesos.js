@@ -51,7 +51,6 @@ function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagin
     document.frmEmpresa.txtDireccion.value = direccion;
     document.frmEmpresa.lstPais.value = pais;
     document.frmEmpresa.lstDepartamento.value = depa;
-    document.frmEmpresa.logo2.value = foto;
     document.frmEmpresa.txtPagina.value = pagina;
     document.frmEmpresa.lstSector.value = sector;
     document.frmEmpresa.txtIdUsuario.value = idu;
@@ -98,12 +97,12 @@ function cargarFormacionAcademica(id, nivel, estado, car, ide) {
     document.frmFormacion.txtIdEmpleador.value = ide;
 }
 
-function cargarOferta(id, puesto, canti,tipo, experiencia,genero, edad, salario, empresa, pais, departamento, descripcion) {
+function cargarOferta(id, puesto, canti, tipo, experiencia, genero, edad, salario, empresa, pais, departamento, descripcion) {
     document.frmOferta.txtIdOferta.value = id;
     document.frmOferta.txtPuesto.value = puesto;
-    document.frmOferta.txtCanti.value=canti;
+    document.frmOferta.txtCanti.value = canti;
     document.frmOferta.lstContratacion.value = tipo;
-    document.frmOferta.experiencia.value=experiencia;
+    document.frmOferta.experiencia.value = experiencia;
     document.frmOferta.genero.value = genero;
     document.frmOferta.txtedad.value = edad;
     document.frmOferta.txtsalario.value = salario;
@@ -111,7 +110,7 @@ function cargarOferta(id, puesto, canti,tipo, experiencia,genero, edad, salario,
     document.frmOferta.lstPais.value = pais;
     document.frmOferta.lstDepartamento.value = departamento;
     document.frmOferta.txtDescripcion.value = descripcion;
-    
+
 }
 function cargarContacto(id, nombres, apellidos, cargo, telefono1, telefono2, empresa) {
     document.frmContacto.txtIdContacto.value = id;
@@ -186,5 +185,16 @@ function Eliminar() {
     else
 // si pulsamos en cancelar
         alert('No se ha realizado ningun cambio');
+
+}
+
+function cargarimagen(imagenvar) {
+
+    var image = new Image();
+
+    var src = '../../imagenes/fotosperfiles/' + imagenvar; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
+    image.src = src;
+
+    $('#image').append(image);
 }
 

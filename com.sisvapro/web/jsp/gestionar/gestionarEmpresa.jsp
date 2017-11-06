@@ -61,6 +61,7 @@
         CrudPais crudp = new CrudPais();
         CrudDepartamento crudd = new CrudDepartamento();
         CrudSectorEmpresarial cruds = new CrudSectorEmpresarial();
+        String imagen = null;
     %>
     <body> 
         <jsp:include page="menuGestionar.jsp"/>
@@ -70,6 +71,7 @@
         <br>
         <div class="container">
             <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
+                <div id="image"></div>
                 <div class="form-group row">
                     <label for="idempresa" class="col-sm-2 col-form-label"><strong>Id Empresa</strong></label>
                     <div class="col-sm-3">
@@ -147,7 +149,7 @@
                     <label for="logo" class="col-sm-2 col-form-label"><strong>Lodo de la Empresa</strong></label>
                     <div class="col-auto">
                         <input type="file" class="form-control-file" id="logo" name="logo">
-                        <!--<input type="text" id="logo2" name="logo2" style="display: block;">-->
+                        <input type="text" id="logo2" name="logo2" style="display: none;">
                     </div>
                 </div>
 
@@ -173,13 +175,13 @@
                         </select>
                     </div>
                 </div>    
-                                                  
+
                 <div class="row">
                     <div class="col-sm-1">
                         <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                     </div>
                     <div class="col-auto">
-                       <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()"> 
+                        <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()"> 
                     </div>
                     <div class="col-auto">
                         <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">    
@@ -253,7 +255,7 @@
                            '<%=em.getNombreEmpresa()%>','<%=em.getRazonSocial()%>',
                            '<%=em.getNit()%>','<%=em.getDireccion()%>','<%=em.getIdPais()%>',
                            '<%=em.getIdDepartamento()%>','<%=em.getLogo()%>',
-                           '<%=em.getPaginaWeb()%>','<%=em.getIdSectorEmpresiarial()%>','<%= em.getIdUsuario()%>')">Seleccionar</a></td>
+                           '<%=em.getPaginaWeb()%>','<%=em.getIdSectorEmpresiarial()%>','<%= em.getIdUsuario()%>')" onclick="cargarimagen('<%=em.getLogo()%>')">Seleccionar</a></td>
                 </tr>
                 <%
                     }
