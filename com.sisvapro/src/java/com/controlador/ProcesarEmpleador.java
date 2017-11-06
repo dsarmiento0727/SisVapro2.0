@@ -53,9 +53,6 @@ public class ProcesarEmpleador extends HttpServlet {
             per.setIdUsuario(Integer.parseInt(request.getParameter("lstUsuario")));
             per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
             per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
-            per.setIdHabilidad(Integer.parseInt(request.getParameter("lstHabilidad")));
-            per.setIdFormacion(Integer.parseInt(request.getParameter("lstFormacion")));
-            per.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("lstProfesion")));
             per.setIdAreaProfesional(Integer.parseInt(request.getParameter("lstArea")));
             
             
