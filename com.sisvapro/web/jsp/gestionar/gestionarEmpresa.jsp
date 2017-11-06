@@ -214,11 +214,30 @@
                     <td><%=em.getRazonSocial()%></td>
                     <td><%=em.getNit()%></td>
                     <td><%=em.getDireccion()%></td>
-                    <td><%=em.getIdPais()%></td>
-                    <td><%=em.getIdDepartamento()%></td>
+                    <%
+                     List<Pais> lstpais = crudp.mostrarPais();
+                     for (Pais pais : lstpais) {
+                          if(em.getIdPais()==pais.getIdPais()){
+                    %>
+                    <td><%=pais.getNombrePais() %></td>
+                    <% }}%>
+                    <%
+                    List<Departamento> lstdepa = crudd.mostrarDepartamento();
+                    for (Departamento depar : lstdepa) {
+                        if(em.getIdDepartamento()==depar.getIdDepartamento()){
+                    %>
+                    <td><%=depar.getNombreDepartamento() %></td>
+                    <% }}%>
                     <td><%=em.getLogo()%></td>
                     <td><%=em.getPaginaWeb()%></td>
-                    <td><%=em.getIdSectorEmpresiarial()%></td>
+                    <%
+                     CrudSectorEmpresarial crudsec=new CrudSectorEmpresarial();
+                     List<SectorEmpresarial> lstsector = crudsec.mostrarSectorEmpresarial();
+                     for (SectorEmpresarial sec : lstsector) {
+                         if(em.getIdSectorEmpresiarial()==sec.getIdSectorEmpresarial()){
+                    %>
+                    <td><%=sec.getNombreSectorEmpresarial()%></td>
+                    <% }}%>
                     <td><%=em.getIdUsuario() %></td>
                     
                     <td><a href="javascript:cargarEmpresa(<%=em.getIdEmpresa()%>,
