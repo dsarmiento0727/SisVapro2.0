@@ -173,7 +173,7 @@
                         </select>
                     </div>
                 </div>    
-                     <center>                               
+                                                  
                 <div class="row">
                     <div class="col-sm-1">
                         <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
@@ -187,8 +187,7 @@
                     <div class="col-auto">
                         <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">           
                     </div>
-                </div>
-                    </center>    
+                </div>  
             </form>
         </div>
 

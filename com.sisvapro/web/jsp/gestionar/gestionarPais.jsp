@@ -64,10 +64,10 @@
     <body>
          <jsp:include page="menuGestionar.jsp"/>
          <center>
-             <div class="p-3 mb-2 bg-light text-black"><h1>Registro de País</h1></div>
+             <br>
+             <div class="p-1 mb-1 bg-light text-black"><h1>Registro de País</h1></div>
         <table>
-            
-                <br><br>        
+                <br>
             <div class="container">
                 <form action="procesarPais" method="POST" name="frmPais">
                 <center>
