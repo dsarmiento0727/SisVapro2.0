@@ -159,6 +159,13 @@ function cargarAdmin(ida,nom,ape,dui,nit,tele,dir,ge,cor,pa,de,idu){
     document.frmAdministrador.txtIdUsuario.value=idu;
 }
 
+function cargarUsuario(idu,nom,cla,idt){
+    document.frmUsuario.txtIdUsuario.value=idu;
+    document.frmUsuario.txtNombreUsuario.value=nom;
+    document.frmUsuario.txtClave.value=cla;
+    document.frmUsuario.lstTipoUsuario.value=idt;
+}
+
 function Modificar() {
     confirmar = confirm("¿Desea Modificar el registro?");
     if (confirmar)

@@ -45,7 +45,7 @@
         <script type="text/javascript" src="../../js/datatables.min.js"></script>
         <script type="text/javascript" src="../../js/Procesos.js"></script>
         <script type="text/javascript" src="../../js/dataTable.js"></script>
-        <title>Gestionar Empresa</title>
+        <title>Gestionar Administrador</title>
 
         <%            if (request.getAttribute("valor") != null) {
         %>
@@ -64,11 +64,11 @@
     <body> 
         <jsp:include page="menuGestionar.jsp"/>
     <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Empresa</h1></div>
+        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Administrador</h1></div>
         <br><br>
 
         <div class="container">
-            <form action="procesarAdministrador" method="POST" name="frmAdministrador" enctype="multipart/form-data">
+            <form action="procesarAdministrador" method="POST" name="frmAdministrador">
                 <table>
                     <div class="form-group row">
                         <label for="idadmin" class="col-sm-2 col-form-label">Id Administrador</label>
