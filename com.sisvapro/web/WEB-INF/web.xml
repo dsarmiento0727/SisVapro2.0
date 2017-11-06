@@ -44,6 +44,10 @@
         <servlet-name>ProcesarFormacionAcademica</servlet-name>
         <servlet-class>com.controlador.ProcesarFormacionAcademica</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesarAdministrador</servlet-name>
+        <servlet-class>com.controlador.ProcesarAdministrador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/iniciarSesion</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>ProcesarFormacionAcademica</servlet-name>
         <url-pattern>/jsp/gestionar/procesarFormacionAcademica</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarAdministrador</servlet-name>
+        <url-pattern>/jsp/gestionar//procesarAdministrador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

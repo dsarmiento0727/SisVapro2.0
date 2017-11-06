@@ -25,7 +25,7 @@ function cargarArea(id, nombre) {
     document.frmArea.txtIdArea.value = id;
     document.frmArea.txtNombre.value = nombre;
 }
-function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagina, sector) {
+function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagina, sector,idu) {
    
     //Ni se como funciona pero funciona att.Sarmiento :v
     const blb = new Blob([log], {type: "text/plain"});
@@ -53,6 +53,7 @@ function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagin
     document.frmEmpresa.logo2.value =  foto;
     document.frmEmpresa.txtPagina.value = pagina;
     document.frmEmpresa.lstSector.value = sector;
+    document.frmEmpresa.txtIdUsuario.value = idu;
 }
 function cargarIdioma(id, nombre) {
     document.frmIdioma.txtIdIdioma.value = id;
@@ -142,6 +143,22 @@ function cargarEmpleador(id, nombres, apellidos, direccion, telefono, correo, fe
     document.frmEmpleador.lstArea.values = area;
 
 }
+
+function cargarAdmin(ida,nom,ape,dui,nit,tele,dir,ge,cor,pa,de,idu){
+    document.frmAdministrador.txtIdAdministrador.value=ida;
+    document.frmAdministrador.txtNombres.value=nom;
+    document.frmAdministrador.txtApellidos.value=ape;
+    document.frmAdministrador.txtDui.value=dui;
+    document.frmAdministrador.txtNit.value=nit;
+    document.frmAdministrador.txtTelefono.value=tele;
+    document.frmAdministrador.txtDireccion.value=dir;
+    document.frmAdministrador.genero.value=ge;
+    document.frmAdministrador.txtCorreo.value=cor;
+    document.frmAdministrador.lstPais.value=pa;
+    document.frmAdministrador.lstDepartamento.value=de;
+    document.frmAdministrador.txtIdUsuario.value=idu;
+}
+
 function Modificar() {
     confirmar = confirm("¿Desea Modificar el registro?");
     if (confirmar)

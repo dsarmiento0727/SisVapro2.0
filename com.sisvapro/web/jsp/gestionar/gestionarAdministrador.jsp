@@ -1,7 +1,7 @@
 <%-- 
-    Document   : empresa
-    Created on : 10-06-2017, 05:37:08 PM
-    Author     : Karen Escobar, David Sarmiento, Carlos Lopez
+    Document   : gestionarAdministrador
+    Created on : 11-05-2017, 05:57:20 PM
+    Author     : carlos
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -57,10 +57,9 @@
         %>
     </head>
     <%
-        CrudEmpresa crude = new CrudEmpresa();
+        CrudAdministrador cruda = new CrudAdministrador();
         CrudPais crudp = new CrudPais();
         CrudDepartamento crudd = new CrudDepartamento();
-        CrudSectorEmpresarial cruds = new CrudSectorEmpresarial();
     %>
     <body> 
         <jsp:include page="menuGestionar.jsp"/>
@@ -69,12 +68,12 @@
         <br><br>
 
         <div class="container">
-            <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
+            <form action="procesarAdministrador" method="POST" name="frmAdministrador" enctype="multipart/form-data">
                 <table>
                     <div class="form-group row">
-                        <label for="idempresa" class="col-sm-2 col-form-label">Id Empresa</label>
+                        <label for="idadmin" class="col-sm-2 col-form-label">Id Administrador</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdEmpresa" name="txtIdEmpresa"placeholder="Id Empresa">
+                            <input type="text" class="form-control" id="idadmin" name="txtIdAdministrador"placeholder="Id Administrador">
                         </div>
                     </div>
 
@@ -86,16 +85,22 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="nombreEmpresa" class="col-sm-2 col-form-label">Nombre de la Empresa</label>
+                        <label for="nombres" class="col-sm-2 col-form-label">Nombres </label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
+                            <input type="text" class="form-control" id="nombres" name="txtNombres"placeholder="Nombres">
                         </div>
                     </div> 
                     <div class="form-group row">
 
-                        <label for="razonsocial" class="col-sm-2 col-form-label">Razón Social</label>
+                        <label for="apellidos" class="col-sm-2 col-form-label">Apellidos</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="txtRazon" name="txtRazon"placeholder="Razón Social de la Empresa">
+                            <input type="text" class="form-control" id="apellidos" name="txtApellidos"placeholder="Apellidos">
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label for="dui" class="col-sm-2 col-form-label">DUI</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="dui" name="txtDui"placeholder="############-#">
                         </div>
                     </div> 
                     <div class="form-group row">
@@ -105,9 +110,34 @@
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label for="DIRECCION" class="col-sm-2 col-form-label">Dirección de la Empresa</label>
+                        <label for="tele" class="col-sm-2 col-form-label">Telefono</label>
                         <div class="col-sm-5">
-                            <textarea class="form-control" id="txtDireccion" name="txtDireccion" rows="3"></textarea>
+                            <input type="text" class="form-control" id="tele" name="txtTelefono"placeholder="####-####">
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label for="direccion" class="col-sm-2 col-form-label">Dirección de la Empresa</label>
+                        <div class="col-sm-5">
+                            <textarea class="form-control" id="direccion" name="txtDireccion" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <strong>Género</strong>
+                            <label class="custom-control custom-radio">
+                                <input type="radio" name="genero" value="Femenino" class="custom-control-input" checked="">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Femenino</span>
+                            </label>
+                            <label class="custom-control custom-radio">
+                                <input type="radio" name="genero" value="Masculino" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Masculino</span>
+                            </label>
+                        </div>
+                    <div class="form-group row">
+                        <label for="core" class="col-sm-2 col-form-label">CorreoElectronico</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="core" name="txtCorreo" placeholder="carlos123@gmail.com">
                         </div>
                     </div>
                     <div class="col-10">
@@ -144,33 +174,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group"> 
-                        <label for="logo">Logo de la Empresa</label>
-                        <input type="file" class="form-control-file" id="logo" name="logo">
-                        <input type="text" id="logo2" name="logo2" style="display: block;">
-                    </div>
-                    <div class="form-group row">
-                        <label for="pagina" class="col-sm-2 col-form-label">Pagina Web</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="txtPagina" name="txtPagina"placeholder="Página Web de la Empresa">
-                        </div>
-                    </div> 
-                    <div class="form-row align-items-center">
-                        <div class="col-auto">
-                            <label class="mr-sm-2" for="idSector">Sector Empresarial</label>
-                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idUsuario" name="lstSector" >
-                                <%
-                                    List<SectorEmpresarial> lst3 = cruds.mostrarSectorEmpresarial();
-                                    for (SectorEmpresarial s : lst3) {
-                                %>
-
-                                <option value="<%=s.getIdSectorEmpresarial()%>"><%=s.getNombreSectorEmpresarial()%></option>
-                                <%
-                                    }
-                                %>
-                            </select>
-                        </div>
-                    </div>
 
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
@@ -188,41 +191,57 @@
         <table id="grid" class="table table-bordered" style="text-align: center">
             <thead  class="thead-inverse">
                 <tr>
-                    <th style="text-align: center">ID Empresa</th>
-                    <th style="text-align: center">Nombre de la Empresa</th>
-                    <th style="text-align: center">Razón Social</th>
+                    <th style="text-align: center">ID Administrador</th>
+                    <th style="text-align: center">Nombres</th>
+                    <th style="text-align: center">Apellidos</th>
+                    <th style="text-align: center">Dui</th>
                     <th style="text-align: center">Nit</th>
-                    <th style="text-align: center">Dirección</th>
-                    <th style="text-align: center">País</th>
+                    <th style="text-align: center">Telefono</th>
+                    <th style="text-align: center">Direccion</th>
+                    <th style="text-align: center">genero</th>
+                    <th style="text-align: center">CorreoElectronico</th>
+                    <th style="text-align: center">Pais</th>
                     <th style="text-align: center">Departamento</th>
-                    <th style="text-align: center">Logo</th>
-                    <th style="text-align: center">Página Web</th>
-                    <th style="text-align: center">Sector Empresarial</th>
+                    <th style="text-align: center">ID Usuario</th>
                     <th style="text-align: center">Seleccionar</th>
                 </tr>
             </thead>
             <tbody>
                 <%
                     
-                    List<Empresa> lst4 = crude.mostrarEmpresa();
-                    for (Empresa em : lst4) {
+                    List<Administrador> lst4 = cruda.mostrarAdministrador();
+                    for (Administrador ad : lst4) {
                 %>
                 <tr class="table-primary">
-                    <td><%=em.getIdEmpresa()%></td>
-                    <td><%=em.getNombreEmpresa()%></td>
-                    <td><%=em.getRazonSocial()%></td>
-                    <td><%=em.getNit()%></td>
-                    <td><%=em.getDireccion()%></td>
-                    <td><%=em.getIdPais()%></td>
-                    <td><%=em.getIdDepartamento()%></td>
-                    <td><%=em.getLogo()%></td>
-                    <td><%=em.getPaginaWeb()%></td>
-                    <td><%=em.getIdSectorEmpresiarial()%></td>
-                    <td><a href="javascript:cargarEmpresa(<%=em.getIdEmpresa()%>,
-                           '<%=em.getNombreEmpresa()%>','<%=em.getRazonSocial()%>',
-                           '<%=em.getNit()%>','<%=em.getDireccion()%>','<%=em.getIdPais()%>',
-                           '<%=em.getIdDepartamento()%>','<%=em.getLogo()%>',
-                           '<%=em.getPaginaWeb()%>','<%=em.getIdSectorEmpresiarial()%>')">Seleccionar</a></td>
+                    <td><%=ad.getIdAdministrador() %></td>
+                    <td><%=ad.getNombres() %></td>
+                    <td><%=ad.getApellidos() %></td>
+                    <td><%=ad.getDui() %></td>
+                    <td><%=ad.getNit() %></td>
+                    <td><%=ad.getTelefono() %></td>
+                    <td><%=ad.getDireccion() %></td>
+                    <td><%=ad.getGenero() %></td>
+                    <td><%=ad.getCorreoElectronico() %></td>
+                    <%
+                        List<Pais> lstp = crudp.mostrarPais();
+                        for(Pais pa:lstp){
+                                 if(ad.getIdPais()==pa.getIdPais()){
+                    %>
+                    <td><%=pa.getNombrePais()%></td>
+                    <%}}%>
+                    <%
+                        List<Departamento> lstd = crudd.mostrarDepartamento();
+                        for(Departamento depa:lstd){
+                                 if(ad.getIdDepartamento()==depa.getIdDepartamento()){
+                    %>
+                    <td><%=depa.getNombreDepartamento()%></td>
+                    <% }}%>
+                    <td><%=ad.getIdUsuario() %></td>
+                    <td><a href="javascript:cargarAdmin(<%=ad.getIdAdministrador() %>,
+                           '<%=ad.getNombres() %>','<%=ad.getApellidos()%>',
+                           '<%=ad.getDui() %>>','<%=ad.getNit() %>','<%=ad.getTelefono() %>',
+                           '<%=ad.getDireccion() %>','<%=ad.getGenero() %>',
+                           '<%=ad.getCorreoElectronico() %>','<%=ad.getIdPais()%>','<%=ad.getIdDepartamento() %>','<%=ad.getIdUsuario() %>')">Seleccionar</a></td>
                 </tr>
                 <%
                     }
