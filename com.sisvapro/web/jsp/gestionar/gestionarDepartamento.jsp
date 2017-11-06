@@ -102,9 +102,7 @@
                                 <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                                 <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
                                 <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
-                         
-                        
+                                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">           
                     </div>
                  </form>
                
