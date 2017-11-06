@@ -112,13 +112,13 @@ function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, de
     document.frmOferta.experiencia.value = experiencia;
 }
 function cargarContacto(id, nombres, apellidos, cargo, telefono1, telefono2, empresa) {
-    document.frmContratador.txtIdContacto.value = id;
-    document.frmContratador.txtNombres.value = nombres;
-    document.frmContratador.txtApellidos.value = apellidos;
-    document.frmContratador.txtCargo.value = cargo;
-    document.frmContratadortxtTelefono1.value = telefono1;
-    document.frmContratadortxtTelefono2.value = telefono2;
-    document.frmContratador.lstEmpresa.value = empresa;
+    document.frmContacto.txtIdContacto.value = id;
+    document.frmContacto.txtNombres.value = nombres;
+    document.frmContacto.txtApellidos.value = apellidos;
+    document.frmContacto.txtCargo.value = cargo;
+    document.frmContacto.txtTelefono1.value = telefono1;
+    document.frmContacto.txtTelefono2.value = telefono2;
+    document.frmContacto.lstEmpresa.value = empresa;
 }
 function cargarEmpleador(id, nombres, apellidos, direccion, telefono, correo, fecha,
         genero, anio, foto, dui, nit, nacionalidad, user, pais, depa, habilidad, formacion, expe, area) {

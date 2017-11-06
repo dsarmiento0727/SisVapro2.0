@@ -73,7 +73,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="id" class="col-form-label"><strong>Id</strong></label>
-                            <input type="text" class="form-control" id="txtId" name="txtId" placeholder="Id del Contacto de persona" required="true" value="0" readonly>
+                            <input type="text" class="form-control" id="txtIdContacto" name="txtIdContacto" placeholder="Id del Contacto de persona" required="true" value="0" readonly>
                         </div>
                     </div>
                     <div class="form-row">
