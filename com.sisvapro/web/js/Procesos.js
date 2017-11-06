@@ -3,7 +3,8 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */function cargarTipoUsuario(id, nivel) {
+ */
+function cargarTipoUsuario(id, nivel) {
     document.frmTipoUsuario.txtIdTipoU.value = id;
 
     document.frmTipoUsuario.txtNivel.value = nivel;
@@ -12,10 +13,10 @@ function cargarPais(id, nombre) {
     document.frmPais.txtIdPais.value = id;
     document.frmPais.txtNombre.value = nombre;
 }
-function cargarDepartamento(id, nombre,pa) {
+function cargarDepartamento(id, nombre, pa) {
     document.frmDepartamento.txtIdDepartamento.value = id;
     document.frmDepartamento.txtNombre.value = nombre;
-    document.frmDepartamento.lstPais.value=pa;
+    document.frmDepartamento.lstPais.value = pa;
 }
 function cargarMunicipio(id, nombre) {
     document.frmMunicipio.txtIdMunicipio.value = id;
@@ -25,8 +26,8 @@ function cargarArea(id, nombre) {
     document.frmArea.txtIdArea.value = id;
     document.frmArea.txtNombre.value = nombre;
 }
-function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagina, sector,idu) {
-   
+function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagina, sector, idu) {
+
     //Ni se como funciona pero funciona att.Sarmiento :v
     const blb = new Blob([log], {type: "text/plain"});
     const reader = new FileReader();
@@ -35,13 +36,13 @@ function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagin
 // This fires after the blob has been read/loaded.
     reader.addEventListener('loadend', (e) => {
         const text = e.srcElement.result;
-        document.frmEmpresa.logo2.value =  text;
+        document.frmEmpresa.logo2.value = text;
         console.log(text);
     });
 
 // Start reading the blob as text.
     reader.readAsText(blb);
-   
+
 
     document.frmEmpresa.txtIdEmpresa.value = id;
     document.frmEmpresa.txtNombre.value = nombre;
@@ -50,7 +51,7 @@ function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagin
     document.frmEmpresa.txtDireccion.value = direccion;
     document.frmEmpresa.lstPais.value = pais;
     document.frmEmpresa.lstDepartamento.value = depa;
-    document.frmEmpresa.logo2.value =  foto;
+    document.frmEmpresa.logo2.value = foto;
     document.frmEmpresa.txtPagina.value = pagina;
     document.frmEmpresa.lstSector.value = sector;
     document.frmEmpresa.txtIdUsuario.value = idu;
@@ -63,10 +64,10 @@ function cargarMunicipio(id, nombre) {
     document.frmMunicipio.txtIdMunicipio.value = id;
     document.frmMunicipio.txtNombre.value = nombre;
 }
-function cargarHabilidad(id, nombre,ide) {
+function cargarHabilidad(id, nombre, ide) {
     document.frmHabilidad.txtIdHabilidad.value = id;
     document.frmHabilidad.txtNombre.value = nombre;
-    document.frmHabilidad.txtIdEmpleador.value=ide;
+    document.frmHabilidad.txtIdEmpleador.value = ide;
 }
 function cargarAreaProfesional(id, nombre) {
     document.frmProfesion.txtIdProfesion.value = id;
@@ -77,7 +78,7 @@ function cargarRanking(id, clasi, usuario) {
     document.frmRanking.txtClasificacion.value = clasi;
     document.frmRanking.lstUsuario.value = usuario;
 }
-function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, hasta, tipo,idEmpleado) {
+function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, hasta, tipo, idEmpleado) {
     document.frmExperienciaLaboral.txtIdExperienciaLaboral.value = id;
     document.frmExperienciaLaboral.txtNombreEmpresa.value = empresa;
     document.frmExperienciaLaboral.txtJefe.value = jefe;
@@ -86,15 +87,15 @@ function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, ha
     document.frmExperienciaLaboral.txtDesde.value = desde;
     document.frmExperienciaLaboral.txtHasta.value = hasta;
     document.frmExperienciaLaboral.lstTipoContrato.value = tipo;
-    document.frmExperienciaLaboral.txtIdEmpleador.value =idEmpleado;
+    document.frmExperienciaLaboral.txtIdEmpleador.value = idEmpleado;
 }
 
-function cargarFormacionAcademica(id,nivel,estado,car,ide){
-    document.frmFormacion.txtIdFormacionAcademica.value=id;
-    document.frmFormacion.lstNivel.value=nivel;
-    document.frmFormacion.lstEstado.value=estado;
-    document.frmFormacion.txtCarrera.value=car;
-    document.frmFormacion.txtIdEmpleador.value=ide;
+function cargarFormacionAcademica(id, nivel, estado, car, ide) {
+    document.frmFormacion.txtIdFormacionAcademica.value = id;
+    document.frmFormacion.lstNivel.value = nivel;
+    document.frmFormacion.lstEstado.value = estado;
+    document.frmFormacion.txtCarrera.value = car;
+    document.frmFormacion.txtIdEmpleador.value = ide;
 }
 
 function cargarOferta(id, puesto, tipo, genero, edad, salario, empresa, pais, departamento, descripcion, experiencia) {
@@ -144,26 +145,26 @@ function cargarEmpleador(id, nombres, apellidos, direccion, telefono, correo, fe
 
 }
 
-function cargarAdmin(ida,nom,ape,dui,nit,tele,dir,ge,cor,pa,de,idu){
-    document.frmAdministrador.txtIdAdministrador.value=ida;
-    document.frmAdministrador.txtNombres.value=nom;
-    document.frmAdministrador.txtApellidos.value=ape;
-    document.frmAdministrador.txtDui.value=dui;
-    document.frmAdministrador.txtNit.value=nit;
-    document.frmAdministrador.txtTelefono.value=tele;
-    document.frmAdministrador.txtDireccion.value=dir;
-    document.frmAdministrador.genero.value=ge;
-    document.frmAdministrador.txtCorreo.value=cor;
-    document.frmAdministrador.lstPais.value=pa;
-    document.frmAdministrador.lstDepartamento.value=de;
-    document.frmAdministrador.txtIdUsuario.value=idu;
+function cargarAdmin(ida, nom, ape, dui, nit, tele, dir, ge, cor, pa, de, idu) {
+    document.frmAdministrador.txtIdAdministrador.value = ida;
+    document.frmAdministrador.txtNombres.value = nom;
+    document.frmAdministrador.txtApellidos.value = ape;
+    document.frmAdministrador.txtDui.value = dui;
+    document.frmAdministrador.txtNit.value = nit;
+    document.frmAdministrador.txtTelefono.value = tele;
+    document.frmAdministrador.txtDireccion.value = dir;
+    document.frmAdministrador.genero.value = ge;
+    document.frmAdministrador.txtCorreo.value = cor;
+    document.frmAdministrador.lstPais.value = pa;
+    document.frmAdministrador.lstDepartamento.value = de;
+    document.frmAdministrador.txtIdUsuario.value = idu;
 }
 
-function cargarUsuario(idu,nom,cla,idt){
-    document.frmUsuario.txtIdUsuario.value=idu;
-    document.frmUsuario.txtNombreUsuario.value=nom;
-    document.frmUsuario.txtClave.value=cla;
-    document.frmUsuario.lstTipoUsuario.value=idt;
+function cargarUsuario(idu, nom, cla, idt) {
+    document.frmUsuario.txtIdUsuario.value = idu;
+    document.frmUsuario.txtNombreUsuario.value = nom;
+    document.frmUsuario.txtClave.value = cla;
+    document.frmUsuario.lstTipoUsuario.value = idt;
 }
 
 function Modificar() {

@@ -58,9 +58,9 @@
     <body>
          <jsp:include page="menuGestionar.jsp"/>
        <center>
-        <br><br>
-        <div class="p-3 mb-2 bg-light text-black">
-            <MARQUEE BEHAVIOR=ALTERNATE><h1>Registro Persona Contacto</h1></marquee>
+        <br>
+        <div class="p-1 mb-2 bg-light text-black">
+            <h1>Registro Persona Contacto</h1>
         </div>
         
             <div class="container">
@@ -70,17 +70,22 @@
                    <div class="row justify-content-star">
                         
                    </div>
-                    
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label>
-                            <input type="text" class="form-control" id="txtNombres" name="txtNombres" placeholder="Nombres">
+                            <label for="id" class="col-form-label"><strong>Id</strong></label>
+                            <input type="text" class="form-control" id="txtId" name="txtId" placeholder="Id del Contacto de persona" required="true" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
+                            <input type="text" class="form-control" id="txtNombres" name="txtNombres" requiered="true" placeholder="Nombres">
                         </div>
                     <div class="col align-self-center">
                     <div class="row justify-content-center">
                        <div class="form-group col-md-8">
                            <label for="apellidos" class="col-form-label"><strong>Apellidos</strong></label>
-                            <input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+                           <input type="text" class="form-control"  id="txtApellidos" name="txtApellidos" required="true" placeholder="Apellidos" >
                         </div>
                     </div>
                     </div>
@@ -89,7 +94,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="telefono1" class="col-form-label"><strong>Telefono 1</strong></label>
-                            <input type="text" class="form-control" id="txtTelefono1" name="txtTelefono1" placeholder="Telefono 1">
+                            <input type="text" class="form-control" id="txtTelefono1" name="txtTelefono1" placeholder="Telefono 1" required="true">
                         </div>
                     <div class="col align-self-center">
                     <div class="row justify-content-center">
@@ -105,12 +110,12 @@
                         <div class="col-5">
                             <div class="form-group">
                                 <label for="cargo" class="col-form-label"><strong>Cargo</strong></label>
-                                <input type="text" class="form-control" id="txtCargo" name="txtCargo" placeholder="Cargo">
+                                <input type="text" class="form-control" id="txtCargo" name="txtCargo" required="true" placeholder="Cargo">
                             </div>
                         
                             <div class="form-group">
                                 <label for="IdEmpresa" class="col-form-label"><strong>Empresa</strong></label>
-                                <select class="custom-select mb-2 mr-sm-2 mb-sm-1" id="lstEmpre" name="lstEmpresa" >
+                                <select class="custom-select mb-5 mr-sm-2 mb-sm-1" id="lstEmpre" name="lstEmpresa" >
                                     <option>Seleccionar</option>
                                     <%
                                     List<Empresa> lst=crude.mostrarEmpresa();

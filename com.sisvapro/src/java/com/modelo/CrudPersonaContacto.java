@@ -20,12 +20,12 @@ public class CrudPersonaContacto extends Conexion{
             this.conectar();
             String sql="insert into personaContacto(nombres,apellidos,cargo,telefono1,telefono2,idEmpresa) values(?,?,?,?,?,?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setString(2, d.getNombres());
-            pre.setString(3, d.getApellidos());
-            pre.setString(4, d.getCargo());
-            pre.setString(5, d.getTelefono1());
-            pre.setString(6, d.getTelefono2());
-            pre.setInt(7, d.getIdEmpresa());
+            pre.setString(1, d.getNombres());
+            pre.setString(2, d.getApellidos());
+            pre.setString(3, d.getCargo());
+            pre.setString(4, d.getTelefono1());
+            pre.setString(5, d.getTelefono2());
+            pre.setInt(6, d.getIdEmpresa());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
