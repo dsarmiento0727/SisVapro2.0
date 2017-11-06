@@ -239,7 +239,7 @@
                     <td><%=ad.getIdUsuario() %></td>
                     <td><a href="javascript:cargarAdmin(<%=ad.getIdAdministrador() %>,
                            '<%=ad.getNombres() %>','<%=ad.getApellidos()%>',
-                           '<%=ad.getDui() %>>','<%=ad.getNit() %>','<%=ad.getTelefono() %>',
+                           '<%=ad.getDui() %>','<%=ad.getNit() %>','<%=ad.getTelefono() %>',
                            '<%=ad.getDireccion() %>','<%=ad.getGenero() %>',
                            '<%=ad.getCorreoElectronico() %>','<%=ad.getIdPais()%>','<%=ad.getIdDepartamento() %>','<%=ad.getIdUsuario() %>')">Seleccionar</a></td>
                 </tr>

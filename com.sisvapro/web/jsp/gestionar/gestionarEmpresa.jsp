@@ -198,6 +198,7 @@
                     <th style="text-align: center">Logo</th>
                     <th style="text-align: center">Página Web</th>
                     <th style="text-align: center">Sector Empresarial</th>
+                    <th style="text-align: center">Id Usuario</th>
                     <th style="text-align: center">Seleccionar</th>
                 </tr>
             </thead>
@@ -218,11 +219,13 @@
                     <td><%=em.getLogo()%></td>
                     <td><%=em.getPaginaWeb()%></td>
                     <td><%=em.getIdSectorEmpresiarial()%></td>
+                    <td><%=em.getIdUsuario() %></td>
+                    
                     <td><a href="javascript:cargarEmpresa(<%=em.getIdEmpresa()%>,
                            '<%=em.getNombreEmpresa()%>','<%=em.getRazonSocial()%>',
                            '<%=em.getNit()%>','<%=em.getDireccion()%>','<%=em.getIdPais()%>',
                            '<%=em.getIdDepartamento()%>','<%=em.getLogo()%>',
-                           '<%=em.getPaginaWeb()%>','<%=em.getIdSectorEmpresiarial()%>')">Seleccionar</a></td>
+                           '<%=em.getPaginaWeb()%>','<%=em.getIdSectorEmpresiarial()%>','<%= em.getIdUsuario() %>')">Seleccionar</a></td>
                 </tr>
                 <%
                     }

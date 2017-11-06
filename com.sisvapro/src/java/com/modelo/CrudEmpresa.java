@@ -43,7 +43,7 @@ public class CrudEmpresa extends Conexion {
     public void modificarEmpresa(Empresa d)throws Exception{
         try {
             this.conectar();
-            String sql="update empresa set nombreEmpresa=?, razonSocial=?, nit=?, direccion=?, idPais=?, idDepartamento=?, logo=?, paginaWeb=?, idSectorEmpresiarial=?, idUsuario=? where idEmpresa =?";
+            String sql="update empresa set nombreEmpresa=?, razonSocial=?, nit=?, direccion=?, idPais=?, idDepartamento=?, logo=?, paginaWeb=?, idSectorEmpresarial=?, idUsuario=? where idEmpresa=?";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
             pre.setString(1, d.getNombreEmpresa());
             pre.setString(2, d.getRazonSocial());
@@ -100,6 +100,7 @@ public class CrudEmpresa extends Conexion {
                 d.setLogo(res.getString("logo"));
                 d.setIdSectorEmpresiarial(res.getInt("idSectorEmpresarial"));
                 d.setPaginaWeb(res.getString("paginaWeb"));
+                d.setIdUsuario(res.getInt("idUsuario"));
                 listaEmpresa.add(d);
             }
         } catch (Exception e) {
