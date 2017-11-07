@@ -188,21 +188,26 @@ function Eliminar() {
 
 }
 
+function eliminarElemento() {
+    var div = document.getElementById('image');
+    if (div !== null) {
+        while (div.hasChildNodes()) {
+            div.removeChild(div.lastChild);
+        }
+    } else {
+        alert("No existe la caja previamente creada.");
+    }
+
+}
+
 function cargarimagen(imagenvar) {
 
     var image = new Image();
 
     var src = '../../imagenes/fotosperfiles/' + imagenvar; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
     image.src = src;
+    image.width = 150;
+    image.height = 120; 
 
     $('#image').append(image);
-}
-function borrarimagen() {
-
-    var image = new Image();
-
-    var src = '../../imagenes/fotosperfiles/' + imagenvar; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
-    image.src = src;
-
-    $('#image').append(null);
 }

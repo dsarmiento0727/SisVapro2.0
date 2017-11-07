@@ -68,9 +68,10 @@
     <center>
         <br>
         <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empresa</h1></div>
-        <div id="image" style="max-width: 20%;max-height: 20%;"></div>
+        
         <br>
         <div class="container">
+            <div id="image" style="max-width: 20%;max-height: 20%;"></div>
             <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
                 
                 <div class="form-group row">
@@ -188,7 +189,7 @@
                         <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">    
                     </div>
                     <div class="col-auto">
-                        <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">           
+                        <input type="button" name="btnLimpiar" class="btn btn-secondary" value="Limpiar" onclick="eliminarElemento()">           
                     </div>
                 </div>  
 
