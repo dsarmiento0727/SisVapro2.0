@@ -54,7 +54,7 @@
     </servlet>
     <servlet>
         <servlet-name>ProcesarGestionarPerfilEmpleador</servlet-name>
-        <servlet-class>com.controlador.ProcesarGestionarPerfilEmpleador</servlet-class>
+        <servlet-class>com.controlador.ProcesarPerfilEmpleador</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>

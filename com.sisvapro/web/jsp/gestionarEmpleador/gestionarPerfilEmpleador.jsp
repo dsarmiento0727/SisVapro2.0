@@ -26,17 +26,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-            </li>
-        </ul>
+        <jsp:include page="menuGestionar.jsp"/>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="nav nav-pills navbar-dark mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Formacion Academica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
+                </li>
+            </ul>
+        </nav>
+
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
@@ -227,29 +234,7 @@
 
 
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">xDDDDDDDD</div>
-        </div>
-        <h1>Hello World!</h1>
-        <form action="gestionarPerfilEmpleador">
-
-            <!-- Se crea un DIV y se le pone un ID en este caso pagina1
-               Style = block (Se muestra)
-               Style = none (Oculto)
-               Se pone como "block" la primera pagina.
-            -->                           
-            <div id="pagina2" style="display:none;">
-
-
-                <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
-                -->
-
-
-
-
-                <!-- Recordar insertar todo en diferentes div
-                -->
-            </div>                
-            <div id="pagina3" style="display:none;">
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <center>
                     <br>
                     <div class="p-1 mb-2 bg-light text-black">
@@ -356,67 +341,78 @@
                     </div>
                 </div>
             </div>
-            <div id="pagina4" style="display:none;">
-                <center>
-                    <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
-                    <br><br>
-                    <table>
-                        <div class="container">
-                            <div class="jumbotron" style="color:black">
+            <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab">
 
-                                <div class="form-group row">
-                                    <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
-                                    <div class="col-sm-3">
-                                        <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
-                                    <div class="col-sm-4">
-                                        <input type="text"type class="form-control" id="txtNombre" name="txtNombre"placeholder="Habilidad">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="idfor1" class="col-sm-2 col-form-label"><strong>Id Empleado</strong></label>
-                                    <div class="col-sm-4">
-                                        <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" >
-                                    </div>
-                                </div>
-                                <div class="container">    
-                                    <div class="row justify-content-around">
-                                        <div class="col-4">
-                                            <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina3()">Anterior</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina4()">Siguiente</button>
+                <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
 
-                                        </div>
-                                    </div>                    
-                                </div>
+
+                <div class="container">
+                    <div class="jumbotron" style="color:black">
+
+                        <div class="form-group row">
+                            <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly>
                             </div>
                         </div>
-                        </div>
-                        <center>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-
-                                <div class="row">
-                                    <div class="col">
-                                        <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                                    </div>
-                                    <div class="col">
-                                        <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                                    </div>
-                                    <div class="col">
-                                        <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
-                                    </div>
-                                    <div class="col">
-                                        <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
-                                    </div>
-                                </div>
+                        <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
+                            <div class="col-sm-4">
+                                <input type="text"type class="form-control" id="txtNombre" name="txtNombre"placeholder="Habilidad">
                             </div>
-                        </center> 
+                        </div>
+                        <div class="form-group row">
+                            <label for="idfor1" class="col-sm-2 col-form-label"><strong>Id Empleado</strong></label>
+                            <div class="col-sm-4">
+                                <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" >
+                            </div>
+                        </div>
+                        <div class="container">    
+                            <div class="row justify-content-around">
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina3()">Anterior</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina4()">Siguiente</button>
 
-                        </form> 
+                                </div>
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        </body>
-                        </html>
+
+        <!-- Se crea un DIV y se le pone un ID en este caso pagina1
+           Style = block (Se muestra)
+           Style = none (Oculto)
+           Se pone como "block" la primera pagina.
+        -->                           
+        <div id="pagina2" style="display:none;">
+
+
+            <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
+            -->
+
+
+
+
+            <!-- Recordar insertar todo en diferentes div
+            -->
+        </div>                
+        <div id="pagina3" style="display:none;">
+
+        </div>
+        <div id="pagina4" style="display:none;">
+
+        </div>
+    <center>
+
+
+    </center> 
+
+</form> 
+
+</body>
+</html>

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author David Sarmiento
  */
-public class ProcesarGestionarPerfilEmpleador extends HttpServlet {
+public class ProcesarPerfilEmpleador extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
