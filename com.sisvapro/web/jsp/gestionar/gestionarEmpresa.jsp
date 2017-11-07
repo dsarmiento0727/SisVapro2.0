@@ -68,10 +68,11 @@
     <center>
         <br>
         <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empresa</h1></div>
+        <div id="image" style="max-width: 20%;max-height: 20%;"></div>
         <br>
         <div class="container">
             <form action="procesarEmpresa" method="POST" name="frmEmpresa" enctype="multipart/form-data">
-                <div id="image"></div>
+                
                 <div class="form-group row">
                     <label for="idempresa" class="col-sm-2 col-form-label"><strong>Id Empresa</strong></label>
                     <div class="col-sm-3">
