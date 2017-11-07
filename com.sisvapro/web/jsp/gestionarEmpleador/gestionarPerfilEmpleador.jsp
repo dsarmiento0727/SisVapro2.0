@@ -212,10 +212,10 @@
                     <div class="container">    
                     <div class="row justify-content-around">
                         <div class="col-4">
-                            <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina3()">Anterior</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina()">Anterior</button>
                         </div>
                         <div class="col-4">
-                            <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina5()">Siguiente</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina2()">Siguiente</button>
                         </div>
                     </div>                    
                 </div>
