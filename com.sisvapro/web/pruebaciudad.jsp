@@ -40,6 +40,8 @@
 
 <select name=capital > 
 </select> 
+                <input type="text" required="true">
+                <input type="submit">
 </form> 
 <script> 
 function cambio() 

@@ -61,7 +61,7 @@
     <script type="text/javascript" src="../../js/mostarOcultar.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-<%        CrudPais crudpa = new CrudPais();
+<%    CrudPais crudpa = new CrudPais();
     CrudDepartamento crudd = new CrudDepartamento();
     CrudFormacionAcademica crudf = new CrudFormacionAcademica();
     CrudHabilidad crudh = new CrudHabilidad();
@@ -70,14 +70,11 @@
     CrudUsuario crudu = new CrudUsuario();
     CrudEmpleador crud = new CrudEmpleador();
 %>
-
-
-    <br>
-    <div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empleador</h1></div>
-    <br>
-    <center>
+<jsp:include page="menuGestionar.jsp"/>
+<div class="p-1 mb-1 bg-light text-black"><h1>Registro de Empleador</h1></div>
+<center>
     <form action="procesarEmpleador" method="POST" name="frmEmpleador">
-        
+
         <div class="form-group, position-relative"> 
             <img src="../../imagenes/fotoprueba.jpg" style="width: 150px" class="rounded float-center" alt="..." class="rounded">
             <div class="col-5">
@@ -85,11 +82,11 @@
                 <input type="file" class="form-control-file" id="foto" name="foto">
             </div>
         </div>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col align-self-start">
-                    
+
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="nombres" class="col-form-label"><strong>Nombres</strong></label>
@@ -182,7 +179,7 @@
                 </div><!--cerra al final-->
             </div><!--cerrar al final-->
         </div><!--cerrar final-->
-        
+
         <div class="btn-group" role="group" aria-label="Basic example">
             <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
             <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
@@ -190,6 +187,77 @@
             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
         </div>
     </form>
-    </center>
+    <table id="grid" class="table table-bordered" style="text-align: center; width: 1200px">
+        <thead class="thead-inverse">
+            <tr>
+                <th  style="text-align: center;width: 200px">Id Empleador</th>
+                <th  style="text-align: center">Nombre</th>
+                <th  style="text-align: center">Apellidos</th>
+                <th  style="text-align: center">Direccion</th>
+                <th  style="text-align: center">Telefono</th>
+                <th  style="text-align: center">Correo Electronico</th>
+                <th  style="text-align: center">Fecha de Nacimiento</th>
+                <th  style="text-align: center">Genero</th>
+                <th  style="text-align: center">A&ntilde;os Experiencia</th>
+                <th  style="text-align: center">Foto Perfil</th>
+                <th  style="text-align: center">Dui</th>
+                <th  style="text-align: center">Nit</th>
+                <th  style="text-align: center">Nacionalidad</th>
+                <th  style="text-align: center">Usuario</th>
+                <th  style="text-align: center">Pais</th>
+                <th  style="text-align: center">Departamento</th>
+                <th  style="text-align: center">Area Professional</th>
+                <th  style="text-align: center">Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                List<Empleador> lst = crud.mostrarEmpleador();
+                for (Empleador emp : lst) {
+            %>
+            <tr class="table-primary">
+                <td scope="row"><%= emp.getIdEmpleador()%></td>
+                <td><%= emp.getNombres()%></td>
+                <td><%= emp.getApellidos()%></td>
+                <td><%= emp.getDireccion()%></td>
+                <td><%= emp.getTelefono()%></td>
+                <td><%= emp.getCorreoElectronico()%></td>
+                <td><%= emp.getFechaNac()%></td>
+                <td><%= emp.getGenero()%></td>
+                <td><%= emp.getAniosExperiencia()%></td>
+                <td><%= emp.getFotoPerfil()%></td>
+                <td><%= emp.getDui()%></td>
+                <td><%= emp.getNit()%></td>
+                <td><%= emp.getNacionalidad()%></td>
+                <%
+                    List<Usuario> lstusuario = crudu.mostrarUsuario();
+                    for(Usuario u: lstusuario)
+                    {
+                        if(emp.getIdUsuario() == u.getIdUsuario())
+                        {
+                            
+                            %>
+                            <td><%= u.getNombreUsuario()%></td>
+                            <%
+                        }
+                    }
+                %>
+                <%
+                    List<Pais> lstpais = crudpa.mostrarPais();
+                    for (Pais pais : lstpais) {
+                        if (emp.getIdPais() == pais.getIdPais()) {
+                %>
+                <td><%=pais.getNombrePais()%></td>
+                <% }
+                    }%>
+                <td><a href="javascript:cargarPais(<%= emp.getIdEmpleador()%>,
+                       '<%= emp.getNombres()%>')">Seleccionar</a></td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
+</center>
 <br>
 
