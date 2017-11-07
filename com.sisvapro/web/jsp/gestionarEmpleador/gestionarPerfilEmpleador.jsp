@@ -339,7 +339,7 @@
             </div>
             <div id="pagina4" style="display:none;">
                 <center>
-                    <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Habilidad</h1></div>
+                    <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
                     <br><br>
                     <table>
                         <div class="container">
@@ -377,7 +377,25 @@
                             </div>
                         </div>
                         </div>
+                        <center>
+                    <div class="btn-group" role="group" aria-label="Basic example">
 
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
+                            </div>
+                            <div class="col">
+                                <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
+                            </div>
+                        </div>
+                    </div>
+                </center> 
 
                         </form> 
 

@@ -22,8 +22,7 @@ public class CrudAreaProfesional extends  Conexion{
             this.conectar();
             String sql="insert into areaProfesional(nombreAreaProfesional) values(?)";
             PreparedStatement pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, ap.getIdAreaProfesional());
-            pre.setString(2, ap.getNombreAreaProfesional());
+            pre.setString(1, ap.getNombreAreaProfesional());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
