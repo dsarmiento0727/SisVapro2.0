@@ -90,26 +90,26 @@
                 <div class="form-group row">
                     <label for="nombreEmpresa" class="col-sm-2 col-form-label"><strong>Nombre de la Empresa</strong></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="txtRazon" name="txtNombre"placeholder="Nombre de la Empresa">
+                        <input type="text" class="form-control" id="txtRazon" name="txtNombre" required="true" placeholder="Nombre de la Empresa">
                     </div>
                 </div> 
                 <div class="form-group row">
 
                     <label for="razonsocial" class="col-sm-2 col-form-label"><strong>Razón Social</strong></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="txtRazon" name="txtRazon"placeholder="Razón Social de la Empresa">
+                        <input type="text" class="form-control" id="txtRazon" name="txtRazon" required="true" placeholder="Razón Social de la Empresa">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="nit" class="col-sm-2 col-form-label"><strong>NIT</strong></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="txtNit" name="txtNit"placeholder="############-##">
+                        <input type="text" class="form-control" id="txtNit" name="txtNit" required="true" placeholder="############-##">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="DIRECCION" class="col-sm-2 col-form-label"><strong>Dirección de la Empresa</strong></label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" id="txtDireccion" name="txtDireccion" rows="1"></textarea>
+                        <textarea class="form-control" id="txtDireccion" required="true" name="txtDireccion" rows="1"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -157,7 +157,7 @@
                 <div class="form-group row">
                     <label for="pagina" class="col-sm-2 col-form-label"><strong>Pagina Web</strong></label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="txtPagina" name="txtPagina"placeholder="Página Web de la Empresa">
+                        <input type="text" class="form-control" id="txtPagina" name="txtPagina" placeholder="Página Web de la Empresa">
                     </div>
                 </div> 
                 <div class="form-group row">
@@ -176,9 +176,9 @@
                         </select>
                     </div>
                 </div>    
-
+                     
                 <div class="row">
-                    <div class="col-sm-1">
+                    <div class="col-auto">
                         <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                     </div>
                     <div class="col-auto">
@@ -191,6 +191,7 @@
                         <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">           
                     </div>
                 </div>  
+
             </form>
         </div>
 
