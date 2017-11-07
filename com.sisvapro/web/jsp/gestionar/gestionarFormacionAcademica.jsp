@@ -45,7 +45,7 @@
                             <label for="idfor1" class="col-form-label">Id Empleador</label>
                             <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador">
                         </div>
-                    </div>
+                    </div> 
                     <div class="row">
                         <div class="col col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
                         <div class="col">
