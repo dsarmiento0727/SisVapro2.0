@@ -90,7 +90,7 @@
                 <div class="form-group row">
                     <label for="nombreEmpresa" class="col-sm-2 col-form-label"><strong>Nombre de la Empresa</strong></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="txtRazon" name="txtNombre" required="true" placeholder="Nombre de la Empresa">
+                        <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="true" placeholder="Nombre de la Empresa">
                     </div>
                 </div> 
                 <div class="form-group row">

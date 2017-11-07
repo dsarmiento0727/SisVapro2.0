@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="idfor1" class="col-form-label">Id Empleador</label>
-                            <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador"  value="0" readonly>
+                            <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador">
                         </div>
                     </div>
                     <div class="row">
