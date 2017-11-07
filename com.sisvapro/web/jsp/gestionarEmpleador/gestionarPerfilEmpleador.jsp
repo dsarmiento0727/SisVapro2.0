@@ -46,19 +46,14 @@
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-
-                <div class="p-1 mb-1 bg-light text-black"><h1>Perfil de Empleador</h1></div>
-
+                <div class="p-1 mb-1 bg-light text-black"><center><h1>Perfil de Empleador</h1></center></div>
                 <div class="jumbotron">
-                    <div class="form-group, position-relative"> 
-                        <img src="../../imagenes/fotoprueba.jpg" style="width: 150px" class="rounded float-center" alt="..." class="rounded">
+                    <div class="form-group, position-relative">
                         <div class="col-6">
                             <label for="foto"><strong>Foto de Perfil</strong></label>
                             <input type="file" class="form-control-file" id="foto" name="foto">
                         </div>
                     </div>
-
                     <div class="container">
                         <div class="row">
                             <div class="col align-self-start">
@@ -152,27 +147,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--cerra al final-->
-                        </div><!--cerrar al final-->
-                    </div><!--cerrar final-->
-
-
-                    <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
-                    -->
-
-                    <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina()">Siguiente</button>
-
-
-                    <!-- Recordar insertar todo en diferentes div
-                    -->
+                            </div>
+                        </div>
+                    </div>  
                 </div>
-
-
-
             </div>
+
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="p-1 mb-1 bg-light text-black"><center><h1>Formacion Academica</h1></center></div>
-                <br>
                 <div class="jumbotron">
                     <div class="container">
                         <div class="row">
@@ -236,12 +218,10 @@
             </div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <center>
-                    <br>
                     <div class="p-1 mb-2 bg-light text-black">
                         <h1>Registro de Experiencia Laboral</h1>
                     </div>
                 </center>    
-                <br>
                 <div class="jumbotron" style="color:black">
                     <div class="container">
 
@@ -342,13 +322,9 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab">
-
                 <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
-
-
-                <div class="container">
-                    <div class="jumbotron" style="color:black">
-
+                <div class="jumbotron" style="color:black">
+                    <div class="container">
                         <div class="form-group row">
                             <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
                             <div class="col-sm-3">
@@ -382,37 +358,5 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- Se crea un DIV y se le pone un ID en este caso pagina1
-           Style = block (Se muestra)
-           Style = none (Oculto)
-           Se pone como "block" la primera pagina.
-        -->                           
-        <div id="pagina2" style="display:none;">
-
-
-            <!-- se crean dos botones uno en el que se avanza y otro en el que se retrocede
-            -->
-
-
-
-
-            <!-- Recordar insertar todo en diferentes div
-            -->
-        </div>                
-        <div id="pagina3" style="display:none;">
-
-        </div>
-        <div id="pagina4" style="display:none;">
-
-        </div>
-    <center>
-
-
-    </center> 
-
-</form> 
-
 </body>
 </html>

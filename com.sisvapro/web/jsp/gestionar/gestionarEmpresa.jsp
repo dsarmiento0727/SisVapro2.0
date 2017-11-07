@@ -189,7 +189,7 @@
                         <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick="Eliminar()">    
                     </div>
                     <div class="col-auto">
-                        <input type="button" name="btnLimpiar" class="btn btn-secondary" value="Limpiar" onclick="eliminarElemento()">           
+                        <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar" onclick="eliminarElemento()">           
                     </div>
                 </div>  
 

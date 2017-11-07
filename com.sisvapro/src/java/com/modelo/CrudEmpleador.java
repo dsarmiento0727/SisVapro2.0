@@ -129,4 +129,42 @@ public class CrudEmpleador extends Conexion{
         }
         return listaEmpleador;
     }
+        public List<Empleador> seleccionarEmpleador(int id)throws Exception{
+        List<Empleador> listaEmpleadorSel =new ArrayList();
+        ResultSet res;
+        try {
+           this.conectar();
+            String sql="select*from empleador where idEmpleador=?";
+            PreparedStatement pre =this.getCon().prepareCall(sql);
+            pre.setInt(1, id);
+            res=pre.executeQuery();
+            while(res.next()){
+                Empleador em=new Empleador();
+                em.setIdEmpleador(res.getInt("idEmpleador"));
+                em.setNombres(res.getString("nombres"));
+                em.setApellidos(res.getString("apellidos"));
+                em.setDireccion(res.getString("direccion"));
+                em.setTelefono(res.getString("telefono"));
+                em.setCorreoElectronico(res.getString("correoElectronico"));
+                em.setFechaNac(res.getString("fechaNacimiento"));
+                em.setGenero(res.getString("genero"));
+                em.setAniosExperiencia(res.getInt("aniosExperiencia"));
+                em.setFotoPerfil(res.getString("fotoPerfil"));
+                em.setDui(res.getString("dui"));
+                em.setNit(res.getString("nit"));
+                em.setNacionalidad(res.getString("nacionalidad"));
+                em.setIdUsuario(res.getInt("idUsuario"));
+                em.setIdPais(res.getInt("idPais"));
+                em.setIdDepartamento(res.getInt("idDepartamento"));
+                em.setIdAreaProfesional(res.getInt("idAreaProfesional"));
+                listaEmpleadorSel.add(em);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        finally{
+            this.desconectar();
+        }
+        return listaEmpleadorSel;
+    }
 }
