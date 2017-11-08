@@ -302,9 +302,9 @@
                                 </div> 
                             </div>
                         </div>
-                       
+                       <input type="submit" name="btnModificarPerfil" class="btn btn-secondary btn-lg btn-block" value="Guardar"> 
                     </div>
-                    <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()"> 
+                    
                 </form>
                 <%
                     }
@@ -369,6 +369,9 @@
             </div>
 
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <form>
+                    
+                </form>
                 <center>
                     <div class="p-1 mb-2 bg-light text-black">
                         <h1>Registro de Experiencia Laboral</h1>

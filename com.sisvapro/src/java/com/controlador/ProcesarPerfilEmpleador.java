@@ -37,39 +37,38 @@ public class ProcesarPerfilEmpleador extends HttpServlet {
         Empleador per = new Empleador();
         PrintWriter out = response.getWriter();
         try {
-            per.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdPerfil")));
-            per.setNombres(request.getParameter("txtNombres"));
-            per.setApellidos(request.getParameter("txtApellidos"));
-            per.setDireccion(request.getParameter("txtDireccion"));
-            per.setTelefono(request.getParameter("txtTelefono"));
-            per.setCorreoElectronico(request.getParameter("txtCorreoE"));
-            per.setFechaNac(request.getParameter("txtFechaNac"));
-            per.setGenero(request.getParameter("genero"));
-            per.setAniosExperiencia(Integer.parseInt(request.getParameter("txtAnio")));
-            if(request.getParameter("foto").isEmpty())
-            {
-                per.setFotoPerfil(request.getParameter("foto2"));
-            } else{
-                per.setFotoPerfil(request.getParameter("foto"));
-            }
-           
-           per.setDui(request.getParameter("txtDui"));
-           per.setNit(request.getParameter("txtNit"));
-           per.setNacionalidad(request.getParameter("txtNacionalidad"));
-           per.setIdUsuario(Integer.parseInt(request.getParameter("lstUsuario")));
-           per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
-          per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
-           per.setIdAreaProfesional(Integer.parseInt(request.getParameter("lstArea")));
 
-            if (request.getParameter("btnModificar") != null) {
+            if (request.getParameter("btnModificarPerfil") != null) {
+                per.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdPerfil")));
+                per.setNombres(request.getParameter("txtNombres"));
+                per.setApellidos(request.getParameter("txtApellidos"));
+                per.setDireccion(request.getParameter("txtDireccion"));
+                per.setTelefono(request.getParameter("txtTelefono"));
+                per.setCorreoElectronico(request.getParameter("txtCorreoE"));
+                per.setFechaNac(request.getParameter("txtFechaNac"));
+                per.setGenero(request.getParameter("genero"));
+                per.setAniosExperiencia(Integer.parseInt(request.getParameter("txtAnio")));
+                if (request.getParameter("foto").isEmpty()) {
+                    per.setFotoPerfil(request.getParameter("foto2"));
+                } else {
+                    per.setFotoPerfil(request.getParameter("foto"));
+                }
+
+                per.setDui(request.getParameter("txtDui"));
+                per.setNit(request.getParameter("txtNit"));
+                per.setNacionalidad(request.getParameter("txtNacionalidad"));
+                per.setIdUsuario(Integer.parseInt(request.getParameter("lstUsuario")));
+                per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
+                per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
+                per.setIdAreaProfesional(Integer.parseInt(request.getParameter("lstArea")));
                 crud.modificarEmpleador(per);
             }
-            
+
             request.setAttribute("valor", val);
             request.getRequestDispatcher("gestionarPerfilEmpleador.jsp").forward(request, response);
         } catch (Exception e) {
             out.print(e.toString());
-            
+
         }
     }
 
