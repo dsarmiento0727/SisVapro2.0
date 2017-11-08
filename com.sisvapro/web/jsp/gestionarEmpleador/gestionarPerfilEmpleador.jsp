@@ -61,34 +61,34 @@
     </head>
     <body>
         <jsp:include page="menuGestionar.jsp"/>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="nav nav-pills navbar-dark mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Formacion Academica</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
-                </li>
-            </ul>
-        </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Formacion Academica</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
+            </li>
+        </ul>
+</nav>
+
 
         <div class="tab-content" id="pills-tabContent">
-            <form name="frmPEmpleado" action="">
 
 
-                <%
-                    CrudEmpleador crudemp = new CrudEmpleador();
-                    for (Empleador empi : crudemp.seleccionarEmpleador(Integer.parseInt(idUsuario))) {
 
-
-                %>
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <%
+                CrudEmpleador crudemp = new CrudEmpleador();
+                for (Empleador empi : crudemp.seleccionarEmpleador(Integer.parseInt(idUsuario))) {
+            %>
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <form name="frmPEmpleado" action="procesarGestionarPerfilEmpleador" method="POST">
                     <div class="p-1 mb-1 bg-light text-black"><center><h1>Perfil de Empleador</h1></center></div>
                     <div class="jumbotron">
                         <div class="form-group, position-relative">
@@ -135,7 +135,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="fecha" class="col-form-label"><strong>Fecha de Nacimiento</strong></label>
-                                        <input type="txt" class="form-control" id="txtFechaNac" name="txtFechaNac" value="<%= empi.getFechaNac() %>" readonly>
+                                        <input type="txt" class="form-control" id="txtFechaNac" name="txtFechaNac" value="<%= empi.getFechaNac()%>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -150,7 +150,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="DUI" class="col-form-label"><strong>DUI</strong></label>
-                                            <input type="text" class="form-control" id="txtDui" name="txtIdPerfil" placeholder="########-#" value="<%= empi.getDui() %>">
+                                            <input type="text" class="form-control" id="txtDui" name="txtIdPerfil" placeholder="########-#" value="<%= empi.getDui()%>">
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -179,26 +179,30 @@
                                             <div class="col-5">
                                                 <div class="form-group">
                                                     <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
-                                                    <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad">
+                                                    <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad" value="<%= empi.getNacionalidad()%>">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> 
-                </div>
-                <%
-                    }
-                %>
-            </form>
-        </div>
+                        </div> 
+                                                <input type="submit" value="Guardar" name="perfil">
+                    </div>
+                    <%
+                        }
+                    %>
+ 
+                </form>
 
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="p-1 mb-1 bg-light text-black"><center><h1>Formacion Academica</h1></center></div>
-            <div class="jumbotron">
-                <div class="container">
+            </div>
+
+
+
+
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="p-1 mb-1 bg-light text-black"><center><h1>Formacion Academica</h1></center></div>
+                <div class="jumbotron">
                     <div class="row">
                         <div class="form-group col-md-5">
                             <label for="idfor" class="col-form-label">Id Formacion Academica</label>
@@ -243,31 +247,16 @@
                             <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"placeholder="Carrera" required="true">
                         </div>
                     </div> 
-                </div>
-                <div class="container">    
-                    <div class="row justify-content-around">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina()">Anterior</button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina2()">Siguiente</button>
-                        </div>
-                    </div>                    
-                </div>
+                </div>             
             </div>
 
-
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <center>
-                <div class="p-1 mb-2 bg-light text-black">
-                    <h1>Registro de Experiencia Laboral</h1>
-                </div>
-            </center>    
-            <div class="jumbotron" style="color:black">
-                <div class="container">
-
-
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <center>
+                    <div class="p-1 mb-2 bg-light text-black">
+                        <h1>Registro de Experiencia Laboral</h1>
+                    </div>
+                </center>    
+                <div class="jumbotron" style="color:black">
                     <div class="col align-self-star">
                         <div class="form-row">
                             <div class="form-group col-md-5">
@@ -341,32 +330,13 @@
                                     <option value="Practicas">Practicas</option> 
                                 </select>
                             </div>
-                            <div class="w-10"></div>
-
-
                         </div>
                     </div>
-                    <div class="container">    
-                        <div class="row justify-content-around">
-                            <div class="col-4">
-                                <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina2()">Anterior</button>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina3()">Siguiente</button>
-
-                            </div>
-                        </div>                    
-                    </div>
-
-
-
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab">
-            <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
-            <div class="jumbotron" style="color:black">
-                <div class="container">
+            <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab">
+                <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
+                <div class="jumbotron" style="color:black">
                     <div class="form-group row">
                         <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
                         <div class="col-sm-3">
@@ -385,20 +355,8 @@
                             <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" >
                         </div>
                     </div>
-                    <div class="container">    
-                        <div class="row justify-content-around">
-                            <div class="col-4">
-                                <button type="button" class="btn btn-dark btn-lg" onclick="anteriorPagina3()">Anterior</button>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-dark btn-lg" onclick="siguientePagina4()">Siguiente</button>
-
-                            </div>
-                        </div>                    
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

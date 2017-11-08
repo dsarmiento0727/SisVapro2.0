@@ -37,7 +37,7 @@ public class ProcesarTipoUsuario extends HttpServlet {
          CrudTipoUsuario crud= new CrudTipoUsuario();
          TipoUsuario t= new TipoUsuario();
          try {
-            t.setIdTipoUsuario(Integer.parseInt(request.getParameter("txtTipoUsuario")));
+            t.setIdTipoUsuario(Integer.parseInt(request.getParameter("txtIdTipoUsuario")));
             t.setNivel(request.getParameter("txtNivel"));
              if (request.getParameter("btnInsertar")!=null) {
                  crud.insertarTipoUsuario(t);

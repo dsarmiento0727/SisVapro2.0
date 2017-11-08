@@ -5,6 +5,8 @@
  */
 package com.controlador;
 
+import com.modelo.CrudEmpleador;
+import com.modelo.Empleador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -30,19 +32,44 @@ public class ProcesarPerfilEmpleador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProcesarGestionarPerfilEmpleador</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProcesarGestionarPerfilEmpleador at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String val=null;
+        CrudEmpleador crud= new CrudEmpleador();
+        Empleador per=new Empleador();
+        try {    
+            per.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdPerfil")));
+            per.setNombres(request.getParameter("txtNombres"));
+            per.setApellidos(request.getParameter("txtApellidos"));
+            per.setDireccion(request.getParameter("txtDireccion"));
+            per.setTelefono(request.getParameter("txtTelefono"));
+            per.setCorreoElectronico(request.getParameter("txtCorreoE"));
+            per.setFechaNac(request.getParameter("txtFechaNac"));
+            per.setGenero(request.getParameter("genero"));
+            per.setAniosExperiencia(Integer.parseInt(request.getParameter("txtAnio")));
+            per.setFotoPerfil(request.getParameter("foto"));
+            per.setDui(request.getParameter("txtDui"));
+            per.setNit(request.getParameter("txtNit"));
+            per.setNacionalidad(request.getParameter("txtNacionalidad"));
+            per.setIdUsuario(Integer.parseInt(request.getParameter("lstUsuario")));
+            per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
+            per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
+            per.setIdAreaProfesional(Integer.parseInt(request.getParameter("lstArea")));
+            
+            
+            if (request.getParameter("btnInsertar")!=null) {
+                crud.insertarEmpleador(per);
+                val="Datos insertados Correctamente";
+            }else if (request.getParameter("btnModificar")!=null) {
+                crud.modificarEmpleador(per);
+            }else if (request.getParameter("btnEliminar")!=null) {
+                crud.eliminarEmpleador(per);
+            }
+            request.setAttribute("valor", val);
+            request.getRequestDispatcher("gestionarEmpleador.jsp").forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("error", e.toString());
         }
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
