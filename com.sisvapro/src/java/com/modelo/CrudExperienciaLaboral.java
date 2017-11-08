@@ -103,5 +103,36 @@ public class CrudExperienciaLaboral extends Conexion{
         }
         return listaExperienciaLaboral;
     }
+    
+     public List<ExperienciaLaboral> seleccionarExperienciaLaboral(int idEmpleador)throws Exception{
+        List<ExperienciaLaboral> listaExperienciaLaboral=new ArrayList();
+        ResultSet res;
+        try {
+            this.conectar();
+            String sql="select*from experienciaLaboral where idEmpleador=?";
+            PreparedStatement pre =this.getCon().prepareCall(sql);
+            pre.setInt(1, idEmpleador);
+            res=pre.executeQuery();
+            while(res.next()){
+                ExperienciaLaboral ap=new ExperienciaLaboral();
+                ap.setIdExperienciaLaboral(res.getInt("idExperienciaLaboral"));
+                ap.setNombreEmpresa(res.getString("nombreEmpresa"));
+                ap.setNombreJefe(res.getString("nombreJefe"));
+                ap.setTelefonoJefe(res.getString("telefonoJefe"));
+                ap.setPuesto(res.getString("puesto"));                
+                ap.setDesde(res.getString("desde"));
+                ap.setHasta(res.getString("hasta"));
+                ap.setTipoContrato(res.getString("tipoContrato"));
+                ap.setIdEmpleador(res.getInt("idEmpleador"));
+                listaExperienciaLaboral.add(ap);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        finally{
+            this.desconectar();
+        }
+        return listaExperienciaLaboral;
+    }
 }
 

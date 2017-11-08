@@ -93,4 +93,31 @@ public class CrudFormacionAcademica  extends Conexion{
         }
         return listaFormacionAcademica;
     }
+    
+     public List<FormacionAcademica> seleccionarFormacionAcademica(int idEmpleador)throws Exception{
+        List<FormacionAcademica> listaFormacionAcademica=new ArrayList();
+        ResultSet res;
+        try {
+           this.conectar();
+            String sql="select*from formacionAcademica where idEmpleador=?";
+            PreparedStatement pre =this.getCon().prepareCall(sql);
+            pre.setInt(1, idEmpleador);
+            res=pre.executeQuery();
+            while(res.next()){
+                FormacionAcademica d=new FormacionAcademica();
+                d.setIdFormacion(res.getInt("idFormacion"));
+                d.setNivelEstudio(res.getString("nivelEstudios"));
+                d.setEstado(res.getString("estado"));
+                d.setCarrera(res.getString("carrera"));
+                d.setIdEmpleador(res.getInt("idEmpleador"));
+                listaFormacionAcademica.add(d);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        finally{
+            this.desconectar();
+        }
+        return listaFormacionAcademica;
+    }
 }

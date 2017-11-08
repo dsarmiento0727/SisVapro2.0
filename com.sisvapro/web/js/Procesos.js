@@ -85,7 +85,7 @@ function cargarExperienciaLaboral(id, empresa, jefe, telefono, puesto, desde, ha
     document.frmExperienciaLaboral.txtPuesto.value = puesto;
     document.frmExperienciaLaboral.Desde.value = desde;
     document.frmExperienciaLaboral.Hasta.value = hasta;
-    document.frmExperienciaLaboral.lstContrato.value = tipo;
+    document.frmExperienciaLaboral.lstTipoContrato.value = tipo;
     document.frmExperienciaLaboral.txtIdEmpleador.value = idEmpleado;
 }
 

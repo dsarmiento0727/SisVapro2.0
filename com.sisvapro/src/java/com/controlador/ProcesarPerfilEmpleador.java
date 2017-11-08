@@ -6,7 +6,13 @@
 package com.controlador;
 
 import com.modelo.CrudEmpleador;
+import com.modelo.CrudExperienciaLaboral;
+import com.modelo.CrudFormacionAcademica;
+import com.modelo.CrudHabilidad;
 import com.modelo.Empleador;
+import com.modelo.ExperienciaLaboral;
+import com.modelo.FormacionAcademica;
+import com.modelo.Habilidad;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,8 +39,14 @@ public class ProcesarPerfilEmpleador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String val = null;
-        CrudEmpleador crud = new CrudEmpleador();
+        CrudEmpleador crudE = new CrudEmpleador();
         Empleador per = new Empleador();
+        CrudFormacionAcademica crudFA = new CrudFormacionAcademica();
+        FormacionAcademica aca = new FormacionAcademica();
+        CrudExperienciaLaboral crud = new CrudExperienciaLaboral();
+        ExperienciaLaboral ex = new ExperienciaLaboral();
+        CrudHabilidad crudH = new CrudHabilidad();
+        Habilidad h = new Habilidad();
         PrintWriter out = response.getWriter();
         try {
 
@@ -53,7 +65,6 @@ public class ProcesarPerfilEmpleador extends HttpServlet {
                 } else {
                     per.setFotoPerfil(request.getParameter("foto"));
                 }
-
                 per.setDui(request.getParameter("txtDui"));
                 per.setNit(request.getParameter("txtNit"));
                 per.setNacionalidad(request.getParameter("txtNacionalidad"));
@@ -61,7 +72,87 @@ public class ProcesarPerfilEmpleador extends HttpServlet {
                 per.setIdPais(Integer.parseInt(request.getParameter("lstPais")));
                 per.setIdDepartamento(Integer.parseInt(request.getParameter("lstDepartamento")));
                 per.setIdAreaProfesional(Integer.parseInt(request.getParameter("lstArea")));
-                crud.modificarEmpleador(per);
+                crudE.modificarEmpleador(per);
+            }
+
+            if (request.getParameter("btnAgregarFa") != null) {
+                aca.setIdFormacion(Integer.parseInt(request.getParameter("txtIdFormacionAcademica")));
+                aca.setNivelEstudio(request.getParameter("lstNivel"));
+                aca.setEstado(request.getParameter("lstEstado"));
+                aca.setCarrera(request.getParameter("txtCarrera"));
+                aca.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                crudFA.insertarFormacionAcademica(aca);
+                val = "Datos insertados Correctamente";
+            } else if (request.getParameter("btnModificarFa") != null) {
+
+                aca.setIdFormacion(Integer.parseInt(request.getParameter("txtIdFormacionAcademica")));
+                aca.setNivelEstudio(request.getParameter("lstNivel"));
+                aca.setEstado(request.getParameter("lstEstado"));
+                aca.setCarrera(request.getParameter("txtCarrera"));
+                aca.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+
+                crudFA.modificarFormacionAcademica(aca);
+            } else if (request.getParameter("btnEliminarFa") != null) {
+                aca.setIdFormacion(Integer.parseInt(request.getParameter("txtIdFormacionAcademica")));
+                crudFA.eliminarFormacionAcademica(aca);
+            }
+
+            if (request.getParameter("btnAgregarEl") != null) {
+                ex.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
+                ex.setNombreEmpresa(request.getParameter("txtNombreEmpresa"));
+                ex.setNombreJefe(request.getParameter("txtJefe"));
+                ex.setTelefonoJefe(request.getParameter("txtTelefono"));
+                ex.setPuesto(request.getParameter("txtPuesto"));
+                ex.setDesde(request.getParameter("txtDesde"));
+                ex.setHasta(request.getParameter("txtHasta"));
+                ex.setTipoContrato(request.getParameter("lstTipoContrato"));
+                ex.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                crud.insertarExperienciaLaboral(ex);
+                val = "Datos insertados Correctamente";
+            } else if (request.getParameter("btnModificarEl") != null) {
+                ex.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
+                ex.setNombreEmpresa(request.getParameter("txtNombreEmpresa"));
+                ex.setNombreJefe(request.getParameter("txtJefe"));
+                ex.setTelefonoJefe(request.getParameter("txtTelefono"));
+                ex.setPuesto(request.getParameter("txtPuesto"));
+                ex.setDesde(request.getParameter("txtDesde"));
+                ex.setHasta(request.getParameter("txtHasta"));
+                ex.setTipoContrato(request.getParameter("lstTipoContrato"));
+                ex.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                crud.modificarExperienciaLaboral(ex);
+            } else if (request.getParameter("btnEliminarEl") != null) {
+                ex.setIdExperienciaLaboral(Integer.parseInt(request.getParameter("txtIdExperienciaLaboral")));
+                ex.setNombreEmpresa(request.getParameter("txtNombreEmpresa"));
+                ex.setNombreJefe(request.getParameter("txtJefe"));
+                ex.setTelefonoJefe(request.getParameter("txtTelefono"));
+                ex.setPuesto(request.getParameter("txtPuesto"));
+                ex.setDesde(request.getParameter("txtDesde"));
+                ex.setHasta(request.getParameter("txtHasta"));
+                ex.setTipoContrato(request.getParameter("lstTipoContrato"));
+                ex.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                crud.eliminarExperienciaLaboral(ex);
+            }
+
+            if (request.getParameter("btnAgregarH") != null) {
+                h.setIdHabilidad(Integer.parseInt(request.getParameter("txtIdHabilidad")));
+                h.setNombreHabilidad(request.getParameter("txtNombre"));
+                h.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                
+                out.print(h.getIdHabilidad());
+                out.print(h.getNombreHabilidad());
+                out.print(h.getIdEmpleador());
+                crudH.insertarHabilidad(h);
+                val = "Datos insertados Correctamente";
+            } else if (request.getParameter("btnModificarH") != null) {
+                h.setIdHabilidad(Integer.parseInt(request.getParameter("txtIdHabilidad")));
+                h.setNombreHabilidad(request.getParameter("txtNombre"));
+                h.setIdEmpleador(Integer.parseInt(request.getParameter("txtIdEmpleador")));
+                val = "Datos modificados Correctamente";
+                crudH.modificarHabilidad(h);
+            } else if (request.getParameter("btnEliminarH") != null) {
+                h.setIdHabilidad(Integer.parseInt(request.getParameter("txtIdHabilidad")));
+                crudH.eliminarHabilidad(h);
+                val = "Datos Eliminados Correctamente";
             }
 
             request.setAttribute("valor", val);

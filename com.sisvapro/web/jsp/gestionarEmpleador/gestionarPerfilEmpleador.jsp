@@ -4,6 +4,12 @@
     Author     : David Sarmiento
 --%>
 
+<%@page import="com.modelo.CrudHabilidad"%>
+<%@page import="com.modelo.Habilidad"%>
+<%@page import="com.modelo.CrudExperienciaLaboral"%>
+<%@page import="com.modelo.ExperienciaLaboral"%>
+<%@page import="com.modelo.FormacionAcademica"%>
+<%@page import="com.modelo.CrudFormacionAcademica"%>
 <%@page import="com.modelo.CrudAreaProfesional"%>
 <%@page import="com.modelo.CrudDepartamento"%>
 <%@page import="com.modelo.Departamento"%>
@@ -70,6 +76,17 @@
         CrudDepartamento crudd = new CrudDepartamento();
         CrudPais crudp = new CrudPais();
         CrudAreaProfesional cruda = new CrudAreaProfesional();
+        CrudFormacionAcademica crudFa = new CrudFormacionAcademica();
+        CrudExperienciaLaboral crudEl = new CrudExperienciaLaboral();
+        CrudHabilidad crudH = new CrudHabilidad();
+    %>
+    <%            if (request.getAttribute("valor") != null) {
+    %>
+    <script>
+        alert('<%=request.getAttribute("valor")%>')
+    </script>
+    <%
+        }
     %>
     <body onload="cargarimagenPerfil()">
         <jsp:include page="menuGestionar.jsp"/>
@@ -85,7 +102,7 @@
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Registro de Habilidad</a>
                 </li>
             </ul>
         </nav>
@@ -116,7 +133,7 @@
                         </div>
                         <script>
                             function cargarimagenPerfil() {
-         
+
                                 var image = new Image();
 
                                 var src = '../../imagenes/fotosperfiles/' + '<%= empi.getFotoPerfil()%>'; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
@@ -126,7 +143,7 @@
 
                                 $('#imagep').append(image);
                             }
-    
+
                         </script>
 
                         <div class="row">
@@ -338,160 +355,274 @@
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="p-1 mb-1 bg-light text-black"><center><h1>Formacion Academica</h1></center></div>
                 <div class="jumbotron">
-                    <div class="row">
-                        <div class="form-group col-md-5">
-                            <label for="idfor" class="col-form-label">Id Formacion Academica</label>
-                            <input type="text" class="form-control" id="idfor" name="txtIdFormacionAcademica" placeholder="Id Formacion Academica"  value="0" readonly>
-                        </div>
-                        <div class="form-group col-md-5">
-                            <label for="idfor1" class="col-form-label">Id Empleador</label>
-                            <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador"  value="0" readonly>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
-                        <div class="col">
-                            <select class="custom-select mb-1 mr-sm-1 mb-sm-1" id="lstNivel" name="lstNivel" required="true">
-                                <option>Seleccione</option>
-                                <option value="9 grado">9 grado</option>
-                                <option value="Bachillertao Incompleto">Bachillertao Incompleto</option>
-                                <option value="Bachillertao Completo">Bachillertao Completo</option>
-                                <option value="Universidad 1to año">Universidad 1ro a&ntilde;o</option>
-                                <option value="Universidad 2to año">Universidad 2do a&ntilde;o</option>
-                                <option value="Universidad 3to año">Universidad 3er a&ntilde;o</option>
-                                <option value="Universidad 4to año">Universidad 4to a&ntilde;o</option>
-                                <option value="Universidad 5to año">Universidad 5to a&ntilde;o</option>
-                                <option value="Graduado Universitario">Graduado Universitario</option>
-                                <option value="Universidad Incompleta">Universidad Incompleta</option>
-                                <option value="Maestria">Maestria</option>
-                            </select></div>
-                        <div class="col col-1"><label for="Estado" class="col-form-label"><strong>Estado</strong></label></div>
-                        <div class="col">
-                            <select class="custom-select mb-2 mr-sm-2 mb-sm-4 row-md-4" id="lstEstado" name="lstEstado" required="true">
-                                <option>Seleccione</option>
-                                <option value="Estudios Activos">Estudios Activos</option>
-                                <option value="Estudios Pausados">Estudios Pausados</option>
-                                <option value="Estudios Terminados">Estudios Terminados</option>
-                            </select>
-                        </div>
-                        <div class="w-100"></div>
-                        <div class="col col-2">
-                            <label for="carrera" class="col-sm-2 col-form-label mb-sm-4"><strong>Carrera</strong></label>
-                        </div>
-                        <div class="col-8">
-                            <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"placeholder="Carrera" required="true">
-                        </div>
-                    </div> 
-                </div>             
+                    <form name="frmFormacion" action="procesarGestionarPerfilEmpleador" method="POST">
+                        <div class="row">
+                            <div class="form-group col-md-5">
+
+                                <input type="text" class="form-control" id="idfor" name="txtIdFormacionAcademica" placeholder="Id Formacion Academica"  value="0" readonly style="display: none">
+
+
+                                <input type="text" class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador"  value="<%= idUsuario%>" readonly style="display: none">
+
+                            </div>
+                            <div class="row">
+                                <div class="col col-2"><label for="niveles" class="col-form-label"><strong>Niveles de Estudio</strong></label></div>
+                                <div class="col">
+                                    <select class="custom-select mb-1 mr-sm-1 mb-sm-1" id="lstNivel" name="lstNivel" required="true">
+                                        <option>Seleccione</option>
+                                        <option value="9 grado">9 grado</option>
+                                        <option value="Bachillertao Incompleto">Bachillertao Incompleto</option>
+                                        <option value="Bachillertao Completo">Bachillertao Completo</option>
+                                        <option value="Universidad 1to año">Universidad 1ro a&ntilde;o</option>
+                                        <option value="Universidad 2to año">Universidad 2do a&ntilde;o</option>
+                                        <option value="Universidad 3to año">Universidad 3er a&ntilde;o</option>
+                                        <option value="Universidad 4to año">Universidad 4to a&ntilde;o</option>
+                                        <option value="Universidad 5to año">Universidad 5to a&ntilde;o</option>
+                                        <option value="Graduado Universitario">Graduado Universitario</option>
+                                        <option value="Universidad Incompleta">Universidad Incompleta</option>
+                                        <option value="Maestria">Maestria</option>
+                                    </select></div>
+                                <div class="col col-1"><label for="Estado" class="col-form-label"><strong>Estado</strong></label></div>
+                                <div class="col">
+                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-4 row-md-4" id="lstEstado" name="lstEstado" required="true">
+                                        <option>Seleccione</option>
+                                        <option value="Estudios Activos">Estudios Activos</option>
+                                        <option value="Estudios Pausados">Estudios Pausados</option>
+                                        <option value="Estudios Terminados">Estudios Terminados</option>
+                                    </select>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col col-2">
+                                    <label for="carrera" class="col-sm-2 col-form-label mb-sm-4"><strong>Carrera</strong></label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"placeholder="Carrera" required="true">
+                                </div>
+                            </div> 
+                            <input type="submit" name="btnAgregarFa" class="btn btn-success btn-sm" value="Agregar">
+                            <input type="submit" name="btnModificarFa" class="btn btn-warning btn-sm" value="Modificar">
+                            <input type="submit" name="btnEliminarFa" class="btn btn-danger btn-sm" value="Eliminar">
+                            <input type="reset" name="btnReset" class="btn btn-primary btn-sm" value="Limpiar">
+                            </form>
+                            <div class="table table-responsive">
+                                <table id="grid" class="table table-responsive-lg table-bordered" style="text-align: center; width: 1200px">
+                                    <thead class="thead-inverse">
+                                        <tr>
+                                            <th  style="text-align: center">Nivel Estudios</th>
+                                            <th  style="text-align: center">Estado</th>
+                                            <th  style="text-align: center">Carrera</th>
+
+                                            <th  style="text-align: center">Seleccionar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%
+
+                                            for (FormacionAcademica f : crudFa.seleccionarFormacionAcademica(Integer.parseInt(idUsuario))) {
+                                        %>
+                                        <tr class="table-primary">
+
+                                            <td><%=f.getNivelEstudio()%></td>
+                                            <td><%=f.getEstado()%></td>
+                                            <td><%=f.getCarrera()%></td>
+
+                                            <td><a href="javascript:cargarFormacionAcademica(<%=f.getIdFormacion()%>,'<%=f.getNivelEstudio()%>','<%=f.getEstado()%>','<%=f.getCarrera()%>','<%=f.getIdEmpleador()%>')">Seleccionar</a></td> 
+
+                                        </tr>
+                                        <%
+                                            }
+                                        %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>             
+                </div>
             </div>
 
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <form>
+                <form action="procesarGestionarPerfilEmpleador" method="post" name="frmExperienciaLaboral">
+                    <center>
+                        <div class="p-1 mb-2 bg-light text-black">
+                            <h1>Registro de Experiencia Laboral</h1>
+                        </div>
+                    </center>    
+                    <div class="jumbotron" style="color:black">
+                        <div class="col align-self-star">
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
 
+                                    <input type="text" class="form-control" id="idExperienciaLaboral" name="txtIdExperienciaLaboral" placeholder="Id Experiencia Laboral"  value="0" readonly style="display: none;">
+                                    <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador" placeholder="Id Empleado"  value="<%= idUsuario%>" readonly style="display: none;">
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-row">
+
+                                <div class="form-group col-md-5">
+                                    <label for="nombreEmpresa" class="col-form-label">Nombre de la Empresa</label>
+                                    <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="row justify-content-center">
+                                        <div class="form-group col-md-8">
+                                            <label for="puesto" class="col-form-label">Puesto</label>
+                                            <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Puesto ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="nombreJefe" class="col-form-label">Nombre del Jefe</label>
+                                    <input type="text" class="form-control" id="nombreJefe" name="txtJefe" placeholder="Nombre del Jefe">
+                                </div>
+                                <div class="col align-self-end">
+                                    <div class="row justify-content-center">
+                                        <div class="form-group col-md-8">
+                                            <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
+                                            <input type="text" class="form-control" id="Telefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="Desde" class="col-form-label">Desde</label>
+                                    <input type="date" class="form-control" id="Desde" name="txtDesde">
+                                </div>
+                                <div class="col align-self-end">
+                                    <div class="row justify-content-center">
+                                        <div class="form-group col-md-8">
+                                            <label for="Hasta" class="col-form-label">Hasta</label>
+                                            <input type="date" class="form-control" id="Hasta" name="txtHasta">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col col-2">
+                                    <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
+                                </div>
+                                <div class="col-4">
+                                    <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="lstTipoContrato" name="lstTipoContrato" required="true">
+                                        <option value="Tiempo Completo">Tiempo Completo</option>
+                                        <option value="Por Horas">Por Horas</option>
+                                        <option value="Practicas">Practicas</option> 
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" name="btnAgregarEl" class="btn btn-success btn-sm" value="Agregar">
+                        <input type="submit" name="btnModificarEl" class="btn btn-warning btn-sm" value="Modificar">
+                        <input type="submit" name="btnEliminarEl" class="btn btn-danger btn-sm" value="Eliminar">
+                        <input type="reset" name="btnReset" class="btn btn-primary btn-sm" value="Limpiar">
+
+                    </div>
                 </form>
-                <center>
-                    <div class="p-1 mb-2 bg-light text-black">
-                        <h1>Registro de Experiencia Laboral</h1>
-                    </div>
-                </center>    
-                <div class="jumbotron" style="color:black">
-                    <div class="col align-self-star">
-                        <div class="form-row">
-                            <div class="form-group col-md-5">
-                                <label for="idExperienciaLaboral" class="col-form-label">Id Experiencia Laboral</label>
-                                <input type="text" class="form-control" id="idExperienciaLaboral" name="txtIdExperienciaLaboral" placeholder="Id Experiencia Laboral"  value="0" readonly>
-                            </div>
-                            <div class="col align-self-center">
-                                <div class="row justify-content-center">
-                                    <div class="form-group col-md-8">
-                                        <label for="idEmpleador" class="col-form-label">Id Empleador</label>
-                                        <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador" placeholder="Id Empleado" >
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="form-row">
-
-                            <div class="form-group col-md-5">
-                                <label for="nombreEmpresa" class="col-form-label">Nombre de la Empresa</label>
-                                <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
-                            </div>
-                            <div class="col align-self-center">
-                                <div class="row justify-content-center">
-                                    <div class="form-group col-md-8">
-                                        <label for="puesto" class="col-form-label">Puesto</label>
-                                        <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Puesto ">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-5">
-                                <label for="nombreJefe" class="col-form-label">Nombre del Jefe</label>
-                                <input type="text" class="form-control" id="nombreJefe" name="txtJefe" placeholder="Nombre del Jefe">
-                            </div>
-                            <div class="col align-self-end">
-                                <div class="row justify-content-center">
-                                    <div class="form-group col-md-8">
-                                        <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
-                                        <input type="text" class="form-control" id="Telefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-5">
-                                <label for="Desde" class="col-form-label">Desde</label>
-                                <input type="date" class="form-control" id="Desde" name="txtDesde">
-                            </div>
-                            <div class="col align-self-end">
-                                <div class="row justify-content-center">
-                                    <div class="form-group col-md-8">
-                                        <label for="Hasta" class="col-form-label">Hasta</label>
-                                        <input type="date" class="form-control" id="Hasta" name="txtHasta">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col col-2">
-                                <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
-                            </div>
-                            <div class="col-4">
-                                <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="idTipoContrato" name="lstTipoContrato" required="true">
-                                    <option value="Tiempo Completo">Tiempo Completo</option>
-                                    <option value="Por Horas">Por Horas</option>
-                                    <option value="Practicas">Practicas</option> 
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                <div class="table table-responsive">
+                    <table id="grid" class="table table-responsive table-bordered" style="text-align: center">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th style="text-align: center;width: 100px">Id Experiencia Laboral</th>
+                                <th style="text-align: center;width: 200px">Nombre de la Empresa</th>
+                                <th style="text-align: center;width: 200px">Nombre de Jefe</th>
+                                <th style="text-align: center;width: 150px">Telefono del Jefe</th>
+                                <th style="text-align: center">Puesto</th>
+                                <th style="text-align: center;width: 150px">Tipo de contrato</th>
+                                <th style="text-align: center;width: 150px">Desde</th>
+                                <th style="text-align: center;width: 150px">Hasta</th>
+                                <th style="text-align: center;width: 150px">Id Empleador</th>
+                                <th style="text-align: center;width: 100px">Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                                for (ExperienciaLaboral ep : crudEl.seleccionarExperienciaLaboral(Integer.parseInt(idUsuario))) {
+                            %>
+                            <tr class="table-primary">
+                                <td><%=ep.getIdExperienciaLaboral()%></td>
+                                <td><%=ep.getNombreEmpresa()%></td>
+                                <td><%=ep.getNombreJefe()%></td>
+                                <td><%=ep.getTelefonoJefe()%></td>
+                                <td><%=ep.getPuesto()%></td>
+                                <td><%=ep.getTipoContrato()%></td>
+                                <td><%=ep.getDesde()%></td>
+                                <td><%=ep.getHasta()%></td>
+                                <td><%=ep.getIdEmpleador()%></td>
+                                <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
+                                       '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
+                                       '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>','<%=ep.getTipoContrato()%>',
+                                       '<%=ep.getIdEmpleador()%>')">Seleccionar</a></td>
+                            </tr>
+                            <%
+                                }
+                            %>
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
             <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab">
                 <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
                 <div class="jumbotron" style="color:black">
-                    <div class="form-group row">
-                        <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly>
+                    <form action="procesarGestionarPerfilEmpleador" method="POST" name="frmHabilidad">
+
+                        <div class="form-group row">
+
+                            <input type="text" class="form-control" id="txtIdHabilidad" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly style="display: none">
+
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
-                        <div class="col-sm-4">
-                            <input type="text"type class="form-control" id="txtNombre" name="txtNombre"placeholder="Habilidad">
+                        <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
+                            <div class="col-sm-4">
+                                <input type="text"type class="form-control" id="txtNombre" name="txtNombre"placeholder="Habilidad">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="idfor1" class="col-sm-2 col-form-label"><strong>Id Empleado</strong></label>
-                        <div class="col-sm-4">
-                            <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" >
+                        <div class="form-group row">
+
+                            <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" value="<%= idUsuario%>" readonly style="display: none" >
+
                         </div>
+                        <input type="submit" name="btnAgregarH" class="btn btn-success btn-sm" value="Agregar">
+                        <input type="submit" name="btnModificarH" class="btn btn-warning btn-sm" value="Modificar">
+                        <input type="submit" name="btnEliminarH" class="btn btn-danger btn-sm" value="Eliminar">
+                        <input type="reset" name="btnReset" class="btn btn-primary btn-sm" value="Limpiar">
+                    </form>
+
+
+
+
+                    <div class="table table-responsive">
+                        <table id="grid" class="table table-bordered" style="text-align: center; width: 1000px">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th style="text-align: center;width: 200px">Id Habilidad</th>
+                                    <th style="text-align: center">Habilidad</th>
+                                    <th style="text-align: center">Id Empleador</th>
+                                    <th style="text-align: center">Seleccionar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for (Habilidad h : crudH.mostrarHabilidad()) {
+                                %>
+                                <tr class="table-primary">
+                                    <td><%=h.getIdHabilidad()%></td>
+                                    <td><%=h.getNombreHabilidad()%></td>
+                                    <td><%=h.getIdEmpleador()%></td>
+                                    <td><a href="javascript:cargarHabilidad(<%=h.getIdHabilidad()%>,
+                                           '<%=h.getNombreHabilidad()%>','<%=h.getIdEmpleador()%>')" style="color:black">Seleccionar</a></td>
+                                </tr>
+                                <%
+                                    }
+                                %>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

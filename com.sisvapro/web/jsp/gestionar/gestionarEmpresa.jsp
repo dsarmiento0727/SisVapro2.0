@@ -197,7 +197,8 @@
         </div>
 
         <br>
-        <table id="grid" class="table table-bordered" style="text-align: center">
+        <div class="table table-responsive" >
+        <table id="grid" class="table table-responsive table-bordered" style="text-align: center">
             <thead  class="thead-inverse">
                 <tr>
                     <th style="text-align: center">ID Empresa</th>
@@ -265,6 +266,7 @@
                 %>
             </tbody>
         </table>
+        </div>
     </center>
 </body>
 </html>

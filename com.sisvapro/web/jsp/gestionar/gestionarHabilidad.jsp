@@ -57,9 +57,11 @@
         <br>
         <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
         <br><br>
+        <div class="container">
+        <form action="procesarHabilidad" method="POST" name="frmHabilidad">
         <table>
-            <div class="container">
-                <form action="procesarHabilidad" method="POST" name="frmHabilidad">
+            
+                
                     <div class="form-group row">
                         <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
                         <div class="col-sm-3">
@@ -87,9 +89,13 @@
                             <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
                         </td>
                     </tr>
-                </form>
-            </div>
+                 
+               
+        
+            
         </table>
+           </form>
+             </div>
         <br>
         <table id="grid" class="table table-bordered" style="text-align: center; width: 1000px">
             <thead class="thead-inverse">
