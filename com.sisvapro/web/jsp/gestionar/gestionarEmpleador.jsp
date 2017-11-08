@@ -160,23 +160,69 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="lstpais" class="col-lg-4 col-form-label"><strong>Pais</strong></label>
+                                        <div class="col-lg-5">
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
+                                                <%
+                                                    List<Pais> lst1 = crudpa.mostrarPais();
+                                                    for (Pais pa : lst1) {
+                                                %>
+                                                <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="lstDepa" class="col-sm-4 col-form-label"><strong>Departamento</strong></label>
+                                        <div class="col-sm-5">
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstDepartamento" name="lstDepartamento">
+                                                <option>Seleccionar</option>
+                                                <%
+                                                    List<Departamento> lst2 = crudd.mostrarDepartamento();
+                                                    for (Departamento d : lst2) {
+                                                %>
+                                                <option value="<%=d.getIdDepartamento()%>" ><%=d.getNombreDepartamento()%></option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                    </div>   
+                                </div>
 
+                                <div class="w-100"></div>
+                                <div class="col">
+                                     <div class="form-group row">
+                                        <label for="lstArea" class="col-sm-4 col-form-label"><strong>Área Profesional</strong></label>
+                                        <div class="col-sm-5">
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea">
+                                                <option>Seleccionar</option>
+                                                <%
+                                                    List< AreaProfesional> lst3 = cruda.mostrarAreaProfesional();
+                                                    for (AreaProfesional d : lst3) {
+                                                %>
+                                                <option value="<%=d.getIdAreaProfesional()%>" ><%=d.getNombreAreaProfesional()%></option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>    
                         <div class="form-row">
                             <div class="col align-self-start">
                                 <div class="row justify-content-start">
-                                    <label class="mr-sm-2" for="idPais"><strong>Pais</strong></label>
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
-                                        <%
-                                            List<Pais> lst1 = crudpa.mostrarPais();
-                                            for (Pais pa : lst1) {
-                                        %>
-
-                                        <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
-
-                                        <%
-                                            }
-                                        %>
-                                    </select>   
                                     <div class="col-5">
                                         <div class="form-group">
                                             <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
@@ -189,13 +235,14 @@
                     </div><!--cerra al final-->
                 </div><!--cerrar al final-->
                 <!--cerrar final-->
-
+                <center>
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
                     <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
                     <input type="submit" name="btnEliminar"  class="btn btn-danger" value="Eliminar" onclick="Eliminar()">
                     <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">
                 </div>
+                </center>
             </form>
         </div>
         <div class="table table-responsive">
