@@ -55,11 +55,14 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/dataTables.bootstrap4.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
         <script type="text/javascript" src="../../js/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="../../js/popper.min.js"></script>
         <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../js/mostarOcultar.js"></script>
+        <script type="text/javascript" src="../../js/datatables.min.js"></script>
+        <script type="text/javascript" src="../../js/Procesos.js"></script>
+        <script type="text/javascript" src="../../js/dataTable.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -68,7 +71,7 @@
         CrudPais crudp = new CrudPais();
         CrudAreaProfesional cruda = new CrudAreaProfesional();
     %>
-    <body>
+    <body onload="cargarimagenPerfil()">
         <jsp:include page="menuGestionar.jsp"/>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -100,17 +103,31 @@
                 <form name="frmPEmpleado" action="procesarGestionarPerfilEmpleador" method="POST">
                     <div class="p-1 mb-1 bg-light text-black"><center><h1>Perfil de Empleador</h1></center></div>
                     <div class="jumbotron">
+                        <div id="imagep" style="max-width: 20%;max-height: 20%;"></div>
                         <div class="form-group, position-relative">
-
                             <input type="text" class="form-control-file" id="txtIdPerfil" name="txtIdPerfil" style="display: none" value="<%= empi.getIdEmpleador()%>">
                             <input type="text" class="form-control-file" id="txtIdPerfil" name="lstUsuario" style="display: none" value="<%= empi.getIdUsuario()%>">
                             <div class="col-6">
                                 <label for="foto"><strong>Foto de Perfil</strong></label>
                                 <input type="file" class="form-control-file" id="foto" name="foto">
                                 <input type="text" class="form-control-file" id="foto2" name="foto2" style="display: none" value="<%= empi.getFotoPerfil()%>">
-                                
+
                             </div>
                         </div>
+                        <script>
+                            function cargarimagenPerfil() {
+         
+                                var image = new Image();
+
+                                var src = '../../imagenes/fotosperfiles/' + '<%= empi.getFotoPerfil()%>'; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
+                                image.src = src;
+                                image.width = 150;
+                                image.height = 120;
+
+                                $('#imagep').append(image);
+                            }
+    
+                        </script>
 
                         <div class="row">
                             <div class="col align-self-start">
@@ -151,7 +168,7 @@
                                         <input type="txt" class="form-control" id="txtFechaNac" name="txtFechaNac" value="<%= empi.getFechaNac()%>" readonly>
                                     </div>
                                 </div>
-                                      <div class="col-13">
+                                <div class="col-13">
                                     <div class="form-group">
                                         <label for="txtAnio" class="col-form-label"><strong>A&ntilde;os Esperiencia</strong></label>
                                         <input type="text" class="form-control" id="txtAnio" name="txtAnio" placeholder="txtAnio" value="<%=empi.getAniosExperiencia()%>">
@@ -302,9 +319,9 @@
                                 </div> 
                             </div>
                         </div>
-                       <input type="submit" name="btnModificarPerfil" class="btn btn-secondary btn-lg btn-block" value="Guardar"> 
+                        <input type="submit" name="btnModificarPerfil" class="btn btn-secondary btn-lg btn-block" value="Guardar"> 
                     </div>
-                    
+
                 </form>
                 <%
                     }
@@ -370,7 +387,7 @@
 
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <form>
-                    
+
                 </form>
                 <center>
                     <div class="p-1 mb-2 bg-light text-black">

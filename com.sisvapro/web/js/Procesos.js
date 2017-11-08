@@ -207,7 +207,9 @@ function cargarimagen(imagenvar) {
     var src = '../../imagenes/fotosperfiles/' + imagenvar; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
     image.src = src;
     image.width = 150;
-    image.height = 120; 
+    image.height = 120;
 
     $('#image').append(image);
 }
+
+
