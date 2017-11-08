@@ -84,11 +84,13 @@
                             Gestionar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="gestionar/gestionarAdministrador.jsp">Administrador</a>
                             <a class="dropdown-item" href="gestionar/gestionarAreaProfesional.jsp">Area Profesional</a>
                             <a class="dropdown-item" href="gestionar/gestionarDepartamento.jsp">Departamento</a>
                             <a class="dropdown-item" href="gestionar/gestionarEmpleador.jsp">Empleador</a>
                             <a class="dropdown-item" href="gestionar/gestionarEmpresa.jsp">Empresa</a>
                             <a class="dropdown-item" href="gestionar/gestionarExperienciaLaboral.jsp">Experiencia Laboral</a>
+                            <a class="dropdown-item" href="gestionar/gestionarFormacionAcademica.jsp">Formacion Academica</a>
                             <a class="dropdown-item" href="gestionar/gestionarHabilidad.jsp">Habilidad</a>
                             <a class="dropdown-item" href="gestionar/gestionarOfertaEmpleo.jsp">Oferta Empleo</a>
                             <a class="dropdown-item" href="gestionar/gestionarPais.jsp">Pais</a>
