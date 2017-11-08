@@ -75,7 +75,7 @@
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="idEmpleador" class="col-form-label">Id Empleador</label>
-                                    <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador" placeholder="Id Empleado" >
+                                    <input type="text" class="form-control" id="idEmpleador" name="txtIdEmpleador"  pattern="[0-9]{1,}" required="true" placeholder="Id Empleado" >
                                 </div>
                             </div>
                         </div>
@@ -85,13 +85,13 @@
                        
                         <div class="form-group col-md-5">
                             <label for="nombreEmpresa" class="col-form-label">Nombre de la Empresa</label>
-                            <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" placeholder="Nombre de la Empresa">
+                            <input type="text" class="form-control" id="nombreEmpresa" name="txtNombreEmpresa" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,}" required="true" placeholder="Nombre de la Empresa">
                         </div>
                         <div class="col align-self-center">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="puesto" class="col-form-label">Puesto</label>
-                                    <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Puesto ">
+                                    <input type="text" class="form-control" id="puesto" name="txtPuesto" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,}" required="true" placeholder="Puesto ">
                                 </div>
                             </div>
                         </div>
@@ -99,13 +99,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="nombreJefe" class="col-form-label">Nombre del Jefe</label>
-                            <input type="text" class="form-control" id="nombreJefe" name="txtJefe" placeholder="Nombre del Jefe">
+                            <input type="text" class="form-control" id="nombreJefe" name="txtJefe" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,}" required="true" placeholder="Nombre del Jefe">
                         </div>
                         <div class="col align-self-end">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="Telefono" class="col-form-label">Telefono del Jefe</label>
-                                    <input type="text" class="form-control" id="Telefono" name="txtTelefono" placeholder="Ejemplo: ####-####">
+                                    <input type="text" class="form-control" id="Telefono"  pattern="[0-9]{1,}" required="true" name="txtTelefono" placeholder="Ejemplo: ####-####">
                                 </div>
                             </div>
                         </div>
@@ -114,13 +114,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="Desde" class="col-form-label">Desde</label>
-                            <input type="date" class="form-control" id="Desde" name="txtDesde">
+                            <input type="date" class="form-control" id="Desde" name="Desde">
                         </div>
                         <div class="col align-self-end">
                             <div class="row justify-content-center">
                                 <div class="form-group col-md-8">
                                     <label for="Hasta" class="col-form-label">Hasta</label>
-                                    <input type="date" class="form-control" id="Hasta" name="txtHasta">
+                                    <input type="date" class="form-control" id="Hasta" name="Hasta">
                                 </div>
                             </div>
                         </div>
@@ -132,10 +132,11 @@
                             <label for="IdTipoContrato" class="col-form-label">Tipo de Contrato</label>
                         </div>
                         <div class="col-4">
-                            <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="idTipoContrato" name="lstTipoContrato" required="true">
-                                <option value="Tiempo Completo">Tiempo Completo</option>
-                                <option value="Por Horas">Por Horas</option>
-                                <option value="Practicas">Practicas</option> 
+                            <select class="custom-select mb-1 mr-sm-1 mb-sm-5" id="lstContrato" name="lstContrato" required="true">
+                                <option>Seleccionar</option>
+                                <option>Tiempo Completo</option>
+                                <option>Por Horas</option>
+                                <option>Practicas</option> 
                             </select>
                         </div>
                         <div class="w-10"></div>

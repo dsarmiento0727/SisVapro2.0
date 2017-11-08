@@ -54,7 +54,8 @@
     <body>
         <jsp:include page="menuGestionar.jsp"/>
     <center>
-        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Habilidad</h1></div>
+        <br>
+        <div class="p-2 mb-1 bg-light text-black"><h1>Registro de Habilidad</h1></div>
         <br><br>
         <table>
             <div class="container">
@@ -68,7 +69,7 @@
                     <div class="form-group row">
                         <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
                         <div class="col-sm-4">
-                            <input type="text"type class="form-control" id="txtNombre" name="txtNombre" required="true" placeholder="Habilidad" pattern="[A-Za-z]{3,}">
+                            <input type="text"type class="form-control" id="txtNombre" name="txtNombre" required="true" placeholder="Habilidad" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,}">
                         </div>
                     </div>
                     <div class="form-group row">
