@@ -5,8 +5,7 @@
  * and open the template in the editor.
  */
 function cargarTipoUsuario(id, nivel) {
-    document.frmTipoUsuario.txtIdTipoU.value = id;
-
+    document.frmTipoUsuario.txtIdTipoUsuario.value = id;
     document.frmTipoUsuario.txtNivel.value = nivel;
 }
 function cargarPais(id, nombre) {
@@ -55,6 +54,7 @@ function cargarEmpresa(id, nombre, razon, nit, direccion, pais, depa, log, pagin
     document.frmEmpresa.lstSector.value = sector;
     document.frmEmpresa.txtIdUsuario.value = idu;
 }
+
 function cargarIdioma(id, nombre) {
     document.frmIdioma.txtIdIdioma.value = id;
     document.frmIdioma.txtNombre.value = nombre;

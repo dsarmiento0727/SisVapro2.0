@@ -198,8 +198,8 @@
                 <td><%=ep.getIdEmpleador() %></td>
                 <td><a href="javascript:cargarExperienciaLaboral(<%=ep.getIdExperienciaLaboral()%>,
                        '<%=ep.getNombreEmpresa()%>','<%=ep.getNombreJefe()%>','<%=ep.getTelefonoJefe()%>',
-                       '<%=ep.getPuesto()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
-                       '<%=ep.getTipoContrato()%>','<%=ep.getIdEmpleador()%>')">Seleccionar</a></td>
+                       '<%=ep.getPuesto()%>','<%=ep.getTipoContrato()%>','<%=ep.getDesde()%>','<%=ep.getHasta()%>',
+                       '<%=ep.getIdEmpleador()%>')">Seleccionar</a></td>
             </tr>
             <%
                 }

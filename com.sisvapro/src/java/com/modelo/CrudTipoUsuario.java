@@ -67,7 +67,7 @@ public class CrudTipoUsuario extends Conexion{
         ResultSet res;
         try {
            this.conectar();
-            String sql="select*from tipoUsuario";
+            String sql="select * from tipoUsuario";
             PreparedStatement pre =this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while(res.next()){
