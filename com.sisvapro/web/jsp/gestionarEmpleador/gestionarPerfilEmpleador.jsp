@@ -92,10 +92,12 @@
                     <div class="p-1 mb-1 bg-light text-black"><center><h1>Perfil de Empleador</h1></center></div>
                     <div class="jumbotron">
                         <div class="form-group, position-relative">
+                            
+                            <input type="text" class="form-control-file" id="txtIdPerfil" name="txtIdPerfil" style="display: none" value="<%= empi.getIdEmpleador() %>">
                             <div class="col-6">
                                 <label for="foto"><strong>Foto de Perfil</strong></label>
                                 <input type="file" class="form-control-file" id="foto" name="foto">
-                                <input type="text" class="form-control-file" id="foto2" name="foto2" style="display: none">
+                                <input type="text" class="form-control-file" id="foto2" name="foto2" style="display: none" value="<%= empi.getIdEmpleador() %>">
                             </div>
                         </div>
 
@@ -150,7 +152,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="DUI" class="col-form-label"><strong>DUI</strong></label>
-                                            <input type="text" class="form-control" id="txtDui" name="txtIdPerfil" placeholder="########-#" value="<%= empi.getDui()%>">
+                                            <input type="text" class="form-control" id="txtDui" name="txtDui" placeholder="########-#" value="<%= empi.getDui()%>">
                                         </div>
                                     </div>
                                     <div class="col-6">
