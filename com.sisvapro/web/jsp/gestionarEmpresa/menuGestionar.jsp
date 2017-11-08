@@ -6,9 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-
     String usuario = null;
-
     String tipoUsuario = null;
 
     try {
@@ -17,15 +15,18 @@
 
         HttpSession objSesionTipo = request.getSession(false);
 
-        usuario = (String) objSesion.getAttribute("usuario");
+        if (objSesion !=null & objSesionTipo != null) {
+            usuario = (String) objSesion.getAttribute("usuario");
 
-        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+            tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        }
+
         if (usuario == null) {
-            //response.sendRedirect("../accesoDenegado.jsp");
+            response.sendRedirect("../../accesoDenegado.jsp");
         }
 
     } catch (Exception e) {
-
+        
         out.print(e.toString());
 
     }
@@ -35,7 +36,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     <a class="navbar-brand" href="#">
-        <img src="imagenes/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="../../imagenes/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Mundo Empleo
     </a>
 
@@ -59,11 +60,13 @@
                     Gestionar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="gestionarAdministrador.jsp">Administrador</a>
                     <a class="dropdown-item" href="gestionarAreaProfesional.jsp">Area Profesional</a>
                     <a class="dropdown-item" href="gestionarDepartamento.jsp">Departamento</a>
                     <a class="dropdown-item" href="gestionarEmpleador.jsp">Empleador</a>
                     <a class="dropdown-item" href="gestionarEmpresa.jsp">Empresa</a>
                     <a class="dropdown-item" href="gestionarExperienciaLaboral.jsp">Experiencia Laboral</a>
+                    <a class="dropdown-item" href="gestionarFormacionAcademica.jsp">Formacion Academica</a>
                     <a class="dropdown-item" href="gestionarHabilidad.jsp">Habilidad</a>
                     <a class="dropdown-item" href="gestionarOfertaEmpleo.jsp">Oferta Empleo</a>
                     <a class="dropdown-item" href="gestionarPais.jsp">Pais</a>
@@ -73,10 +76,17 @@
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-
-            <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase() %></span>
+            <%
+                if(usuario != null)
+                {
+                    
+                
+                %>
+            <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase()%></span>
             <a href="../cerrarSession.jsp" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
-
+<%
+    }
+%>
         </form>
 
 

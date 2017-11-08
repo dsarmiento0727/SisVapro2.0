@@ -7,44 +7,28 @@ and open the template in the editor.
     Created on : Oct 31, 2017, 11:35:34 PM
     Author     : David Sarmiento
 */
-
-.navbar-expand-lg .navbar-nav .dropdown-dash-right {
-    right: 0;
-    left: auto;
+@media screen and (max-width: 600px) {
+       table {
+           width:100%;
+       }
+       thead {
+           display: none;
+       }
+       tr:nth-of-type(2n) {
+           background-color: inherit;
+       }
+       tr td:first-child {
+           background: #f0f0f0;
+           font-weight:bold;
+           font-size:1.3em;
+       }
+       tbody td {
+           display: block;
+           text-align:center;
+       }
+       tbody td:before {
+           content: attr(data-th);
+           display: block;
+           text-align:center;
+       }
 }
-
-
-.navbar-expand-lg .navbar-nav .dropdown-dash {
-    position: absolute;
-}
-
-.navbar-nav .dropdown-dash{
-    position: relative;
-    float: none;
-}
-
-.dropdown-dash.show {
-    display: block;
-}
-
-.dropdown-dash {
-    position: relative;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
-    width: 150px;
-}
-
