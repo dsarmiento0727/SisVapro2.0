@@ -70,7 +70,7 @@
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
                 <div class="col-sm-4">
-                    <input type="text"type class="form-control" id="txtNombre" name="txtNombre"placeholder="Habilidad">
+                    <input type="text"type class="form-control" id="txtNombre" name="txtNombre" required="true" pattern="[A-Za-z]" placeholder="Habilidad">
                 </div>
                 </div>
                 <div class="form-group row">
