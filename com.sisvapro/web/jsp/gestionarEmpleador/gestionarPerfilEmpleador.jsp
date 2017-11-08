@@ -64,28 +64,28 @@
         <title>JSP Page</title>
     </head>
     <%
-    CrudDepartamento crudd= new CrudDepartamento();
-    CrudPais crudp= new CrudPais();
-    CrudAreaProfesional cruda= new CrudAreaProfesional();
+        CrudDepartamento crudd = new CrudDepartamento();
+        CrudPais crudp = new CrudPais();
+        CrudAreaProfesional cruda = new CrudAreaProfesional();
     %>
     <body>
         <jsp:include page="menuGestionar.jsp"/>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Perfil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Formacion Academica</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
-            </li>
-        </ul>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Formacion Academica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Experiencia Laboral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-test" role="tab" aria-controls="pills-test" aria-selected="false">Holi</a>
+                </li>
+            </ul>
+        </nav>
 
 
         <div class="tab-content" id="pills-tabContent">
@@ -101,12 +101,14 @@
                     <div class="p-1 mb-1 bg-light text-black"><center><h1>Perfil de Empleador</h1></center></div>
                     <div class="jumbotron">
                         <div class="form-group, position-relative">
-                            
-                            <input type="text" class="form-control-file" id="txtIdPerfil" name="txtIdPerfil" style="display: none" value="<%= empi.getIdEmpleador() %>">
+
+                            <input type="text" class="form-control-file" id="txtIdPerfil" name="txtIdPerfil" style="display: none" value="<%= empi.getIdEmpleador()%>">
+                            <input type="text" class="form-control-file" id="txtIdPerfil" name="lstUsuario" style="display: none" value="<%= empi.getIdUsuario()%>">
                             <div class="col-6">
                                 <label for="foto"><strong>Foto de Perfil</strong></label>
                                 <input type="file" class="form-control-file" id="foto" name="foto">
-                                <input type="text" class="form-control-file" id="foto2" name="foto2" style="display: none" value="<%= empi.getIdEmpleador() %>">
+                                <input type="text" class="form-control-file" id="foto2" name="foto2" style="display: none" value="<%= empi.getFotoPerfil()%>">
+                                
                             </div>
                         </div>
 
@@ -149,13 +151,45 @@
                                         <input type="txt" class="form-control" id="txtFechaNac" name="txtFechaNac" value="<%= empi.getFechaNac()%>" readonly>
                                     </div>
                                 </div>
+                                      <div class="col-13">
+                                    <div class="form-group">
+                                        <label for="txtAnio" class="col-form-label"><strong>A&ntilde;os Esperiencia</strong></label>
+                                        <input type="text" class="form-control" id="txtAnio" name="txtAnio" placeholder="txtAnio" value="<%=empi.getAniosExperiencia()%>">
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <strong>Género</strong>
+
+                                    <%
+                                        if (empi.getGenero().equals("Masculino")) {
+                                    %>
                                     <label class="custom-control custom-radio">
                                         <input type="radio" name="genero" class="custom-control-input" checked="true" value="<%= empi.getGenero()%>">
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description"><%= empi.getGenero()%></span>
                                     </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="genero" value="Femenino" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Femenino</span>
+                                    </label>
+                                    <%
+                                    } else {
+                                    %> 
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="genero" class="custom-control-input" checked="true" value="<%= empi.getGenero()%>">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description"><%= empi.getGenero()%></span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="genero" value="Masculino" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Masculino</span>
+                                    </label>
+                                    <%
+                                        }
+                                    %>
+
                                 </div>
                                 <div class="form-row">
                                     <div class="col-6">
@@ -174,86 +208,112 @@
 
                                 <div class="form-row">
                                     <div class="col align-self-start">   
-                                            <div class="col-5">
-                                                <div class="form-group">
-                                                    <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
-                                                    <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad" value="<%= empi.getNacionalidad()%>">
-                                                </div>
+                                        <div class="col-5">
+                                            <div class="form-group">
+                                                <label for="txtNacio" class="col-form-label"><strong>Nacionalidad</strong></label>
+                                                <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad" value="<%= empi.getNacionalidad()%>">
                                             </div>
                                         </div>
                                     </div>
-                                                <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label for="lstpais" class="col-lg-4 col-form-label"><strong>Pais</strong></label>
-                                        <div class="col-lg-5">
-                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
-                                                <%
-                                                    List<Pais> lst1 = crudpa.mostrarPais();
-                                                    for (Pais pa : lst1) {
-                                                %>
-                                                <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
-                                                <%
-                                                    }
-                                                %>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label for="lstDepa" class="col-sm-4 col-form-label"><strong>Departamento</strong></label>
-                                        <div class="col-sm-5">
-                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstDepartamento" name="lstDepartamento">
-                                                <option>Seleccionar</option>
-                                                <%
-                                                    List<Departamento> lst2 = crudd.mostrarDepartamento();
-                                                    for (Departamento d : lst2) {
-                                                %>
-                                                <option value="<%=d.getIdDepartamento()%>" ><%=d.getNombreDepartamento()%></option>
-                                                <%
-                                                    }
-                                                %>
-                                            </select>
-                                        </div>
-                                    </div>   
-                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group row">
+                                                <label for="lstpais" class="col-lg-4 col-form-label"><strong>Pais</strong></label>
+                                                <div class="col-lg-5">
+                                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstPais" name="lstPais" >
+                                                        <option>Seleccionar</option>
+                                                        <%
+                                                            List<Pais> lst1 = crudpa.mostrarPais();
+                                                            for (Pais pa : lst1) {
 
-                                <div class="w-100"></div>
-                                <div class="col">
-                                     <div class="form-group row">
-                                        <label for="lstArea" class="col-sm-4 col-form-label"><strong>Área Profesional</strong></label>
-                                        <div class="col-sm-5">
-                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea">
-                                                <option>Seleccionar</option>
-                                                <%
-                                                    List< AreaProfesional> lst3 = cruda.mostrarAreaProfesional();
-                                                    for (AreaProfesional d : lst3) {
-                                                %>
-                                                <option value="<%=d.getIdAreaProfesional()%>" ><%=d.getNombreAreaProfesional()%></option>
-                                                <%
-                                                    }
-                                                %>
-                                            </select>
+                                                                if (empi.getIdPais() == pa.getIdPais()) {
+                                                        %>
+                                                        <option value="<%=pa.getIdPais()%>"selected ><%=pa.getNombrePais()%></option>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <option value="<%=pa.getIdPais()%>"><%=pa.getNombrePais()%></option>
+                                                        <%
+
+                                                                }
+                                                            }
+                                                        %>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="col">
+                                            <div class="form-group row">
+                                                <label for="lstDepa" class="col-sm-4 col-form-label"><strong>Departamento</strong></label>
+                                                <div class="col-sm-5">
+                                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstDepartamento" name="lstDepartamento">
+                                                        <option>Seleccionar</option>
+                                                        <%
+                                                            List<Departamento> lst2 = crudd.mostrarDepartamento();
+                                                            for (Departamento d : lst2) {
+                                                                if (empi.getIdDepartamento() == d.getIdDepartamento()) {
+                                                        %>
+                                                        <option value="<%=d.getIdDepartamento()%>"selected ><%=d.getNombreDepartamento()%></option>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <option value="<%=d.getIdDepartamento()%>"><%=d.getNombreDepartamento()%></option>
+                                                        <%
+
+                                                                }
+                                                            }
+                                                        %>
+                                                    </select>
+                                                </div>
+                                            </div>   
+                                        </div>
+
+                                        <div class="w-100"></div>
+                                        <div class="col">
+                                            <div class="form-group row">
+                                                <label for="lstArea" class="col-sm-4 col-form-label"><strong>Área Profesional</strong></label>
+                                                <div class="col-sm-5">
+                                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="lstArea" name="lstArea">
+                                                        <option>Seleccionar</option>
+                                                        <%
+                                                            List< AreaProfesional> lst3 = cruda.mostrarAreaProfesional();
+                                                            for (AreaProfesional d : lst3) {
+                                                                if (empi.getIdAreaProfesional() == d.getIdAreaProfesional()) {
+                                                        %>
+                                                        <option value="<%=d.getIdAreaProfesional()%>" selected><%=d.getNombreAreaProfesional()%></option>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <option value="<%=d.getIdAreaProfesional()%>" ><%=d.getNombreAreaProfesional()%></option>
+                                                        <%
+
+                                                                }
+                                                            }
+                                                        %>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col"></div>
                                     </div>
-                                </div>
-                                <div class="col"></div>
+                                </div> 
                             </div>
-                        </div> 
-                                </div>
-                            </div>
-                        </div> 
-                                                <input type="submit" value="Guardar" name="perfil">
+                        </div>
+                       
                     </div>
-                    <%
-                        }
-                    %>
- 
+                    <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()"> 
                 </form>
-
+                <%
+                    }
+                %>
             </div>
+
+
+
+
 
 
 

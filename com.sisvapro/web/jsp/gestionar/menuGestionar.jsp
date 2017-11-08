@@ -71,6 +71,8 @@
                     <a class="dropdown-item" href="gestionarOfertaEmpleo.jsp">Oferta Empleo</a>
                     <a class="dropdown-item" href="gestionarPais.jsp">Pais</a>
                     <a class="dropdown-item" href="gestionarPersonaContacto.jsp">Persona Contacto</a>
+                    <a class="dropdown-item" href="gestionarTipoUsuario.jsp">Tipo Usuario</a>
+                    <a class="dropdown-item" href="gestionarUsuario.jsp">Usuario</a>
                 </div>
             </li>
         </ul>
