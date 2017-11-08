@@ -40,7 +40,7 @@
 
 <select name=capital > 
 </select> 
-                <input type="text" required="true">
+                <input type="text" required="true" pattern="[A-Za-z]{10,}">
                 <input type="submit">
 </form> 
 <script> 

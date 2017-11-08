@@ -16,16 +16,18 @@
         HttpSession objSesion = request.getSession(false);
 
         HttpSession objSesionTipo = request.getSession(false);
+  
+            usuario = (String) objSesion.getAttribute("usuario");
 
-        usuario = (String) objSesion.getAttribute("usuario");
+            tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
+        
 
-        tipoUsuario = (String) objSesionTipo.getAttribute("tipo");
         if (usuario == null) {
-            //response.sendRedirect("../accesoDenegado.jsp");
+            response.sendRedirect("../accesoDenegado.jsp");
         }
 
     } catch (Exception e) {
-
+        response.sendRedirect("../accesoDenegado.jsp");
         out.print(e.toString());
 
     }
@@ -76,7 +78,7 @@
 
         <form class="form-inline my-2 my-lg-0">
 
-            <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase() %></span>
+            <span class="input-group-addon" id="basic-addon1"><%= usuario.toUpperCase()%></span>
             <a href="../cerrarSession.jsp" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
 
         </form>

@@ -29,8 +29,7 @@
 
     } catch (Exception e) {
 
-        out.print(e.toString());
-
+        response.sendRedirect("../../accesoDenegado.jsp");
     }
 
 %>
@@ -50,45 +49,44 @@
         <title>Gestionar Habilidad</title>
         <script src="../../js/Procesos.js"></script>
     </head>
-    <%
-    CrudHabilidad crud=new CrudHabilidad();
+    <%        CrudHabilidad crud = new CrudHabilidad();
     %>
     <body>
         <jsp:include page="menuGestionar.jsp"/>
-        <center>
-            <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Habilidad</h1></div>
+    <center>
+        <div class="p-3 mb-2 bg-light text-black"><h1>Registro de Habilidad</h1></div>
         <br><br>
         <table>
             <div class="container">
-            <form action="procesarHabilidad" method="POST" name="frmHabilidad">
-                <div class="form-group row">
-                    <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly>
-                </div>
-                </div>
-                <div class="form-group row">
-                    <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
-                <div class="col-sm-4">
-                    <input type="text"type class="form-control" id="txtNombre" name="txtNombre" required="true" pattern="[A-Za-z]" placeholder="Habilidad">
-                </div>
-                </div>
-                <div class="form-group row">
-                            <label for="idfor1" class="col-sm-2 col-form-label"><strong>Id Empleado</strong></label>
-                            <div class="col-sm-4">
-                            <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" >
+                <form action="procesarHabilidad" method="POST" name="frmHabilidad">
+                    <div class="form-group row">
+                        <label for="idhabilidad" class="col-sm-2 col-form-label"><strong>Id Habilidad</strong></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="txtIdDepartamento" name="txtIdHabilidad" placeholder="Id Habilidad" value="0" readonly>
                         </div>
-                </div>
-                
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
-                        <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
-                        <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick=" Eliminar()">
-                        <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
-                    </td>
-                </tr>
-            </form>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nombre" class="col-sm-2 col-form-label"><strong>Habilidad</strong></label>
+                        <div class="col-sm-4">
+                            <input type="text"type class="form-control" id="txtNombre" name="txtNombre" required="true" placeholder="Habilidad" pattern="[A-Za-z]{3,}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="idfor1" class="col-sm-2 col-form-label"><strong>Id Empleado</strong></label>
+                        <div class="col-sm-4">
+                            <input type="text"type class="form-control" id="idfor1" name="txtIdEmpleador" placeholder="Id Empleador" required="true">
+                        </div>
+                    </div>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="btnInsertar" class="btn btn-success" value="Insertar">
+                            <input type="submit" name="btnModificar" class="btn btn-warning" value="Modificar" onclick="Modificar()">
+                            <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" onclick=" Eliminar()">
+                            <input type="reset" name="btnLimpiar" class="btn btn-secondary" value="Limpiar">   
+                        </td>
+                    </tr>
+                </form>
             </div>
         </table>
         <br>
@@ -103,21 +101,21 @@
             </thead>
             <tbody>
                 <%
-                    List<Habilidad> lst=crud.mostrarHabilidad();
-                    for(Habilidad h:lst){
+                    List<Habilidad> lst = crud.mostrarHabilidad();
+                    for (Habilidad h : lst) {
                 %>
                 <tr class="table-primary">
                     <td><%=h.getIdHabilidad()%></td>
                     <td><%=h.getNombreHabilidad()%></td>
-                    <td><%=h.getIdEmpleador() %></td>
+                    <td><%=h.getIdEmpleador()%></td>
                     <td><a href="javascript:cargarHabilidad(<%=h.getIdHabilidad()%>,
-                           '<%=h.getNombreHabilidad()%>','<%=h.getIdEmpleador() %>')" style="color:black">Seleccionar</a></td>
+                           '<%=h.getNombreHabilidad()%>','<%=h.getIdEmpleador()%>')" style="color:black">Seleccionar</a></td>
                 </tr>
                 <%
                     }
                 %>
             </tbody>
         </table>
-        </center>
-    </body>
+    </center>
+</body>
 </html>
