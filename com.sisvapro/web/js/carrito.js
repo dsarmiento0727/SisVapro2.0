@@ -8,6 +8,6 @@ var carrito = [];
 function cargarACarrito(oferta) {
    carrito.push(oferta);
 }
-function cargarACarrito(puesto, canti, tipo, experiencia, genero, edad, salario, empresa, pais, departamento, descripcion) {
-   var carrito = [puesto, canti, tipo, experiencia, genero, edad, salario, empresa, pais, departamento, descripcion];
+function cargarACarrito(id,puesto, canti, tipo, experiencia, genero, edad, salario, empresa, pais, departamento, descripcion) {
+   var carrito = [id,puesto, canti, tipo, experiencia, genero, edad, salario, empresa, pais, departamento, descripcion];
 }

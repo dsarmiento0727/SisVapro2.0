@@ -107,15 +107,28 @@
                         <td><%=o.getEdad()%></td>
                         <td><%=o.getSalario()%></td>
                         <td><%=o.getIdEmpresa()%></td>
-                        <td><%=o.getIdPais()%></td>
-                        <td><%=o.getIdDepartamento()%></td>
+                        <%
+                            
+                            List<Pais> lstpa=crup.mostrarPais();
+                            for(Pais pa:lstpa){
+                                if(o.getIdPais()==pa.getIdPais()){
+                        %>
+                        <td><%=pa.getNombrePais()%></td>
+                        <% }}%>
+                        <%
+                         List<Departamento> lstd =crudepar.mostrarDepartamento();
+                         for(Departamento de:lstd ){
+                             if(o.getIdDepartamento()==de.getIdDepartamento()){
+                        %>
+                        <td><%=de.getNombreDepartamento() %></td>
+                        <% }}%>
                         <td><%=o.getDescripcionOferta()%></td>
 
                         <td><a class="badge badge-primary" href="javascript:cargarACarrito(<%=o.getIdOfertaEmpleo()%>,
                                '<%=o.getPuestoVacante()%>','<%=o.getTipoContratacion()%>',
                                '<%=o.getGenero()%>','<%=o.getEdad()%>','><%=o.getSalario()%>',
                                '<%=o.getIdEmpresa()%>','<%=o.getIdPais()%>','<%=o.getIdDepartamento()%>',
-                               '<%=o.getDescripcionOferta()%>','<%=o.getNivelExperiencia()%>')">Seleccionar</a></td>
+                               '<%=o.getDescripcionOferta()%>','<%=o.getNivelExperiencia()%>')">Agregar</a></td>
                     </tr>
                     <%
                         }
